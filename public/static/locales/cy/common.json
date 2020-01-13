@@ -1,0 +1,34 @@
+{
+  "travel": {
+    "home": {
+      "banner": {
+        "heading": "Dewch o hyd i yswiriant teithio os oes gennych gyflwr meddygol difrifol",
+        "paragraph": "Mae ein Cyfeiriadur yn darparu manylion cwmnïau sy'n spaecialise wrth gynnig yswiriant teithio os oes gennych gyflwr meddygol difrifol neu luosog",
+        "register": "Cofrestrwch neu fewngofnodwch "
+      },
+      "conditions": {
+        "heading": "A all cwmnïau ar yr gyfarwyddeb hon fy helpu?",
+        "questions" : [
+          { "answer":"Oes, os gwrthodwyd yswiriant teithio i chi oherwydd cyflwr meddygol", "sign": "positive"} ,
+          { "answer": "Oes, os ydych wedi cael yswiriant wedi'i ganslo oherwydd cyflwr meddygol", "sign": "positive"},
+          { "answer": "Oes, os cynigiwyd yswiriant i chi ond bod cyflwr meddygol wedi'i eithrio", "sign": "positive"},
+         
+          { "answer": "Na, os oes gennych gyflwr heb ddiagnosis" , "sign": "negative"}
+        ],
+        "button": "Gweld pob cwmni"
+      },
+        "about": {
+          "heading": "Ynglŷn â'r cyfeiriadur",
+          "details":[
+          {"answer": "Mae pob cwmni'n arbenigwyr ar ddarparu yswiriant teithio i bobl sydd â'r holl gyflyrau meddygol difrifol sy'n bodoli eisoes", "sign": "positive"},
+          {"answer": "Mae pob cwmni wedi'i awdurdodi a'i reoleiddio gan yr Financial Conduct Authority (FCA)", "sign": "positive"},
+          {"answer": "Nid ydym yn darparu dyfynbrisiau ond yn dangos manylion allweddol i chi am ddarparwyr arbenigol a all eich helpu", "sign": "positive"}
+        ]
+    }}
+  },
+    "misc": {
+      "submit": "Cyflwyno"
+    },
+    "altLanguage": "English",
+    "retirement": "ymddeol"
+  }
