@@ -4,8 +4,8 @@ A react prototype of directories projects built with nodejs and express for seve
 
 ## Prerequisites
 
-: Git
-: Node
+- Git
+- Node
 
 ## Installation
 
