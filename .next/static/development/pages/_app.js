@@ -928,9 +928,10 @@ var NextI18Next = __webpack_require__(/*! next-i18next */ "./node_modules/next-i
 
 var NextI18NextInstance = new NextI18Next({
   defaultLanguage: 'en',
-  otherLanguages: ['cy'],
+  otherLanguages: ['cy', 'en'],
   localeSubpaths: {
-    cy: 'cy'
+    cy: 'cy',
+    en: 'en'
   }
 });
 module.exports = NextI18NextInstance;
