@@ -1,16 +1,23 @@
 {
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "node": true
     },
     "extends": [
-        "standard"
+        "standard",
+        "eslint:recommended",
+        "plugin:import/errors",
+        "plugin:react/recommended",
+        "prettier",
+        "prettier/react"
     ],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly",
         "React": "writable"
     },
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -19,9 +26,18 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react", "import", "module-resolver"
     ],
     "rules": {
-        "react/react-in-jsx-scope": "off"
-    }
+        "react/react-in-jsx-scope": "off",
+        "react/prop-types": 0,
+        "no-console": "off",
+        "quotes": [2, "single", { "avoidEscape": true }],
+        "module-resolver/use-alias": 2
+    },
+    "settings": {
+        "react": {
+          "version": "detect"
+        }
+      }
 }
