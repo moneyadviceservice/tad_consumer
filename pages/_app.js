@@ -7,14 +7,16 @@ import GlobalStyle from '../components/Styles/globalStyle'
 import { Translation } from '../components/Styles/Text'
 import LanguageSwitcher from '../components/translation/languageSwitcher'
 import Footer from '../components/footer'
-import { withRedux } from '../redux/withRedux'
+import withReduxStore from '../redux/with-redux-store'
+import { Provider } from 'react-redux'
+
 
 
 class MyApp extends App {
   render() {
-    const { Component, pageProps } = this.props
+    const { Component, pageProps, reduxStore } = this.props
     return (
-        <Fragment>
+        <Provider store={reduxStore}>
          <GlobalStyle />
         <Header pb="0" pt="0" justify="space-between">
           {/* Wrap a container around */}
@@ -23,9 +25,9 @@ class MyApp extends App {
         </Header>
       <Component {...pageProps} />
       <Footer/>
-      </Fragment>
+      </Provider>
     )
   }
 }
 
-export default withRedux(appWithTranslation(MyApp))
+export default withReduxStore(appWithTranslation(MyApp))
