@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/moneyadviceservice/isomorphic_react_prototype#readme",
   "dependencies": {
+    "axios": "^0.19.2",
     "express": "^4.17.1",
     "next": "^9.1.7",
     "next-i18next": "^3.0.1",
