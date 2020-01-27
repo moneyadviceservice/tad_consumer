@@ -1,11 +1,7 @@
 import axios from 'axios';
 import {  
     GET_FIRMS_SUCCESS,
-    GET_FIRMS_STARTED,
-    FILTER_AGE,
-    FILTER_INSURANCE_TYPE,
-    FILTER_TRIP_LENGTH,
-    FILTER_TREATMENT_STAGE
+    GET_FIRMS_STARTED
  } from './constant'
 
  

@@ -1,17 +1,20 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
 // import { startClock, serverRenderClock } from '../store'
 import Firms from '../components/firms'
-import { getFirms } from '../components/firms/actions'
 
-class Index extends React.Component {
-  
 
-  render() {
-    return <Firms />
-  }
+const Listings = () => {
+
+    return (
+      <Fragment>
+      
+        <Firms />
+      </Fragment>
+    )
+ 
 }
 
 
 
-export default Index
+export default Listings
