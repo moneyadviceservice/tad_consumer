@@ -1,29 +1,17 @@
 import axios from 'axios';
 import {  
     GET_FIRMS_SUCCESS,
-    GET_FIRMS_STARTED
+    GET_FIRMS_STARTED,
+    FILTER_AGE,
+    FILTER_INSURANCE_TYPE,
+    FILTER_TRIP_LENGTH,
+    FILTER_TREATMENT_STAGE,
  } from './constant'
+
 
  
 
-//  export const getAllFirms = () => {
-//     return (dispatch) => {
-//       fetch(`https://jsonplaceholder.typicode.com/users`)
-//         .then(res => res.json())
-//         .then(firms => {
-//           dispatch({
-//             type: GET_FIRMS,
-//             payload: firms
-//           })
-//         })
-//     }
-//   }
 
-//   export const getFirms = () =>{
-//     return dispatch => axios.get(`https://my-json-server.typicode.com/akenzua/tad-data/data`)
-//         .then(({ data }) => data)
-//         .then(firms => dispatch({ type: 'GET_FIRMS', firms}));
-// }
 
 export const getFirms = () =>{
     return dispatch => axios.get(`https://my-json-server.typicode.com/akenzua/tad-data/data`)
@@ -45,4 +33,26 @@ export const getFirmsStarted = () => ({
     type: GET_FIRMS_STARTED
     
   });
+
+
+export const filterAge = (age) => ({
+    type: FILTER_AGE,
+    payload: age
+});
+
+export const filterInsuranceType = (insuranceType) => ({
+    type: FILTER_INSURANCE_TYPE,
+    payload: insuranceType
+});
+
+export const filterTripLength = (tripLength) => ({
+    type: FILTER_TRIP_LENGTH,
+    payload: tripLength
+});
+
+export const filterTreatmentStage = (treatmentStage) => ({
+    type: FILTER_TREATMENT_STAGE,
+    payload: treatmentStage
+});
+
 
