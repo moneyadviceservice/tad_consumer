@@ -1,0 +1,31 @@
+{
+    "filters": {
+        "age": [
+            {"range" : "Dan 18 oed", "value": "Under 18 years"},
+            {"range" : "Rhwng 18 - 80 oed", "value": "Between 18 and 80 years"},
+            {"range" : "Dros 80 mlynedd", "value": "Over 80 years"}
+        ],
+        "insuranceType": [
+            {"type": "Trip Sengl", "value": "Single Trip"},
+            {"type": "Aml-Daith Flynyddol", "value": "Annual Multi-Trip"}
+        ],
+        "tripLength": [
+            {"length": "O dan 1 mis", "value": "Under 1 month"},
+            {"length": "Rhwng 1 - 3 mis", "value":"Between 1 - 3 months"},
+            {"length": "Rhwng 3 - 6 mis", "value":"Between 3 - 6 months"},
+            {"length": "Dros 6 mis", "value": "Over 6 months"}
+        ],
+        "treatmentStage": [
+            {"stage": "Rwy'n mynd dramor i gael triniaeth feddygol neu lawdriniaeth", "value": "I am going abroad for medical treatment or surgery"},
+            {"stage": "Rwyf ar restr aros gartref am driniaeth neu lawdriniaeth", "value": "I am on a waiting list at home for treatment or surgery"},
+            {"stage": "Rwy'n deffro canlyniadau profion", "value": "I am awating test results"},
+            {"stage": "Mae fy meddyg wedi rhoi prognosis terfynol i mi", "value": "My doctor has given me a terminal prognosis"}
+        ]
+    },
+    "headings": {
+        "age": "Oedran",
+        "insuranceType": "Math o Yswiriant",
+        "tripLength": "Hyd y Daith",
+        "treatmentStage": "Cam Triniaeth"
+    }
+}

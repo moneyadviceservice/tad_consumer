@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
-import { connect } from 'react-redux'
-// import { startClock, serverRenderClock } from '../store'
 import Firms from '../components/firms'
+import { withTranslation } from '../components/translation/i18n'
+
 
 
 const Listings = () => {
@@ -17,4 +17,4 @@ const Listings = () => {
 
 
 
-export default Listings
+export default withTranslation('listings')(Listings)

@@ -24,9 +24,9 @@ export const getFirms = () =>{
 
 export const getFirmsSuccess = firms => ({
     type: GET_FIRMS_SUCCESS,
-    payload: [
-        ...firms
-    ]
+    payload: firms
+       
+    
 });
 
 export const getFirmsStarted = () => ({
