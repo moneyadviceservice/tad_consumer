@@ -1,6 +1,6 @@
-# Isomorphic React Prototype
+# RAD_CONSUMER
 
-A react prototype of directories projects built with nodejs and express for sever-side rendering which helps to develop web applications that takes into considering non javascript users and search engine optimization (SEO). 
+Consumer search for the Travel Adviser Directory
 
 ## Prerequisites
 
@@ -9,13 +9,9 @@ A react prototype of directories projects built with nodejs and express for seve
 
 ## Installation
 
-    git clone https://github.com/moneyadviceservice/isomorphic_react_prototype.git
+    git clone https://github.com/moneyadviceservice/tad_consumer.git
 
-    cd isomorphic_react_prototype
-
-    touch .gitignore
-
-    echo "node_modules" >> .gitignore
+    cd tad_consumer
 
     npm install
     
