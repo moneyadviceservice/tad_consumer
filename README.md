@@ -1,4 +1,4 @@
-# RAD_CONSUMER
+# TAD_CONSUMER
 
 Consumer search for the Travel Adviser Directory
 
@@ -16,3 +16,7 @@ Consumer search for the Travel Adviser Directory
     npm install
     
     npm run dev
+
+## Test
+
+    npm run test

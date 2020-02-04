@@ -16,8 +16,8 @@ const Firms = ({t}) => {
 
     // Get current firms
     const indexOfLastFirm = currentPage * firmsPerPage;
-    const indexOfFirstFirn = indexOfLastFirm - firmsPerPage;
-    const currentFirms = firms.slice(indexOfFirstFirn, indexOfLastFirm);
+    const indexOfFirstFirm = indexOfLastFirm - firmsPerPage;
+    const currentFirms = firms.slice(indexOfFirstFirm, indexOfLastFirm);
 
     const dispatch = useDispatch();
 
