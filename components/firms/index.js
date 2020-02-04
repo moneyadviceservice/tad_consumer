@@ -64,39 +64,46 @@ const Firms = ({t}) => {
        
         <form>
             <fieldset>
+                <legend>{t("headings.age")}:</legend>
                 
-                <label htmlFor="age">{t("headings.age")}:</label><br/>
                 {t("filters.age", {returnObjects: true}).map(({range, value}, i) => (
                     <div key={i} >
                          <input type="radio"  name="age" value={value} onChange={e => handleAgeChange(e)}/>
-                         <span>{range}</span>
+                         <label htmlFor="age">{range}</label>
                     </div>
                 ))}
             </fieldset>
+
             <fieldset>
-                <label htmlFor="insuranceType"> {t("headings.insuranceType")}:</label><br/> 
+                <legend>{t("headings.insuranceType")}:</legend>
+                
                 {t("filters.insuranceType", {returnObjects: true}).map(({type, value}, i) => (
                     <div key={i} >
                          <input type="radio"  name="insuranceType" value={value} onChange={e => handleInsuranceTypeChange(e)}/>
-                         <span>{type}</span>
+                         <label htmlFor="insuranceType"> {type}</label>
                     </div>
                 ))}      
             </fieldset>
+
             <fieldset>
-                <label htmlFor="tripLength"> {t("headings.tripLength")}:</label><br/>   
+                <legend>{t("headings.tripLength")}:</legend>
+                 
                 {t("filters.tripLength", {returnObjects: true}).map(({length, value}, i) => (
                     <div key={i} >
                          <input type="radio"  name="tripLength" value={value} onChange={e => handleTripLengthChange(e)}/>
-                         <span>{length}</span>
+                         <label htmlFor="tripLength"> {length}</label>
                     </div>
                 ))}      
             </fieldset>
+            
             <fieldset>
-                <label htmlFor="treatmentStage">{t("headings.treatmentStage")}:</label><br/>    
+                <legend>{t("headings.treatmentStage")}:</legend>
+
                 {t("filters.treatmentStage", {returnObjects: true}).map(({stage, value}, i) => (
                     <div key={i} >
                          <input type="radio"  name="treatmentStage" value={value} onChange={e => handleTreatmentStageChange(e)}/>
-                         <span>{stage}</span>
+                         <label htmlFor="treatmentStage">{stage}</label> 
+
                     </div>
                 ))}    
             </fieldset>
