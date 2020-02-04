@@ -68,8 +68,8 @@ const Firms = ({t}) => {
                 
                 {t("filters.age", {returnObjects: true}).map(({range, value}, i) => (
                     <div key={i} >
-                         <input type="radio"  name="age" value={value} onChange={e => handleAgeChange(e)}/>
-                         <label htmlFor="age">{range}</label>
+                         <input type="radio"  name="age" id={`age-${i}`} value={value} onChange={e => handleAgeChange(e)}/>
+                         <label htmlFor={`age-${i}`}>{range}</label>
                     </div>
                 ))}
             </fieldset>
@@ -79,8 +79,8 @@ const Firms = ({t}) => {
                 
                 {t("filters.insuranceType", {returnObjects: true}).map(({type, value}, i) => (
                     <div key={i} >
-                         <input type="radio"  name="insuranceType" value={value} onChange={e => handleInsuranceTypeChange(e)}/>
-                         <label htmlFor="insuranceType"> {type}</label>
+                         <input type="radio"  name="insuranceType" id={`type-${i}`} value={value} onChange={e => handleInsuranceTypeChange(e)}/>
+                         <label htmlFor={`type-${i}`}> {type}</label>
                     </div>
                 ))}      
             </fieldset>
@@ -90,8 +90,8 @@ const Firms = ({t}) => {
                  
                 {t("filters.tripLength", {returnObjects: true}).map(({length, value}, i) => (
                     <div key={i} >
-                         <input type="radio"  name="tripLength" value={value} onChange={e => handleTripLengthChange(e)}/>
-                         <label htmlFor="tripLength"> {length}</label>
+                         <input type="radio"  name="tripLength" id={`length-${i}`} value={value} onChange={e => handleTripLengthChange(e)}/>
+                         <label htmlFor={`length-${i}`}> {length}</label>
                     </div>
                 ))}      
             </fieldset>
@@ -101,8 +101,8 @@ const Firms = ({t}) => {
 
                 {t("filters.treatmentStage", {returnObjects: true}).map(({stage, value}, i) => (
                     <div key={i} >
-                         <input type="radio"  name="treatmentStage" value={value} onChange={e => handleTreatmentStageChange(e)}/>
-                         <label htmlFor="treatmentStage">{stage}</label> 
+                         <input type="radio" id={`stage-${i}`} name="treatmentStage" value={value} onChange={e => handleTreatmentStageChange(e)}/>
+                         <label htmlFor={`stage-${i}`}>{stage}</label> 
 
                     </div>
                 ))}    
