@@ -1,16 +1,21 @@
-import {  
-    GET_FIRMS_SUCCESS,
-    GET_FIRMS_STARTED,
-    FILTER_AGE,
-    FILTER_INSURANCE_TYPE,
-    FILTER_TRIP_LENGTH,
-    FILTER_TREATMENT_STAGE
- } from './constant'
+import {
+  GET_FIRMS_SUCCESS,
+  GET_OFFERINGS_SUCCESS,
+  GET_FIRMS_STARTED,
+  FILTER_AGE,
+  FILTER_INSURANCE_TYPE,
+  FILTER_TRIP_LENGTH,
+  FILTER_TREATMENT_STAGE,
+  FILTER_OFFERING,
+  FILTER
+} from "./constant";
+import { getFirms } from "./actions";
+import axios from "axios";
 
 let initialState = {
   loading: false,
-  firms:[]
-}
+  firms: []
+};
 
 const firmsReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -19,49 +24,74 @@ const firmsReducer = (state = initialState, action) => {
         ...state,
         loading: true
       };
-    break;
+      break;
     case GET_FIRMS_SUCCESS:
       return {
-        ...state, 
+        ...state,
         firms: action.payload
       };
-    break;
+      break;
+    case GET_OFFERINGS_SUCCESS:
+      return {
+        ...state,
+        offerings: action.payload
+      };
+      break;
     case FILTER_AGE:
       return {
         ...state,
-        firms: state.firms.filter((firms)=>{
-          return firms.filters.age.includes(action.payload)
+        firms: state.firms.filter(firms => {
+          return firms.filters.age.includes(action.payload);
         })
-        
       };
-    break;
+      break;
     case FILTER_INSURANCE_TYPE:
       return {
         ...state,
-        firms: state.firms.filter((firms)=>{
-          return firms.filters.insuranceType.includes(action.payload)
+        firms: state.firms.filter(firms => {
+          return firms.filters.insuranceType.includes(action.payload);
         })
       };
-    break;
+      break;
     case FILTER_TRIP_LENGTH:
       return {
         ...state,
-        firms: state.firms.filter((firms)=>{
-          return firms.filters.tripLength.includes(action.payload)
+        firms: state.firms.filter(firms => {
+          return firms.filters.tripLength.includes(action.payload);
         })
       };
-    break;
+      break;
     case FILTER_TREATMENT_STAGE:
       return {
         ...state,
-        firms: state.firms.filter((firms)=>{
-          return firms.filters.treatmentStage.includes(action.payload)
+        firms: state.firms.filter(firms => {
+          return firms.filters.treatmentStage.includes(action.payload);
         })
       };
-    break;
+      break;
+    case FILTER:
+      return {
+        ...state,
+        firms: action.payload.reduce(
+          (acc, value) =>
+            acc.filter(firm =>
+              firm.offerings.some(offer =>
+                offer[Object.keys(value)].includes(Object.values(value)[0])
+              )
+            ),
+
+          state.firms
+        )
+      };
+    case FILTER_OFFERING:
+      return {
+        ...state,
+        offered: action.payload
+      };
+      break;
     default:
       return state;
-    break;
+      break;
   }
-}
+};
 export default firmsReducer;
