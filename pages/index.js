@@ -26,7 +26,7 @@ const Homepage = ({ t }) => {
           <Link href="/pos">
             <a>
               <LinkText align="left">
-                {t("travel.home.banner.register")} test
+                {t("travel.home.banner.register")} test again
               </LinkText>
             </a>
           </Link>
