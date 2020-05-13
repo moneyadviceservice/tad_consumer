@@ -1,20 +1,8 @@
-import React, { Fragment } from 'react'
-import Firms from '../components/firms'
-import { withTranslation } from '../components/translation/i18n'
-
-
+import React, { Fragment } from "react";
+import { withTranslation } from "../components/translation/i18n";
 
 const Listings = () => {
+  return <h1>Result Page</h1>;
+};
 
-    return (
-      <Fragment>
-      
-        <Firms />
-      </Fragment>
-    )
- 
-}
-
-
-
-export default withTranslation('listings')(Listings)
+export default withTranslation("listings")(Listings);
