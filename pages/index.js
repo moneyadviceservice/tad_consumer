@@ -8,7 +8,7 @@ import { Container, Row, Col } from "@moneypensionservice/directories";
 const Homepage = ({ t }) => {
   return (
     <Fragment>
-      <Container debug>
+      <Container debug as="main">
         <Row constrained margin="auto">
           <Col sizes={{ xs: 12, md: 7 }} debug>
             H1
@@ -17,8 +17,7 @@ const Homepage = ({ t }) => {
             Anchor
           </Col>
         </Row>
-      </Container>
-      <Container debug>
+
         <Row constrained margin="auto">
           <Col sizes={{ xs: 12, md: 7 }} debug>
             Required Question and link button
@@ -27,16 +26,14 @@ const Homepage = ({ t }) => {
             Quote disclaimer
           </Col>
         </Row>
-      </Container>
-      <Container debug>
+
         <Row constrained margin="auto">
           <Col sizes={{ xs: 12, md: 6 }} debug>
             Youtube Video
           </Col>
           <Col debug>FAQs</Col>
         </Row>
-      </Container>
-      <Container debug>
+
         <Row constrained margin="auto">
           <Col sizes={{ xs: 12, md: 6 }} debug>
             Articles &#x26; Guides
