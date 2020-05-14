@@ -1,10 +1,5 @@
-import {  combineReducers } from 'redux';
-import footerReducer from '../components/footer/reducer'
-import firmsReducer from '../components/firms/reducer'
+import { combineReducers } from "redux";
 
-const rootReducer = combineReducers({
-    footer: footerReducer,
-    firms: firmsReducer
-});
+const rootReducer = combineReducers({});
 
 export default rootReducer;
