@@ -1,6 +1,5 @@
 import { Header } from "@moneypensionservice/directories";
-import { i18n } from "../translation/i18n";
-import { withTranslation } from "../translation/i18n";
+import { i18n, withTranslation } from "../translation/i18n";
 
 const PageHeader = ({ t, alternateAddress }) => {
   const changeLanguage = (e) => {
