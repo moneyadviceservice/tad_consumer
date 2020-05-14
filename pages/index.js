@@ -9,7 +9,7 @@ const Homepage = ({ t }) => {
   return (
     <Fragment>
       <Container debug>
-        <Row>
+        <Row constrained margin="auto">
           <Col sizes={{ xs: 12, md: 7 }} debug>
             H1
           </Col>
@@ -19,7 +19,7 @@ const Homepage = ({ t }) => {
         </Row>
       </Container>
       <Container debug>
-        <Row>
+        <Row constrained margin="auto">
           <Col sizes={{ xs: 12, md: 7 }} debug>
             Required Question and link button
           </Col>
@@ -29,7 +29,7 @@ const Homepage = ({ t }) => {
         </Row>
       </Container>
       <Container debug>
-        <Row>
+        <Row constrained margin="auto">
           <Col sizes={{ xs: 12, md: 6 }} debug>
             Youtube Video
           </Col>
@@ -37,7 +37,7 @@ const Homepage = ({ t }) => {
         </Row>
       </Container>
       <Container debug>
-        <Row>
+        <Row constrained margin="auto">
           <Col sizes={{ xs: 12, md: 6 }} debug>
             Articles &#x26; Guides
           </Col>
