@@ -7,7 +7,7 @@ import { appWithTranslation } from "../components/translation/i18n";
 import Header from "../components/header";
 import Footer from "../components/footer/";
 
-import { ThemeProvider } from "@moneypensionservice/directories";
+import { ThemeProvider, Container } from "@moneypensionservice/directories";
 
 class MyApp extends App {
   // get initial props from the server
@@ -42,7 +42,9 @@ class MyApp extends App {
       <Provider store={reduxStore}>
         <ThemeProvider>
           <Header alternateAddress={alternateAddress} />
-          <Component {...pageProps} />
+          <Container as="main" debug>
+            <Component {...pageProps} />
+          </Container>
           <Footer />
         </ThemeProvider>
       </Provider>

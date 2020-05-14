@@ -8,39 +8,37 @@ import { Container, Row, Col } from "@moneypensionservice/directories";
 const Homepage = ({ t }) => {
   return (
     <Fragment>
-      <Container debug as="main">
-        <Row constrained margin="auto">
-          <Col sizes={{ xs: 12, md: 7 }} debug>
-            H1
-          </Col>
-          <Col sizes={{ xs: 12, md: 5 }} debug>
-            Anchor
-          </Col>
-        </Row>
+      <Row constrained margin="auto">
+        <Col sizes={{ xs: 12, md: 7 }} debug>
+          H1
+        </Col>
+        <Col sizes={{ xs: 12, md: 5 }} debug>
+          Anchor
+        </Col>
+      </Row>
 
-        <Row constrained margin="auto">
-          <Col sizes={{ xs: 12, md: 7 }} debug>
-            Required Question and link button
-          </Col>
-          <Col sizes={{ xs: 12, md: 5 }} debug>
-            Quote disclaimer
-          </Col>
-        </Row>
+      <Row constrained margin="auto">
+        <Col sizes={{ xs: 12, md: 7 }} debug>
+          Required Question and link button
+        </Col>
+        <Col sizes={{ xs: 12, md: 5 }} debug>
+          Quote disclaimer
+        </Col>
+      </Row>
 
-        <Row constrained margin="auto">
-          <Col sizes={{ xs: 12, md: 6 }} debug>
-            Youtube Video
-          </Col>
-          <Col debug>FAQs</Col>
-        </Row>
+      <Row constrained margin="auto">
+        <Col sizes={{ xs: 12, md: 6 }} debug>
+          Youtube Video
+        </Col>
+        <Col debug>FAQs</Col>
+      </Row>
 
-        <Row constrained margin="auto">
-          <Col sizes={{ xs: 12, md: 6 }} debug>
-            Articles &#x26; Guides
-          </Col>
-          <Col debug>Find a broker</Col>
-        </Row>
-      </Container>
+      <Row constrained margin="auto">
+        <Col sizes={{ xs: 12, md: 6 }} debug>
+          Articles &#x26; Guides
+        </Col>
+        <Col debug>Find a broker</Col>
+      </Row>
     </Fragment>
   );
 };
