@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { withTranslation } from "../components/translation/i18n";
 
-import { Container, Row, Col } from "@moneypensionservice/directories";
+import { Row, Col } from "@moneypensionservice/directories";
 
 const Homepage = ({ t }) => {
   return (
