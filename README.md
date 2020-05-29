@@ -31,9 +31,7 @@ cd tad_consumer
 
 ### Run
 
-```javascript
-npm run test
-```
+To start the test runner run `npm run test`
 
 ### Approach
 
@@ -41,11 +39,15 @@ Where possible, the approach to testing should be Test Driven Development (TDD) 
 
 ### Tools
 
-Jest and Enzymes
+This project uses Jest as a test runner and Enzyme as a testing utility.
+The documentation for these can be found here:
+
+- [Jest](https://jestjs.io/docs/en/getting-started).
+- [Enzyme](https://enzymejs.github.io/enzyme/)
 
 ### Location
 
-Where a component has its own folder, the test should be colocated in the folder, however, where the component share folder with other files, the test should be located in `src/__test__` folder.
+Where a component has its own folder, the test should be colocated in the folder, however, where the component share folder with other files, the test should be located in `__test__` folder.
 
 ### Naming Convention
 
