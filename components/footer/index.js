@@ -1,7 +1,8 @@
 import { Footer } from "@moneypensionservice/directories";
 import { i18n, withTranslation } from "../translation/i18n";
 
-const PageFooter = (props) => {
-  return <Footer currentLgn={i18n.language} />;
+const PageFooter = ({ t }) => {
+  let footerLang = t("Footer", { returnObjects: true });
+  return <Footer currentLgn={i18n.language} i18nLng={footerLang} />;
 };
-export default withTranslation("common")(PageFooter);
+export default withTranslation("footer")(PageFooter);

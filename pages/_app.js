@@ -37,7 +37,6 @@ class MyApp extends App {
 
   render() {
     const { Component, pageProps, reduxStore, alternateAddress } = this.props;
-
     return (
       <Provider store={reduxStore}>
         <ThemeProvider>
