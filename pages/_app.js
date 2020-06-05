@@ -41,7 +41,7 @@ class MyApp extends App {
       <Provider store={reduxStore}>
         <ThemeProvider>
           <Header alternateAddress={alternateAddress} />
-          <Container as="main" debug>
+          <Container as="main">
             <Component {...pageProps} />
           </Container>
           <Footer />
