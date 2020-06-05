@@ -28,4 +28,13 @@ const QuestionButton = styled(Button)`
     width: 25%;
 `};
 `;
-export { LoginAnchor, UnorderedList, ListItem, QuestionButton };
+
+const YoutubeFrame = styled.iframe.attrs((props) => ({
+  frameBorder: 0,
+  height: 315,
+}))`
+  position: relative;
+  top: 0;
+  left: 0;
+`;
+export { LoginAnchor, UnorderedList, ListItem, QuestionButton, YoutubeFrame };

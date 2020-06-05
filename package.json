@@ -37,7 +37,8 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.3.0",
-    "styled-components": "^4.4.1"
+    "styled-components": "^4.4.1",
+    "react-html-parser": "^2.0.2"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",

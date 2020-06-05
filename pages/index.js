@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import PropTypes from "prop-types";
+import ReactHtmlParser from "react-html-parser";
 
 import { withTranslation } from "../components/translation/i18n";
 
@@ -16,6 +17,7 @@ import {
   UnorderedList,
   ListItem,
   QuestionButton,
+  YoutubeFrame,
 } from "../components/landingPage";
 
 const Homepage = ({ t }) => {
@@ -72,11 +74,36 @@ const Homepage = ({ t }) => {
         </Row>
       </Row>
 
-      <Row constrained margin="auto">
-        <Col sizes={{ xs: 12, md: 6 }} debug>
-          Youtube Video
+      {/* Youtube Video and FAQs */}
+      <Row
+        constrained
+        margin="auto"
+        style={{
+          paddingTop: "50px",
+          paddingBottom: "50px",
+          borderBottom: "1px solid #cbdae0",
+        }}
+      >
+        <Col sizes={{ xs: 12, md: 6 }}>
+          <Heading level={2} color="#006A00">
+            {t("home.video.heading")}
+          </Heading>
+          <YoutubeFrame src="https://www.youtube.com/embed/_MMnVaQeFqk" />
         </Col>
-        <Col debug>FAQs</Col>
+        <Col sizes={{ xs: 12, md: 6 }}>
+          <Heading level={2} color="#006A00">
+            {t("home.faqs.heading")}
+          </Heading>
+          {t("home.faqs.list", { returnObjects: true }).map(
+            ({ question, answer }, i) => (
+              <Fragment key={i}>
+                <Accordion style={{ fontSize: "15px" }} title={question}>
+                  {ReactHtmlParser(answer)}
+                </Accordion>
+              </Fragment>
+            )
+          )}
+        </Col>
       </Row>
       <Row constrained margin="auto">
         <Col sizes={{ xs: 12, md: 6 }} debug>
