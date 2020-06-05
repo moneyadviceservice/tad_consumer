@@ -11,7 +11,12 @@ import {
   Paragraph,
   Accordion,
 } from "@moneypensionservice/directories";
-import { LoginAnchor } from "../components/landingPage";
+import {
+  LoginAnchor,
+  UnorderedList,
+  ListItem,
+  QuestionButton,
+} from "../components/landingPage";
 
 const Homepage = ({ t }) => {
   return (
@@ -30,14 +35,43 @@ const Homepage = ({ t }) => {
         </Col>
       </Row>
 
-      <Row constrained margin="auto">
-        <Col sizes={{ xs: 12, md: 7 }} debug>
-          Required Question and link button
-        </Col>
-        <Col sizes={{ xs: 12, md: 5 }} debug>
-          Quote disclaimer
-        </Col>
+      {/* Questions and quote disclaimer */}
+      <Row
+        background="#edf0f0"
+        align="stretch"
+        style={{ paddingTop: "50px", paddingBottom: "50px" }}
+      >
+        <Row constrained margin="auto">
+          <Col sizes={{ xs: 12, md: 7 }}>
+            <Heading level={3}> {t("home.conditions.heading")}</Heading>
+            <UnorderedList>
+              {t("home.conditions.questions", { returnObjects: true }).map(
+                ({ answer }, i) => (
+                  <ListItem key={i}>{answer}</ListItem>
+                )
+              )}
+            </UnorderedList>
+            <QuestionButton primary href="/listings">
+              {t("home.conditions.button")}
+            </QuestionButton>
+          </Col>
+          <Col sizes={{ xs: 12, md: 5 }}>
+            <Col
+              style={{
+                margin: "22px 11px",
+                border: "4px solid #00BEBE",
+                padding: "20px 30px",
+                fontSize: "18px",
+                background: "#fff",
+                fontWeight: 400,
+              }}
+            >
+              {t("home.conditions.disclaimer")}
+            </Col>
+          </Col>
+        </Row>
       </Row>
+
       <Row constrained margin="auto">
         <Col sizes={{ xs: 12, md: 6 }} debug>
           Youtube Video

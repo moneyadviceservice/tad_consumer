@@ -7,4 +7,25 @@ const LoginAnchor = styled(Anchor)`
   `}
 `;
 
-export { LoginAnchor };
+const UnorderedList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 10px 50px 10px 0;
+  padding: 0 0 0 25px;
+`;
+
+const ListItem = styled.li`
+  list-style-image: url(/assets/Images/tick.svg);
+  margin-bottom: 12px;
+  font-size: 16px;
+`;
+
+const QuestionButton = styled(Button)`
+  width: 100%;
+  text-align: center;
+  ${resolveMedia.md`
+    width: 25%;
+`};
+`;
+export { LoginAnchor, UnorderedList, ListItem, QuestionButton };
