@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import PropTypes from "prop-types";
 import ReactHtmlParser from "react-html-parser";
 
-import { withTranslation } from "../components/translation/i18n";
+import { withTranslation } from "../Utils/translation/i18n";
 
 import {
   Row,
@@ -18,33 +18,38 @@ import {
   ListItem,
   QuestionButton,
   YoutubeFrame,
+  InfoTable,
+  InfoTableHead,
+  InfoTH,
+  InfoTD,
 } from "../components/landingPage";
+import { Section, ExtendedSection } from "../Utils/layouts";
 
 const Homepage = ({ t }) => {
   return (
     <Fragment>
       {/* Main heading and firm registration anchor */}
-      <Row constrained margin="auto">
-        <Col sizes={{ xs: 12, md: 8 }}>
+      <Section constrained data-testid="contentRow">
+        <Col sizes={{ xs: 12, md: 8 }} data-testid="contentCol">
           <Heading level={1} color="#006A00">
             {t("home.banner.heading")}
           </Heading>
         </Col>
-        <Col sizes={{ xs: 12, md: 4 }} alignSelf="center">
+        <Col
+          sizes={{ xs: 12, md: 4 }}
+          alignSelf="center"
+          data-testid="contentCol"
+        >
           <LoginAnchor href="https://www.google.co.uk" target="_blank">
             {t("home.banner.register")}
           </LoginAnchor>
         </Col>
-      </Row>
+      </Section>
 
       {/* Questions and quote disclaimer */}
-      <Row
-        background="#edf0f0"
-        align="stretch"
-        style={{ paddingTop: "50px", paddingBottom: "50px" }}
-      >
-        <Row constrained margin="auto">
-          <Col sizes={{ xs: 12, md: 7 }}>
+      <ExtendedSection align="stretch" background="#edf0f0">
+        <Section constrained data-testid="contentRow">
+          <Col sizes={{ xs: 12, md: 7 }} data-testid="contentCol">
             <Heading level={3}> {t("home.conditions.heading")}</Heading>
             <UnorderedList>
               {t("home.conditions.questions", { returnObjects: true }).map(
@@ -57,7 +62,7 @@ const Homepage = ({ t }) => {
               {t("home.conditions.button")}
             </QuestionButton>
           </Col>
-          <Col sizes={{ xs: 12, md: 5 }}>
+          <Col sizes={{ xs: 12, md: 5 }} data-testid="contentCol">
             <Col
               style={{
                 margin: "22px 11px",
@@ -71,46 +76,87 @@ const Homepage = ({ t }) => {
               {t("home.conditions.disclaimer")}
             </Col>
           </Col>
-        </Row>
-      </Row>
+        </Section>
+      </ExtendedSection>
 
       {/* Youtube Video and FAQs */}
-      <Row
-        constrained
-        margin="auto"
-        style={{
-          paddingTop: "50px",
-          paddingBottom: "50px",
-          borderBottom: "1px solid #cbdae0",
-        }}
-      >
-        <Col sizes={{ xs: 12, md: 6 }}>
-          <Heading level={2} color="#006A00">
-            {t("home.video.heading")}
-          </Heading>
-          <YoutubeFrame src="https://www.youtube.com/embed/_MMnVaQeFqk" />
-        </Col>
-        <Col sizes={{ xs: 12, md: 6 }}>
-          <Heading level={2} color="#006A00">
-            {t("home.faqs.heading")}
-          </Heading>
-          {t("home.faqs.list", { returnObjects: true }).map(
-            ({ question, answer }, i) => (
-              <Fragment key={i}>
-                <Accordion style={{ fontSize: "15px" }} title={question}>
-                  {ReactHtmlParser(answer)}
-                </Accordion>
-              </Fragment>
-            )
-          )}
-        </Col>
-      </Row>
-      <Row constrained margin="auto">
-        <Col sizes={{ xs: 12, md: 6 }} debug>
-          Articles &#x26; Guides
-        </Col>
-        <Col debug>Find a broker</Col>
-      </Row>
+      <ExtendedSection align="stretch">
+        <Section constrained data-testid="contentRow">
+          <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
+            <Heading level={2} color="#006A00">
+              {t("home.video.heading")}
+            </Heading>
+            <YoutubeFrame src="https://www.youtube.com/embed/aijzHfO0VC8" />
+          </Col>
+          <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
+            <Heading level={2} color="#006A00">
+              {t("home.faqs.heading")}
+            </Heading>
+            {t("home.faqs.list", { returnObjects: true }).map(
+              ({ question, answer }, i) => (
+                <Fragment key={i}>
+                  <Accordion style={{ fontSize: "15px" }} title={question}>
+                    {ReactHtmlParser(answer)}
+                  </Accordion>
+                </Fragment>
+              )
+            )}
+          </Col>
+        </Section>
+      </ExtendedSection>
+
+      {/* Articles and find a broker */}
+      <ExtendedSection align="stretch">
+        <Section constrained data-testid="contentRow">
+          <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
+            <Heading level={2} color="#006A00">
+              {t("home.articles.heading")}
+            </Heading>
+            {t("home.articles.links", { returnObjects: true }).map(
+              ({ text, href }, i) => (
+                <Anchor key={i} href={href}>
+                  {text}
+                </Anchor>
+              )
+            )}
+          </Col>
+          <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
+            <InfoTable>
+              <InfoTableHead>
+                <tr>
+                  <InfoTH>
+                    <img src="/assets/Images/question2.svg" />
+                    &nbsp;{t("home.broker.heading")}
+                  </InfoTH>
+                </tr>
+              </InfoTableHead>
+              <tbody>
+                <tr>
+                  <InfoTD>
+                    <Paragraph weight="400">{t("home.broker.intro")}</Paragraph>
+                    <Paragraph weight={600}>
+                      {t("home.broker.contact_details")}:
+                    </Paragraph>
+                    <span>
+                      <Paragraph textSize="30px" weight={600}>
+                        <img src="/assets/Images/call.svg" /> 0808 281 3298
+                      </Paragraph>
+                    </span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Mon - Fri 9:00 am
+                    to 5:30 pm)
+                    <br />
+                    <br />
+                    <Anchor>
+                      <img src="/assets/Images/www.svg" />
+                      &nbsp;{t("home.broker.website")}
+                    </Anchor>
+                  </InfoTD>
+                </tr>
+              </tbody>
+            </InfoTable>
+          </Col>
+        </Section>
+      </ExtendedSection>
     </Fragment>
   );
 };

@@ -25,7 +25,7 @@ const QuestionButton = styled(Button)`
   width: 100%;
   text-align: center;
   ${resolveMedia.md`
-    width: 25%;
+    width: auto;
 `};
 `;
 
@@ -37,4 +37,39 @@ const YoutubeFrame = styled.iframe.attrs((props) => ({
   top: 0;
   left: 0;
 `;
-export { LoginAnchor, UnorderedList, ListItem, QuestionButton, YoutubeFrame };
+
+const InfoTable = styled.table`
+  margin: 22px 11px;
+  border: 4px solid #00bebe;
+  padding: 20px 30px;
+  font-size: 15px;
+  background: #fff;
+  font-weight: 400;
+`;
+
+const InfoTableHead = styled.thead`
+  background: #00bebe;
+`;
+
+const InfoTH = styled.th`
+  color: #fff;
+  text-align: left;
+  height: 50px;
+  font-size: 20px;
+  padding-left: 20px;
+`;
+
+const InfoTD = styled.td`
+  padding: 20px;
+`;
+export {
+  LoginAnchor,
+  UnorderedList,
+  ListItem,
+  QuestionButton,
+  YoutubeFrame,
+  InfoTable,
+  InfoTableHead,
+  InfoTH,
+  InfoTD,
+};

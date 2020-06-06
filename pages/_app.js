@@ -3,7 +3,7 @@ import App from "next/app";
 import withReduxStore from "../redux/with-redux-store";
 import { Provider } from "react-redux";
 
-import { appWithTranslation } from "../components/translation/i18n";
+import { appWithTranslation } from "../Utils/translation/i18n";
 import Header from "../components/header";
 import Footer from "../components/footer/";
 
@@ -41,7 +41,7 @@ class MyApp extends App {
       <Provider store={reduxStore}>
         <ThemeProvider>
           <Header alternateAddress={alternateAddress} />
-          <Container as="main">
+          <Container as="main" style={{ paddingRight: "0", paddingLeft: "0" }}>
             <Component {...pageProps} />
           </Container>
           <Footer />

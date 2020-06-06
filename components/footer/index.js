@@ -1,5 +1,5 @@
 import { Footer } from "@moneypensionservice/directories";
-import { i18n, withTranslation } from "../translation/i18n";
+import { i18n, withTranslation } from "../../Utils/translation/i18n";
 
 const PageFooter = ({ t }) => {
   let footerLang = t("Footer", { returnObjects: true });

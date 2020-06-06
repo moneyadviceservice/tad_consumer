@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { withTranslation } from "../components/translation/i18n";
+import { withTranslation } from "../Utils/translation/i18n";
 
 import { Row, Col } from "@moneypensionservice/directories";
 
