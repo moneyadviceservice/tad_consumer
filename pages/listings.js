@@ -3,7 +3,7 @@ import { withTranslation } from "../Utils/translation/i18n";
 
 import { Row, Col } from "@moneypensionservice/directories";
 
-const Listings = () => {
+const Listings = ({ t }) => {
   return (
     <Fragment>
       <Row margin="auto" constrained>
@@ -19,4 +19,12 @@ const Listings = () => {
   );
 };
 
-export default withTranslation("listings")(Listings);
+Listings.getInitialProps = async () => ({
+  namespacesRequired: ["listings", "common", "footer"],
+});
+
+Listings.propTypes = {
+  t: PropTypes.func.isRequired,
+};
+
+export default withTranslation("listings", "common", "footer")(Listings);

@@ -11,8 +11,8 @@ const Section = styled(Row)`
 `;
 
 const ExtendedSection = styled(Row)`
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   border-bottom: 1px solid #cbdae0;
 `;
 

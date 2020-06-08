@@ -5,7 +5,7 @@
       "register": "Cofrestrwch neu fewngofnodwch fel cwmni ar y cyfeiriadur"
     },
     "conditions": {
-      "heading": "A all cwmnïau ar y cyfeiriadur hwn fy helpu ?",
+      "heading": "A all cwmnïau ar y cyfeiriadur hwn fy helpu?",
       "questions": [
         {
           "answer": "Oes os gwrthodwyd yswiriant teithio i chi oherwydd cyflwr meddygol"

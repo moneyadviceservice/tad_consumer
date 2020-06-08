@@ -1,5 +1,10 @@
 import styled from "styled-components";
-import { Anchor, resolveMedia, Button } from "@moneypensionservice/directories";
+import {
+  Anchor,
+  resolveMedia,
+  Button,
+  Col,
+} from "@moneypensionservice/directories";
 
 const LoginAnchor = styled(Anchor)`
   ${resolveMedia.md`
@@ -62,6 +67,16 @@ const InfoTH = styled.th`
 const InfoTD = styled.td`
   padding: 20px;
 `;
+
+const DisclaimerBox = styled(Col)`
+  margin: 22px 11px;
+  border: 4px solid #00bebe;
+  padding: 20px 30px;
+  font-size: 18px;
+  background: #fff;
+  font-weight: 400;
+`;
+
 export {
   LoginAnchor,
   UnorderedList,
@@ -72,4 +87,5 @@ export {
   InfoTableHead,
   InfoTH,
   InfoTD,
+  DisclaimerBox,
 };

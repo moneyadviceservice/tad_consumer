@@ -16,4 +16,8 @@ const PageHeader = ({ t, alternateAddress }) => {
   );
 };
 
+PageHeader.getInitialProps = async () => ({
+  namespacesRequired: ["common"],
+});
+
 export default withTranslation("common")(PageHeader);

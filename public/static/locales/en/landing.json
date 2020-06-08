@@ -5,7 +5,7 @@
       "register": "Register or login as a firm on the directory"
     },
     "conditions": {
-      "heading": "Can firms on this directory help me ?",
+      "heading": "Can firms on this directory help me?",
       "questions": [
         {
           "answer": "Yes if you have been refused travel insurance because of a medical condition"
@@ -27,7 +27,7 @@
       "button": "View all firms"
     },
     "video": {
-      "heading": "Who is this directory for ?"
+      "heading": "Who is this directory for?"
     },
     "faqs": {
       "heading": "Frequently asked questions",

@@ -5,4 +5,8 @@ const PageFooter = ({ t }) => {
   let footerLang = t("Footer", { returnObjects: true });
   return <Footer currentLgn={i18n.language} i18nLng={footerLang} />;
 };
+PageFooter.getInitialProps = async () => ({
+  namespacesRequired: ["footer"],
+});
+
 export default withTranslation("footer")(PageFooter);

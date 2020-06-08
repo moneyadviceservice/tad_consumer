@@ -11,6 +11,7 @@ import {
   Anchor,
   Paragraph,
   Accordion,
+  Button,
 } from "@moneypensionservice/directories";
 import {
   LoginAnchor,
@@ -22,6 +23,7 @@ import {
   InfoTableHead,
   InfoTH,
   InfoTD,
+  DisclaimerBox,
 } from "../components/landingPage";
 import { Section, ExtendedSection } from "../Utils/layouts";
 
@@ -63,18 +65,7 @@ const Homepage = ({ t }) => {
             </QuestionButton>
           </Col>
           <Col sizes={{ xs: 12, md: 5 }} data-testid="contentCol">
-            <Col
-              style={{
-                margin: "22px 11px",
-                border: "4px solid #00BEBE",
-                padding: "20px 30px",
-                fontSize: "18px",
-                background: "#fff",
-                fontWeight: 400,
-              }}
-            >
-              {t("home.conditions.disclaimer")}
-            </Col>
+            <DisclaimerBox>{t("home.conditions.disclaimer")}</DisclaimerBox>
           </Col>
         </Section>
       </ExtendedSection>
@@ -95,9 +86,7 @@ const Homepage = ({ t }) => {
             {t("home.faqs.list", { returnObjects: true }).map(
               ({ question, answer }, i) => (
                 <Fragment key={i}>
-                  <Accordion style={{ fontSize: "15px" }} title={question}>
-                    {ReactHtmlParser(answer)}
-                  </Accordion>
+                  <Accordion title={question} text={ReactHtmlParser(answer)} />
                 </Fragment>
               )
             )}
