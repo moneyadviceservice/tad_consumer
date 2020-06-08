@@ -1,4 +1,6 @@
 import React, { Fragment } from "react";
+import PropTypes from "prop-types";
+
 import { withTranslation } from "../Utils/translation/i18n";
 
 import { Row, Col } from "@moneypensionservice/directories";
