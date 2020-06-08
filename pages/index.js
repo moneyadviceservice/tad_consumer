@@ -24,6 +24,7 @@ import {
   InfoTH,
   InfoTD,
   DisclaimerBox,
+  BrokerOpening,
 } from "../components/landingPage";
 import { Section, ExtendedSection } from "../Utils/layouts";
 
@@ -126,15 +127,12 @@ const Homepage = ({ t }) => {
                     <Paragraph weight={600}>
                       {t("home.broker.contact_details")}:
                     </Paragraph>
-                    <span>
-                      <Paragraph textSize="30px" weight={600}>
-                        <img src="/assets/Images/call.svg" /> 0808 281 3298
-                      </Paragraph>
-                    </span>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Mon - Fri 9:00 am
-                    to 5:30 pm)
-                    <br />
-                    <br />
+                    <Paragraph textSize="30px" weight={600}>
+                      <img src="/assets/Images/call.svg" /> 0808 281 3298
+                    </Paragraph>
+                    <BrokerOpening>
+                      &#40;Mon - Fri 9:00 am to 5:30 pm&#41;
+                    </BrokerOpening>
                     <Anchor>
                       <img src="/assets/Images/www.svg" />
                       &nbsp;{t("home.broker.website")}

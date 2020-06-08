@@ -76,7 +76,10 @@ const DisclaimerBox = styled(Col)`
   background: #fff;
   font-weight: 400;
 `;
-
+const BrokerOpening = styled.div`
+  padding-left: 30px;
+  margin-bottom: 30px;
+`;
 export {
   LoginAnchor,
   UnorderedList,
@@ -88,4 +91,5 @@ export {
   InfoTH,
   InfoTD,
   DisclaimerBox,
+  BrokerOpening,
 };
