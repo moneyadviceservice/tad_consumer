@@ -42,7 +42,11 @@
     "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.3.0",
     "styled-components": "^4.4.1",
-    "react-html-parser": "^2.0.2"
+    "react-html-parser": "^2.0.2",
+    "jest": "^24.9.0",
+    "babel-plugin-styled-components": "^1.10.6",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.9.0",
