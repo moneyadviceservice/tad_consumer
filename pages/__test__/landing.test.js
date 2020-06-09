@@ -5,7 +5,9 @@ import { Heading } from "@moneypensionservice/directories";
 import { QuestionButton } from "../../components/landingPage/index";
 import { findByTestAtrr, checkProps } from "../../Utils/test";
 
-jest.mock("react-i18next", () => ({
+// import { withTranslation } from '../../node_modules/react-i18next/react-i18next'
+
+jest.mock("../../node_modules/react-i18next/react-i18next", () => ({
   withTranslation: () => (Component) => {
     Component.defaultProps = { ...Component.defaultProps, t: () => [] };
     return Component;
