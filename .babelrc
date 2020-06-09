@@ -1,6 +1,15 @@
-{ 
-    "presets": ["next/babel"], 
-    "plugins": [
-        ["styled-components", { "ssr": true }]
-     ]
-  }
+{
+  "presets": ["next/babel"],
+  "plugins": [["styled-components", { "ssr": true }]],
+  "env": {
+    "test": {
+      "plugins": []
+    },
+    "development": {
+      "plugins": ["transform-es2015-modules-amd"]
+    }
+  },
+
+  "sourceMaps": false,
+  "ignore": ["build", "node_modules"]
+}
