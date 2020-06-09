@@ -11,7 +11,8 @@
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
     "test": "jest",
-    "testwatch": "jest --watchAll"
+    "testwatch": "jest --watchAll",
+    "heroku-postbuild": "npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "repository": {
     "type": "git",
