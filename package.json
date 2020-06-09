@@ -3,14 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "engines": {
-    "node": "12.x"
-  },
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "test": "./node_modules/.bin/jest -V",
+    "test": "NODE_ENV=test",
     "testwatch": "jest --watchAll"
   },
   "repository": {
