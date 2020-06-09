@@ -1,3 +1,4 @@
+import React from "react";
 import { shallow } from "enzyme";
 import { withTranslation } from "react-i18next";
 
@@ -50,3 +51,6 @@ import { findByTestAtrr, checkProps } from "../../Utils/test";
 //     ).toHaveLength(1);
 //   });
 // });
+test("it adds up", () => {
+  expect(2 + 2).toBe(4);
+});
