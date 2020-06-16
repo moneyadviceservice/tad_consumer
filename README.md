@@ -69,7 +69,7 @@ beforeEach(()=> {
 })
 
 afterEach(() => {
-  wrapped = wrapped.unmount()
+ wrapped.unmount()
 })
 ...
 ```
