@@ -7,6 +7,9 @@ const NextI18NextInstance = new NextI18Next({
     cy: "cy",
     en: "en",
   },
+  interpolation: {
+    escapeValue: false,
+  },
 });
 
 module.exports = NextI18NextInstance;

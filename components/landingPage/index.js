@@ -16,7 +16,7 @@ const UnorderedList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  margin: 10px 50px 10px 0;
+  margin: 10px 0;
   padding: 0 0 0 25px;
 `;
 

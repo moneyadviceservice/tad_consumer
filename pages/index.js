@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import PropTypes from "prop-types";
 import ReactHtmlParser from "react-html-parser";
 
@@ -29,6 +29,12 @@ import {
 import { Section, ExtendedSection } from "../Utils/layouts";
 
 const Homepage = ({ t }) => {
+  const [activeIndex, changeIndex] = useState(0);
+
+  const handleClick = (current) => {
+    const newIndex = activeIndex === current ? -1 : current;
+    changeIndex(newIndex);
+  };
   return (
     <Fragment>
       {/* Main heading and firm registration anchor */}
@@ -84,13 +90,18 @@ const Homepage = ({ t }) => {
             <Heading level={2} color="#006A00">
               {t("home.faqs.heading")}
             </Heading>
-            {t("home.faqs.list", { returnObjects: true }).map(
-              ({ question, answer }, i) => (
-                <Fragment key={i}>
-                  <Accordion title={question} text={ReactHtmlParser(answer)} />
-                </Fragment>
-              )
-            )}
+            {t("home.faqs.list", {
+              returnObjects: true,
+            }).map(({ question, answer }, i) => (
+              <Accordion
+                key={i}
+                title={question}
+                active={activeIndex === i}
+                onClick={() => handleClick(i)}
+              >
+                {ReactHtmlParser(answer)}
+              </Accordion>
+            ))}
           </Col>
         </Section>
       </ExtendedSection>

@@ -2,8 +2,6 @@ import styled from "styled-components";
 import { Row, resolveMedia } from "@moneypensionservice/directories";
 
 const Section = styled(Row)`
-  padding-right: 15px;
-  padding-left: 15px;
   margin: auto;
   ${resolveMedia.md`
    padding: 0;
