@@ -29,7 +29,7 @@ import {
 import { Section, ExtendedSection } from "../Utils/layouts";
 
 const Homepage = ({ t }) => {
-  const [activeIndex, changeIndex] = useState(0);
+  const [activeIndex, changeIndex] = useState();
 
   const handleClick = (current) => {
     const newIndex = activeIndex === current ? -1 : current;
