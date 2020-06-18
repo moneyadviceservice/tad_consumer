@@ -8,7 +8,7 @@ const PageHeader = ({ t, alternateAddress }) => {
   };
   return (
     <Header
-      currentLgn={i18n.language}
+      currentLng={i18n.language}
       setLng={(e) => changeLanguage(e)}
       lngUrl={alternateAddress}
       localeText={t("altLanguage")}
