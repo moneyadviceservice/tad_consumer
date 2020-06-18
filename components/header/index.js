@@ -6,18 +6,22 @@ const PageHeader = ({ t, alternateAddress }) => {
     e.preventDefault();
     i18n.changeLanguage(i18n.language === "en" ? "cy" : "en");
   };
+  let headerLang = !process.browser
+    ? t("Header", { returnObjects: true })
+    : t("Header", { returnObjects: true }).Header;
+
   return (
     <Header
       currentLng={i18n.language}
       setLng={(e) => changeLanguage(e)}
       lngUrl={alternateAddress}
-      localeText={t("altLanguage")}
+      i18nLng={headerLang}
     />
   );
 };
 
 PageHeader.getInitialProps = async () => ({
-  namespacesRequired: ["common"],
+  namespacesRequired: ["header"],
 });
 
-export default withTranslation("common")(PageHeader);
+export default withTranslation("header")(PageHeader);
