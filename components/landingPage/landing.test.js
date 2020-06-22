@@ -41,9 +41,14 @@ describe("HomePage", () => {
   });
   it("should have a button with href pointing to /listings ", () => {
     const linkButton = wrapper.find(QuestionButton);
-    console.log(linkButton.debug());
+    // console.log(linkButton.debug());
     expect(
       linkButton.findWhere((node) => node.props().href === "/listings")
     ).toHaveLength(1);
+  });
+  it("test", () => {
+    const component = findByTestAtrr(wrapper, "test");
+    console.log(component.debug());
+    // expect(component.length).toBe(4);
   });
 });

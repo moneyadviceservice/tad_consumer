@@ -14,7 +14,7 @@ import {
   Button,
 } from "@moneypensionservice/directories";
 import {
-  LoginAnchor,
+  ParagraphAnchor,
   UnorderedList,
   ListItem,
   QuestionButton,
@@ -39,19 +39,25 @@ const Homepage = ({ t }) => {
     <Fragment>
       {/* Main heading and firm registration anchor */}
       <Section constrained data-testid="contentRow">
-        <Col sizes={{ xs: 12, md: 8 }} data-testid="contentCol">
-          <Heading level={1} color="#006A00">
+        <Col sizes={{ xs: 12 }} alignSelf="center" data-testid="contentCol">
+          <ParagraphAnchor>
+            <Anchor href="https://www.moneyadvisoryservice.co.uk/register">
+              {t("home.banner.register")}
+            </Anchor>
+            &nbsp;{t("home.banner.or")}
+            <Anchor href="https://www.moneyadvisoryservice.co.uk/login">
+              &nbsp; {t("home.banner.login")}
+            </Anchor>
+            &nbsp;{t("home.banner.as")}
+            {/* <LoginAnchor href="https://www.google.co.uk" target="_blank">
+              {t("home.banner.register")}
+            </LoginAnchor> */}
+          </ParagraphAnchor>
+        </Col>
+        <Col sizes={{ xs: 12 }} data-testid="contentCol">
+          <Heading level={1} color="#006A00" style={{ marginTop: "20px" }}>
             {t("home.banner.heading")}
           </Heading>
-        </Col>
-        <Col
-          sizes={{ xs: 12, md: 4 }}
-          alignSelf="center"
-          data-testid="contentCol"
-        >
-          <LoginAnchor href="https://www.google.co.uk" target="_blank">
-            {t("home.banner.register")}
-          </LoginAnchor>
         </Col>
       </Section>
 

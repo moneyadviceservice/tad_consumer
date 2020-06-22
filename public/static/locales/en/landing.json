@@ -2,7 +2,10 @@
   "home": {
     "banner": {
       "heading": "Find travel insurance providers if you have a serious medical condition",
-      "register": "Register or login as a firm on the directory"
+      "register": "Register",
+      "login": "Login",
+      "or": "or",
+      "as": "as a firm on the directory"
     },
     "conditions": {
       "heading": "Can firms on this directory help me?",

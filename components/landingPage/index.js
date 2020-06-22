@@ -4,11 +4,18 @@ import {
   resolveMedia,
   Button,
   Col,
+  Paragraph,
 } from "@moneypensionservice/directories";
 
-const LoginAnchor = styled(Anchor)`
+// const LoginAnchor = styled(Anchor)`
+//   ${resolveMedia.md`
+//     text-align: right;
+//   `}
+// `;
+const ParagraphAnchor = styled(Paragraph)`
   ${resolveMedia.md`
     text-align: right;
+    margin-top:20px;
   `}
 `;
 
@@ -81,7 +88,7 @@ const BrokerOpening = styled.div`
   margin-bottom: 30px;
 `;
 export {
-  LoginAnchor,
+  ParagraphAnchor,
   UnorderedList,
   ListItem,
   QuestionButton,

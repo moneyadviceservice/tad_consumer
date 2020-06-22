@@ -2,7 +2,10 @@
   "home": {
     "banner": {
       "heading": "Dewch o hyd i ddarparwyr yswiriant teithio os oes gennych gyflwr meddygol difrifol",
-      "register": "Cofrestrwch neu fewngofnodwch fel cwmni ar y cyfeiriadur"
+      "register": "Cofrestrwch",
+      "login": "Fewngofnodwch",
+      "or": "neu",
+      "as": "fel cwmni ar y cyfeiriadur"
     },
     "conditions": {
       "heading": "A all cwmnïau ar y cyfeiriadur hwn fy helpu?",

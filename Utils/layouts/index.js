@@ -5,6 +5,8 @@ const Section = styled(Row)`
   margin: auto;
   ${resolveMedia.md`
    padding: 0;
+   padding-right: 15px;
+   padding-left: 15px
 `};
 `;
 
