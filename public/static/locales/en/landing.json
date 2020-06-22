@@ -7,6 +7,10 @@
       "or": "or",
       "as": "as a firm on the directory"
     },
+    "about": {
+      "heading": "About this directory",
+      "content": "We can't provide quotes - but we can direct you to specialist firms who can. All firms are authorised and regulated by the Financial Conduct Authority (FCA) and ahce been through a rigorous selection process to prove their specialism"
+    },
     "conditions": {
       "heading": "Can firms on this directory help me?",
       "questions": [
@@ -20,13 +24,9 @@
           "answer": "Yes if you have been offered insurance but had a medical condition excluded"
         },
         {
-          "answer": "Yes because all firms are specialists in providing travel insurance for people with serious medical conditions"
-        },
-        {
-          "answer": "All firms are authorised and regulated by the Financial Conduct Authority (FCA) so you can have peace of mind"
+          "answer": "Yes if you have been offered insurance with a high additional premium because of your medical condition"
         }
       ],
-      "disclaimer": "We can’t provide quotes - but we can direct you to specialist providers who can help you.",
       "button": "View all firms"
     },
     "video": {

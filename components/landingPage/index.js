@@ -13,9 +13,11 @@ import {
 //   `}
 // `;
 const ParagraphAnchor = styled(Paragraph)`
+  display: none;
   ${resolveMedia.md`
     text-align: right;
     margin-top:20px;
+    display: block;
   `}
 `;
 
@@ -24,13 +26,23 @@ const UnorderedList = styled.ul`
   flex-wrap: wrap;
   flex-direction: row;
   margin: 10px 0;
-  padding: 0 0 0 25px;
+  padding: 0 0 0 0px;
 `;
 
 const ListItem = styled.li`
-  list-style-image: url(/assets/Images/tick.svg);
+  list-style-image: none;
   margin-bottom: 12px;
-  font-size: 16px;
+  font-size: 18px;
+  display: inline-block;
+  color: black;
+  &:before {
+    content: "";
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+    background-image: url(/assets/Images/MAS_tick-102.svg);
+  }
 `;
 
 const QuestionButton = styled(Button)`
@@ -75,13 +87,13 @@ const InfoTD = styled.td`
   padding: 20px;
 `;
 
-const DisclaimerBox = styled(Col)`
+const AboutBox = styled(Col)`
   margin: 22px 11px;
   border: 4px solid #00bebe;
-  padding: 20px 30px;
+  padding: 25px;
   font-size: 18px;
   background: #fff;
-  font-weight: 400;
+  font-weight: 200;
 `;
 const BrokerOpening = styled.div`
   padding-left: 30px;
@@ -97,6 +109,6 @@ export {
   InfoTableHead,
   InfoTH,
   InfoTD,
-  DisclaimerBox,
+  AboutBox,
   BrokerOpening,
 };

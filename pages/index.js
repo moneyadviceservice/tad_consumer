@@ -23,7 +23,7 @@ import {
   InfoTableHead,
   InfoTH,
   InfoTD,
-  DisclaimerBox,
+  AboutBox,
   BrokerOpening,
 } from "../components/landingPage";
 import { Section, ExtendedSection } from "../Utils/layouts";
@@ -65,7 +65,9 @@ const Homepage = ({ t }) => {
       <ExtendedSection align="stretch" background="#edf0f0">
         <Section constrained data-testid="contentRow">
           <Col sizes={{ xs: 12, md: 7 }} data-testid="contentCol">
-            <Heading level={3}> {t("home.conditions.heading")}</Heading>
+            <Heading level={2} color="#006A00">
+              {t("home.conditions.heading")}
+            </Heading>
             <UnorderedList>
               {t("home.conditions.questions", { returnObjects: true }).map(
                 ({ answer }, i) => (
@@ -78,7 +80,12 @@ const Homepage = ({ t }) => {
             </QuestionButton>
           </Col>
           <Col sizes={{ xs: 12, md: 5 }} data-testid="contentCol">
-            <DisclaimerBox>{t("home.conditions.disclaimer")}</DisclaimerBox>
+            <AboutBox>
+              <Heading level={3} color="#006A00" style={{ marginTop: 0 }}>
+                {t("home.about.heading")}
+              </Heading>
+              {t("home.about.content")}
+            </AboutBox>
           </Col>
         </Section>
       </ExtendedSection>

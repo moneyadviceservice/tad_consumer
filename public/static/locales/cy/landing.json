@@ -7,6 +7,10 @@
       "or": "neu",
       "as": "fel cwmni ar y cyfeiriadur"
     },
+    "about": {
+      "heading": "Ynglŷn â'r cyfeiriadur hwn",
+      "content": "Ni allwn ddarparu dyfynbrisiau - ond gallwn eich cyfeirio at gwmnïau arbenigol sy'n gallu. Mae pob cwmni wedi'i awdurdodi a'i reoleiddio gan yr Awdurdod Ymddygiad Ariannol (FCA) ac maent wedi bod trwy broses ddethol drylwyr i brofi eu harbenigedd"
+    },
     "conditions": {
       "heading": "A all cwmnïau ar y cyfeiriadur hwn fy helpu?",
       "questions": [
@@ -20,13 +24,9 @@
           "answer": "Oes, cynigiwyd yswiriant i chi ond bod cyflwr meddygol wedi'i eithrio"
         },
         {
-          "answer": "Ydy oherwydd bod pob cwmni'n arbenigwyr ar ddarparu yswiriant teithio i bobl â chyflyrau meddygol difrifol"
-        },
-        {
-          "answer": "Mae pob cwmni wedi'i awdurdodi a'i reoleiddio gan yr Awdurdod Ymddygiad Ariannol (FCA) fel y gallwch gael tawelwch meddwl"
+          "answer": "Oes, cynigiwyd yswiriant i chi gyda phremiwm ychwanegol uchel oherwydd eich cyflwr meddygol"
         }
       ],
-      "disclaimer": "Ni allwn ddarparu dyfynbrisiau - ond gallwn eich cyfeirio at ddarparwyr arbenigol a all eich helpu.",
       "button": "Gweld pob cwmni"
     },
     "video": {

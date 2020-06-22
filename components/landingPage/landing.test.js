@@ -46,9 +46,4 @@ describe("HomePage", () => {
       linkButton.findWhere((node) => node.props().href === "/listings")
     ).toHaveLength(1);
   });
-  it("test", () => {
-    const component = findByTestAtrr(wrapper, "test");
-    console.log(component.debug());
-    // expect(component.length).toBe(4);
-  });
 });
