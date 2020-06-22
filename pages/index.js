@@ -64,7 +64,7 @@ const Homepage = ({ t }) => {
       {/* Questions and quote disclaimer */}
       <ExtendedSection align="stretch" background="#edf0f0">
         <Section constrained data-testid="contentRow">
-          <Col sizes={{ xs: 12, md: 7 }} data-testid="contentCol">
+          <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
             <Heading level={2} color="#006A00">
               {t("home.conditions.heading")}
             </Heading>
@@ -79,7 +79,7 @@ const Homepage = ({ t }) => {
               {t("home.conditions.button")}
             </QuestionButton>
           </Col>
-          <Col sizes={{ xs: 12, md: 5 }} data-testid="contentCol">
+          <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
             <AboutBox>
               <Heading level={3} color="#006A00" style={{ marginTop: 0 }}>
                 {t("home.about.heading")}
@@ -107,6 +107,13 @@ const Homepage = ({ t }) => {
               returnObjects: true,
             }).map(({ question, answer }, i) => (
               <Accordion
+                color="#003d8e"
+                style={{
+                  fontSize: "16px",
+                  fontWeight: "200",
+                  color: "#515151",
+                  lineHeight: "23px",
+                }}
                 key={i}
                 title={question}
                 active={activeIndex === i}

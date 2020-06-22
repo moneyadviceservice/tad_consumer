@@ -7,11 +7,6 @@ import {
   Paragraph,
 } from "@moneypensionservice/directories";
 
-// const LoginAnchor = styled(Anchor)`
-//   ${resolveMedia.md`
-//     text-align: right;
-//   `}
-// `;
 const ParagraphAnchor = styled(Paragraph)`
   display: none;
   ${resolveMedia.md`
@@ -27,14 +22,15 @@ const UnorderedList = styled.ul`
   flex-direction: row;
   margin: 10px 0;
   padding: 0 0 0 0px;
+  font-size: 16px;
 `;
 
 const ListItem = styled.li`
   list-style-image: none;
   margin-bottom: 12px;
-  font-size: 18px;
+  font-size: 16px;
   display: inline-block;
-  color: black;
+  color: #515151;
   &:before {
     content: "";
     display: inline-block;
@@ -88,12 +84,14 @@ const InfoTD = styled.td`
 `;
 
 const AboutBox = styled(Col)`
-  margin: 22px 11px;
+  margin: 22px 0 22px 0;
   border: 4px solid #00bebe;
   padding: 25px;
-  font-size: 18px;
+  font-size: 16px;
   background: #fff;
   font-weight: 200;
+  color: #515151;
+  line-height: 20px;
 `;
 const BrokerOpening = styled.div`
   padding-left: 30px;

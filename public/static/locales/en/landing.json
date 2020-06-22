@@ -37,7 +37,7 @@
       "list": [
         {
           "question": "Do I need a specialist?",
-          "answer": "<article>If any of the following apply then a specialist firm is worth contacting to see if they can offer a better or cheaper deal <ul style='margin-left: 30px; list-style-type: decimal;' ><li>You have been refused travel insurance because of a medical condition.</li> <li>An existing policy has been cancelled or amended because of a medical condition.</li><li>You have been offered insurance, but your medical condition has been excluded.</li><li>You have been offered insurance with a high additional premium because of your medical condition.</li></ul>The firms on our Directory specialise in providing travel insurance to people who have serious and/or multiple medical conditions that carry a high risk of needing some form of medical intervention while you are on your trip.  Examples of conditions might be cancer, stroke or serious heart condition, respiratory conditions or conditions that have been diagnosed as terminal.<br/>However, different firms have different views on what conditions are ‘high risk’ and its worth trying more than one.</article>"
+          "answer": "<article>If any of the following apply then a specialist firm is worth contacting to see if they can offer a better or cheaper deal <ul style='margin-left: 30px; list-style-type: disc;' ><li>You have been refused travel insurance because of a medical condition.</li> <li>An existing policy has been cancelled or amended because of a medical condition.</li><li>You have been offered insurance, but your medical condition has been excluded.</li><li>You have been offered insurance with a high additional premium because of your medical condition.</li></ul>The firms on our Directory specialise in providing travel insurance to people who have serious and/or multiple medical conditions that carry a high risk of needing some form of medical intervention while you are on your trip.  Examples of conditions might be cancer, stroke or serious heart condition, respiratory conditions or conditions that have been diagnosed as terminal.<br/>However, different firms have different views on what conditions are ‘high risk’ and its worth trying more than one.</article>"
         },
         {
           "question": "I haven’t been offered any insurance yet – I don’t know if I need a specialist.",
@@ -78,6 +78,14 @@
         },
         {
           "text": "Travel Insurance for the over 65s. What does a good policy look like",
+          "href": "google.com"
+        },
+        {
+          "text": "Choose the right policy and cover",
+          "href": "google.com"
+        },
+        {
+          "text": "Coronavirus and travel insurance",
           "href": "google.com"
         }
       ]
