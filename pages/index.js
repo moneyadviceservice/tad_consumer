@@ -1,4 +1,5 @@
 import { Fragment, useState } from "react";
+import Link from "next/link";
 import PropTypes from "prop-types";
 import ReactHtmlParser from "react-html-parser";
 
@@ -49,9 +50,6 @@ const Homepage = ({ t }) => {
               &nbsp; {t("home.banner.login")}
             </Anchor>
             &nbsp;{t("home.banner.as")}
-            {/* <LoginAnchor href="https://www.google.co.uk" target="_blank">
-              {t("home.banner.register")}
-            </LoginAnchor> */}
           </ParagraphAnchor>
         </Col>
         <Col sizes={{ xs: 12 }} data-testid="contentCol">
@@ -75,8 +73,11 @@ const Homepage = ({ t }) => {
                 )
               )}
             </UnorderedList>
-            <QuestionButton primary href="/listings">
-              {t("home.conditions.button")}
+
+            <QuestionButton primary>
+              <Link href="/listings">
+                <Anchor href="/listings">{t("home.conditions.button")}</Anchor>
+              </Link>
             </QuestionButton>
           </Col>
           <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">

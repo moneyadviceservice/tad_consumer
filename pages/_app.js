@@ -29,18 +29,25 @@ class MyApp extends App {
       pageProps = await Component.getInitialProps(ctx);
     }
     if (typeof window === "undefined") {
-      return { pageProps, alternateAddress };
+      return { pageProps, alternateAddress, path };
     }
 
     return { pageProps };
   }
 
   render() {
-    const { Component, pageProps, reduxStore, alternateAddress } = this.props;
+    const {
+      Component,
+      pageProps,
+      reduxStore,
+      alternateAddress,
+      path,
+    } = this.props;
+
     return (
       <Provider store={reduxStore}>
         <ThemeProvider>
-          <Header alternateAddress={alternateAddress} />
+          <Header path={path} alternateAddress={alternateAddress} />
           <Container as="main" style={{ paddingRight: "0", paddingLeft: "0" }}>
             <Component {...pageProps} />
           </Container>
