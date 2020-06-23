@@ -7,5 +7,7 @@
     "localeButton": "Cymraeg"
   },
 
-  "listings": "Listings"
+  "listings": "Listings",
+  "home": "Home",
+  "travel": "Travel Directory"
 }

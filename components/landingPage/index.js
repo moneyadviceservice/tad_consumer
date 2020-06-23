@@ -85,7 +85,7 @@ const InfoTD = styled.td`
 
 const AboutBox = styled(Col)`
   margin: 22px 0 22px 0;
-  border: 4px solid #00bebe;
+  border: 2px solid #00bebe;
   padding: 25px;
   font-size: 16px;
   background: #fff;

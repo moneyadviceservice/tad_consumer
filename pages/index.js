@@ -41,12 +41,18 @@ const Homepage = ({ t }) => {
       {/* Main heading and firm registration anchor */}
       <Section constrained data-testid="contentRow">
         <Col sizes={{ xs: 12 }} alignSelf="center" data-testid="contentCol">
-          <ParagraphAnchor>
-            <Anchor href="https://www.moneyadvisoryservice.co.uk/register">
+          <ParagraphAnchor style={{ fontSize: "16px" }}>
+            <Anchor
+              style={{ fontSize: "16px" }}
+              href="https://www.moneyadvisoryservice.co.uk/register"
+            >
               {t("home.banner.register")}
             </Anchor>
             &nbsp;{t("home.banner.or")}
-            <Anchor href="https://www.moneyadvisoryservice.co.uk/login">
+            <Anchor
+              style={{ fontSize: "16px" }}
+              href="https://www.moneyadvisoryservice.co.uk/login"
+            >
               &nbsp; {t("home.banner.login")}
             </Anchor>
             &nbsp;{t("home.banner.as")}

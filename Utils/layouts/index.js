@@ -61,13 +61,13 @@ const Breadcrumb = ({ path, t }) => {
       <Section constrained>
         <Col style={{ display: "inline" }}>
           <BreadAnchor href="https://www.moneyadviceservice.org.uk/en">
-            Home &nbsp;
+            {t("home")} &nbsp;
           </BreadAnchor>
           <img src={RightChevron} style={{ height: "10px" }} />
           &nbsp;
           <Link href="/">
             <BreadAnchor href="/">
-              Travel Directory &nbsp;
+              {t("travel")} &nbsp;
               <img src={RightChevron} style={{ height: "10px" }} />
             </BreadAnchor>
           </Link>
