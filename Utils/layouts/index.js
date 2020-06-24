@@ -32,7 +32,7 @@ const BreadcrumbSection = styled(ExtendedSection)`
     background: #edf0f0;
     border-bottom: none;
     padding-top: 15px;
-    padding-bottom: 10px
+    padding-bottom: 15px
 `};
 `;
 
