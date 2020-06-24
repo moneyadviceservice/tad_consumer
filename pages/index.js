@@ -87,7 +87,7 @@ const Homepage = ({ t }) => {
             </QuestionButton>
           </Col>
           <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
-            <AboutBox>
+            <AboutBox style={{ marginTop: "50px" }}>
               <Heading level={3} color="#006A00" style={{ marginTop: 0 }}>
                 {t("home.about.heading")}
               </Heading>
