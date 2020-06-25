@@ -38,17 +38,19 @@ const BreadcrumbSection = styled(ExtendedSection)`
 
 const BreadAnchor = styled(Anchor)`
   font-size: 16px;
-  &:hover {
+  &:link {
     text-decoration: none;
+    background: none;
+    border: none;
   }
   &:after {
-    font-size: 12px;
+    font-size: 32px;
     line-height: 0;
     color: #96b4c0;
     position: relative;
-    top: 0px;
+    top: 4px;
     padding: 0 6px;
-    content: "  >";
+    content: " \\00203A  ";
     text-decoration: none;
   }
 `;
