@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import {
-  Anchor,
   resolveMedia,
   Button,
   Col,
@@ -31,6 +30,9 @@ const ListItem = styled.li`
   font-size: 16px;
   display: inline-block;
   color: #515151;
+  position: relative;
+  padding-left: 30px;
+
   &:before {
     content: "";
     display: inline-block;
@@ -38,6 +40,8 @@ const ListItem = styled.li`
     width: 20px;
     margin-right: 10px;
     background-image: url(/assets/Images/MAS_tick-102.svg);
+    position: absolute;
+    left: 0;
   }
 `;
 
@@ -56,31 +60,6 @@ const YoutubeFrame = styled.iframe.attrs((props) => ({
   position: relative;
   top: 0;
   left: 0;
-`;
-
-const InfoTable = styled.table`
-  margin: 22px 11px;
-  border: 4px solid #00bebe;
-  padding: 20px 30px;
-  font-size: 15px;
-  background: #fff;
-  font-weight: 400;
-`;
-
-const InfoTableHead = styled.thead`
-  background: #00bebe;
-`;
-
-const InfoTH = styled.th`
-  color: #fff;
-  text-align: left;
-  height: 50px;
-  font-size: 20px;
-  padding-left: 20px;
-`;
-
-const InfoTD = styled.td`
-  padding: 20px;
 `;
 
 const AboutBox = styled(Col)`
@@ -104,10 +83,6 @@ export {
   ListItem,
   QuestionButton,
   YoutubeFrame,
-  InfoTable,
-  InfoTableHead,
-  InfoTH,
-  InfoTD,
   AboutBox,
   BrokerOpening,
 };

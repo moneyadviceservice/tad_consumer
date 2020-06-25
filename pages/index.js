@@ -6,13 +6,11 @@ import ReactHtmlParser from "react-html-parser";
 import { withTranslation } from "../Utils/translation/i18n";
 
 import {
-  Row,
   Col,
   Heading,
   Anchor,
-  Paragraph,
   Accordion,
-  Button,
+  InfoTable,
 } from "@moneypensionservice/directories";
 import {
   ParagraphAnchor,
@@ -20,12 +18,7 @@ import {
   ListItem,
   QuestionButton,
   YoutubeFrame,
-  InfoTable,
-  InfoTableHead,
-  InfoTH,
-  InfoTD,
   AboutBox,
-  BrokerOpening,
 } from "../components/landingPage";
 import { Section, ExtendedSection } from "../Utils/layouts";
 
@@ -43,15 +36,15 @@ const Homepage = ({ t }) => {
         <Col sizes={{ xs: 12 }} alignSelf="center" data-testid="contentCol">
           <ParagraphAnchor style={{ fontSize: "16px" }}>
             <Anchor
-              style={{ fontSize: "16px" }}
               href="https://www.moneyadvisoryservice.co.uk/register"
+              style={{ fontSize: "16px" }}
             >
               {t("home.banner.register")}
             </Anchor>
             &nbsp;{t("home.banner.or")}
             <Anchor
-              style={{ fontSize: "16px" }}
               href="https://www.moneyadvisoryservice.co.uk/login"
+              style={{ fontSize: "16px" }}
             >
               &nbsp; {t("home.banner.login")}
             </Anchor>
@@ -149,35 +142,13 @@ const Homepage = ({ t }) => {
             )}
           </Col>
           <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
-            <InfoTable>
-              <InfoTableHead>
-                <tr>
-                  <InfoTH>
-                    <img src="/assets/Images/question2.svg" />
-                    &nbsp;{t("home.broker.heading")}
-                  </InfoTH>
-                </tr>
-              </InfoTableHead>
-              <tbody>
-                <tr>
-                  <InfoTD>
-                    <Paragraph weight="400">{t("home.broker.intro")}</Paragraph>
-                    <Paragraph weight={600}>
-                      {t("home.broker.contact_details")}:
-                    </Paragraph>
-                    <Paragraph textSize="30px" weight={600}>
-                      <img src="/assets/Images/call.svg" /> 0808 281 3298
-                    </Paragraph>
-                    <BrokerOpening>
-                      &#40;Mon - Fri 9:00 am to 5:30 pm&#41;
-                    </BrokerOpening>
-                    <Anchor>
-                      <img src="/assets/Images/www.svg" />
-                      &nbsp;{t("home.broker.website")}
-                    </Anchor>
-                  </InfoTD>
-                </tr>
-              </tbody>
+            <InfoTable
+              margin={{ bottom: "15px" }}
+              styles={{ paddingLeft: "30px" }}
+              sizes={{ xs: 12, md: 4 }}
+              title={t("home.broker.heading")}
+            >
+              {ReactHtmlParser(t("home.broker.content"))}
             </InfoTable>
           </Col>
         </Section>
