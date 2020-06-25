@@ -38,6 +38,9 @@ const BreadcrumbSection = styled(ExtendedSection)`
 
 const BreadAnchor = styled(Anchor)`
   font-size: 16px;
+  &:hover {
+    text-decoration: none;
+  }
   &:after {
     font-size: 12px;
     line-height: 0;
@@ -45,7 +48,8 @@ const BreadAnchor = styled(Anchor)`
     position: relative;
     top: 0px;
     padding: 0 6px;
-    content: ">";
+    content: "  >";
+    text-decoration: none;
   }
 `;
 
@@ -61,7 +65,7 @@ const Breadcrumb = ({ path, t }) => {
 
     return (
       <Link key={i} href={paths}>
-        <BreadAnchor href={paths}>{t(anchorText)} &nbsp;</BreadAnchor>
+        <BreadAnchor href={paths}>{t(anchorText)}</BreadAnchor>
       </Link>
     );
   });
@@ -70,13 +74,13 @@ const Breadcrumb = ({ path, t }) => {
       <Section constrained>
         <Col style={{ display: "inline" }}>
           <BreadAnchor href="https://www.moneyadviceservice.org.uk/en">
-            {t("home")} &nbsp;
+            {t("home")}
           </BreadAnchor>
-          &nbsp;
+
           <Link href="/">
-            <BreadAnchor href="/">{t("travel")} &nbsp; </BreadAnchor>
+            <BreadAnchor href="/">{t("travel")}</BreadAnchor>
           </Link>
-          &nbsp;
+
           {crumbs}
         </Col>
       </Section>
