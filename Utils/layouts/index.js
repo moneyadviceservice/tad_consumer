@@ -7,7 +7,7 @@ import {
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import RightChevron from "../../public/assets/Images/MAS_right-103.svg";
+// import RightChevron from "../../public/assets/Images/MAS_right-103.svg";
 import { withTranslation } from "../translation/i18n";
 
 const Section = styled(Row)`
@@ -38,6 +38,15 @@ const BreadcrumbSection = styled(ExtendedSection)`
 
 const BreadAnchor = styled(Anchor)`
   font-size: 16px;
+  &:after {
+    font-size: 12px;
+    line-height: 0;
+    color: #96b4c0;
+    position: relative;
+    top: 0px;
+    padding: 0 6px;
+    content: ">";
+  }
 `;
 
 const Breadcrumb = ({ path, t }) => {
@@ -52,7 +61,7 @@ const Breadcrumb = ({ path, t }) => {
 
     return (
       <Link key={i} href={paths}>
-        <BreadAnchor href={paths}>{t(anchorText)}</BreadAnchor>
+        <BreadAnchor href={paths}>{t(anchorText)} &nbsp;</BreadAnchor>
       </Link>
     );
   });
@@ -63,13 +72,9 @@ const Breadcrumb = ({ path, t }) => {
           <BreadAnchor href="https://www.moneyadviceservice.org.uk/en">
             {t("home")} &nbsp;
           </BreadAnchor>
-          <img src={RightChevron} style={{ height: "10px" }} />
           &nbsp;
           <Link href="/">
-            <BreadAnchor href="/">
-              {t("travel")} &nbsp;
-              <img src={RightChevron} style={{ height: "10px" }} />
-            </BreadAnchor>
+            <BreadAnchor href="/">{t("travel")} &nbsp; </BreadAnchor>
           </Link>
           &nbsp;
           {crumbs}

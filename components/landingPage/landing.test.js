@@ -44,6 +44,6 @@ describe("HomePage", () => {
     // console.log(linkButton.debug());
     expect(
       linkButton.findWhere((node) => node.props().href === "/listings")
-    ).toHaveLength(1);
+    ).toHaveLength(2);
   });
 });
