@@ -129,7 +129,11 @@ const Homepage = ({ t }) => {
       {/* Articles and find a broker */}
       <ExtendedSection align="stretch">
         <Section constrained data-testid="contentRow">
-          <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
+          <Col
+            sizes={{ xs: 12, md: 6 }}
+            data-testid="contentCol"
+            style={{ marginBottom: "50px" }}
+          >
             <Heading level={2} color="#006A00">
               {t("home.articles.heading")}
             </Heading>

@@ -48,7 +48,11 @@ class MyApp extends App {
       <Provider store={reduxStore}>
         <ThemeProvider>
           <Header path={path} alternateAddress={alternateAddress} />
-          <Container as="main" style={{ paddingRight: "0", paddingLeft: "0" }}>
+          <Container
+            as="main"
+            style={{ paddingRight: "0", paddingLeft: "0" }}
+            fluid
+          >
             <Component {...pageProps} />
           </Container>
           <Footer />
