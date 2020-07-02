@@ -36,14 +36,14 @@ const Homepage = ({ t }) => {
         <Col sizes={{ xs: 12 }} alignSelf="center" data-testid="contentCol">
           <ParagraphAnchor style={{ fontSize: "16px" }}>
             <Anchor
-              href="https://www.moneyadvisoryservice.co.uk/register"
+              href="https://radsignup.moneyadviceservice.org.uk/travel_insurance_registrations/new"
               style={{ fontSize: "16px" }}
             >
               {t("home.banner.register")}
             </Anchor>
             &nbsp;{t("home.banner.or")}
             <Anchor
-              href="https://www.moneyadvisoryservice.co.uk/login"
+              href="https://radsignup.moneyadviceservice.org.uk/users/sign_in"
               style={{ fontSize: "16px" }}
             >
               &nbsp; {t("home.banner.login")}
