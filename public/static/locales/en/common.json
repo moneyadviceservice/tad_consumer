@@ -1,45 +1,16 @@
 {
-    "travel": {
-      "home": {
-        "banner": {
-          "heading": "Find travel insurance if you have a serious medical condition",
-          "paragraph": "Our Directory provides details of firms that spaecialise in offering travel insurance if you have serious or multiple medical condition",
-          "register": "Register or login on the directory"
-        },
-        "conditions": {
-          "heading": "Can firms on this directory help me?",
-          "questions" : [
-              {   "answer":"Yes, if you have been refused travel insurance because of medical condition",
-                  "sign": "positive"
-              } ,
-              {   "answer": "Yes, if you have had insurance cancelled because of a medical condition",
-                  "sign": "positive"
-              },
-              {   "answer": "Yes, if you have have been offered insurance but had a medical condition excluded",
-                  "sign": "positive"
-              },
-             {   "answer": "No, if you are travelling against the advice of a medical practitioner",
-                 "sign": "negative"
-            }
-            
-          ],
-          "button": "View all firms"
-        },
-        "about": {
-          "heading": "About this directory",
-          "details":[
-          {"answer": "All firms are specialists in providing travel insurance for people with all serious pre-existing medical conditions", "sign": "positive"},
-          {"answer": "All firms are authorised and regulated by the Financial Conduct Authority (FCA)", "sign": "positive"},
-          {"answer": "We don’t provide quotes but show you key details of specialist providers that can help you", "sign": "positive"}
-        ]
-      }}
-    },
-    "misc": {
-      "submit": "Submit"
-    },
-    "altLanguage": "Cymreag",
-    "retirement": "Retirement"
-
-
-  }
-  
+  "head": {
+    "sub_title": "Travel Adviser Directory",
+    "title": "Find a regulated travel insurance firm",
+    "description": "Use Travel Insuarance Directory to find travel insurance specilaist firms authorized and regulated bythe Financial Conduct Autority (FCA)",
+    "page": {
+      "landing": "Find a regulated travel insurance firm",
+      "listings": "Travel firm listings"
+    }
+  },
+  "misc": {
+    "submit": "Submit"
+  },
+  "altLanguage": "Cymreag",
+  "retirement": "Retirement"
+}

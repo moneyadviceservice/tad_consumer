@@ -16,18 +16,15 @@ class MyApp extends App {
   static async getInitialProps({ Component, ctx, reduxStore, req }) {
     let pageProps = {};
     let alternateLang = "";
-    let language = "";
+
     if (!process.browser) {
       alternateLang = ctx.req.language === "en" ? "cy" : "en";
-    }
-    if (!process.browser) {
-      language = ctx.req.language;
     }
 
     let protocol = !process.browser ? ctx.req.protocol : "";
     let host = !process.browser ? ctx.req.headers.host : "";
     let path = !process.browser ? ctx.pathname : "";
-    let address = `${protocol}://${host}/${language}${path}` || "";
+
     let alternateAddress = !process.browser
       ? `${protocol}://${host}/${alternateLang}${path}`
       : "";
@@ -36,7 +33,7 @@ class MyApp extends App {
       pageProps = await Component.getInitialProps(ctx);
     }
     if (typeof window === "undefined") {
-      return { pageProps, alternateAddress, path, address };
+      return { pageProps, alternateAddress, path };
     }
 
     return { pageProps };
@@ -49,19 +46,12 @@ class MyApp extends App {
       reduxStore,
       alternateAddress,
       path,
-      address,
     } = this.props;
-
-    console.log(address);
 
     return (
       <Provider store={reduxStore}>
         <ThemeProvider>
-          <Head
-            address={address}
-            alternateAddress={alternateAddress}
-            path={path}
-          />
+          <Head path={path} />
           <Header path={path} alternateAddress={alternateAddress} />
           <Container
             as="main"

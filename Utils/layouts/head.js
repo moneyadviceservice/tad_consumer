@@ -1,24 +1,27 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { withTranslation } from "../translation/i18n";
 
-const AppHead = ({ address, alternateAddress, path }) => {
+const AppHead = ({ path, t }) => {
   const route = useRouter().pathname;
   const pathname = process.browser ? route : path;
 
-  let pageDescription;
+  let pageTitle;
   if (pathname === "/listings") {
-    pageDescription = "Travel firm listings";
+    pageTitle = t("head.page.listings");
   } else {
-    pageDescription = "Find a regulated travel insurance firm";
+    pageTitle = t("head.page.landing");
   }
 
   return (
     <Head>
-      <title>Travel Adviser Directory | {pageDescription}</title>
-
-      <link href={path} hreflang="en-GB" rel="alternate"></link>
-      <link href={alternateAddress} hreflang="cy-GB" rel="alternate"></link>
-      <link href={path} rel="canonical"></link>
+      <title>
+        {t("head.sub_title")} | {pageTitle}
+      </title>
+      <meta property="og:locale:alternate" content="en-GB" />
+      <meta property="og:locale:alternate" content="cy-GB" />
+      <meta property="og:description" content={t("head.description")} />
+      <meta property="og:video" content="http://example.com/bond/trailer.swf" />
       <link
         rel="shortcut icon"
         type="image/x-icon"
@@ -28,4 +31,4 @@ const AppHead = ({ address, alternateAddress, path }) => {
   );
 };
 
-export default AppHead;
+export default withTranslation("common")(AppHead);
