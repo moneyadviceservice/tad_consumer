@@ -21,7 +21,7 @@ const AppHead = ({ path, t }) => {
       <meta property="og:locale:alternate" content="en-GB" />
       <meta property="og:locale:alternate" content="cy-GB" />
       <meta property="og:description" content={t("head.description")} />
-      <meta property="og:video" content="http://example.com/bond/trailer.swf" />
+      <meta property="og:video" content="https://youtu.be/aijzHfO0VC8" />
       <link
         rel="shortcut icon"
         type="image/x-icon"

@@ -7,7 +7,7 @@ import {
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import Link from "next/link";
-// import RightChevron from "../../public/assets/Images/MAS_right-103.svg";
+
 import { withTranslation } from "../translation/i18n";
 
 const Section = styled(Row)`
