@@ -10,6 +10,11 @@ import Link from "next/link";
 
 import { withTranslation } from "../translation/i18n";
 
+const StyledLink = styled.a`
+  color: red;
+  background: blue;
+`;
+
 const Section = styled(Row)`
   margin: auto;
   ${resolveMedia.md`
@@ -35,14 +40,40 @@ const BreadcrumbSection = styled(ExtendedSection)`
     padding-bottom: 15px
 `};
 `;
-
-const BreadAnchor = styled(Anchor)`
+const InternalAnchor = styled.a`
   font-size: 16px;
+  color: #003d8e;
+  font-size: 16px;
+  &:visited {
+    color: #003d8e;
+  }
+  &:hover,
+  &:focus {
+    color: #003d8e;
+    text-decoration: underline;
+  }
+  &:hover {
+    outline: none;
+    cursor: pointer;
+  }
+  &:focus {
+    outline: solid 0.1875rem #daaf2d;
+    background-color: #e8b940;
+    color: #000000;
+  }
   &:link {
     text-decoration: none;
     background: none;
     border: none;
   }
+  &[href^="tel"] {
+    color: inherit;
+    letter-spacing: -1px;
+    text-decoration: none;
+  }
+`;
+
+const BreadAnchor = styled(InternalAnchor)`
   &:after {
     font-size: 32px;
     line-height: 0;
@@ -53,7 +84,22 @@ const BreadAnchor = styled(Anchor)`
     content: " \\00203A  ";
     text-decoration: none;
   }
+  &:focus {
+    outline: none;
+    color: #003d8e;
+  }
 `;
+
+const InternalLink = ({ href, name }) => (
+  <Link href={href} passHref>
+    <InternalAnchor>{name}</InternalAnchor>
+  </Link>
+);
+const BreadLink = ({ href, name }) => (
+  <Link href={href} passHref>
+    <BreadAnchor>{name}</BreadAnchor>
+  </Link>
+);
 
 const Breadcrumb = ({ path, t }) => {
   const router = useRouter().pathname;
@@ -65,11 +111,7 @@ const Breadcrumb = ({ path, t }) => {
 
     let anchorText = eval("`${paths}`");
 
-    return (
-      <Link key={i} href={paths}>
-        <BreadAnchor href={paths}>{t(anchorText)}</BreadAnchor>
-      </Link>
-    );
+    return <BreadLink key={i} href={paths} name={t(anchorText)} />;
   });
   return (
     <BreadcrumbSection align="stretch">
@@ -78,10 +120,7 @@ const Breadcrumb = ({ path, t }) => {
           <BreadAnchor href="https://www.moneyadviceservice.org.uk/en">
             {t("home")}
           </BreadAnchor>
-
-          <Link href="/">
-            <BreadAnchor href="/">{t("travel")}</BreadAnchor>
-          </Link>
+          <BreadLink href="/" name={t("travel")} />
 
           {crumbs}
         </Col>
@@ -92,4 +131,4 @@ const Breadcrumb = ({ path, t }) => {
 
 export default withTranslation("header")(Breadcrumb);
 
-export { Section, ExtendedSection };
+export { Section, ExtendedSection, InternalLink };

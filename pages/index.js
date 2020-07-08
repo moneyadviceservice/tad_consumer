@@ -20,7 +20,7 @@ import {
   YoutubeFrame,
   AboutBox,
 } from "../components/landingPage";
-import { Section, ExtendedSection } from "../Utils/layouts";
+import { Section, ExtendedSection, InternalLink } from "../Utils/layouts";
 
 const Homepage = ({ t }) => {
   const [activeIndex, changeIndex] = useState();
@@ -74,9 +74,13 @@ const Homepage = ({ t }) => {
             </UnorderedList>
 
             <QuestionButton primary>
-              <Link href="/listings">
+              {/* <Link href="/listings">
                 <Anchor href="/listings">{t("home.conditions.button")}</Anchor>
-              </Link>
+              </Link> */}
+              <InternalLink
+                href="/listings"
+                name={t("home.conditions.button")}
+              />
             </QuestionButton>
           </Col>
           <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
