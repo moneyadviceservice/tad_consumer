@@ -74,9 +74,6 @@ const Homepage = ({ t }) => {
             </UnorderedList>
 
             <QuestionButton primary>
-              {/* <Link href="/listings">
-                <Anchor href="/listings">{t("home.conditions.button")}</Anchor>
-              </Link> */}
               <InternalLink
                 href="/listings"
                 name={t("home.conditions.button")}
