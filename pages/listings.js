@@ -3,14 +3,21 @@ import PropTypes from "prop-types";
 
 import { withTranslation } from "../Utils/translation/i18n";
 
-import { Row, Col } from "@moneypensionservice/directories";
+import { Row, Col, Heading } from "@moneypensionservice/directories";
+import { Section, ExtendedSection, InternalLink } from "../Utils/layouts";
 
 const Listings = ({ t }) => {
   return (
     <Fragment>
-      <Row margin="auto" constrained>
-        <Col debug>H1</Col>
-      </Row>
+      <Section constrained data-testid="contentRow">
+        <Col sizes={{ xs: 12 }} data-testid="contentCol">
+          <Heading level={1} color="#006A00" style={{ marginTop: "20px" }}>
+            Find travel insurance providers if you have a serious medical
+            condition
+          </Heading>
+        </Col>
+      </Section>
+
       <Row margin="auto" constrained>
         <Col sizes={{ xs: 12, md: 4 }} debug>
           Filter Form
