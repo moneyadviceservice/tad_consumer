@@ -6,6 +6,8 @@ import { withTranslation } from "../Utils/translation/i18n";
 import { Row, Col, Heading } from "@moneypensionservice/directories";
 import { Section, ExtendedSection, InternalLink } from "../Utils/layouts";
 
+import Listing from "../components/listingsPage";
+
 const Listings = ({ t }) => {
   return (
     <Fragment>
@@ -18,12 +20,11 @@ const Listings = ({ t }) => {
         </Col>
       </Section>
 
-      <Row margin="auto" constrained>
-        <Col sizes={{ xs: 12, md: 4 }} debug>
-          Filter Form
-        </Col>
-        <Col debug>Result List</Col>
-      </Row>
+      <ExtendedSection align="stretch">
+        <Section constrained data-testid="contentRow">
+          <Listing />
+        </Section>
+      </ExtendedSection>
     </Fragment>
   );
 };
