@@ -20,7 +20,7 @@ const Listings = ({ t }) => {
         </Col>
       </Section>
 
-      <ExtendedSection align="stretch">
+      <ExtendedSection align="stretch" style={{ paddingTop: 0 }}>
         <Section constrained data-testid="contentRow">
           <Listing />
         </Section>

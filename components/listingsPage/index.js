@@ -10,7 +10,9 @@ const Listing = () => {
       <Col sizes={{ xs: 12, md: 4 }}>
         <Filters />
       </Col>
-      <Results />
+      <Col sizes={{ xs: 12, md: 8 }}>
+        <Results />
+      </Col>
     </Fragment>
   );
 };
