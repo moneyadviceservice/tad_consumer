@@ -4,14 +4,14 @@ import Filters from "./filters";
 import Results from "./results";
 import { Row, Col, Heading } from "@moneypensionservice/directories";
 
-const Listing = () => {
+const Listing = ({ t }) => {
   return (
     <Fragment>
       <Col sizes={{ xs: 12, md: 4 }}>
         <Filters />
       </Col>
       <Col sizes={{ xs: 12, md: 8 }}>
-        <Results />
+        <Results t={t} />
       </Col>
     </Fragment>
   );

@@ -22,7 +22,7 @@ const Listings = ({ t }) => {
 
       <ExtendedSection align="stretch" style={{ paddingTop: 0 }}>
         <Section constrained data-testid="contentRow">
-          <Listing />
+          <Listing t={t} />
         </Section>
       </ExtendedSection>
     </Fragment>

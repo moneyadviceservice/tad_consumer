@@ -26,9 +26,14 @@ const Filters = () => {
           borderTopLeftRadius: "5px",
           borderTopRightRadius: "5px",
           padding: "12px 18px",
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          justifyContent: "space-between",
         }}
       >
-        Refine your search
+        <span>Refine your search</span>
+        <span style={{ fontSize: "11px", color: "#003D8E" }}>Clear</span>
       </Heading>
       <div
         style={{
