@@ -2,11 +2,18 @@ import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 
 import { withTranslation } from "../Utils/translation/i18n";
-
-import { Row, Col, Heading } from "@moneypensionservice/directories";
-import { Section, ExtendedSection, InternalLink } from "../Utils/layouts";
+import styled from "styled-components";
+import { Col, Heading, resolveMedia } from "@moneypensionservice/directories";
+import { Section, ExtendedSection } from "../Utils/layouts";
 
 import Listing from "../components/listingsPage";
+
+const ListingSection = styled(Section)`
+  padding: 0;
+  ${resolveMedia.md`
+
+`};
+`;
 
 const Listings = ({ t }) => {
   return (
@@ -21,9 +28,9 @@ const Listings = ({ t }) => {
       </Section>
 
       <ExtendedSection align="stretch" style={{ paddingTop: 0 }}>
-        <Section constrained data-testid="contentRow">
+        <ListingSection constrained data-testid="contentRow">
           <Listing t={t} />
-        </Section>
+        </ListingSection>
       </ExtendedSection>
     </Fragment>
   );

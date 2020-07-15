@@ -3,6 +3,9 @@ import {
   Radio,
   Formfield,
   Button,
+  resolveMedia,
+  Form,
+  Tooltip,
 } from "@moneypensionservice/directories";
 import styled from "styled-components";
 
@@ -14,9 +17,29 @@ const FilterFormFIeld = styled(Formfield)`
   padding-left: 0;
 `;
 
+const FormDiv = styled.div`
+  border: 1px solid #edf0f0;
+  padding: 0 18px 18px;
+  display: none;
+  ${resolveMedia.md`
+      display: block;
+  `};
+`;
+
+const Legend = styled.legend`
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+  width: 100%;
+  margin-bottom: 0.75rem;
+`;
+
+const insuranceTypeTip =
+  "Single Trip:  Depending on what medical condition(s) you have, where you are going and for how long – sometimes a Single Trip policy might be cheaper than an Annual Multi-trip.  Also if you have been declined for an Annual Multi-trip policy, you might still get offered insurance if you choose a Single Trip policy.  But if you are planning to travel several times during a 12 month period, try for an Annual Multi-trip policy first. Annual Multi-trip: If you are planning to travel several times during a 12 month period, an Annual Multi-trip policy can save you money.  You can usually only buy an Annual Multi-trip policy up to 31 days in advance of when you want the policy to start.  If you get turned down for an Annual Multi-trip – or you think the cost is too much – its worth seeing if you can get a Single Trip policy instead.";
+
 const Filters = () => {
   return (
-    <form>
+    <Form style={{ marginBottom: "40px" }}>
       <Heading
         level={3}
         style={{
@@ -33,19 +56,23 @@ const Filters = () => {
         }}
       >
         <span>Refine your search</span>
-        <span style={{ fontSize: "11px", color: "#003D8E" }}>Clear</span>
+        <span style={{ fontSize: "11px", color: "#003D8E", cursor: "pointer" }}>
+          Clear
+        </span>
       </Heading>
-      <div
-        style={{
-          border: "1px solid #edf0f0",
-          padding: "0 18px 18px",
-        }}
-      >
-        <FilterFormFIeld legend="Filter by insurance type">
+      <FormDiv>
+        <FilterFormFIeld>
+          <Legend>
+            Filter by insurance type{" "}
+            <Tooltip minWidth="300px" hover text={insuranceTypeTip} />
+          </Legend>
           <Radio value="Single Trip" label="Single Trip" name="insuranceType" />
           <Radio value="Annual Trip" label="Annual Trip" name="insuranceType" />
         </FilterFormFIeld>
-        <FilterFormFIeld legend="Filter by length of trip">
+        <FilterFormFIeld>
+          <Legend>
+            Filter by length of trip <Tooltip text="To be supplied" />
+          </Legend>
           <Radio
             value="Under 35 Days"
             label="Under 45 Days"
@@ -67,7 +94,10 @@ const Filters = () => {
             name="tripLength"
           />
         </FilterFormFIeld>
-        <FilterFormFIeld legend="Destination">
+        <FilterFormFIeld>
+          <Legend>
+            Destination <Tooltip text="To be supplied" />
+          </Legend>
           <Radio
             value="UK &amp; Europe"
             label="UK &amp; Europe"
@@ -84,11 +114,17 @@ const Filters = () => {
             name="destination"
           />
         </FilterFormFIeld>
-        <FilterFormFIeld legend="Is your trip a cruise?">
+        <FilterFormFIeld>
+          <Legend>
+            Is your trip a cruise? <Tooltip text="To be supplied" />
+          </Legend>
           <Radio value="Yes" label="Yes" name="cruise" />
           <Radio value="No" label="No" name="cruise" />
         </FilterFormFIeld>
-        <FilterFormFIeld legend="When are you travelling?">
+        <FilterFormFIeld>
+          <Legend>
+            When are you travelling? <Tooltip text="To be supplied" />
+          </Legend>
           <Radio value="Within 1 month" label="Within 1 month" name="when" />
           <Radio
             value="Between 1 - 6 months"
@@ -111,21 +147,33 @@ const Filters = () => {
             name="when"
           />
         </FilterFormFIeld>
-        <FilterFormFIeld legend="I am going abroad for medical treatment">
+        <FilterFormFIeld>
+          <Legend>
+            I am going abroad for medical treatment
+            <Tooltip text="To be supplied" />
+          </Legend>
           <Radio value="Yes" label="Yes" name="treatment" />
           <Radio value="No" label="No" name="treatment" />
         </FilterFormFIeld>
-        <FilterFormFIeld legend="My doctor has given me a terminal prognosis">
+        <FilterFormFIeld>
+          <Legend>
+            My doctor has given me a terminal prognosis
+            <Tooltip text="To be supplied" />
+          </Legend>
           <Radio value="Yes" label="Yes" name="terminal" />
           <Radio value="No" label="No" name="terminal" />
         </FilterFormFIeld>
-        <FilterFormFIeld legend="Do you require cover for medical equipment?">
+        <FilterFormFIeld>
+          <Legend>
+            Do you require cover for medical equipment?
+            <Tooltip text="To be supplied" />
+          </Legend>
           <Radio value="Yes" label="Yes" name="equipment" />
           <Radio value="No" label="No" name="equipment" />
         </FilterFormFIeld>
         <Button primary>Shortlist provider</Button>
-      </div>
-    </form>
+      </FormDiv>
+    </Form>
   );
 };
 
