@@ -34,8 +34,28 @@ const Legend = styled.legend`
   margin-bottom: 0.75rem;
 `;
 
+const Select = styled.select`
+  font-size: 16px;
+  width: 70%;
+  padding: 10px;
+`;
+
 const insuranceTypeTip =
   "Single Trip:  Depending on what medical condition(s) you have, where you are going and for how long – sometimes a Single Trip policy might be cheaper than an Annual Multi-trip.  Also if you have been declined for an Annual Multi-trip policy, you might still get offered insurance if you choose a Single Trip policy.  But if you are planning to travel several times during a 12 month period, try for an Annual Multi-trip policy first. Annual Multi-trip: If you are planning to travel several times during a 12 month period, an Annual Multi-trip policy can save you money.  You can usually only buy an Annual Multi-trip policy up to 31 days in advance of when you want the policy to start.  If you get turned down for an Annual Multi-trip – or you think the cost is too much – its worth seeing if you can get a Single Trip policy instead.";
+
+const ageRange = () => {
+  var arr = [];
+
+  for (let i = 1; i <= 100; i++) {
+    arr.push(
+      <option key={i} value="{i}">
+        {i}
+      </option>
+    );
+  }
+
+  return arr;
+};
 
 const Filters = () => {
   return (
@@ -63,7 +83,17 @@ const Filters = () => {
       <FormDiv>
         <FilterFormFIeld>
           <Legend>
-            Filter by insurance type{" "}
+            Age at time of travel
+            <Tooltip text="To be supplied" />
+          </Legend>
+          <Select>
+            <option value="">Age at time of travel</option>
+            {ageRange()}
+          </Select>
+        </FilterFormFIeld>
+        <FilterFormFIeld>
+          <Legend>
+            Filter by insurance type
             <Tooltip minWidth="300px" hover text={insuranceTypeTip} />
           </Legend>
           <Radio value="Single Trip" label="Single Trip" name="insuranceType" />
