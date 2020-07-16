@@ -84,7 +84,7 @@ const Filters = () => {
         <FilterFormFIeld>
           <Legend>
             Age at time of travel
-            <Tooltip text="To be supplied" />
+            <Tooltip hover text="To be supplied" />
           </Legend>
           <Select>
             <option value="">Age at time of travel</option>
@@ -101,7 +101,7 @@ const Filters = () => {
         </FilterFormFIeld>
         <FilterFormFIeld>
           <Legend>
-            Filter by length of trip <Tooltip text="To be supplied" />
+            Filter by length of trip <Tooltip hover text="To be supplied" />
           </Legend>
           <Radio
             value="Under 35 Days"
@@ -126,7 +126,7 @@ const Filters = () => {
         </FilterFormFIeld>
         <FilterFormFIeld>
           <Legend>
-            Destination <Tooltip text="To be supplied" />
+            Destination <Tooltip hover text="To be supplied" />
           </Legend>
           <Radio
             value="UK &amp; Europe"
@@ -146,14 +146,14 @@ const Filters = () => {
         </FilterFormFIeld>
         <FilterFormFIeld>
           <Legend>
-            Is your trip a cruise? <Tooltip text="To be supplied" />
+            Is your trip a cruise? <Tooltip hover text="To be supplied" />
           </Legend>
           <Radio value="Yes" label="Yes" name="cruise" />
           <Radio value="No" label="No" name="cruise" />
         </FilterFormFIeld>
         <FilterFormFIeld>
           <Legend>
-            When are you travelling? <Tooltip text="To be supplied" />
+            When are you travelling? <Tooltip hover text="To be supplied" />
           </Legend>
           <Radio value="Within 1 month" label="Within 1 month" name="when" />
           <Radio
@@ -180,7 +180,7 @@ const Filters = () => {
         <FilterFormFIeld>
           <Legend>
             I am going abroad for medical treatment
-            <Tooltip text="To be supplied" />
+            <Tooltip hover text="To be supplied" />
           </Legend>
           <Radio value="Yes" label="Yes" name="treatment" />
           <Radio value="No" label="No" name="treatment" />
@@ -188,7 +188,7 @@ const Filters = () => {
         <FilterFormFIeld>
           <Legend>
             My doctor has given me a terminal prognosis
-            <Tooltip text="To be supplied" />
+            <Tooltip hover text="To be supplied" />
           </Legend>
           <Radio value="Yes" label="Yes" name="terminal" />
           <Radio value="No" label="No" name="terminal" />
@@ -196,7 +196,7 @@ const Filters = () => {
         <FilterFormFIeld>
           <Legend>
             Do you require cover for medical equipment?
-            <Tooltip text="To be supplied" />
+            <Tooltip hover text="To be supplied" />
           </Legend>
           <Radio value="Yes" label="Yes" name="equipment" />
           <Radio value="No" label="No" name="equipment" />
