@@ -1,11 +1,11 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
-import { i18n } from "../Utils/translation/i18n";
+
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
-    const lang = ctx.req.language + "-GB";
+
     try {
       ctx.renderPage = () =>
         originalRenderPage({
@@ -16,7 +16,7 @@ export default class MyDocument extends Document {
 
       return {
         ...initialProps,
-        locale: ctx.req.language + "-GB",
+        locale: ctx.req.language,
         styles: (
           <>
             {initialProps.styles}
