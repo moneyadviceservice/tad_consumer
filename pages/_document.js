@@ -1,10 +1,12 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
+import { i18n } from "../Utils/translation/i18n";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
+    const currentLang = ctx.req.i18n;
 
     try {
       ctx.renderPage = () =>
@@ -16,7 +18,7 @@ export default class MyDocument extends Document {
 
       return {
         ...initialProps,
-        locale: ctx.req.language,
+        current: ctx.req.i18n,
         styles: (
           <>
             {initialProps.styles}
@@ -30,8 +32,9 @@ export default class MyDocument extends Document {
   }
 
   render() {
+    console.log(this.props.current);
     return (
-      <Html lang={this.props.locale}>
+      <Html dir="ltr" lang={this.props.__NEXT_DATA__.props.initialLanguage}>
         <Head />
         <body>
           <Main />
