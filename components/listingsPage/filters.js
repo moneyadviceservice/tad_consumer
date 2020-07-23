@@ -7,7 +7,9 @@ import {
   resolveMedia,
   Form,
   Tooltip,
+  Anchor,
 } from "@moneypensionservice/directories";
+import { InternalLink } from "../../Utils/layouts";
 import styled from "styled-components";
 
 const FilterFormFIeld = styled(Formfield)`
@@ -146,12 +148,27 @@ const Filters = () => {
         }}
       >
         <span>Refine your search</span>
-        <span
-          style={{ fontSize: "11px", color: "#003D8E", cursor: "pointer" }}
-          onClick={(e) => clearFilters(e)}
-        >
-          Clear
-        </span>
+        {process.browser ? (
+          <span
+            style={{ fontSize: "11px", color: "#003D8E", cursor: "pointer" }}
+            onClick={(e) => clearFilters(e)}
+          >
+            Clear
+          </span>
+        ) : (
+          <a
+            href="/listings"
+            name=""
+            style={{
+              fontSize: "11px",
+              color: "#003D8E",
+              cursor: "pointer",
+              textDecoration: "none",
+            }}
+          >
+            Clear
+          </a>
+        )}
       </Heading>
       <FormDiv>
         <FilterFormFIeld>
