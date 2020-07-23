@@ -40,7 +40,6 @@ const Comms = styled.span`
 `;
 
 const Results = ({ t }) => {
-  console.log(t("firms.getInTouch"));
   return (
     <div>
       <Paragraph
