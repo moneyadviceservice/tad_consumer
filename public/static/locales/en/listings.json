@@ -10,35 +10,61 @@
       { "type": "Annual Multi-Trip", "value": "Annual Multi-Trip" }
     ],
     "tripLength": [
-      { "length": "Under 1 month", "value": "Under 1 month" },
-      { "length": "Between 1 - 3 months", "value": "Between 1 - 3 months" },
-      { "length": "Between 3 - 6 months", "value": "Between 3 - 6 months" },
+      { "length": "Under 35 Days", "value": "Under 35 Days" },
+      { "length": "Under 45 Days", "value": "Under 45 Days" },
+      { "length": "Under 55 Days", "value": "Under 55 Days" },
       { "length": "Over 6 months", "value": "Over 6 months" }
     ],
-    "treatmentStage": [
+    "destination": [
+      { "location": "UK & Europe", "value": "UK &amp; Europe" },
       {
-        "stage": "I am going abroad for medical treatment or surgery",
-        "value": "I am going abroad for medical treatment or surgery"
+        "location": "Worldwide excluding USA, Canada, Carribeean",
+        "value": "Worldwide excluding USA, Canada, Carribeean"
       },
       {
-        "stage": "I am on a waiting list at home for treatment or surgery",
-        "value": "I am on a waiting list at home for treatment or surgery"
-      },
-      {
-        "stage": "I am awating test results",
-        "value": "I am awating test results"
-      },
-      {
-        "stage": "My doctor has given me a terminal prognosis",
-        "value": "My doctor has given me a terminal prognosis"
+        "location": "Worldwide including USA, Canada, Carribeean",
+        "value": "Worldwide including USA, Canada, Carribeean"
       }
+    ],
+    "cruise": [
+      { "response": "Yes", "value": "Yes" },
+      { "response": "No", "value": "No" }
+    ],
+    "when": [
+      { "length": "Within 1 month", "value": "Within 1 month" },
+      { "length": "Between 1 - 6 months", "value": "Between 1 - 6 months" },
+      { "length": "Between 6 - 12 months", "value": "Between 6 - 12 months" },
+      { "length": "Between 12 - 18 months", "value": "Between 12 - 18 months" },
+      { "length": "Between 18 - 24 months", "value": "Between 18 - 24 months" }
+    ],
+    "treatment": [
+      { "response": "Yes", "value": "Yes" },
+      { "response": "No", "value": "No" }
+    ],
+
+    "terminal": [
+      { "response": "Yes", "value": "Yes" },
+      { "response": "No", "value": "No" }
+    ],
+    "equipment": [
+      { "response": "Yes", "value": "Yes" },
+      { "response": "No", "value": "No" }
     ]
   },
   "headings": {
-    "age": "Age",
-    "insuranceType": "Type of Insurance",
-    "tripLength": "Length of Trip",
-    "treatmentStage": "Treatment Stage"
+    "main": "Find travel insurance providers if you have a serious medical condition",
+    "filter": "Refine your search",
+    "clear": "Clear",
+    "age_at_time_of_travel": "Age at time of travel",
+    "filter_by_insurance_type": "Filter by insurance type",
+    "filter_by_length_of_trip": "Filter by length of trip",
+    "destination": "Destination",
+    "is_your_trip_a_cruise": "Is your trip a cruise",
+    "when_are_you_travelling": "When are you travelling",
+    "i_am_going_abroad_for_medical_treatment": "I am going abroad for medical treatment",
+    "my_doctor_has_given_me_a_terminal_prognosis": "My doctor has given me a terminal prognosis",
+    "do_you_require_cover_for_medical_equipment": "Do you require cover for medical equipment",
+    "submit": "Shortlist provider"
   },
   "firms": {
     "getInTouch": "Get in touch",

@@ -1,31 +1,68 @@
 {
-    "filters": {
-        "age": [
-            {"range" : "Dan 18 oed", "value": "Under 18 years"},
-            {"range" : "Rhwng 18 - 80 oed", "value": "Between 18 and 80 years"},
-            {"range" : "Dros 80 mlynedd", "value": "Over 80 years"}
-        ],
-        "insuranceType": [
-            {"type": "Trip Sengl", "value": "Single Trip"},
-            {"type": "Aml-Daith Flynyddol", "value": "Annual Multi-Trip"}
-        ],
-        "tripLength": [
-            {"length": "O dan 1 mis", "value": "Under 1 month"},
-            {"length": "Rhwng 1 - 3 mis", "value":"Between 1 - 3 months"},
-            {"length": "Rhwng 3 - 6 mis", "value":"Between 3 - 6 months"},
-            {"length": "Dros 6 mis", "value": "Over 6 months"}
-        ],
-        "treatmentStage": [
-            {"stage": "Rwy'n mynd dramor i gael triniaeth feddygol neu lawdriniaeth", "value": "I am going abroad for medical treatment or surgery"},
-            {"stage": "Rwyf ar restr aros gartref am driniaeth neu lawdriniaeth", "value": "I am on a waiting list at home for treatment or surgery"},
-            {"stage": "Rwy'n deffro canlyniadau profion", "value": "I am awating test results"},
-            {"stage": "Mae fy meddyg wedi rhoi prognosis terfynol i mi", "value": "My doctor has given me a terminal prognosis"}
-        ]
-    },
-    "headings": {
-        "age": "Oedran",
-        "insuranceType": "Math o Yswiriant",
-        "tripLength": "Hyd y Daith",
-        "treatmentStage": "Cam Triniaeth"
-    }
+  "filters": {
+    "age": [
+      { "range": "Dan 18 oed", "value": "Under 18 years" },
+      { "range": "Rhwng 18 - 80 oed", "value": "Between 18 and 80 years" },
+      { "range": "Dros 80 mlynedd", "value": "Over 80 years" }
+    ],
+    "insuranceType": [
+      { "type": "Trip Sengl", "value": "Single Trip" },
+      { "type": "Aml-Daith Flynyddol", "value": "Annual Multi-Trip" }
+    ],
+    "tripLength": [
+      { "length": "Dan 35 diwrnod", "value": "Under 35 Days" },
+      { "length": "Dan 45 diwrnod", "value": "Under 45 Days" },
+      { "length": "Dan 55 diwrnod", "value": "Under 55 Days" },
+      { "length": "Dros 6 mis", "value": "Over 6 months" }
+    ],
+    "destination": [
+      { "location": "DU ac Ewrop", "value": "UK &amp; Europe" },
+      {
+        "location": "Ledled y byd ac eithrio UDA, Canada, Caribïaidd",
+        "value": "Worldwide excluding USA, Canada, Carribeean"
+      },
+      {
+        "location": "Ledled y byd gan gynnwys UDA, Canada, Caribïaidd",
+        "value": "Worldwide including USA, Canada, Carribeean"
+      }
+    ],
+    "cruise": [
+      { "response": "Ydw", "value": "Yes" },
+      { "response": "Na", "value": "No" }
+    ],
+    "when": [
+      { "length": "O fewn 1 mis", "value": "Within 1 month" },
+      { "length": "Rhwng 1 - 6 mis", "value": "Between 1 - 6 months" },
+      { "length": "Rhwng 6 - 12 mis", "value": "Between 6 - 12 months" },
+      { "length": "Rhwng 12 - 18 mis", "value": "Between 12 - 18 months" },
+      { "length": "Rhwng 18 - 24 mis", "value": "Between 18 - 24 months" }
+    ],
+    "treatment": [
+      { "response": "Ydw", "value": "Yes" },
+      { "response": "Na", "value": "No" }
+    ],
+    "terminal": [
+      { "response": "Ydw", "value": "Yes" },
+      { "response": "Na", "value": "No" }
+    ],
+    "equipment": [
+      { "response": "Ydw", "value": "Yes" },
+      { "response": "Na", "value": "No" }
+    ]
+  },
+  "headings": {
+    "main": "Dewch o hyd i ddarparwyr yswiriant teithio os oes gennych gyflwr meddygol difrifol",
+    "filter": "Mireinio'ch chwiliad",
+    "clear": "Yn glir",
+    "age_at_time_of_travel": "Oedran adeg teithio",
+    "filter_by_insurance_type": "Hidlo yn ôl math o yswiriant",
+    "filter_by_length_of_trip": "Hidlo yn ôl hyd y daith",
+    "destination": "Cyrchfan",
+    "is_your_trip_a_cruise": "A yw eich taith yn fordaith",
+    "when_are_you_travelling": "Pryd wyt ti'n teithio",
+    "i_am_going_abroad_for_medical_treatment": "Rwy'n mynd dramor i gael triniaeth feddygol",
+    "my_doctor_has_given_me_a_terminal_prognosis": "Mae fy meddyg wedi rhoi prognosis terfynol i mi",
+    "do_you_require_cover_for_medical_equipment": "A oes angen yswiriant arnoch ar gyfer offer meddygol",
+    "submit": "Darparwr rhestr fer"
+  }
 }

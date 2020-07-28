@@ -21,8 +21,7 @@ const Listings = ({ t }) => {
       <Section constrained data-testid="contentRow">
         <Col sizes={{ xs: 12 }} data-testid="contentCol">
           <Heading level={1} color="#006A00" style={{ marginTop: "20px" }}>
-            Find travel insurance providers if you have a serious medical
-            condition
+            {t("headings.main")}
           </Heading>
         </Col>
       </Section>
