@@ -175,7 +175,7 @@ const Filters = ({ t }) => {
               textDecoration: "none",
             }}
           >
-            Clear
+            {t("headings.clear")}
           </a>
         )}
       </Heading>
@@ -186,7 +186,7 @@ const Filters = ({ t }) => {
             <Tooltip hover text="To be supplied" />
           </Legend>
           <Select name="age" value={age.age} onChange={(e) => handleAge(e)}>
-            <option value="">Age at time of travel</option>
+            <option value="">{t("headings.age_at_time_of_travel")}</option>
             {ageRange()}
           </Select>
         </FilterFormFIeld>
