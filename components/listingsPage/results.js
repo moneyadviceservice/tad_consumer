@@ -52,7 +52,8 @@ const Results = ({ t }) => {
           width: "100%",
         }}
       >
-        Showing 1 -10 of 1000 firms that match
+        {t("headings.showing")} 1 -10 {t("headings.of")} 1000{" "}
+        {t("headings.firms")}
       </Paragraph>
       <DummyCard>
         <Row style={{ marginBottom: "20px" }}>
