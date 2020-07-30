@@ -5,6 +5,8 @@ import {
   Pagination,
 } from "@moneypensionservice/directories";
 import styled from "styled-components";
+import { i18n } from "../../Utils/translation/i18n";
+
 import ReactHtmlParser from "react-html-parser";
 
 const DummyCard = styled.div`
@@ -175,7 +177,7 @@ const Results = ({ t }) => {
           </Col>
         </Row>
       </DummyCard>
-      <Pagination currentLng="en" currentPage={1} totalPages={20} />
+      <Pagination currentLng={i18n.language} currentPage={1} totalPages={20} />
     </div>
   );
 };
