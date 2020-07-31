@@ -11,6 +11,7 @@ import {
 } from "@moneypensionservice/directories";
 import { InternalLink } from "../../Utils/layouts";
 import styled from "styled-components";
+import { useSelector, useDispatch } from "react-redux";
 
 const FilterFormFIeld = styled(Formfield)`
   margin-top: 20px;
@@ -75,6 +76,11 @@ const Filters = ({ t }) => {
   const [terminal, changeTerminal] = useState({});
   const [equipment, changeEquipment] = useState({});
 
+  const firms = useSelector((state) => state.data.firms.hits);
+  const offerings = useSelector((state) => state.data.offerings.hits);
+
+  console.log(offerings);
+
   const handleAge = (e) => {
     let age = e.target.value;
     changeAge({ age });
@@ -131,15 +137,6 @@ const Filters = ({ t }) => {
     changeEquipment({});
     changeAge({ age: "" });
   };
-
-  console.log(insuranceType);
-  console.log(tripLength);
-  console.log(destination);
-  console.log(cruise);
-  console.log(when);
-  console.log(treatment);
-  console.log(terminal);
-  console.log(equipment);
 
   return (
     <Form style={{ marginBottom: "40px" }}>

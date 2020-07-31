@@ -6,6 +6,7 @@ import {
 } from "@moneypensionservice/directories";
 import styled from "styled-components";
 import { i18n } from "../../Utils/translation/i18n";
+import { useSelector } from "react-redux";
 
 import ReactHtmlParser from "react-html-parser";
 
@@ -42,6 +43,8 @@ const Comms = styled.span`
 `;
 
 const Results = ({ t }) => {
+  const firms = useSelector((state) => state.data.firms.hits);
+  console.log(firms);
   return (
     <div>
       <Paragraph
@@ -81,102 +84,7 @@ const Results = ({ t }) => {
           </Col>
         </Row>
       </DummyCard>
-      <DummyCard>
-        <Row style={{ marginBottom: "20px" }}>
-          <Col sizes={{ xs: 12 }}>
-            <CompanyName>Special Travels</CompanyName>
-          </Col>
-          <Col sizes={{ xs: 12, md: 4 }}>
-            <SubHead> {t("firms.getInTouch")}</SubHead>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.phoneImg"))} &#160;
-              <Comms>0801 234 56789</Comms>
-            </CommsInfo>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.webImg"))} &#160; <Comms>Website</Comms>
-            </CommsInfo>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.emailImg"))} &#160; <Comms>Email</Comms>
-            </CommsInfo>
-          </Col>
-          <Col sizes={{ xs: 12, md: 8 }}>
-            <SubHead>{t("firms.moreInfo")}</SubHead>
-            <section>{ReactHtmlParser(t("firms.more"))}</section>
-          </Col>
-        </Row>
-      </DummyCard>
-      <DummyCard>
-        <Row style={{ marginBottom: "20px" }}>
-          <Col sizes={{ xs: 12 }}>
-            <CompanyName>Holsurance</CompanyName>
-          </Col>
-          <Col sizes={{ xs: 12, md: 4 }}>
-            <SubHead> {t("firms.getInTouch")}</SubHead>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.phoneImg"))} &#160;
-              <Comms>0801 234 56789</Comms>
-            </CommsInfo>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.webImg"))} &#160; <Comms>Website</Comms>
-            </CommsInfo>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.emailImg"))} &#160; <Comms>Email</Comms>
-            </CommsInfo>
-          </Col>
-          <Col sizes={{ xs: 12, md: 8 }}>
-            <SubHead>{t("firms.moreInfo")}</SubHead>
-            <section>{ReactHtmlParser(t("firms.more"))}</section>
-          </Col>
-        </Row>
-      </DummyCard>
-      <DummyCard>
-        <Row style={{ marginBottom: "20px" }}>
-          <Col sizes={{ xs: 12 }}>
-            <CompanyName>Olive Travels</CompanyName>
-          </Col>
-          <Col sizes={{ xs: 12, md: 4 }}>
-            <SubHead> {t("firms.getInTouch")}</SubHead>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.phoneImg"))} &#160;
-              <Comms>0801 234 56789</Comms>
-            </CommsInfo>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.webImg"))} &#160; <Comms>Website</Comms>
-            </CommsInfo>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.emailImg"))} &#160; <Comms>Email</Comms>
-            </CommsInfo>
-          </Col>
-          <Col sizes={{ xs: 12, md: 8 }}>
-            <SubHead>{t("firms.moreInfo")}</SubHead>
-            <section>{ReactHtmlParser(t("firms.more"))}</section>
-          </Col>
-        </Row>
-      </DummyCard>
-      <DummyCard>
-        <Row style={{ marginBottom: "20px" }}>
-          <Col sizes={{ xs: 12 }}>
-            <CompanyName>Daystar Inc</CompanyName>
-          </Col>
-          <Col sizes={{ xs: 12, md: 4 }}>
-            <SubHead> {t("firms.getInTouch")}</SubHead>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.phoneImg"))} &#160;
-              <Comms>0801 234 56789</Comms>
-            </CommsInfo>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.webImg"))} &#160; <Comms>Website</Comms>
-            </CommsInfo>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.emailImg"))} &#160; <Comms>Email</Comms>
-            </CommsInfo>
-          </Col>
-          <Col sizes={{ xs: 12, md: 8 }}>
-            <SubHead>{t("firms.moreInfo")}</SubHead>
-            <section>{ReactHtmlParser(t("firms.more"))}</section>
-          </Col>
-        </Row>
-      </DummyCard>
+
       <Pagination currentLng={i18n.language} currentPage={1} totalPages={20} />
     </div>
   );

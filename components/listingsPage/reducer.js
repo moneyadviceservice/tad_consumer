@@ -2,19 +2,10 @@ import { GET_FIRMS_SUCCESS, GET_OFFERINGS_SUCCESS } from "./constant";
 import { getFirms } from "./actions";
 import axios from "axios";
 
-let initialState = {
-  loading: false,
-  firms: [],
-};
+let initialState = {};
 
 const firmsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "GET_FIRMS_STARTED":
-      return {
-        ...state,
-        loading: true,
-      };
-      break;
     case GET_FIRMS_SUCCESS:
       return {
         ...state,

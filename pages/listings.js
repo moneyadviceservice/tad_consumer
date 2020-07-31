@@ -5,6 +5,10 @@ import { withTranslation } from "../Utils/translation/i18n";
 import styled from "styled-components";
 import { Col, Heading, resolveMedia } from "@moneypensionservice/directories";
 import { Section, ExtendedSection } from "../Utils/layouts";
+import {
+  getAlgoFirms,
+  getAlgoOfferings,
+} from "../components/listingsPage/actions";
 
 import Listing from "../components/listingsPage";
 
@@ -35,9 +39,14 @@ const Listings = ({ t }) => {
   );
 };
 
-Listings.getInitialProps = async () => ({
-  namespacesRequired: ["listings", "common", "footer"],
-});
+Listings.getInitialProps = async ({ reduxStore }) => {
+  await reduxStore.dispatch(getAlgoFirms());
+  await reduxStore.dispatch(getAlgoOfferings());
+
+  return {
+    namespacesRequired: ["listings", "common", "footer"],
+  };
+};
 
 Listings.propTypes = {
   t: PropTypes.func.isRequired,

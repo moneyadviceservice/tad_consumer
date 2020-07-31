@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import firmsReducer from "../components/listingsPage/reducer";
 
 const rootReducer = combineReducers({
-  firms: firmsReducer,
+  data: firmsReducer,
 });
 
 export default rootReducer;
