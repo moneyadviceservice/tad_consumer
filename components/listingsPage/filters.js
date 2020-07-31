@@ -29,6 +29,8 @@ const FormDiv = styled.div`
   `};
 `;
 
+const FormWrapper = ({ isBrowser }) => <FormDiv></FormDiv>;
+
 const Legend = styled.legend`
   font-size: 1.125rem;
   line-height: 1.5rem;
