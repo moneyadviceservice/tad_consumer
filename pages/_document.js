@@ -33,7 +33,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <Html dir="ltr" lang="">
+      <Html dir="ltr" lang={this.props.__NEXT_DATA__.props.initialLanguage}>
         <Head />
         <body>
           <Main />

@@ -5,7 +5,7 @@
       { "range": "Between 18 - 80 years", "value": "Between 18 and 80 years" },
       { "range": "Over 80 years", "value": "Over 80 years" }
     ],
-    "insuranceType": [
+    "trip_type": [
       { "type": "Single Trip", "value": "Single Trip" },
       { "type": "Annual Multi-Trip", "value": "Annual Multi-Trip" }
     ],
@@ -15,7 +15,7 @@
       { "length": "Under 55 Days", "value": "Under 55 Days" },
       { "length": "Over 6 months", "value": "Over 6 months" }
     ],
-    "destination": [
+    "cover_area": [
       { "location": "UK & Europe", "value": "UK &amp; Europe" },
       {
         "location": "Worldwide excluding USA, Canada, Carribeean",
@@ -30,23 +30,23 @@
       { "response": "Yes", "value": "Yes" },
       { "response": "No", "value": "No" }
     ],
-    "when": [
+    "how_far_in_advance_trip_cover": [
       { "length": "Within 1 month", "value": "Within 1 month" },
       { "length": "Between 1 - 6 months", "value": "Between 1 - 6 months" },
       { "length": "Between 6 - 12 months", "value": "Between 6 - 12 months" },
       { "length": "Between 12 - 18 months", "value": "Between 12 - 18 months" },
       { "length": "Between 18 - 24 months", "value": "Between 18 - 24 months" }
     ],
-    "treatment": [
+    "cover_undergoing_treatment": [
       { "response": "Yes", "value": "Yes" },
       { "response": "No", "value": "No" }
     ],
 
-    "terminal": [
+    "terminal_prognosis_cover": [
       { "response": "Yes", "value": "Yes" },
       { "response": "No", "value": "No" }
     ],
-    "equipment": [
+    "cover_for_specialist_equipment": [
       { "response": "Yes", "value": "Yes" },
       { "response": "No", "value": "No" }
     ]
@@ -56,14 +56,14 @@
     "filter": "Refine your search",
     "clear": "Clear",
     "age_at_time_of_travel": "Age at time of travel",
-    "filter_by_insurance_type": "Filter by insurance type",
+    "filter_by_trip_type": "Filter by insurance type",
     "filter_by_length_of_trip": "Filter by length of trip",
-    "destination": "Destination",
+    "cover_area": "Destination",
     "is_your_trip_a_cruise": "Is your trip a cruise",
-    "when_are_you_travelling": "When are you travelling",
-    "i_am_going_abroad_for_medical_treatment": "I am going abroad for medical treatment",
-    "my_doctor_has_given_me_a_terminal_prognosis": "My doctor has given me a terminal prognosis",
-    "do_you_require_cover_for_medical_equipment": "Do you require cover for medical equipment",
+    "how_far_in_advance_trip_cover": "When are you travelling",
+    "cover_undergoing_treatment": "I am going abroad for medical treatment",
+    "terminal_prognosis_cover": "My doctor has given me a terminal prognosis",
+    "cover_for_specialist_equipment": "Do you require cover for medical equipment",
     "submit": "Shortlist provider",
     "showing": "Showing",
     "of": "of",
