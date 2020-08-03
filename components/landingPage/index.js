@@ -39,7 +39,7 @@ const ListItem = styled.li`
     height: 20px;
     width: 20px;
     margin-right: 10px;
-    background-image: url(/assets/Images/MAS_tick-102.svg);
+    background-image: url(/assets/Images/MAS_tick-105.svg);
     position: absolute;
     left: 0;
   }
