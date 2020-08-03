@@ -12,6 +12,7 @@ const firmsReducer = (state = initialState, action) => {
         firms: action.payload,
       };
       break;
+
     case GET_OFFERINGS_SUCCESS:
       return {
         ...state,

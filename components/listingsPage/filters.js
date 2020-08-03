@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Heading,
   Radio,
@@ -12,6 +12,7 @@ import {
 import { InternalLink } from "../../Utils/layouts";
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
+import { filterOfferings } from "./actions";
 
 const FilterFormFIeld = styled(Formfield)`
   margin-top: 20px;
@@ -76,9 +77,25 @@ const Filters = ({ t }) => {
   const [terminal_prognosis_cover, changeTerminal] = useState({});
   const [cover_for_specialist_equipment, changeEquipment] = useState({});
 
-  const offerings = useSelector((state) => state.data.offerings.hits);
+  const dispatch = useDispatch();
 
+  const filtersValues = [
+    age,
+    trip_type,
+    tripLength,
+    cover_area,
+    cruise,
+    how_far_in_advance_trip_cover,
+    cover_undergoing_treatment,
+    terminal_prognosis_cover,
+    cover_for_specialist_equipment,
+  ];
+
+  const offerings = useSelector((state) => state.data.offerings.hits);
   console.log(offerings);
+  useEffect(() => {
+    dispatch(filterOfferings(filtersValues));
+  }, [filtersValues]);
 
   const handleAge = (e) => {
     let age = e.target.value;
