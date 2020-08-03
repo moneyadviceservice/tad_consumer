@@ -42,14 +42,15 @@ const BreadcrumbSection = styled(ExtendedSection)`
 `;
 const InternalAnchor = styled.a`
   font-size: 16px;
-  color: #003d8e;
+  color: ${(props) => (props.color ? props.color : "#003d8e")};
+
   font-size: 16px;
   &:visited {
-    color: #003d8e;
+    color: ${(props) => (props.color ? props.color : "#003d8e")};
   }
   &:hover,
   &:focus {
-    color: #003d8e;
+    color: ${(props) => (props.color ? props.color : "#003d8e")};
     text-decoration: underline;
   }
   &:hover {
@@ -90,9 +91,9 @@ const BreadAnchor = styled(InternalAnchor)`
   }
 `;
 
-const InternalLink = ({ href, name }) => (
+const InternalLink = ({ href, name, color }) => (
   <Link href={href} passHref>
-    <InternalAnchor>{name}</InternalAnchor>
+    <InternalAnchor color={color}>{name}</InternalAnchor>
   </Link>
 );
 const BreadLink = ({ href, name }) => (

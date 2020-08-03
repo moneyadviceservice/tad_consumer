@@ -77,6 +77,7 @@ const Homepage = ({ t }) => {
               <InternalLink
                 href="/listings"
                 name={t("home.conditions.button")}
+                color="#515151"
               />
             </QuestionButton>
           </Col>
