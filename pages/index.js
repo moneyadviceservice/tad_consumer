@@ -110,12 +110,8 @@ const Homepage = ({ t }) => {
             }).map(({ question, answer }, i) => (
               <Accordion
                 color="#003d8e"
-                style={{
-                  fontSize: "16px",
-                  fontWeight: "200",
-                  color: "#515151",
-                  lineHeight: "23px",
-                }}
+                titleSize="16px"
+                titleWeight="200"
                 key={i}
                 title={question}
                 active={activeIndex === i}
