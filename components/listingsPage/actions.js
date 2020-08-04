@@ -1,5 +1,9 @@
 import axios from "axios";
-import { GET_FIRMS_SUCCESS, GET_OFFERINGS_SUCCESS } from "./constant";
+import {
+  GET_FIRMS_SUCCESS,
+  GET_OFFERINGS_SUCCESS,
+  FILTER_OFFERING,
+} from "./constant";
 
 const algoliasearch = require("algoliasearch");
 const client = algoliasearch("0K37IDKMFY", "e86ea9a6aba13065305eb793da96f481");
@@ -34,16 +38,16 @@ export const filterOfferings = (pool) => {
   return (dispatch, getState) => {
     const offerings = getState().data.offerings.hits;
     const filteredPool = pool.filter((value) => Object.keys(value).length != 0);
-    console.log(filteredPool);
-    // const selectedOfferings = filteredPool.reduce((acc, value) => {
-    //   return acc.filter((offering) =>
-    //     offering[Object.keys(value)].includes(Object.values(value)[0])
-    //   );
-    // }, offerings);
-    // console.log(selectedOfferings);
-    //   dispatch({
-    //     type: FILTER_OFFERING,
-    //     payload: selectedOfferings,
-    //   });
+    // console.log(filteredPool);
+    const selectedOfferings = filteredPool.reduce((acc, value) => {
+      return acc.filter((offering) =>
+        offering[Object.keys(value)].includes(Object.values(value)[0])
+      );
+    }, offerings);
+    console.log(selectedOfferings);
+    dispatch({
+      type: FILTER_OFFERING,
+      payload: selectedOfferings,
+    });
   };
 };

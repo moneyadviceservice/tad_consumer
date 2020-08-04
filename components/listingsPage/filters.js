@@ -223,7 +223,7 @@ const Filters = ({ t }) => {
             )
           )}
         </FilterFormFIeld>
-        <FilterFormFIeld>
+        {/* <FilterFormFIeld>
           <Legend>
             {t("headings.filter_by_length_of_trip")}
             <Tooltip hover text="To be supplied" />
@@ -240,7 +240,7 @@ const Filters = ({ t }) => {
               />
             )
           )}
-        </FilterFormFIeld>
+        </FilterFormFIeld> */}
         <FilterFormFIeld>
           <Legend>
             {t("headings.cover_area")}
@@ -259,7 +259,7 @@ const Filters = ({ t }) => {
             )
           )}
         </FilterFormFIeld>
-        <FilterFormFIeld>
+        {/* <FilterFormFIeld>
           <Legend>
             {t("headings.is_your_trip_a_cruise")}?
             <Tooltip hover text="To be supplied" />
@@ -276,7 +276,7 @@ const Filters = ({ t }) => {
               />
             )
           )}
-        </FilterFormFIeld>
+        </FilterFormFIeld> */}
         <FilterFormFIeld>
           <Legend>
             {t("headings.how_far_in_advance_trip_cover")}?
@@ -340,7 +340,7 @@ const Filters = ({ t }) => {
             )
           )}
         </FilterFormFIeld>
-        <FilterFormFIeld>
+        {/* <FilterFormFIeld>
           <Legend>
             {t("headings.cover_for_specialist_equipment")}?
             <Tooltip hover text="To be supplied" />
@@ -361,7 +361,7 @@ const Filters = ({ t }) => {
               value={value}
             />
           ))}
-        </FilterFormFIeld>
+        </FilterFormFIeld> */}
         <Button primary>{t("headings.submit")}</Button>
       </FormDiv>
     </Form>

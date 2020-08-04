@@ -1,4 +1,8 @@
-import { GET_FIRMS_SUCCESS, GET_OFFERINGS_SUCCESS } from "./constant";
+import {
+  GET_FIRMS_SUCCESS,
+  GET_OFFERINGS_SUCCESS,
+  FILTER_OFFERING,
+} from "./constant";
 import { getFirms } from "./actions";
 import axios from "axios";
 
@@ -17,6 +21,13 @@ const firmsReducer = (state = initialState, action) => {
       return {
         ...state,
         offerings: action.payload,
+      };
+      break;
+
+    case FILTER_OFFERING:
+      return {
+        ...state,
+        offered: action.payload,
       };
       break;
 
