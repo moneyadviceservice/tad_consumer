@@ -52,7 +52,12 @@ const Homepage = ({ t }) => {
           </ParagraphAnchor>
         </Col>
         <Col sizes={{ xs: 12 }} data-testid="contentCol">
-          <Heading level={1} color="#006A00" style={{ marginTop: "20px" }}>
+          <Heading
+            level={1}
+            color="#006A00"
+            lineHeight="1.1"
+            style={{ marginTop: "20px" }}
+          >
             {t("home.banner.heading")}
           </Heading>
         </Col>
@@ -137,7 +142,7 @@ const Homepage = ({ t }) => {
             </Heading>
             {t("home.articles.links", { returnObjects: true }).map(
               ({ text, href }, i) => (
-                <Anchor key={i} href={href}>
+                <Anchor textSize="16px" key={i} href={href}>
                   {text}
                 </Anchor>
               )

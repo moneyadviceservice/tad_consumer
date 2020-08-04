@@ -32,6 +32,7 @@ const ListItem = styled.li`
   color: #515151;
   position: relative;
   padding-left: 30px;
+  line-height: 1.5;
 
   &:before {
     content: "";

@@ -92,7 +92,7 @@
     },
     "broker": {
       "heading": "Need help shopping around",
-      "content": "<section style='margin: 15px; font-size: 16px; line-height: 20px;'><p>If you haven't had any quotes yet and are at the start of your search for travel insurance, the British Insurance Broker's Association (BIBA) have a service which links you to a Broker who can do the shopping around for you and find you the best deal from both mainstream and specialist travel insurance providers</p><br/><p style='font-size: 13px;'><b>Get in touch :<b/><br/><br/></p><img src='/assets/Images/phone.svg' style='width: 20px;' /> <span style='font-size: 22px; color:  #18507a;'>&nbsp;<b>0123 456 7891<b/></span><p style='padding-left: 30px; margin-bottom: 30px;'> &#40;Mon - Fri 9:00 am to 5:30 pm&#41;</p><img src='/assets/Images/web.svg'/><span>&nbsp; <a  style=' color:#18507a; font-size: 16px;' href=''>Website</a></span</section>"
+      "content": "<section style='margin: 15px; font-size: 16px; line-height: 23px; color: #515151'><p>If you haven't had any quotes yet and are at the start of your search for travel insurance, the British Insurance Broker's Association (BIBA) have a service which links you to a Broker who can do the shopping around for you and find you the best deal from both mainstream and specialist travel insurance providers</p><br/><p style='font-size: 13px;'><b>Get in touch :<b/><br/><br/></p><img src='/assets/Images/phone.svg' style='width: 20px;' /> <span style='font-size: 22px; color:  #18507a;'>&nbsp;<b>0123 456 7891<b/></span><p style='padding-left: 30px; margin-bottom: 30px;'> &#40;Mon - Fri 9:00 am to 5:30 pm&#41;</p><img src='/assets/Images/web.svg'/><span>&nbsp; <a  style=' color:#18507a; font-size: 16px;' href=''>Website</a></span</section>"
     }
   }
 }
