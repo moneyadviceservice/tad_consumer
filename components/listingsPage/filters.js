@@ -92,7 +92,7 @@ const Filters = ({ t }) => {
   ];
 
   const offerings = useSelector((state) => state.data.offerings.hits);
-  console.log(offerings);
+  // console.log(offerings);
   useEffect(() => {
     dispatch(filterOfferings(filtersValues));
   }, [filtersValues]);
