@@ -45,26 +45,13 @@ const Comms = styled.span`
 const Results = ({ t }) => {
   const firms = useSelector((state) => state.data.firms.hits);
   const offered = useSelector((state) => state.data.offered);
-  console.log(firms);
-  // console.log(offered);
+  console.log(offered);
 
-  // let filteredFirms = "";
-  // if (offered && offered.length === 0) {
-  //   filteredFirms = noFirm;
-  // } else {
-  //   filteredFirms =
-  //     offered &&
-  //     offered.reduce((acc, value) => {
-  //       console.log(acc);
-  //       // return acc.filter((firm) => firm.offering_ids.includes(value.objectID));
-  //     }, firms);
-  // }
-  const filteredFirms =
-    offered &&
-    offered.reduce((acc, value) => {
-      return acc.filter((firm) => firm.offering_ids.includes(value.objectID));
-    }, firms);
-  console.log(filteredFirms);
+  offered &&
+    offered.map((firm) => {
+      console.log(firm.company);
+    });
+
   return (
     <div>
       <Paragraph

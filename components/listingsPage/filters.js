@@ -94,6 +94,7 @@ const Filters = ({ t }) => {
   const offerings = useSelector((state) => state.data.offerings.hits);
   // console.log(offerings);
   useEffect(() => {
+    console.log(filtersValues);
     dispatch(filterOfferings(filtersValues));
   }, [filtersValues]);
 
@@ -151,7 +152,7 @@ const Filters = ({ t }) => {
     changeTreatment({});
     changeTerminal({});
     changeEquipment({});
-    changeAge({ age: "" });
+    changeAge({});
   };
 
   return (
