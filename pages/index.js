@@ -11,6 +11,7 @@ import {
   Anchor,
   Accordion,
   InfoTable,
+  Paragraph,
 } from "@moneypensionservice/directories";
 import {
   ParagraphAnchor,
@@ -105,6 +106,11 @@ const Homepage = ({ t }) => {
               {t("home.video.heading")}
             </Heading>
             <YoutubeFrame src="https://www.youtube.com/embed/aijzHfO0VC8" />
+            <Paragraph color="#515151" textSize="16px" margin={{ top: "20px" }}>
+              Watch this short video to find out if this directory can help you
+              find the cover you need.{" "}
+              <Anchor textSize="16px">Download the transcript</Anchor>.
+            </Paragraph>
           </Col>
           <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
             <Heading level={2} color="#006A00">
