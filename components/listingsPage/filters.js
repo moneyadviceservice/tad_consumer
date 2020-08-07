@@ -363,7 +363,7 @@ const Filters = ({ t }) => {
             />
           ))}
         </FilterFormFIeld> */}
-        <Button primary>{t("headings.submit")}</Button>
+        {process.browser ? "" : <Button primary>{t("headings.submit")}</Button>}
       </FormDiv>
     </Form>
   );
