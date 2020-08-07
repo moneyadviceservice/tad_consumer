@@ -3,6 +3,7 @@ import {
   Col,
   Row,
   Pagination,
+  Anchor,
 } from "@moneypensionservice/directories";
 import styled from "styled-components";
 import { i18n } from "../../Utils/translation/i18n";
@@ -45,12 +46,7 @@ const Comms = styled.span`
 const Results = ({ t }) => {
   const firms = useSelector((state) => state.data.firms.hits);
   const offered = useSelector((state) => state.data.offered);
-  console.log(offered);
-
-  offered &&
-    offered.map((firm) => {
-      console.log(firm.company);
-    });
+  // console.log(firms);
 
   return (
     <div>
@@ -67,30 +63,55 @@ const Results = ({ t }) => {
         {t("headings.showing")} 1 -10 {t("headings.of")} 1000{" "}
         {t("headings.firms")}
       </Paragraph>
-      <DummyCard>
-        <Row style={{ marginBottom: "20px" }}>
-          <Col sizes={{ xs: 12 }}>
-            <CompanyName>Travelocity</CompanyName>
-          </Col>
-          <Col sizes={{ xs: 12, md: 4 }}>
-            <SubHead> {t("firms.getInTouch")}</SubHead>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.phoneImg"))} &#160;
-              <Comms>0801 234 56789</Comms>
-            </CommsInfo>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.webImg"))} &#160; <Comms>Website</Comms>
-            </CommsInfo>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.emailImg"))} &#160; <Comms>Email</Comms>
-            </CommsInfo>
-          </Col>
-          <Col sizes={{ xs: 12, md: 8 }}>
-            <SubHead>{t("firms.moreInfo")}</SubHead>
-            <section>{ReactHtmlParser(t("firms.more"))}</section>
-          </Col>
-        </Row>
-      </DummyCard>
+
+      {offered ? (
+        offered.length == 0 ? (
+          <Paragraph margin={{ top: "40px", bottom: "40px" }}>
+            There are no results matching your search criteria. Please amend
+            your criteria and try again
+          </Paragraph>
+        ) : (
+          offered.map((selectedFirm, i) => {
+            return (
+              <DummyCard key={i}>
+                <Row style={{ marginBottom: "20px" }}>
+                  <Col sizes={{ xs: 12 }}>
+                    <CompanyName>{selectedFirm.company}</CompanyName>
+                  </Col>
+                  <Col sizes={{ xs: 12, md: 4 }}>
+                    <SubHead> {t("firms.getInTouch")}</SubHead>
+                    <CommsInfo>
+                      {ReactHtmlParser(t("firms.phoneImg"))} &#160;
+                      <Comms>{selectedFirm.online.phone}</Comms>
+                    </CommsInfo>
+                    <CommsInfo>
+                      {ReactHtmlParser(t("firms.webImg"))} &#160;{" "}
+                      <Comms>
+                        <Anchor
+                          href={selectedFirm.online.website}
+                          target="_blank"
+                        >
+                          Website
+                        </Anchor>
+                      </Comms>
+                    </CommsInfo>
+                    <CommsInfo>
+                      {ReactHtmlParser(t("firms.emailImg"))} &#160;{" "}
+                      <Comms>Email</Comms>
+                    </CommsInfo>
+                  </Col>
+                  <Col sizes={{ xs: 12, md: 8 }}>
+                    <SubHead>{t("firms.moreInfo")}</SubHead>
+                    <section>{ReactHtmlParser(t("firms.more"))}</section>
+                  </Col>
+                </Row>
+              </DummyCard>
+            );
+          })
+        )
+      ) : (
+        "Loading"
+      )}
 
       <Pagination currentLng={i18n.language} currentPage={1} totalPages={20} />
     </div>
