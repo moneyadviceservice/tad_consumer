@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import {
   Heading,
   Radio,
@@ -155,76 +155,82 @@ const Filters = ({ t }) => {
     changeAge({});
   };
 
+  // const handleSubmit = () => {
+  //   evt.preventDefault();
+  //   console.log("submit");
+  // };
+
   return (
-    <Form style={{ marginBottom: "40px" }}>
-      <Heading
-        level={3}
-        style={{
-          marginTop: 0,
-          marginBottom: 0,
-          background: "#edf0f0",
-          borderTopLeftRadius: "5px",
-          borderTopRightRadius: "5px",
-          padding: "12px 18px",
-          display: "flex",
-          flexDirection: "row",
-          flexWrap: "wrap",
-          justifyContent: "space-between",
-        }}
-      >
-        <span>{t("headings.filter")}</span>
-        {process.browser ? (
-          <span
-            style={{ fontSize: "11px", color: "#003D8E", cursor: "pointer" }}
-            onClick={(e) => clearFilters(e)}
-          >
-            {t("headings.clear")}
-          </span>
-        ) : (
-          <a
-            href="/listings"
-            name=""
-            style={{
-              fontSize: "11px",
-              color: "#003D8E",
-              cursor: "pointer",
-              textDecoration: "none",
-            }}
-          >
-            {t("headings.clear")}
-          </a>
-        )}
-      </Heading>
-      <FormDiv>
-        <FilterFormFIeld>
-          <Legend>
-            {t("headings.age_at_time_of_travel")}
-            <Tooltip hover text="To be supplied" />
-          </Legend>
-          <Select name="age" value={age.age} onChange={(e) => handleAge(e)}>
-            <option value="">{t("headings.age_at_time_of_travel")}</option>
-            {ageRange()}
-          </Select>
-        </FilterFormFIeld>
-        <FilterFormFIeld>
-          <Legend>
-            {t("headings.filter_by_trip_type")}
-            <Tooltip minWidth="300px" hover text={insuranceTypeTip} />
-          </Legend>
-          {t("filters.trip_type", { returnObjects: true }).map(
-            ({ type, value }, i) => (
-              <Radio
-                key={i}
-                checked={trip_type.trip_type === value}
-                onChange={(e) => handleInsuranceType(e)}
-                label={type}
-                name="trip_type"
-                value={value}
-              />
-            )
+    <Fragment>
+      <Form style={{ marginBottom: "40px" }} action="/listings" method="post">
+        <Heading
+          level={3}
+          style={{
+            marginTop: 0,
+            marginBottom: 0,
+            background: "#edf0f0",
+            borderTopLeftRadius: "5px",
+            borderTopRightRadius: "5px",
+            padding: "12px 18px",
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "wrap",
+            justifyContent: "space-between",
+          }}
+        >
+          <span>{t("headings.filter")}</span>
+          {process.browser ? (
+            <span
+              style={{ fontSize: "11px", color: "#003D8E", cursor: "pointer" }}
+              onClick={(e) => clearFilters(e)}
+            >
+              {t("headings.clear")}
+            </span>
+          ) : (
+            <a
+              href="/listings"
+              name=""
+              style={{
+                fontSize: "11px",
+                color: "#003D8E",
+                cursor: "pointer",
+                textDecoration: "none",
+              }}
+            >
+              {t("headings.clear")}
+            </a>
           )}
-        </FilterFormFIeld>
-        {/* <FilterFormFIeld>
+        </Heading>
+        <FormDiv>
+          <FilterFormFIeld>
+            <Legend>
+              {t("headings.age_at_time_of_travel")}
+              <Tooltip hover text="To be supplied" />
+            </Legend>
+            <Select name="age" value={age.age} onChange={(e) => handleAge(e)}>
+              <option value="">{t("headings.age_at_time_of_travel")}</option>
+              {ageRange()}
+            </Select>
+          </FilterFormFIeld>
+          <FilterFormFIeld>
+            <Legend>
+              {t("headings.filter_by_trip_type")}
+              <Tooltip minWidth="300px" hover text={insuranceTypeTip} />
+            </Legend>
+            {t("filters.trip_type", { returnObjects: true }).map(
+              ({ type, value }, i) => (
+                <Radio
+                  key={i}
+                  checked={trip_type.trip_type === value}
+                  onChange={(e) => handleInsuranceType(e)}
+                  label={type}
+                  name="trip_type"
+                  value={value}
+                />
+              )
+            )}
+          </FilterFormFIeld>
+          {/* <FilterFormFIeld>
           <Legend>
             {t("headings.filter_by_length_of_trip")}
             <Tooltip hover text="To be supplied" />
@@ -242,25 +248,25 @@ const Filters = ({ t }) => {
             )
           )}
         </FilterFormFIeld> */}
-        <FilterFormFIeld>
-          <Legend>
-            {t("headings.cover_area")}
-            <Tooltip hover text="To be supplied" />
-          </Legend>
-          {t("filters.cover_area", { returnObjects: true }).map(
-            ({ location, value }, i) => (
-              <Radio
-                key={i}
-                checked={cover_area.cover_area === value}
-                onChange={(e) => handleDestination(e)}
-                label={location}
-                name="cover_area"
-                value={value}
-              />
-            )
-          )}
-        </FilterFormFIeld>
-        {/* <FilterFormFIeld>
+          <FilterFormFIeld>
+            <Legend>
+              {t("headings.cover_area")}
+              <Tooltip hover text="To be supplied" />
+            </Legend>
+            {t("filters.cover_area", { returnObjects: true }).map(
+              ({ location, value }, i) => (
+                <Radio
+                  key={i}
+                  checked={cover_area.cover_area === value}
+                  onChange={(e) => handleDestination(e)}
+                  label={location}
+                  name="cover_area"
+                  value={value}
+                />
+              )
+            )}
+          </FilterFormFIeld>
+          {/* <FilterFormFIeld>
           <Legend>
             {t("headings.is_your_trip_a_cruise")}?
             <Tooltip hover text="To be supplied" />
@@ -278,35 +284,36 @@ const Filters = ({ t }) => {
             )
           )}
         </FilterFormFIeld> */}
-        <FilterFormFIeld>
-          <Legend>
-            {t("headings.how_far_in_advance_trip_cover")}?
-            <Tooltip hover text="To be supplied" />
-          </Legend>
-          {t("filters.how_far_in_advance_trip_cover", {
-            returnObjects: true,
-          }).map(({ length, value }, i) => (
-            <Radio
-              key={i}
-              checked={
-                how_far_in_advance_trip_cover.how_far_in_advance_trip_cover ===
-                value
-              }
-              onChange={(e) => handleWhen(e)}
-              label={length}
-              name="length"
-              value={value}
-            />
-          ))}
-        </FilterFormFIeld>
-        <FilterFormFIeld>
-          <Legend>
-            {t("headings.cover_undergoing_treatment")}
-            <Tooltip hover text="To be supplied" />
-          </Legend>
+          <FilterFormFIeld>
+            <Legend>
+              {t("headings.how_far_in_advance_trip_cover")}?
+              <Tooltip hover text="To be supplied" />
+            </Legend>
+            {t("filters.how_far_in_advance_trip_cover", {
+              returnObjects: true,
+            }).map(({ length, value }, i) => (
+              <Radio
+                key={i}
+                checked={
+                  how_far_in_advance_trip_cover.how_far_in_advance_trip_cover ===
+                  value
+                }
+                onChange={(e) => handleWhen(e)}
+                label={length}
+                name="length"
+                value={value}
+              />
+            ))}
+          </FilterFormFIeld>
+          <FilterFormFIeld>
+            <Legend>
+              {t("headings.cover_undergoing_treatment")}
+              <Tooltip hover text="To be supplied" />
+            </Legend>
 
-          {t("filters.cover_undergoing_treatment", { returnObjects: true }).map(
-            ({ response, value }, i) => (
+            {t("filters.cover_undergoing_treatment", {
+              returnObjects: true,
+            }).map(({ response, value }, i) => (
               <Radio
                 key={i}
                 checked={
@@ -318,30 +325,29 @@ const Filters = ({ t }) => {
                 name="cover_undergoing_treatment"
                 value={value}
               />
-            )
-          )}
-        </FilterFormFIeld>
-        <FilterFormFIeld>
-          <Legend>
-            {t("headings.terminal_prognosis_cover")}
-            <Tooltip hover text="To be supplied" />
-          </Legend>
-          {t("filters.terminal_prognosis_cover", { returnObjects: true }).map(
-            ({ response, value }, i) => (
-              <Radio
-                key={i}
-                checked={
-                  terminal_prognosis_cover.terminal_prognosis_cover === value
-                }
-                onChange={(e) => handleTerminal(e)}
-                label={response}
-                name="terminal_prognosis_cover"
-                value={value}
-              />
-            )
-          )}
-        </FilterFormFIeld>
-        {/* <FilterFormFIeld>
+            ))}
+          </FilterFormFIeld>
+          <FilterFormFIeld>
+            <Legend>
+              {t("headings.terminal_prognosis_cover")}
+              <Tooltip hover text="To be supplied" />
+            </Legend>
+            {t("filters.terminal_prognosis_cover", { returnObjects: true }).map(
+              ({ response, value }, i) => (
+                <Radio
+                  key={i}
+                  checked={
+                    terminal_prognosis_cover.terminal_prognosis_cover === value
+                  }
+                  onChange={(e) => handleTerminal(e)}
+                  label={response}
+                  name="terminal_prognosis_cover"
+                  value={value}
+                />
+              )
+            )}
+          </FilterFormFIeld>
+          {/* <FilterFormFIeld>
           <Legend>
             {t("headings.cover_for_specialist_equipment")}?
             <Tooltip hover text="To be supplied" />
@@ -363,9 +369,20 @@ const Filters = ({ t }) => {
             />
           ))}
         </FilterFormFIeld> */}
-        {process.browser ? "" : <Button primary>{t("headings.submit")}</Button>}
-      </FormDiv>
-    </Form>
+          {process.browser ? (
+            ""
+          ) : (
+            <Button primary type="submit">
+              {t("headings.submit")}
+            </Button>
+          )}
+        </FormDiv>
+      </Form>
+      <form action="/api/process" method="POST">
+        <input name="test2" type="text" />
+        <button type="submit">Submit</button>
+      </form>
+    </Fragment>
   );
 };
 

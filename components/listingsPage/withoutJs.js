@@ -15,7 +15,7 @@ import { DummyCard, CompanyName, SubHead, CommsInfo, Comms } from "./dummy";
 import Loading from "./loading";
 const WithoutJs = ({ t }) => {
   const firms = useSelector((state) => state.data.firms.hits);
-  console.log("server", firms);
+  // console.log("server", firms);
 
   return (
     <div>
