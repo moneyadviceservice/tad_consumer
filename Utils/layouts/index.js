@@ -57,7 +57,7 @@ const BreadAnchor = styled(Anchor)`
     content: " \\00203A  ";
     text-decoration: none;
   }
-
+  &:hover,
   &:focus {
     outline: none;
     background-color: #e8b940;
