@@ -49,6 +49,11 @@ const ListItem = styled.li`
 const QuestionButton = styled(Button)`
   width: 100%;
   text-align: center;
+  &:hover,
+  &:focus {
+    outline: solid;
+    outline-color: #dbae1f;
+  }
   ${resolveMedia.md`
     width: auto;
 `};

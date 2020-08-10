@@ -79,13 +79,11 @@ const Homepage = ({ t }) => {
               )}
             </UnorderedList>
 
-            <QuestionButton primary>
-              <InternalLink
-                href="/listings"
-                name={t("home.conditions.button")}
-                color="#515151"
-              />
-            </QuestionButton>
+            <InternalLink href="/listings">
+              <QuestionButton href="/listings" primary>
+                {t("home.conditions.button")}
+              </QuestionButton>
+            </InternalLink>
           </Col>
           <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
             <AboutBox style={{ marginTop: "50px" }}>

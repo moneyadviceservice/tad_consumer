@@ -3,6 +3,7 @@ import {
   Anchor,
   Col,
   Row,
+  Button,
 } from "@moneypensionservice/directories";
 import styled from "styled-components";
 import { useRouter } from "next/router";
@@ -40,41 +41,11 @@ const BreadcrumbSection = styled(ExtendedSection)`
     padding-bottom: 15px
 `};
 `;
-const InternalAnchor = styled.a`
-  font-size: 16px;
-  color: ${(props) => (props.color ? props.color : "#003d8e")};
 
-  font-size: 16px;
-  &:visited {
-    color: ${(props) => (props.color ? props.color : "#003d8e")};
-  }
-  &:hover,
-  &:focus {
-    color: ${(props) => (props.color ? props.color : "#003d8e")};
-    text-decoration: underline;
-  }
-  &:hover {
-    outline: none;
-    cursor: pointer;
-  }
-  &:focus {
-    outline: solid 0.1875rem #daaf2d;
-    background-color: #e8b940;
-    color: #000000;
-  }
-  &:link {
-    text-decoration: none;
-    background: none;
-    border: none;
-  }
-  &[href^="tel"] {
-    color: inherit;
-    letter-spacing: -1px;
-    text-decoration: none;
-  }
-`;
+const BreadAnchor = styled(Anchor)`
+  text-decoration: none;
+  border: none;
 
-const BreadAnchor = styled(InternalAnchor)`
   &:after {
     font-size: 32px;
     line-height: 0;
@@ -85,15 +56,22 @@ const BreadAnchor = styled(InternalAnchor)`
     content: " \\00203A  ";
     text-decoration: none;
   }
+
   &:focus {
     outline: none;
+    background-color: #e8b940;
     color: #003d8e;
+  }
+  &:link {
+    text-decoration: none;
+    background: none;
+    border: none;
   }
 `;
 
-const InternalLink = ({ href, name, color }) => (
+const InternalLink = ({ children, href }) => (
   <Link href={href} passHref>
-    <InternalAnchor color={color}>{name}</InternalAnchor>
+    {children}
   </Link>
 );
 const BreadLink = ({ href, name }) => (
