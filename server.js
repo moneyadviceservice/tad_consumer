@@ -12,42 +12,31 @@ const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
-// app.prepare().then(() => {
-//   const server = express();
-//   server.use(nextI18NextMiddleware(nextI18next));
-//   server.use(bodyParser.urlencoded({ extended: true }));
-//   server.use(bodyParser.json());
-
-//   server.post("/listings", (req, res) => {
-//     console.log("post akin");
-//     return app.render(req, res, "/listings", req.query);
-//   });
-
-//   server.get("*", (req, res) => {
-//     console.log(req.body);
-
-//     return handle(req, res);
-//   });
-
-//   server.listen(port, (err) => {
-//     if (err) throw err;
-//     console.log(`> Ready on http://localhost:${port}`);
-//   });
-// });
-
 (async () => {
   await app.prepare();
   const server = express();
 
-  server.use(nextI18NextMiddleware(nextI18next));
-  // server.use(bodyParser.urlencoded({ extended: true }));
-  // server.use(bodyParser.json());
+  // server.use(nextI18NextMiddleware(nextI18next));
+  server.use(bodyParser.urlencoded({ extended: true }));
+  server.use(bodyParser.json());
 
-  server.all("*", (req, res) => handle(req, res));
+  server.post("/listings", (req, res) => {
+    let query = req.body;
 
-  server.post("/listings", (req, res, next) => {
-    console.log("akin");
-    return app.render(req, res, "/listings", req.query);
+    const queryString = () => {
+      var out = [];
+      for (var key in query) {
+        if (query.hasOwnProperty(key)) {
+          out.push(key + "=" + encodeURIComponent(query[key]));
+        }
+      }
+      return out.join("&");
+    };
+    res.redirect("/en/listings?" + queryString());
+  });
+
+  server.all("*", nextI18NextMiddleware(nextI18next), (req, res) => {
+    return handle(req, res);
   });
 
   await server.listen(port);

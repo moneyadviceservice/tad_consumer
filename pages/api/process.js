@@ -6,7 +6,7 @@ export const config = {
 
 const Process = (req, res) => {
   if (req.method === "POST") {
-    console.log(req.body);
+    console.log(akin);
   }
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json");

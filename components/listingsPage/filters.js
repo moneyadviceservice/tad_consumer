@@ -66,7 +66,7 @@ const ageRange = () => {
   return arr;
 };
 
-const Filters = ({ t }) => {
+const Filters = ({ t, query }) => {
   const [age, changeAge] = useState({});
   const [trip_type, changeInsuranceType] = useState({});
   const [tripLength, changeTripLength] = useState({});
@@ -90,9 +90,8 @@ const Filters = ({ t }) => {
     terminal_prognosis_cover,
     cover_for_specialist_equipment,
   ];
+  console.log(query);
 
-  const offerings = useSelector((state) => state.data.offerings.hits);
-  // console.log(offerings);
   useEffect(() => {
     console.log(filtersValues);
     dispatch(filterOfferings(filtersValues));
@@ -154,11 +153,6 @@ const Filters = ({ t }) => {
     changeEquipment({});
     changeAge({});
   };
-
-  // const handleSubmit = () => {
-  //   evt.preventDefault();
-  //   console.log("submit");
-  // };
 
   return (
     <Fragment>
@@ -378,10 +372,6 @@ const Filters = ({ t }) => {
           )}
         </FormDiv>
       </Form>
-      <form action="/api/process" method="POST">
-        <input name="test2" type="text" />
-        <button type="submit">Submit</button>
-      </form>
     </Fragment>
   );
 };

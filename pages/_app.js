@@ -16,7 +16,7 @@ class MyApp extends App {
   static async getInitialProps({ Component, ctx, reduxStore, req }) {
     let pageProps = {};
     let alternateLang = "";
-
+    // console.log(ctx);
     if (!process.browser) {
       alternateLang = ctx.req.language === "en" ? "cy" : "en";
     }
@@ -58,7 +58,7 @@ class MyApp extends App {
             style={{ paddingRight: "0", paddingLeft: "0" }}
             fluid
           >
-            <Component {...pageProps} />
+            <Component {...pageProps} path={path} />
           </Container>
           <Footer />
         </ThemeProvider>

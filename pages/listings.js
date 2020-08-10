@@ -19,7 +19,7 @@ const ListingSection = styled(Section)`
 `};
 `;
 
-const Listings = ({ t }) => {
+const Listings = ({ t, query }) => {
   return (
     <Fragment>
       <Section constrained data-testid="contentRow">
@@ -32,19 +32,23 @@ const Listings = ({ t }) => {
 
       <ExtendedSection align="stretch" style={{ paddingTop: 0 }}>
         <ListingSection constrained data-testid="contentRow">
-          <Listing t={t} />
+          <Listing t={t} query={query} />
         </ListingSection>
       </ExtendedSection>
     </Fragment>
   );
 };
 
-Listings.getInitialProps = async ({ reduxStore }) => {
+Listings.getInitialProps = async ({ reduxStore, pathname, query }) => {
   await reduxStore.dispatch(getAlgoFirms());
   await reduxStore.dispatch(getAlgoOfferings());
+  let queryArray = [];
+  queryArray.push(query);
 
   return {
     namespacesRequired: ["listings", "common", "footer"],
+    path: pathname,
+    query: queryArray,
   };
 };
 
