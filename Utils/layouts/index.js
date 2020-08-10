@@ -45,6 +45,7 @@ const BreadcrumbSection = styled(ExtendedSection)`
 const BreadAnchor = styled(Anchor)`
   text-decoration: none;
   border: none;
+  font-size: 16px;
 
   &:after {
     font-size: 32px;
