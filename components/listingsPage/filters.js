@@ -90,12 +90,33 @@ const Filters = ({ t, query }) => {
     terminal_prognosis_cover,
     cover_for_specialist_equipment,
   ];
-  console.log(query);
+
+  let sortedFilters = [];
+
+  for (const property in query) {
+    let bucket = {};
+    bucket[`${property}`] = `${query[property]}`;
+    sortedFilters.push(bucket);
+  }
 
   useEffect(() => {
     console.log(filtersValues);
     dispatch(filterOfferings(filtersValues));
-  }, [filtersValues]);
+  }, [
+    age,
+    trip_type,
+    tripLength,
+    cover_area,
+    cruise,
+    how_far_in_advance_trip_cover,
+    cover_undergoing_treatment,
+    terminal_prognosis_cover,
+    cover_for_specialist_equipment,
+  ]);
+
+  if (!process.browser) {
+    dispatch(filterOfferings(sortedFilters));
+  }
 
   const handleAge = (e) => {
     let age = e.target.value;
@@ -196,7 +217,7 @@ const Filters = ({ t, query }) => {
           )}
         </Heading>
         <FormDiv>
-          <FilterFormFIeld>
+          {/* <FilterFormFIeld>
             <Legend>
               {t("headings.age_at_time_of_travel")}
               <Tooltip hover text="To be supplied" />
@@ -205,7 +226,7 @@ const Filters = ({ t, query }) => {
               <option value="">{t("headings.age_at_time_of_travel")}</option>
               {ageRange()}
             </Select>
-          </FilterFormFIeld>
+          </FilterFormFIeld> */}
           <FilterFormFIeld>
             <Legend>
               {t("headings.filter_by_trip_type")}

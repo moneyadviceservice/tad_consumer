@@ -42,13 +42,13 @@ const Listings = ({ t, query }) => {
 Listings.getInitialProps = async ({ reduxStore, pathname, query }) => {
   await reduxStore.dispatch(getAlgoFirms());
   await reduxStore.dispatch(getAlgoOfferings());
-  let queryArray = [];
-  queryArray.push(query);
+  // let queryArray = [];
+  // queryArray.push(query);
 
   return {
     namespacesRequired: ["listings", "common", "footer"],
     path: pathname,
-    query: queryArray,
+    query: query,
   };
 };
 

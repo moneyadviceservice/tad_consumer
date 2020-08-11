@@ -15,6 +15,7 @@ import { DummyCard, CompanyName, SubHead, CommsInfo, Comms } from "./dummy";
 import Loading from "./loading";
 const WithJs = ({ t }) => {
   const offered = useSelector((state) => state.data.offered);
+  console.log(offered);
   return (
     <div>
       <Paragraph
