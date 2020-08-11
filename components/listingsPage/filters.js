@@ -130,15 +130,6 @@ const Filters = ({ t }) => {
     changeAge({ age: "" });
   };
 
-  console.log(insuranceType);
-  console.log(tripLength);
-  console.log(destination);
-  console.log(cruise);
-  console.log(when);
-  console.log(treatment);
-  console.log(terminal);
-  console.log(equipment);
-
   return (
     <Form style={{ marginBottom: "40px", color: "#515151" }}>
       <Heading
