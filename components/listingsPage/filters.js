@@ -140,7 +140,7 @@ const Filters = ({ t }) => {
   console.log(equipment);
 
   return (
-    <Form style={{ marginBottom: "40px" }}>
+    <Form style={{ marginBottom: "40px", color: "#515151" }}>
       <Heading
         level={3}
         style={{
