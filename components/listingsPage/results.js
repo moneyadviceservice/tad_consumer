@@ -6,6 +6,7 @@ import {
 } from "@moneypensionservice/directories";
 import styled from "styled-components";
 import { i18n } from "../../Utils/translation/i18n";
+import { useSelector } from "react-redux";
 
 import ReactHtmlParser from "react-html-parser";
 
@@ -42,6 +43,8 @@ const Comms = styled.span`
 `;
 
 const Results = ({ t }) => {
+  const firms = useSelector((state) => state.listings.firms.hits);
+  console.log(firms);
   return (
     <div>
       <Paragraph

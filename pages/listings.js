@@ -6,6 +6,11 @@ import styled from "styled-components";
 import { Col, Heading, resolveMedia } from "@moneypensionservice/directories";
 import { Section, ExtendedSection } from "../Utils/layouts";
 
+import {
+  getAlgoFirms,
+  getAlgoOfferings,
+} from "../components/listingsPage/redux/actions";
+
 import Listing from "../components/listingsPage";
 
 const ListingSection = styled(Section)`
@@ -35,9 +40,14 @@ const Listings = ({ t }) => {
   );
 };
 
-Listings.getInitialProps = async () => ({
-  namespacesRequired: ["listings", "common", "footer"],
-});
+Listings.getInitialProps = async ({ reduxStore }) => {
+  await reduxStore.dispatch(getAlgoFirms());
+  await reduxStore.dispatch(getAlgoOfferings());
+
+  return {
+    namespacesRequired: ["listings", "common", "footer"],
+  };
+};
 
 Listings.propTypes = {
   t: PropTypes.func.isRequired,

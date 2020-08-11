@@ -7,10 +7,10 @@ import {
   resolveMedia,
   Form,
   Tooltip,
-  Anchor,
 } from "@moneypensionservice/directories";
-import { InternalLink } from "../../Utils/layouts";
+
 import styled from "styled-components";
+import { useSelector } from "react-redux";
 
 const FilterFormFIeld = styled(Formfield)`
   margin-top: 20px;
@@ -72,6 +72,8 @@ const Filters = ({ t }) => {
   const [treatment, changeTreatment] = useState({});
   const [terminal, changeTerminal] = useState({});
   const [equipment, changeEquipment] = useState({});
+  const offerings = useSelector((state) => state.listings.offerings.hits);
+  console.log(offerings);
 
   const handleAge = (e) => {
     let age = e.target.value;
