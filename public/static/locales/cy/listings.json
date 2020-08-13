@@ -7,7 +7,7 @@
     ],
     "trip_type": [
       { "type": "Trip Sengl", "value": "Single Trip" },
-      { "type": "Aml-Daith Flynyddol", "value": "Annual Multi-Trip" }
+      { "type": "Aml-Daith Flynyddol", "value": "Annual Multi-trip" }
     ],
     "tripLength": [
       { "length": "Dan 35 diwrnod", "value": "Under 35 Days" },
@@ -16,14 +16,14 @@
       { "length": "Dros 6 mis", "value": "Over 6 months" }
     ],
     "cover_area": [
-      { "location": "DU ac Ewrop", "value": "UK &amp; Europe" },
+      { "location": "DU ac Ewrop", "value": "United Kingdom & Europe" },
       {
         "location": "Ledled y byd ac eithrio UDA, Canada, Caribïaidd",
-        "value": "Worldwide excluding USA, Canada, Carribeean"
+        "value": "Worldwide excluding USA, Canada & Caribbean"
       },
       {
         "location": "Ledled y byd gan gynnwys UDA, Canada, Caribïaidd",
-        "value": "Worldwide including USA, Canada, Carribeean"
+        "value": "Worldwide including USA, Canada & Caribbean"
       }
     ],
     "cruise": [
@@ -31,11 +31,11 @@
       { "response": "Na", "value": "No" }
     ],
     "how_far_in_advance_trip_cover": [
-      { "length": "O fewn 1 mis", "value": "Within 1 month" },
-      { "length": "Rhwng 1 - 6 mis", "value": "Between 1 - 6 months" },
-      { "length": "Rhwng 6 - 12 mis", "value": "Between 6 - 12 months" },
-      { "length": "Rhwng 12 - 18 mis", "value": "Between 12 - 18 months" },
-      { "length": "Rhwng 18 - 24 mis", "value": "Between 18 - 24 months" }
+      { "length": "O fewn 1 mis", "value": "Up to 1 month" },
+      { "length": "Rhwng 1 - 6 mis", "value": "Up to 6 months" },
+      { "length": "Rhwng 6 - 12 mis", "value": "Up to 12 months" },
+      { "length": "Rhwng 12 - 18 mis", "value": "Up to 18 months" },
+      { "length": "Rhwng 18 - 24 mis", "value": "Up to 24 months" }
     ],
     "will_cover_undergoing_treatment": [
       { "response": "Ydw", "value": "Yes" },

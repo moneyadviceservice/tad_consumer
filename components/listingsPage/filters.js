@@ -10,7 +10,8 @@ import {
 } from "@moneypensionservice/directories";
 
 import styled from "styled-components";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { filterOfferings } from "./redux/actions";
 
 const FilterFormFIeld = styled(Formfield)`
   margin-top: 20px;
@@ -81,22 +82,45 @@ const Filters = ({ t }) => {
   const [land_45_days_max_age, changeLandMax45] = useState({});
   const [land_55_days_max_age, changeLandMax55] = useState({});
 
+  const filtersValues = [
+    trip_type,
+    cover_area,
+    how_far_in_advance_trip_cover,
+    will_cover_undergoing_treatment,
+    will_cover_terminal_prognosis,
+    will_cover_specialist_equipment,
+    cruise_30_days_max_age,
+    cruise_45_days_max_age,
+    cruise_55_days_max_age,
+    land_30_days_max_age,
+    land_45_days_max_age,
+    land_55_days_max_age,
+  ];
+
+  const dispatch = useDispatch();
+
+  console.log(filtersValues);
+
   const offerings = useSelector((state) => state.listings.offerings.hits);
 
   // processed the age into variant of cruise and land as required by algolia keys
   useEffect(() => {
     let processedAge = age.age;
-
-    changeCruise30Max({ cruise_30_days_max_age: processedAge });
-    changeCruise45Max({ cruise_45_days_max_age: processedAge });
-    changeCruise55Max({ cruise_55_days_max_age: processedAge });
-    changeLandMax30({ land_30_days_max_age: processedAge });
-    changeLandMax45({ land_45_days_max_age: processedAge });
-    changeLandMax55({ land_55_days_max_age: processedAge });
+    if (processedAge) {
+      changeCruise30Max({ cruise_30_days_max_age: processedAge });
+      changeCruise45Max({ cruise_45_days_max_age: processedAge });
+      changeCruise55Max({ cruise_55_days_max_age: processedAge });
+      changeLandMax30({ land_30_days_max_age: processedAge });
+      changeLandMax45({ land_45_days_max_age: processedAge });
+      changeLandMax55({ land_55_days_max_age: processedAge });
+    }
   }, [age]);
 
+  useEffect(() => {
+    dispatch(filterOfferings(filtersValues));
+  }, [filtersValues]);
+
   console.log(offerings);
-  console.log(land_55_days_max_age);
 
   const handleAge = (e) => {
     let age = e.target.value;
@@ -152,6 +176,12 @@ const Filters = ({ t }) => {
     changeTreatment({});
     changeTerminal({});
     changeEquipment({});
+    changeCruise30Max({});
+    changeCruise45Max({});
+    changeCruise55Max({});
+    changeLandMax30({});
+    changeLandMax45({});
+    changeLandMax55({});
     changeAge({ age: "" });
   };
 

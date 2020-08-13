@@ -44,7 +44,9 @@ const Comms = styled.span`
 
 const Results = ({ t }) => {
   const firms = useSelector((state) => state.listings.firms.hits);
+  const offered = useSelector((state) => state.listings.offered);
   console.log(firms);
+  console.log(offered);
   return (
     <div>
       <Paragraph

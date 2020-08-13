@@ -1,4 +1,8 @@
-import { GET_FIRMS_SUCCESS, GET_OFFERINGS_SUCCESS } from "./constants";
+import {
+  GET_FIRMS_SUCCESS,
+  GET_OFFERINGS_SUCCESS,
+  FILTER_OFFERING,
+} from "./constants";
 
 let initialState = {
   firms: [],
@@ -23,6 +27,12 @@ const ListingsReducer = (state = initialState, action) => {
       return {
         ...state,
         offerings: action.payload,
+      };
+      break;
+    case FILTER_OFFERING:
+      return {
+        ...state,
+        offered: action.payload,
       };
       break;
 
