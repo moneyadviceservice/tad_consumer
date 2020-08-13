@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Heading,
   Radio,
@@ -72,14 +72,29 @@ const Filters = ({ t }) => {
   const [will_cover_undergoing_treatment, changeTreatment] = useState({});
   const [will_cover_terminal_prognosis, changeTerminal] = useState({});
   const [will_cover_specialist_equipment, changeEquipment] = useState({});
+
+  const [cruise_30_days_max_age, changeCruise30Max] = useState({});
+  const [cruise_45_days_max_age, changeCruise45Max] = useState({});
+  const [cruise_55_days_max_age, changeCruise55Max] = useState({});
+
+  const [land_30_days_max_age, changeLandMax30] = useState({});
+  const [land_45_days_max_age, changeLandMax45] = useState({});
+  const [land_55_days_max_age, changeLandMax55] = useState({});
+
   const offerings = useSelector((state) => state.listings.offerings.hits);
-  // console.log(age);
-  // console.log(trip_type);
-  // console.log(cover_area);
-  // console.log(how_far_in_advance_trip_cover);
-  // console.log(will_cover_undergoing_treatment);
-  // console.log(will_cover_terminal_prognosis);
-  // console.log(will_cover_specialist_equipment);
+
+  // processed the age into variant of cruise and land as required by algolia keys
+  useEffect(() => {
+    let processedAge = age.age;
+
+    changeCruise30Max({ cruise_30_days_max_age: processedAge });
+    changeCruise45Max({ cruise_45_days_max_age: processedAge });
+    changeCruise55Max({ cruise_55_days_max_age: processedAge });
+    changeLandMax30({ land_30_days_max_age: processedAge });
+    changeLandMax45({ land_45_days_max_age: processedAge });
+    changeLandMax55({ land_55_days_max_age: processedAge });
+  }, [age]);
+
   console.log(offerings);
 
   const handleAge = (e) => {
