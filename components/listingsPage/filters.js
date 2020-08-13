@@ -96,6 +96,7 @@ const Filters = ({ t }) => {
   }, [age]);
 
   console.log(offerings);
+  console.log(land_55_days_max_age);
 
   const handleAge = (e) => {
     let age = e.target.value;
