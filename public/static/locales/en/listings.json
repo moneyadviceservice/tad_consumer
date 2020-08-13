@@ -5,7 +5,7 @@
       { "range": "Between 18 - 80 years", "value": "Between 18 and 80 years" },
       { "range": "Over 80 years", "value": "Over 80 years" }
     ],
-    "insuranceType": [
+    "trip_type": [
       { "type": "Single Trip", "value": "Single Trip" },
       { "type": "Annual Multi-Trip", "value": "Annual Multi-Trip" }
     ],
@@ -15,7 +15,7 @@
       { "length": "Under 55 Days", "value": "Under 55 Days" },
       { "length": "Over 6 months", "value": "Over 6 months" }
     ],
-    "destination": [
+    "cover_area": [
       { "location": "UK & Europe", "value": "UK &amp; Europe" },
       {
         "location": "Worldwide excluding USA, Canada, Carribeean",
@@ -30,23 +30,23 @@
       { "response": "Yes", "value": "Yes" },
       { "response": "No", "value": "No" }
     ],
-    "when": [
+    "how_far_in_advance_trip_cover": [
       { "length": "Within 1 month", "value": "Within 1 month" },
       { "length": "Between 1 - 6 months", "value": "Between 1 - 6 months" },
       { "length": "Between 6 - 12 months", "value": "Between 6 - 12 months" },
       { "length": "Between 12 - 18 months", "value": "Between 12 - 18 months" },
       { "length": "Between 18 - 24 months", "value": "Between 18 - 24 months" }
     ],
-    "treatment": [
+    "will_cover_undergoing_treatment": [
       { "response": "Yes", "value": "Yes" },
       { "response": "No", "value": "No" }
     ],
 
-    "terminal": [
+    "will_cover_terminal_prognosis": [
       { "response": "Yes", "value": "Yes" },
       { "response": "No", "value": "No" }
     ],
-    "equipment": [
+    "will_cover_specialist_equipment": [
       { "response": "Yes", "value": "Yes" },
       { "response": "No", "value": "No" }
     ]
