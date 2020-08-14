@@ -107,12 +107,12 @@ const Filters = ({ t }) => {
   useEffect(() => {
     let processedAge = age.age;
     if (processedAge) {
-      changeCruise30Max({ cruise_30_days_max_age: processedAge });
-      changeCruise45Max({ cruise_45_days_max_age: processedAge });
-      changeCruise55Max({ cruise_55_days_max_age: processedAge });
-      changeLandMax30({ land_30_days_max_age: processedAge });
-      changeLandMax45({ land_45_days_max_age: processedAge });
-      changeLandMax55({ land_55_days_max_age: processedAge });
+      changeCruise30Max({ cruise_30_days_max_age: parseInt(processedAge) });
+      changeCruise45Max({ cruise_45_days_max_age: parseInt(processedAge) });
+      changeCruise55Max({ cruise_55_days_max_age: parseInt(processedAge) });
+      changeLandMax30({ land_30_days_max_age: parseInt(processedAge) });
+      changeLandMax45({ land_45_days_max_age: parseInt(processedAge) });
+      changeLandMax55({ land_55_days_max_age: parseInt(processedAge) });
     }
   }, [age]);
 
@@ -121,6 +121,7 @@ const Filters = ({ t }) => {
   }, [filtersValues]);
 
   console.log(offerings);
+  console.log(cruise_30_days_max_age);
 
   const handleAge = (e) => {
     let age = e.target.value;
