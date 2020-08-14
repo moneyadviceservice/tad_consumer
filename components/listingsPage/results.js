@@ -3,49 +3,18 @@ import {
   Col,
   Row,
   Pagination,
+  Anchor,
 } from "@moneypensionservice/directories";
-import styled from "styled-components";
+
 import { i18n } from "../../Utils/translation/i18n";
 import { useSelector } from "react-redux";
 
 import ReactHtmlParser from "react-html-parser";
 
-const DummyCard = styled.div`
-  border: 1px solid #edf0f0;
-  min-height: 100px;
-  border-radius: 5px;
-  margin-top: 20px;
-  margin-bottom: 30px;
-  padding-top: 20px;
-  font-size: 16px;
-  box-shadow: 0 1px #a8b2ba;
-`;
-const CompanyName = styled.h2`
-  color: #003d8e;
-  border-bottom: 1px solid #edf0f0;
-`;
-
-const SubHead = styled.h5`
-  margin-top: 20px;
-`;
-
-const CommsInfo = styled.div`
-  border: 1px solid #edf0f0;
-  border-radius: 5px;
-  margin-top: 10px;
-  padding: 10px;
-  width: 90%;
-`;
-
-const Comms = styled.span`
-  vertical-align: super;
-  display: inline-block;
-`;
-
+import { DummyCard, CompanyName, SubHead, CommsInfo, Comms } from "./dummy";
+import Loading from "./loading";
 const Results = ({ t }) => {
-  const firms = useSelector((state) => state.listings.firms.hits);
   const offered = useSelector((state) => state.listings.offered);
-  console.log(firms);
   console.log(offered);
   return (
     <div>
@@ -62,129 +31,58 @@ const Results = ({ t }) => {
         {t("headings.showing")} 1 -10 {t("headings.of")} 1000{" "}
         {t("headings.firms")}
       </Paragraph>
-      <DummyCard>
-        <Row style={{ marginBottom: "20px" }}>
-          <Col sizes={{ xs: 12 }}>
-            <CompanyName>Travelocity</CompanyName>
-          </Col>
-          <Col sizes={{ xs: 12, md: 4 }}>
-            <SubHead> {t("firms.getInTouch")}</SubHead>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.phoneImg"))} &#160;
-              <Comms>0801 234 56789</Comms>
-            </CommsInfo>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.webImg"))} &#160; <Comms>Website</Comms>
-            </CommsInfo>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.emailImg"))} &#160; <Comms>Email</Comms>
-            </CommsInfo>
-          </Col>
-          <Col sizes={{ xs: 12, md: 8 }}>
-            <SubHead>{t("firms.moreInfo")}</SubHead>
-            <section>{ReactHtmlParser(t("firms.more"))}</section>
-          </Col>
-        </Row>
-      </DummyCard>
-      <DummyCard>
-        <Row style={{ marginBottom: "20px" }}>
-          <Col sizes={{ xs: 12 }}>
-            <CompanyName>Special Travels</CompanyName>
-          </Col>
-          <Col sizes={{ xs: 12, md: 4 }}>
-            <SubHead> {t("firms.getInTouch")}</SubHead>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.phoneImg"))} &#160;
-              <Comms>0801 234 56789</Comms>
-            </CommsInfo>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.webImg"))} &#160; <Comms>Website</Comms>
-            </CommsInfo>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.emailImg"))} &#160; <Comms>Email</Comms>
-            </CommsInfo>
-          </Col>
-          <Col sizes={{ xs: 12, md: 8 }}>
-            <SubHead>{t("firms.moreInfo")}</SubHead>
-            <section>{ReactHtmlParser(t("firms.more"))}</section>
-          </Col>
-        </Row>
-      </DummyCard>
-      <DummyCard>
-        <Row style={{ marginBottom: "20px" }}>
-          <Col sizes={{ xs: 12 }}>
-            <CompanyName>Holsurance</CompanyName>
-          </Col>
-          <Col sizes={{ xs: 12, md: 4 }}>
-            <SubHead> {t("firms.getInTouch")}</SubHead>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.phoneImg"))} &#160;
-              <Comms>0801 234 56789</Comms>
-            </CommsInfo>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.webImg"))} &#160; <Comms>Website</Comms>
-            </CommsInfo>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.emailImg"))} &#160; <Comms>Email</Comms>
-            </CommsInfo>
-          </Col>
-          <Col sizes={{ xs: 12, md: 8 }}>
-            <SubHead>{t("firms.moreInfo")}</SubHead>
-            <section>{ReactHtmlParser(t("firms.more"))}</section>
-          </Col>
-        </Row>
-      </DummyCard>
-      <DummyCard>
-        <Row style={{ marginBottom: "20px" }}>
-          <Col sizes={{ xs: 12 }}>
-            <CompanyName>Olive Travels</CompanyName>
-          </Col>
-          <Col sizes={{ xs: 12, md: 4 }}>
-            <SubHead> {t("firms.getInTouch")}</SubHead>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.phoneImg"))} &#160;
-              <Comms>0801 234 56789</Comms>
-            </CommsInfo>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.webImg"))} &#160; <Comms>Website</Comms>
-            </CommsInfo>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.emailImg"))} &#160; <Comms>Email</Comms>
-            </CommsInfo>
-          </Col>
-          <Col sizes={{ xs: 12, md: 8 }}>
-            <SubHead>{t("firms.moreInfo")}</SubHead>
-            <section>{ReactHtmlParser(t("firms.more"))}</section>
-          </Col>
-        </Row>
-      </DummyCard>
-      <DummyCard>
-        <Row style={{ marginBottom: "20px" }}>
-          <Col sizes={{ xs: 12 }}>
-            <CompanyName>Daystar Inc</CompanyName>
-          </Col>
-          <Col sizes={{ xs: 12, md: 4 }}>
-            <SubHead> {t("firms.getInTouch")}</SubHead>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.phoneImg"))} &#160;
-              <Comms>0801 234 56789</Comms>
-            </CommsInfo>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.webImg"))} &#160; <Comms>Website</Comms>
-            </CommsInfo>
-            <CommsInfo>
-              {ReactHtmlParser(t("firms.emailImg"))} &#160; <Comms>Email</Comms>
-            </CommsInfo>
-          </Col>
-          <Col sizes={{ xs: 12, md: 8 }}>
-            <SubHead>{t("firms.moreInfo")}</SubHead>
-            <section>{ReactHtmlParser(t("firms.more"))}</section>
-          </Col>
-        </Row>
-      </DummyCard>
+
+      {offered ? (
+        offered.length == 0 ? (
+          <Paragraph margin={{ top: "40px", bottom: "40px" }}>
+            There are no results matching your search criteria. Please amend
+            your criteria and try again
+          </Paragraph>
+        ) : (
+          offered.map((selectedFirm, i) => {
+            return (
+              <DummyCard key={i}>
+                <Row style={{ marginBottom: "20px" }}>
+                  <Col sizes={{ xs: 12 }}>
+                    <CompanyName>{selectedFirm.company}</CompanyName>
+                  </Col>
+                  <Col sizes={{ xs: 12, md: 4 }}>
+                    <SubHead> {t("firms.getInTouch")}</SubHead>
+                    <CommsInfo>
+                      {ReactHtmlParser(t("firms.phoneImg"))} &#160;
+                      <Comms>{selectedFirm.online.phone}</Comms>
+                    </CommsInfo>
+                    <CommsInfo>
+                      {ReactHtmlParser(t("firms.webImg"))} &#160;{" "}
+                      <Comms>
+                        <Anchor
+                          href={selectedFirm.online.website}
+                          target="_blank"
+                        >
+                          Website
+                        </Anchor>
+                      </Comms>
+                    </CommsInfo>
+                    <CommsInfo>
+                      {ReactHtmlParser(t("firms.emailImg"))} &#160;{" "}
+                      <Comms>Email</Comms>
+                    </CommsInfo>
+                  </Col>
+                  <Col sizes={{ xs: 12, md: 8 }}>
+                    <SubHead>{t("firms.moreInfo")}</SubHead>
+                    <section>{ReactHtmlParser(t("firms.more"))}</section>
+                  </Col>
+                </Row>
+              </DummyCard>
+            );
+          })
+        )
+      ) : (
+        <Loading />
+      )}
+
       <Pagination currentLng={i18n.language} currentPage={1} totalPages={20} />
     </div>
   );
 };
-
 export default Results;
