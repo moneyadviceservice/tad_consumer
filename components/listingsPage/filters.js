@@ -21,6 +21,10 @@ const FilterFormFIeld = styled(Formfield)`
   padding-left: 0;
 `;
 
+const ExtendedRadio = styled(Radio).attrs(({ required }) => ({
+  required,
+}));
+
 const FormDiv = styled.div`
   border: 1px solid #edf0f0;
   padding: 0 18px 18px;
@@ -81,8 +85,6 @@ const Filters = ({ t, query }) => {
   const [land_30_days_max_age, changeLandMax30] = useState({});
   const [land_45_days_max_age, changeLandMax45] = useState({});
   const [land_55_days_max_age, changeLandMax55] = useState({});
-
-  console.log(query);
 
   const filtersValues = [
     trip_type,
@@ -183,6 +185,44 @@ const Filters = ({ t, query }) => {
     changeAge({ age: "" });
   };
 
+  // NONJS CODE
+
+  let sortedFilters = [];
+
+  for (const property in query) {
+    let bucket = {};
+    bucket[`${property}`] = `${query[property]}`;
+    sortedFilters.push(bucket);
+  }
+
+  console.log(sortedFilters);
+  let altTripType = {};
+  let altCoverArea = {};
+  let altWhen = {};
+  let altCoverOngoingTreatment = {};
+  let altTerminalPrognnosis = {};
+  let altCoverSpecialEquipment = {};
+
+  // Code to repopulate the input from the url
+  if (!process.browser) {
+    altTripType = sortedFilters[1]
+      ? `${sortedFilters[1].trip_type}`
+      : { trip_type: "" };
+    altCoverArea = sortedFilters[2] ? `${sortedFilters[2].cover_area}` : "";
+    altWhen = sortedFilters[3]
+      ? `${sortedFilters[3].how_far_in_advance_trip_cover}`
+      : {};
+    altCoverOngoingTreatment = sortedFilters[4]
+      ? `${sortedFilters[4].will_cover_undergoing_treatment}`
+      : {};
+    altTerminalPrognnosis = sortedFilters[5]
+      ? `${sortedFilters[5].will_cover_terminal_prognosis}`
+      : {};
+    altCoverSpecialEquipment = sortedFilters[6]
+      ? `${sortedFilters[6].will_cover_specialist_equipment}`
+      : {};
+  }
+
   return (
     <Form
       style={{ marginBottom: "40px", color: "#515151" }}
@@ -247,11 +287,15 @@ const Filters = ({ t, query }) => {
             ({ type, value }, i) => (
               <Radio
                 key={i}
-                checked={trip_type.trip_type === value}
                 onChange={(e) => handleInsuranceType(e)}
                 label={type}
                 name="trip_type"
                 value={value}
+                checked={
+                  !process.browser
+                    ? altTripType === value
+                    : trip_type.trip_type === value
+                }
               />
             )
           )}
@@ -284,11 +328,15 @@ const Filters = ({ t, query }) => {
             ({ location, value }, i) => (
               <Radio
                 key={i}
-                checked={cover_area.cover_area === value}
                 onChange={(e) => handleDestination(e)}
                 label={location}
                 name="cover_area"
                 value={value}
+                checked={
+                  !process.browser
+                    ? altCoverArea === value
+                    : cover_area.cover_area === value
+                }
               />
             )
           )}
@@ -322,14 +370,16 @@ const Filters = ({ t, query }) => {
           }).map(({ length, value }, i) => (
             <Radio
               key={i}
-              checked={
-                how_far_in_advance_trip_cover.how_far_in_advance_trip_cover ===
-                value
-              }
               onChange={(e) => handleWhen(e)}
               label={length}
-              name="length"
+              name="how_far_in_advance_trip_cover"
               value={value}
+              checked={
+                !process.browser
+                  ? altWhen === value
+                  : how_far_in_advance_trip_cover.how_far_in_advance_trip_cover ===
+                    value
+              }
             />
           ))}
         </FilterFormFIeld>
@@ -344,14 +394,16 @@ const Filters = ({ t, query }) => {
           }).map(({ response, value }, i) => (
             <Radio
               key={i}
-              checked={
-                will_cover_undergoing_treatment.will_cover_undergoing_treatment ===
-                value
-              }
               onChange={(e) => handleTreatment(e)}
               label={response}
               name="will_cover_undergoing_treatment"
               value={value}
+              checked={
+                !process.browser
+                  ? altCoverOngoingTreatment === value
+                  : will_cover_undergoing_treatment.will_cover_undergoing_treatment ===
+                    value
+              }
             />
           ))}
         </FilterFormFIeld>
@@ -365,14 +417,16 @@ const Filters = ({ t, query }) => {
           }).map(({ response, value }, i) => (
             <Radio
               key={i}
-              checked={
-                will_cover_terminal_prognosis.will_cover_terminal_prognosis ===
-                value
-              }
               onChange={(e) => handleTerminal(e)}
               label={response}
               name="will_cover_terminal_prognosis"
               value={value}
+              checked={
+                !process.browser
+                  ? altTerminalPrognnosis === value
+                  : will_cover_terminal_prognosis.will_cover_terminal_prognosis ===
+                    value
+              }
             />
           ))}
         </FilterFormFIeld>
@@ -387,15 +441,18 @@ const Filters = ({ t, query }) => {
           }).map(({ response, value }, i) => (
             <Radio
               key={i}
-              checked={
-                will_cover_specialist_equipment.will_cover_specialist_equipment ===
-                value
-              }
               onChange={(e) => handleEquipment(e)}
               label={response}
               name="will_cover_specialist_equipment"
               id={`equipment-${i}`}
               value={value}
+              checked={
+                !process.browser
+                  ? altCoverSpecialEquipment === value
+                  : will_cover_specialist_equipment.will_cover_specialist_equipment ===
+                    value
+              }
+              altCoverSpecialEquipment
             />
           ))}
         </FilterFormFIeld>
