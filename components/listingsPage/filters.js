@@ -63,7 +63,7 @@ const ageRange = () => {
   return arr;
 };
 
-const Filters = ({ t }) => {
+const Filters = ({ t, query }) => {
   const [age, changeAge] = useState({});
   const [trip_type, changeInsuranceType] = useState({});
   const [tripLength, changeTripLength] = useState({});
@@ -82,6 +82,8 @@ const Filters = ({ t }) => {
   const [land_45_days_max_age, changeLandMax45] = useState({});
   const [land_55_days_max_age, changeLandMax55] = useState({});
 
+  console.log(query);
+
   const filtersValues = [
     trip_type,
     cover_area,
@@ -98,8 +100,6 @@ const Filters = ({ t }) => {
   ];
 
   const dispatch = useDispatch();
-
-  console.log(filtersValues);
 
   const offerings = useSelector((state) => state.listings.offerings.hits);
 
@@ -119,9 +119,6 @@ const Filters = ({ t }) => {
   useEffect(() => {
     dispatch(filterOfferings(filtersValues));
   }, [filtersValues]);
-
-  console.log(offerings);
-  console.log(cruise_30_days_max_age);
 
   const handleAge = (e) => {
     let age = e.target.value;
