@@ -187,7 +187,11 @@ const Filters = ({ t }) => {
   };
 
   return (
-    <Form style={{ marginBottom: "40px", color: "#515151" }}>
+    <Form
+      style={{ marginBottom: "40px", color: "#515151" }}
+      action="/listings"
+      method="post"
+    >
       <Heading
         level={3}
         style={{

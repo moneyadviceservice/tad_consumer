@@ -15,7 +15,21 @@ const handle = app.getRequestHandler();
   server.use(bodyParser.urlencoded({ extended: true }));
   server.use(bodyParser.json());
 
-  // server.get("*", (req, res) => handle(req, res));
+  server.post("/listings", (req, res) => {
+    let query = req.body;
+
+    const queryString = () => {
+      var out = [];
+      for (var key in query) {
+        if (query.hasOwnProperty(key)) {
+          out.push(key + "=" + encodeURIComponent(query[key]));
+        }
+      }
+      return out.join("&");
+    };
+    res.redirect("/en/listings?" + queryString());
+  });
+
   server.get("*", nextI18NextMiddleware(nextI18next), (req, res) => {
     return handle(req, res);
   });
