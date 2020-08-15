@@ -1,6 +1,7 @@
 const express = require("express");
 const next = require("next");
 const nextI18NextMiddleware = require("next-i18next/middleware").default;
+const bodyParser = require("body-parser");
 
 const nextI18next = require("./Utils/translation/i18n");
 
@@ -11,10 +12,13 @@ const handle = app.getRequestHandler();
 (async () => {
   await app.prepare();
   const server = express();
+  server.use(bodyParser.urlencoded({ extended: true }));
+  server.use(bodyParser.json());
 
-  server.use(nextI18NextMiddleware(nextI18next));
-
-  server.get("*", (req, res) => handle(req, res));
+  // server.get("*", (req, res) => handle(req, res));
+  server.get("*", nextI18NextMiddleware(nextI18next), (req, res) => {
+    return handle(req, res);
+  });
 
   await server.listen(port);
   console.log(`> Ready on http://localhost:${port}`); // eslint-disable-line no-console
