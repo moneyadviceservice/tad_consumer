@@ -2,6 +2,7 @@ import {
   GET_FIRMS_SUCCESS,
   GET_OFFERINGS_SUCCESS,
   FILTER_OFFERING,
+  GET_BACK_OFFERING,
 } from "./constants";
 
 let initialState = {
@@ -33,6 +34,12 @@ const ListingsReducer = (state = initialState, action) => {
       return {
         ...state,
         offered: action.payload,
+      };
+      break;
+    case GET_BACK_OFFERING:
+      return {
+        ...state,
+        selectedOffers: action.payload,
       };
       break;
 

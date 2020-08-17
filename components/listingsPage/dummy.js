@@ -1,4 +1,9 @@
 import styled from "styled-components";
+import {
+  Radio,
+  Formfield,
+  resolveMedia,
+} from "@moneypensionservice/directories";
 
 export const DummyCard = styled.div`
   border: 1px solid #edf0f0;
@@ -31,4 +36,39 @@ export const CommsInfo = styled.div`
 export const Comms = styled.span`
   vertical-align: super;
   display: inline-block;
+`;
+
+export const FilterFormFIeld = styled(Formfield)`
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #edf0f0;
+  padding-left: 0;
+`;
+
+export const ExtendedRadio = styled(Radio).attrs(({ required }) => ({
+  required,
+}));
+
+export const FormDiv = styled.div`
+  border: 1px solid #edf0f0;
+  padding: 0 18px 18px;
+  display: none;
+  ${resolveMedia.md`
+      display: block;
+  `};
+`;
+
+export const Legend = styled.legend`
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+  width: 100%;
+  margin-bottom: 0.75rem;
+`;
+
+export const Select = styled.select`
+  font-size: 16px;
+  width: 70%;
+  padding: 10px;
 `;

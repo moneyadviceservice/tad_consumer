@@ -11,61 +11,8 @@ import {
 
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
-import { filterOfferings } from "./redux/actions";
-
-const FilterFormFIeld = styled(Formfield)`
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #edf0f0;
-  padding-left: 0;
-`;
-
-const ExtendedRadio = styled(Radio).attrs(({ required }) => ({
-  required,
-}));
-
-const FormDiv = styled.div`
-  border: 1px solid #edf0f0;
-  padding: 0 18px 18px;
-  display: none;
-  ${resolveMedia.md`
-      display: block;
-  `};
-`;
-
-const Legend = styled.legend`
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-  font-weight: 700;
-  width: 100%;
-  margin-bottom: 0.75rem;
-`;
-
-const Select = styled.select`
-  font-size: 16px;
-  width: 70%;
-  padding: 10px;
-`;
-
-// Tooltips value
-const insuranceTypeTip =
-  "Single Trip:  Depending on what medical condition(s) you have, where you are going and for how long – sometimes a Single Trip policy might be cheaper than an Annual Multi-trip.  Also if you have been declined for an Annual Multi-trip policy, you might still get offered insurance if you choose a Single Trip policy.  But if you are planning to travel several times during a 12 month period, try for an Annual Multi-trip policy first. Annual Multi-trip: If you are planning to travel several times during a 12 month period, an Annual Multi-trip policy can save you money.  You can usually only buy an Annual Multi-trip policy up to 31 days in advance of when you want the policy to start.  If you get turned down for an Annual Multi-trip – or you think the cost is too much – its worth seeing if you can get a Single Trip policy instead.";
-
-// Select age range
-const ageRange = () => {
-  var arr = [];
-
-  for (let i = 1; i <= 100; i++) {
-    arr.push(
-      <option key={i} value={i}>
-        {i}
-      </option>
-    );
-  }
-
-  return arr;
-};
+import { filterOfferings, filterOfferingsBackend } from "./redux/actions";
+import { FilterFormFIeld, FormDiv, Legend, Select } from "./dummy";
 
 const Filters = ({ t, query }) => {
   const [age, changeAge] = useState({});
@@ -85,6 +32,25 @@ const Filters = ({ t, query }) => {
   const [land_30_days_max_age, changeLandMax30] = useState({});
   const [land_45_days_max_age, changeLandMax45] = useState({});
   const [land_55_days_max_age, changeLandMax55] = useState({});
+
+  // Tooltips value
+  const insuranceTypeTip =
+    "Single Trip:  Depending on what medical condition(s) you have, where you are going and for how long – sometimes a Single Trip policy might be cheaper than an Annual Multi-trip.  Also if you have been declined for an Annual Multi-trip policy, you might still get offered insurance if you choose a Single Trip policy.  But if you are planning to travel several times during a 12 month period, try for an Annual Multi-trip policy first. Annual Multi-trip: If you are planning to travel several times during a 12 month period, an Annual Multi-trip policy can save you money.  You can usually only buy an Annual Multi-trip policy up to 31 days in advance of when you want the policy to start.  If you get turned down for an Annual Multi-trip – or you think the cost is too much – its worth seeing if you can get a Single Trip policy instead.";
+
+  // Select age range
+  const ageRange = () => {
+    var arr = [];
+
+    for (let i = 1; i <= 100; i++) {
+      arr.push(
+        <option key={i} value={i}>
+          {i}
+        </option>
+      );
+    }
+
+    return arr;
+  };
 
   const filtersValues = [
     trip_type,
@@ -185,17 +151,20 @@ const Filters = ({ t, query }) => {
     changeAge({ age: "" });
   };
 
-  // NONJS CODE
+  // NONFRONTEND CODE STARTS
 
   let sortedFilters = [];
 
+  // push the form values in the url in sortedFilters
   for (const property in query) {
     let bucket = {};
     bucket[`${property}`] = `${query[property]}`;
     sortedFilters.push(bucket);
   }
 
-  console.log(sortedFilters);
+  dispatch(filterOfferingsBackend(sortedFilters));
+
+  // setup alternate values for form input to trigger checked attr
   let altTripType = {};
   let altCoverArea = {};
   let altWhen = {};
@@ -222,6 +191,8 @@ const Filters = ({ t, query }) => {
       ? `${sortedFilters[6].will_cover_specialist_equipment}`
       : {};
   }
+
+  // NONFRONTEND CODE ENDS
 
   return (
     <Form

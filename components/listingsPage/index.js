@@ -11,7 +11,7 @@ const Listing = ({ t, query }) => {
         <Filters t={t} query={query} />
       </Col>
       <Col sizes={{ xs: 12, md: 8 }}>
-        <Results t={t} />
+        <Results t={t} query={query} />
       </Col>
     </Fragment>
   );

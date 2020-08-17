@@ -2,6 +2,7 @@ import {
   GET_FIRMS_SUCCESS,
   GET_OFFERINGS_SUCCESS,
   FILTER_OFFERING,
+  GET_BACK_OFFERING,
 } from "./constants";
 
 const algoliasearch = require("algoliasearch");
@@ -16,6 +17,30 @@ export const getAlgoFirms = () => {
       dispatch(getFirmsSuccess(res));
     });
 };
+
+export const filterOfferingsBackend = () => {
+  return (dispatch) => {
+    try {
+      offerings
+        .search("", {
+          filters: 'land_45_days_max_age:"67"',
+          attributesToRetrieve: ["objectID"],
+        })
+        .then(({ hits }) => {
+          console.log(hits);
+          dispatch(getBackOffering(hits));
+        });
+    } catch (error) {
+      // if error
+      console.error(error);
+    }
+  };
+};
+
+export const getBackOffering = (offering) => ({
+  type: GET_BACK_OFFERING,
+  payload: offering,
+});
 
 export const getAlgoOfferings = () => {
   return (dispatch) =>
@@ -39,6 +64,7 @@ export const filterOfferings = (pool) => {
     // get data from the state
     const offerings = getState().listings.offerings.hits;
     const firms = getState().listings.firms.hits;
+    console.log(offerings);
 
     // remove empty object from dispatched filter values
     const filteredPool = pool.filter((value) => Object.keys(value).length != 0);
@@ -55,7 +81,7 @@ export const filterOfferings = (pool) => {
     if (filteredPool.length > 0) {
       // obtain the selected offering through filteredPool
       const selectedOfferings = filteredPool.reduce((acc, value) => {
-        console.log(Object.keys(value));
+        // console.log(Object.keys(value));
 
         return acc.filter((offering) => {
           for (var key in value) {
@@ -70,6 +96,7 @@ export const filterOfferings = (pool) => {
         });
       }, offerings);
 
+      console.log(selectedOfferings);
       // collected the ids of the selected offering into an array of array
       const offered = selectedOfferings.map((offering) => {
         let id = parseInt(offering.objectID);
