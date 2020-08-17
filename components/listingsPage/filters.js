@@ -99,7 +99,7 @@ const Filters = ({ t }) => {
 
   const dispatch = useDispatch();
 
-  console.log(filtersValues);
+  // console.log(filtersValues);
 
   const offerings = useSelector((state) => state.listings.offerings.hits);
 
@@ -120,8 +120,8 @@ const Filters = ({ t }) => {
     dispatch(filterOfferings(filtersValues));
   }, [filtersValues]);
 
-  console.log(offerings);
-  console.log(cruise_30_days_max_age);
+  // console.log(offerings);
+  // console.log(cruise_30_days_max_age);
 
   const handleAge = (e) => {
     let age = e.target.value;

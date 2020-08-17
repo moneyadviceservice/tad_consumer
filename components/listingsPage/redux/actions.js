@@ -5,7 +5,10 @@ import {
 } from "./constants";
 
 const algoliasearch = require("algoliasearch");
-const client = algoliasearch("0K37IDKMFY", "e86ea9a6aba13065305eb793da96f481");
+const client = algoliasearch(
+  process.env.NEXT_PUBLIC_APPLICATION_ID,
+  process.env.NEXT_PUBLIC_API_KEY
+);
 
 const firms = client.initIndex("travel-firms");
 const offerings = client.initIndex("travel-firm-offerings");

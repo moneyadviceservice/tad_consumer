@@ -15,7 +15,7 @@ import { DummyCard, CompanyName, SubHead, CommsInfo, Comms } from "./dummy";
 import Loading from "./loading";
 const Results = ({ t }) => {
   const offered = useSelector((state) => state.listings.offered);
-  console.log(offered);
+  // console.log(offered);
   return (
     <div>
       <Paragraph
