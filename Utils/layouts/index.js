@@ -42,7 +42,7 @@ const BreadcrumbSection = styled(ExtendedSection)`
 `};
 `;
 
-const BreadAnchor = styled.a`
+const BreadAnchor = styled(Anchor)`
   text-decoration: none;
   border: none;
   font-size: 16px;

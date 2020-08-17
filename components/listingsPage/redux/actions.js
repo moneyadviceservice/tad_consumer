@@ -58,8 +58,6 @@ export const filterOfferings = (pool) => {
     if (filteredPool.length > 0) {
       // obtain the selected offering through filteredPool
       const selectedOfferings = filteredPool.reduce((acc, value) => {
-        console.log(Object.keys(value));
-
         return acc.filter((offering) => {
           for (var key in value) {
             if (typeof value[key] === "number") {
