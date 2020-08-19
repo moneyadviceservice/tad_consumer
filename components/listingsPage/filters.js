@@ -154,44 +154,41 @@ const Filters = ({ t, query, filterString }) => {
   };
 
   // NONFRONTEND CODE STARTS
-
-  let sortedFilters = [];
-
-  // push the form values in the url in sortedFilters
-  for (const property in query) {
-    let bucket = {};
-    bucket[`${property}`] = `${query[property]}`;
-    sortedFilters.push(bucket);
-  }
+  console.log(query);
 
   // setup alternate values for form input to trigger checked attr
-  let altTripType = {};
-  let altCoverArea = {};
-  let altWhen = {};
-  let altCoverOngoingTreatment = {};
-  let altTerminalPrognnosis = {};
-  let altCoverSpecialEquipment = {};
+  let altAge = t("headings.age_at_time_of_travel");
+  let altTripType = "";
+  let altCoverArea = "";
+  let altWhen = "";
+  let altCoverOngoingTreatment = "";
+  let altTerminalPrognnosis = "";
+  let altCoverSpecialEquipment = "";
 
   // Code to repopulate the input from the url
-  if (!process.browser) {
-    altTripType = sortedFilters[1]
-      ? `${sortedFilters[1].trip_type}`
-      : { trip_type: "" };
-    altCoverArea = sortedFilters[2] ? `${sortedFilters[2].cover_area}` : "";
-    altWhen = sortedFilters[3]
-      ? `${sortedFilters[3].how_far_in_advance_trip_cover}`
-      : {};
-    altCoverOngoingTreatment = sortedFilters[4]
-      ? `${sortedFilters[4].will_cover_undergoing_treatment}`
-      : {};
-    altTerminalPrognnosis = sortedFilters[5]
-      ? `${sortedFilters[5].will_cover_terminal_prognosis}`
-      : {};
-    altCoverSpecialEquipment = sortedFilters[6]
-      ? `${sortedFilters[6].will_cover_specialist_equipment}`
-      : {};
+  for (const property in query) {
+    if (`${property}` === "cruise_30_days_max_age") {
+      altAge = `${query[property]}`;
+    }
+    if (`${property}` === "trip_type") {
+      altTripType = `${query[property]}`;
+    }
+    if (`${property}` === "cover_area") {
+      altCoverArea = `${query[property]}`;
+    }
+    if (`${property}` === "how_far_in_advance_trip_cover") {
+      altWhen = `${query[property]}`;
+    }
+    if (`${property}` === "will_cover_undergoing_treatment") {
+      altCoverOngoingTreatment = `${query[property]}`;
+    }
+    if (`${property}` === "will_cover_terminal_prognosis") {
+      altTerminalPrognnosis = `${query[property]}`;
+    }
+    if (`${property}` === "will_cover_specialist_equipment") {
+      altCoverSpecialEquipment = `${query[property]}`;
+    }
   }
-
   // NONFRONTEND CODE ENDS
 
   return (
@@ -245,7 +242,10 @@ const Filters = ({ t, query, filterString }) => {
             <Tooltip hover text="To be supplied" />
           </Legend>
           <Select name="age" value={age.age} onChange={(e) => handleAge(e)}>
-            <option value="">{t("headings.age_at_time_of_travel")}</option>
+            <option value="" selected={!process.browser ? altAge : age.age}>
+              {!process.browser ? altAge : t("headings.age_at_time_of_travel")}
+            </option>
+
             {ageRange()}
           </Select>
         </FilterFormFIeld>
