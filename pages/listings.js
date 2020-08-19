@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { Col, Heading, resolveMedia } from "@moneypensionservice/directories";
 import { Section, ExtendedSection } from "../Utils/layouts";
 
+import { FILTER_OFFERING_BACK } from "../components/listingsPage/redux/constants";
 import {
   getAlgoFirms,
   getAlgoOfferings,
@@ -20,7 +21,7 @@ const ListingSection = styled(Section)`
 `};
 `;
 
-const Listings = ({ t, query }) => {
+const Listings = ({ t, query, filterString, result }) => {
   return (
     <Fragment>
       <Section constrained data-testid="contentRow">
@@ -33,7 +34,12 @@ const Listings = ({ t, query }) => {
 
       <ExtendedSection align="stretch" style={{ paddingTop: 0 }}>
         <ListingSection constrained data-testid="contentRow">
-          <Listing t={t} query={query} />
+          <Listing
+            t={t}
+            query={query}
+            filterString={filterString}
+            result={result}
+          />
         </ListingSection>
       </ExtendedSection>
     </Fragment>
@@ -43,10 +49,69 @@ const Listings = ({ t, query }) => {
 Listings.getInitialProps = async ({ reduxStore, query }) => {
   await reduxStore.dispatch(getAlgoFirms());
   await reduxStore.dispatch(getAlgoOfferings());
+  const firms = reduxStore.getState().listings.firms.hits;
+
+  const algoliasearch = require("algoliasearch");
+  const client = algoliasearch(
+    "0K37IDKMFY",
+    "e86ea9a6aba13065305eb793da96f481"
+  );
+
+  const companies = client.initIndex("travel-firms");
+  const offerings = client.initIndex("travel-firm-offerings");
+  let result;
+  var filterArray = [];
+  for (var key in query) {
+    if (query.hasOwnProperty(key)) {
+      let querying = `${query[key]}`;
+      if (
+        key === "cruise_30_days_max_age" ||
+        key === "cruise_45_days_max_age" ||
+        key === "cruise_55_days_max_age" ||
+        key === "land_30_days_max_age" ||
+        key === "land_45_days_max_age" ||
+        key === "land_55_days_max_age"
+      ) {
+        filterArray.push(key + " < " + querying);
+      } else filterArray.push(key + ":" + '"' + querying + '"');
+    }
+  }
+  const filterString = filterArray.join(" AND ");
+  console.log(filterString);
+  if (!filterString) {
+    result = firms;
+  }
+
+  if (filterString) {
+    const offerIDs = await offerings.search("", {
+      filters: filterString,
+      attributesToRetrieve: ["objectID"],
+    });
+
+    const selectedFirms = await offerIDs.hits.map((company) => {
+      return company.objectID;
+    });
+
+    result = selectedFirms;
+
+    let firmString = [];
+    for (var key in selectedFirms) {
+      firmString.push("offering_ids" + "=" + selectedFirms[key]);
+    }
+    const joinedFirmString = await firmString.join(" OR ");
+
+    const callFirms = await companies.search("", {
+      filters: joinedFirmString,
+    });
+
+    result = callFirms.hits;
+  }
 
   return {
     namespacesRequired: ["listings", "common", "footer"],
     query: query,
+    filterString: filterString,
+    result: result,
   };
 };
 

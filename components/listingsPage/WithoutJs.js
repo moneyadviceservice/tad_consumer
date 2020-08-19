@@ -13,9 +13,8 @@ import ReactHtmlParser from "react-html-parser";
 
 import { DummyCard, CompanyName, SubHead, CommsInfo, Comms } from "./dummy";
 import Loading from "./loading";
-const WithoutJs = ({ t, query }) => {
-  const firms = useSelector((state) => state.listings.firms.hits);
-
+const WithoutJs = ({ t, result }) => {
+  console.log(result);
   return (
     <div>
       <Paragraph
@@ -31,7 +30,7 @@ const WithoutJs = ({ t, query }) => {
         {t("headings.showing")} 1 -10 {t("headings.of")} 1000{" "}
         {t("headings.firms")}
       </Paragraph>
-      {/* {offered.map((firm, i) => {
+      {result.map((firm, i) => {
         return (
           <DummyCard key={i}>
             <Row style={{ marginBottom: "20px" }}>
@@ -64,7 +63,7 @@ const WithoutJs = ({ t, query }) => {
             </Row>
           </DummyCard>
         );
-      })} */}
+      })}
     </div>
   );
 };

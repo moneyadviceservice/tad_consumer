@@ -11,10 +11,10 @@ import {
 
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
-import { filterOfferings, filterOfferingsBackend } from "./redux/actions";
+import { filterOfferings } from "./redux/actions";
 import { FilterFormFIeld, FormDiv, Legend, Select } from "./dummy";
 
-const Filters = ({ t, query }) => {
+const Filters = ({ t, query, filterString }) => {
   const [age, changeAge] = useState({});
   const [trip_type, changeInsuranceType] = useState({});
   const [tripLength, changeTripLength] = useState({});
@@ -32,6 +32,8 @@ const Filters = ({ t, query }) => {
   const [land_30_days_max_age, changeLandMax30] = useState({});
   const [land_45_days_max_age, changeLandMax45] = useState({});
   const [land_55_days_max_age, changeLandMax55] = useState({});
+
+  // console.log(filterString);
 
   // Tooltips value
   const insuranceTypeTip =
@@ -161,8 +163,6 @@ const Filters = ({ t, query }) => {
     bucket[`${property}`] = `${query[property]}`;
     sortedFilters.push(bucket);
   }
-
-  dispatch(filterOfferingsBackend(sortedFilters));
 
   // setup alternate values for form input to trigger checked attr
   let altTripType = {};
