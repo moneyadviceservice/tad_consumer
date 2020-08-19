@@ -7,14 +7,13 @@ import {
 } from "@moneypensionservice/directories";
 
 import { i18n } from "../../Utils/translation/i18n";
-import { useSelector } from "react-redux";
 
 import ReactHtmlParser from "react-html-parser";
 
 import { DummyCard, CompanyName, SubHead, CommsInfo, Comms } from "./dummy";
-import Loading from "./loading";
+
 const WithoutJs = ({ t, result }) => {
-  console.log(result);
+  // console.log(result);
   return (
     <div>
       <Paragraph

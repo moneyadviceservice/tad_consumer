@@ -72,7 +72,9 @@ Listings.getInitialProps = async ({ reduxStore, query }) => {
         key === "land_45_days_max_age" ||
         key === "land_55_days_max_age"
       ) {
-        filterArray.push(key + " < " + querying);
+        filterArray.push(key + " = " + querying);
+        // filterArray.push(key + ":" + 0 + " TO " + querying);
+        // price:5.99 TO 100
       } else filterArray.push(key + ":" + '"' + querying + '"');
     }
   }
@@ -87,6 +89,8 @@ Listings.getInitialProps = async ({ reduxStore, query }) => {
       filters: filterString,
       attributesToRetrieve: ["objectID"],
     });
+
+    console.log(offerIDs);
 
     const selectedFirms = await offerIDs.hits.map((company) => {
       return company.objectID;
@@ -104,6 +108,7 @@ Listings.getInitialProps = async ({ reduxStore, query }) => {
       filters: joinedFirmString,
     });
 
+    // console.log(callFirms);
     result = callFirms.hits;
   }
 
