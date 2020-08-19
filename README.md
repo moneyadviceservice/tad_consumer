@@ -17,6 +17,8 @@ cd tad_consumer
     npm install
 
     npm run dev
+
+    cp .env.local.example .env.local
 ```
 
 ## Deployment to staging
