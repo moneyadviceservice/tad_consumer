@@ -154,7 +154,6 @@ const Filters = ({ t, query, filterString }) => {
   };
 
   // NONFRONTEND CODE STARTS
-  console.log(query);
 
   // setup alternate values for form input to trigger checked attr
   let altAge = t("headings.age_at_time_of_travel");

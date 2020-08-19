@@ -72,7 +72,7 @@ Listings.getInitialProps = async ({ reduxStore, query }) => {
         key === "land_45_days_max_age" ||
         key === "land_55_days_max_age"
       ) {
-        filterArray.push(key + " <= " + querying);
+        filterArray.push(key + " = " + querying);
         // filterArray.push(key + ":" + 0 + " TO " + querying);
         // price:5.99 TO 100
       } else filterArray.push(key + ":" + '"' + querying + '"');
@@ -90,26 +90,33 @@ Listings.getInitialProps = async ({ reduxStore, query }) => {
       attributesToRetrieve: ["objectID"],
     });
 
-    // console.log(offerIDs);
+    console.log(offerIDs.hits.length);
 
-    const selectedFirms = await offerIDs.hits.map((company) => {
-      return company.objectID;
-    });
-
-    result = selectedFirms;
-
-    let firmString = [];
-    for (var key in selectedFirms) {
-      firmString.push("offering_ids" + "=" + selectedFirms[key]);
+    if (offerIDs.hits.length === 0) {
+      result =
+        "There are no results matching your search criteria. Please amend your criteria and try again";
     }
-    const joinedFirmString = await firmString.join(" OR ");
 
-    const callFirms = await companies.search("", {
-      filters: joinedFirmString,
-    });
+    if (offerIDs.hits.length > 0) {
+      const selectedFirms = await offerIDs.hits.map((company) => {
+        return company.objectID;
+      });
 
-    // console.log(callFirms);
-    result = callFirms.hits;
+      result = selectedFirms;
+
+      let firmString = [];
+      for (var key in selectedFirms) {
+        firmString.push("offering_ids" + "=" + selectedFirms[key]);
+      }
+      const joinedFirmString = await firmString.join(" OR ");
+
+      const callFirms = await companies.search("", {
+        filters: joinedFirmString,
+      });
+
+      // console.log(callFirms);
+      result = callFirms.hits;
+    }
   }
 
   return {
