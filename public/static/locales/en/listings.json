@@ -30,12 +30,12 @@
       { "response": "Yes", "value": "Yes" },
       { "response": "No", "value": "No" }
     ],
-    "how_far_in_advance_trip_cover": [
-      { "length": "Within 1 month", "value": "Up to 1 month" },
-      { "length": "Between 1 - 6 months", "value": "Up to 6 months" },
-      { "length": "Between 6 - 12 months", "value": "Up to 12 months" },
-      { "length": "Between 12 - 18 months", "value": "Up to 18 months" },
-      { "length": "Between 18 - 24 months", "value": "Up to 24 months" }
+    "how_far_in_advance_trip_cover_weeks": [
+      { "length": "Within 1 month", "value": "4" },
+      { "length": "Between 1 - 6 months", "value": "24" },
+      { "length": "Between 6 - 12 months", "value": "48" },
+      { "length": "Between 12 - 18 months", "value": "72" },
+      { "length": "Between 18 - 24 months", "value": "96" }
     ],
     "will_cover_undergoing_treatment": [
       { "response": "Yes", "value": "Yes" },

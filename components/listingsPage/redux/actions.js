@@ -62,15 +62,18 @@ export const filterOfferings = (pool) => {
           for (var key in value) {
             if (typeof value[key] === "number") {
               let subtitle = parseInt(offering[Object.keys(value)]);
-              console.log(subtitle, Object.values(value)[0]);
               return (
-                Object.values(value)[0] <= offering.cruise_30_days_max_age ||
-                Object.values(value)[0] <= offering.cruise_45_days_max_age ||
-                Object.values(value)[0] <= offering.cruise_55_days_max_age ||
-                Object.values(value)[0] <= offering.land_30_days_max_age ||
-                Object.values(value)[0] <= offering.land_45_days_max_age ||
-                Object.values(value)[0] <= offering.land_55_days_max_age
+                subtitle != -1 &&
+                (Object.values(value)[0] <= offering.cruise_30_days_max_age ||
+                  Object.values(value)[0] <= offering.cruise_45_days_max_age ||
+                  Object.values(value)[0] <= offering.cruise_55_days_max_age ||
+                  Object.values(value)[0] <= offering.land_30_days_max_age ||
+                  Object.values(value)[0] <= offering.land_45_days_max_age ||
+                  Object.values(value)[0] <= offering.land_55_days_max_age)
               );
+            }
+            if (key === "how_far_in_advance_trip_cover_weeks") {
+              return parseInt(offering[key]) <= Object.values(value)[0];
             }
             return offering[Object.keys(value)].includes(
               Object.values(value)[0]

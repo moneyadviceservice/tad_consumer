@@ -69,7 +69,7 @@ const Filters = ({ t }) => {
   const [tripLength, changeTripLength] = useState({});
   const [cover_area, changeDestination] = useState({});
   const [cruise, changeCruise] = useState({});
-  const [how_far_in_advance_trip_cover, changeWhen] = useState({});
+  const [how_far_in_advance_trip_cover_weeks, changeWhen] = useState({});
   const [will_cover_undergoing_treatment, changeTreatment] = useState({});
   const [will_cover_terminal_prognosis, changeTerminal] = useState({});
   const [will_cover_specialist_equipment, changeEquipment] = useState({});
@@ -85,7 +85,7 @@ const Filters = ({ t }) => {
   const filtersValues = [
     trip_type,
     cover_area,
-    how_far_in_advance_trip_cover,
+    how_far_in_advance_trip_cover_weeks,
     will_cover_undergoing_treatment,
     will_cover_terminal_prognosis,
     will_cover_specialist_equipment,
@@ -149,8 +149,8 @@ const Filters = ({ t }) => {
   // };
 
   const handleWhen = (e) => {
-    let how_far_in_advance_trip_cover = e.target.value;
-    changeWhen({ how_far_in_advance_trip_cover });
+    let how_far_in_advance_trip_cover_weeks = e.target.value;
+    changeWhen({ how_far_in_advance_trip_cover_weeks });
   };
 
   const handleTreatment = (e) => {
@@ -316,13 +316,13 @@ const Filters = ({ t }) => {
             {t("headings.when_are_you_travelling")}?
             <Tooltip hover text="To be supplied" />
           </Legend>
-          {t("filters.how_far_in_advance_trip_cover", {
+          {t("filters.how_far_in_advance_trip_cover_weeks", {
             returnObjects: true,
           }).map(({ length, value }, i) => (
             <Radio
               key={i}
               checked={
-                how_far_in_advance_trip_cover.how_far_in_advance_trip_cover ===
+                how_far_in_advance_trip_cover_weeks.how_far_in_advance_trip_cover_weeks ===
                 value
               }
               onChange={(e) => handleWhen(e)}
