@@ -11,12 +11,6 @@ let initialState = {
 
 const ListingsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "GET_FIRMS_STARTED":
-      return {
-        ...state,
-        loading: true,
-      };
-      break;
     case GET_FIRMS_SUCCESS:
       return {
         ...state,
