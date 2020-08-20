@@ -6,7 +6,7 @@ import {
 
 const algoliasearch = require("algoliasearch");
 const client = algoliasearch(
-  process.env.NEXT_PUBLIC_APPLICATION_ID,
+  process.env.NEXT_PUBLIC_APP_ID,
   process.env.NEXT_PUBLIC_API_KEY
 );
 
