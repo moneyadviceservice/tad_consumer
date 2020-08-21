@@ -32,7 +32,7 @@ const Results = ({ t }) => {
         {t("headings.firms")}
       </Paragraph>
 
-      {/* {offered ? (
+      {offered ? (
         offered.length == 0 ? (
           <Paragraph margin={{ top: "40px", bottom: "40px" }}>
             There are no results matching your search criteria. Please amend
@@ -79,7 +79,7 @@ const Results = ({ t }) => {
         )
       ) : (
         <Loading />
-      )} */}
+      )}
 
       <Pagination currentLng={i18n.language} currentPage={1} totalPages={20} />
     </div>

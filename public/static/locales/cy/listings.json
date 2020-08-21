@@ -31,11 +31,11 @@
       { "response": "Na", "value": "No" }
     ],
     "how_far_in_advance_trip_cover_weeks": [
-      { "length": "O fewn 1 mis", "value": "4" },
-      { "length": "Rhwng 1 - 6 mis", "value": "24" },
-      { "length": "Rhwng 6 - 12 mis", "value": "48" },
-      { "length": "Rhwng 12 - 18 mis", "value": "72" },
-      { "length": "Rhwng 18 - 24 mis", "value": "96" }
+      { "length": "O fewn 1 mis", "value": "1" },
+      { "length": "Rhwng 1 - 6 mis", "value": "5" },
+      { "length": "Rhwng 6 - 12 mis", "value": "25" },
+      { "length": "Rhwng 12 - 18 mis", "value": "49" },
+      { "length": "Rhwng 18 - 24 mis", "value": "73" }
     ],
     "will_cover_undergoing_treatment": [
       { "response": "Ydw", "value": "Yes" },

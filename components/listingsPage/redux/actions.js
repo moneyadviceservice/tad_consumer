@@ -86,33 +86,33 @@ export const filterOfferings = (pool) => {
 
       console.log(selectedOfferings);
       // collected the ids of the selected offering into an array of array
-      // const offered = selectedOfferings.map((offering) => {
-      //   let id = parseInt(offering.objectID);
-      //   let arr = [];
-      //   arr.push(id);
-      //   return arr;
-      // });
+      const offered = selectedOfferings.map((offering) => {
+        let id = parseInt(offering.objectID);
+        let arr = [];
+        arr.push(id);
+        return arr;
+      });
 
       // flaten the collected offering into a single array
-      // const flatOffered = offered.flat();
+      const flatOffered = offered.flat();
 
       // use the selected ids for filter firms
-      // const selectedFirm = firms.map((firm) => {
-      //   if (firm.offering_ids.some((ele) => flatOffered.includes(ele))) {
-      //     return firm;
-      //   }
-      // });
+      const selectedFirm = firms.map((firm) => {
+        if (firm.offering_ids.some((ele) => flatOffered.includes(ele))) {
+          return firm;
+        }
+      });
 
       // filtered empty object out of the selectedFirm
-      // const filteredFirm = selectedFirm.filter((selected) => {
-      //   return selected != null;
-      // });
+      const filteredFirm = selectedFirm.filter((selected) => {
+        return selected != null;
+      });
 
       // dispatch the result
-      // dispatch({
-      //   type: FILTER_OFFERING,
-      //   payload: filteredFirm,
-      // });
+      dispatch({
+        type: FILTER_OFFERING,
+        payload: filteredFirm,
+      });
     }
   };
 };
