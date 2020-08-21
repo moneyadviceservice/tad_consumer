@@ -75,7 +75,7 @@ export const filterOfferings = (pool) => {
               );
             }
             if (key === "how_far_in_advance_trip_cover_weeks") {
-              return parseInt(offering[key]) >= Object.values(value)[0];
+              return Object.values(value)[0] <= parseInt(offering[key]);
             }
             return offering[Object.keys(value)].includes(
               Object.values(value)[0]
