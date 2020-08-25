@@ -43,10 +43,12 @@ export const filterOfferings = (pool) => {
     const offerings = getState().listings.offerings.hits;
     const firms = getState().listings.firms.hits;
 
-    console.log(offerings);
+    // console.log(offerings);
 
     // remove empty object from dispatched filter values
     const filteredPool = pool.filter((value) => Object.keys(value).length != 0);
+
+    console.log(filteredPool);
 
     //  dispatch firm if filteredPool is empty
     if (filteredPool.length == 0) {
@@ -60,12 +62,17 @@ export const filterOfferings = (pool) => {
     if (filteredPool.length > 0) {
       // obtain the selected offering through filteredPool
       const selectedOfferings = filteredPool.reduce((acc, value) => {
+        // let age = value.cruise_30_days_max_age;
+        // console.log(age);
+
         return acc.filter((offering) => {
           for (var key in value) {
+            // console.log(key);
             if (typeof value[key] === "number") {
+              // console.log(age);
               let subtitle = parseInt(offering[Object.keys(value)]);
               return (
-                subtitle <= 1000 ||
+                subtitle === 1000 ||
                 Object.values(value)[0] <= offering.cruise_30_days_max_age ||
                 Object.values(value)[0] <= offering.cruise_45_days_max_age ||
                 Object.values(value)[0] <= offering.cruise_55_days_max_age ||
@@ -77,9 +84,26 @@ export const filterOfferings = (pool) => {
             if (key === "how_far_in_advance_trip_cover_weeks") {
               return Object.values(value)[0] <= parseInt(offering[key]);
             }
-            return offering[Object.keys(value)].includes(
-              Object.values(value)[0]
-            );
+            if (key === "tripLength") {
+              let land = "land_" + Object.values(value)[0] + "_days_max_age";
+              let cruise =
+                "cruise_" + Object.values(value)[0] + "_days_max_age";
+
+              console.log(value);
+              console.log(`${offering[land]}`, `${offering[cruise]}`);
+
+              return (
+                Object.values(value)[0] <= offering.cruise_30_days_max_age ||
+                Object.values(value)[0] <= offering.cruise_45_days_max_age ||
+                Object.values(value)[0] <= offering.cruise_55_days_max_age ||
+                Object.values(value)[0] <= offering.land_30_days_max_age ||
+                Object.values(value)[0] <= offering.land_45_days_max_age ||
+                Object.values(value)[0] <= offering.land_55_days_max_age
+              );
+            }
+            // return offering[Object.keys(value)].includes(
+            //   Object.values(value)[0]
+            // );
           }
         });
       }, offerings);

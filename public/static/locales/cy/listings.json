@@ -9,11 +9,15 @@
       { "type": "Trip Sengl", "value": "Single Trip" },
       { "type": "Aml-Daith Flynyddol", "value": "Annual Multi-trip" }
     ],
-    "tripLength": [
-      { "length": "Dan 35 diwrnod", "value": "Under 35 Days" },
-      { "length": "Dan 45 diwrnod", "value": "Under 45 Days" },
-      { "length": "Dan 55 diwrnod", "value": "Under 55 Days" },
-      { "length": "Dros 6 mis", "value": "Over 6 months" }
+    "singleTripLength": [
+      { "length": "Hyd at 1 mis", "value": "30" },
+      { "length": "1 - 6 mis", "value": "180" },
+      { "length": "DDros 6 mis", "value": "181" }
+    ],
+    "annualTripLength": [
+      { "length": "Heb fod yn hwy na 31 diwrnod", "value": "31" },
+      { "length": "Heb fod yn hwy na 45 diwrnod", "value": "45" },
+      { "length": "DHeb fod yn hwy na 55 diwrnod", "value": "55" }
     ],
     "cover_area": [
       { "location": "DU ac Ewrop", "value": "United Kingdom & Europe" },
@@ -56,7 +60,7 @@
     "clear": "Yn glir",
     "age_at_time_of_travel": "Oedran adeg teithio",
     "filter_by_insurance_type": "Hidlo yn ôl math o yswiriant",
-    "filter_by_length_of_trip": "Hidlo yn ôl hyd y daith",
+    "filter_by_length_of_trip": "Hyd y daith",
     "destination": "Cyrchfan",
     "is_your_trip_a_cruise": "A yw eich taith yn fordaith",
     "when_are_you_travelling": "Pryd wyt ti'n teithio",

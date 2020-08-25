@@ -9,11 +9,15 @@
       { "type": "Single Trip", "value": "Single Trip" },
       { "type": "Annual Multi-Trip", "value": "Annual Multi-trip" }
     ],
-    "tripLength": [
-      { "length": "Under 35 Days", "value": "Under 35 Days" },
-      { "length": "Under 45 Days", "value": "Under 45 Days" },
-      { "length": "Under 55 Days", "value": "Under 55 Days" },
-      { "length": "Over 6 months", "value": "Over 6 months" }
+    "singleTripLength": [
+      { "length": "Up to 1 month", "value": "30" },
+      { "length": "1 - 6 months", "value": "45" },
+      { "length": "Over 6 months", "value": "55" }
+    ],
+    "annualTripLength": [
+      { "length": "No longer than 31 days", "value": "30" },
+      { "length": "No longer than 45 days", "value": "45" },
+      { "length": "No longer than 55 days", "value": "55" }
     ],
     "cover_area": [
       { "location": "UK & Europe", "value": "United Kingdom & Europe" },
@@ -57,7 +61,7 @@
     "clear": "Clear",
     "age_at_time_of_travel": "Age at time of travel",
     "filter_by_insurance_type": "Filter by insurance type",
-    "filter_by_length_of_trip": "Filter by length of trip",
+    "filter_by_length_of_trip": "Length of trip",
     "destination": "Destination",
     "is_your_trip_a_cruise": "Is your trip a cruise",
     "when_are_you_travelling": "When are you travelling",

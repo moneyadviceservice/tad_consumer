@@ -7,6 +7,7 @@ import {
   resolveMedia,
   Form,
   Tooltip,
+  Paragraph,
 } from "@moneypensionservice/directories";
 
 import styled from "styled-components";
@@ -83,9 +84,11 @@ const Filters = ({ t }) => {
   const [land_55_days_max_age, changeLandMax55] = useState({});
 
   const filtersValues = [
+    age,
     trip_type,
     cover_area,
     how_far_in_advance_trip_cover_weeks,
+    tripLength,
     will_cover_undergoing_treatment,
     will_cover_terminal_prognosis,
     will_cover_specialist_equipment,
@@ -96,6 +99,23 @@ const Filters = ({ t }) => {
     land_45_days_max_age,
     land_55_days_max_age,
   ];
+  // console.log(tripLength);
+
+  const [annual, changeAnnualShow] = useState(true);
+  const [single, changeSingleShow] = useState(true);
+  const [note, changeNote] = useState(true);
+
+  const SingleTrip = styled.div`
+    display: ${(props) => (props.single ? "block" : "none")};
+  `;
+  const AnnualTrip = styled.div`
+    display: ${(props) => (props.annual ? "block" : "none")};
+  `;
+
+  const Note = styled.span`
+    display: ${(props) => (props.note ? "block" : "none")};
+    font-size: 12px;
+  `;
 
   const dispatch = useDispatch();
 
@@ -130,13 +150,24 @@ const Filters = ({ t }) => {
 
   const handleInsuranceType = (e) => {
     let trip_type = e.target.value;
+
     changeInsuranceType({ trip_type });
+    if (trip_type === "Single Trip") {
+      changeSingleShow(true);
+      changeAnnualShow(false);
+      changeNote(false);
+    }
+    if (trip_type === "Annual Multi-trip") {
+      changeAnnualShow(true);
+      changeSingleShow(false);
+      changeNote(false);
+    }
   };
 
-  // const handleTripLength = (e) => {
-  //   let tripLength = e.target.value;
-  //   changeTripLength({ tripLength });
-  // };
+  const handleTripLength = (e) => {
+    let tripLength = e.target.value;
+    changeTripLength({ tripLength });
+  };
 
   const handleDestination = (e) => {
     let cover_area = e.target.value;
@@ -184,6 +215,9 @@ const Filters = ({ t }) => {
     changeLandMax45({});
     changeLandMax55({});
     changeAge({ age: "" });
+    changeAnnualShow(false);
+    changeSingleShow(false);
+    changeNote(true);
   };
 
   return (
@@ -237,24 +271,115 @@ const Filters = ({ t }) => {
             {ageRange()}
           </Select>
         </FilterFormFIeld>
-        <FilterFormFIeld>
-          <Legend>
-            {t("headings.filter_by_insurance_type")}
-            <Tooltip minWidth="300px" hover text={insuranceTypeTip} />
-          </Legend>
-          {t("filters.trip_type", { returnObjects: true }).map(
-            ({ type, value }, i) => (
-              <Radio
-                key={i}
-                checked={trip_type.trip_type === value}
-                onChange={(e) => handleInsuranceType(e)}
-                label={type}
-                name="trip_type"
-                value={value}
-              />
-            )
-          )}
-        </FilterFormFIeld>
+        {/* Client Insurance Type */}
+        {process.browser ? (
+          <FilterFormFIeld>
+            <Legend>
+              {t("headings.filter_by_insurance_type")}
+              <Tooltip minWidth="300px" hover text={insuranceTypeTip} />
+            </Legend>
+            {t("filters.trip_type", { returnObjects: true }).map(
+              ({ type, value }, i) => (
+                <Radio
+                  key={i}
+                  checked={trip_type.trip_type === value}
+                  onChange={(e) => handleInsuranceType(e)}
+                  label={type}
+                  name="trip_type"
+                  value={value}
+                />
+              )
+            )}
+            <Heading level={4}>
+              {t("headings.filter_by_length_of_trip")}
+            </Heading>
+            <Note note={note}>Please select the type of insurance first</Note>
+            <SingleTrip single={single}>
+              {t("filters.singleTripLength", { returnObjects: true }).map(
+                ({ length, value }, i) => (
+                  <Radio
+                    key={i}
+                    checked={tripLength.tripLength === value}
+                    onChange={(e) => handleTripLength(e)}
+                    label={length}
+                    name="tripLength"
+                    id={`length-${i}`}
+                    value={value}
+                  />
+                )
+              )}
+            </SingleTrip>
+            <AnnualTrip annual={annual}>
+              <span style={{ fontSize: "14px" }}>for each individual trip</span>
+
+              {t("filters.annualTripLength", { returnObjects: true }).map(
+                ({ length, value }, i) => (
+                  <Radio
+                    key={i}
+                    checked={tripLength.tripLength === value}
+                    onChange={(e) => handleTripLength(e)}
+                    label={length}
+                    name="tripLength"
+                    id={`length-${i}`}
+                    value={value}
+                  />
+                )
+              )}
+            </AnnualTrip>
+          </FilterFormFIeld>
+        ) : (
+          <FilterFormFIeld>
+            <Legend>{t("headings.filter_by_insurance_type")}</Legend>
+            {t("filters.trip_type", { returnObjects: true }).map(
+              ({ type, value }, i) => (
+                <Radio
+                  key={i}
+                  checked={trip_type.trip_type === value}
+                  onChange={(e) => handleInsuranceType(e)}
+                  label={type}
+                  name="trip_type"
+                  value={value}
+                />
+              )
+            )}
+            <Heading level={4}>
+              {t("headings.filter_by_length_of_trip")}
+            </Heading>
+            <Paragraph textSize="12px">
+              Choose only if you selected Single Trip
+            </Paragraph>
+            {t("filters.singleTripLength", { returnObjects: true }).map(
+              ({ length, value }, i) => (
+                <Radio
+                  style={{ fontSize: "13px" }}
+                  key={i}
+                  checked={tripLength.tripLength === value}
+                  onChange={(e) => handleTripLength(e)}
+                  label={length}
+                  name="tripLength"
+                  value={value}
+                />
+              )
+            )}
+            <Paragraph textSize="12px" style={{ marginTop: "20px" }}>
+              Choose only if you selected Annual Multi-trip
+            </Paragraph>
+            {t("filters.annualTripLength", { returnObjects: true }).map(
+              ({ length, value }, i) => (
+                <Radio
+                  style={{ fontSize: "13px" }}
+                  key={i}
+                  checked={tripLength.tripLength === value}
+                  onChange={(e) => handleTripLength(e)}
+                  label={length}
+                  name="tripLength"
+                  value={value}
+                />
+              )
+            )}
+          </FilterFormFIeld>
+        )}
+
         {/* <FilterFormFIeld>
           <Legend>
             {t("headings.filter_by_length_of_trip")}
