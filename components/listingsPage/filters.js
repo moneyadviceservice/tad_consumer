@@ -105,8 +105,8 @@ const Filters = ({ t }) => {
   ];
   console.log(cruise);
 
-  const [annual, changeAnnualShow] = useState(true);
-  const [single, changeSingleShow] = useState(true);
+  const [annual, changeAnnualShow] = useState(false);
+  const [single, changeSingleShow] = useState(false);
   const [note, changeNote] = useState(true);
 
   const SingleTrip = styled.div`

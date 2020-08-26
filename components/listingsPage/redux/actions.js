@@ -54,9 +54,10 @@ export const filterOfferings = (pool) => {
         age = fill.age;
       }
     });
+
+    // remove age from filteredPool
     filteredPool.shift();
 
-    // console.log(parseInt(age));
     //  dispatch firm if filteredPool is empty
     if (filteredPool.length == 0) {
       dispatch({
@@ -69,13 +70,9 @@ export const filterOfferings = (pool) => {
     if (filteredPool.length > 0) {
       // obtain the selected offering through filteredPool
       const selectedOfferings = filteredPool.reduce((acc, value) => {
-        // let age = value.cruise_30_days_max_age;
-
         return acc.filter((offering) => {
           for (var key in value) {
-            // console.log(age);
             if (typeof value[key] === "number") {
-              // console.log(age);
               let subtitle = parseInt(offering[Object.keys(value)]);
               return (
                 subtitle === 1000 ||
@@ -95,10 +92,6 @@ export const filterOfferings = (pool) => {
               let land = "land_" + Object.values(value)[0] + "_days_max_age";
               let cruise =
                 "cruise_" + Object.values(value)[0] + "_days_max_age";
-              // let l = `${offering[land]}`;
-              // let c = `${offering[cruise]}`;
-
-              // console.log(typeof parseInt(l), typeof parseInt(c));
 
               console.log(
                 age,
@@ -113,12 +106,12 @@ export const filterOfferings = (pool) => {
               );
 
               return (
-                ((parseInt(`${offering[land]}`) != -1 ||
+                (parseInt(`${offering[land]}`) != -1 ||
                   parseInt(`${offering[cruise]}`) != -1) &&
-                  age >= parseInt(`${offering[land]}`)) ||
-                age >= parseFloat(`${offering[cruise]}`) ||
-                parseInt(`${offering[land]}`) === 1000 ||
-                parseFloat(`${offering[cruise]}`) === 1000
+                (age >= parseInt(`${offering[land]}`) ||
+                  age >= parseFloat(`${offering[cruise]}`) ||
+                  parseInt(`${offering[land]}`) === 1000 ||
+                  parseFloat(`${offering[cruise]}`) === 1000)
               );
             }
             return offering[Object.keys(value)].includes(
