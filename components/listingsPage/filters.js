@@ -68,6 +68,8 @@ const Filters = ({ t }) => {
   const [age, changeAge] = useState({});
   const [trip_type, changeInsuranceType] = useState({});
   const [tripLength, changeTripLength] = useState({});
+  const [singleOption, changeSingleOption] = useState({});
+  const [annualOption, changeAnnualOption] = useState({});
   const [cover_area, changeDestination] = useState({});
   const [cruise, changeCruise] = useState({});
   const [how_far_in_advance_trip_cover_weeks, changeWhen] = useState({});
@@ -87,8 +89,10 @@ const Filters = ({ t }) => {
     age,
     trip_type,
     cover_area,
+    // cruise,
     how_far_in_advance_trip_cover_weeks,
-    tripLength,
+    singleOption,
+    annualOption,
     will_cover_undergoing_treatment,
     will_cover_terminal_prognosis,
     will_cover_specialist_equipment,
@@ -99,7 +103,7 @@ const Filters = ({ t }) => {
     land_45_days_max_age,
     land_55_days_max_age,
   ];
-  // console.log(tripLength);
+  console.log(cruise);
 
   const [annual, changeAnnualShow] = useState(true);
   const [single, changeSingleShow] = useState(true);
@@ -140,9 +144,6 @@ const Filters = ({ t }) => {
     dispatch(filterOfferings(filtersValues));
   }, [filtersValues]);
 
-  // console.log(offerings);
-  // console.log(cruise_30_days_max_age);
-
   const handleAge = (e) => {
     let age = e.target.value;
     changeAge({ age });
@@ -164,9 +165,16 @@ const Filters = ({ t }) => {
     }
   };
 
-  const handleTripLength = (e) => {
-    let tripLength = e.target.value;
-    changeTripLength({ tripLength });
+  const handleSingleOption = (e) => {
+    let singleOption = e.target.value;
+    changeSingleOption({ singleOption });
+    changeAnnualOption({});
+  };
+
+  const handleAnnualOption = (e) => {
+    let annualOption = e.target.value;
+    changeAnnualOption({ annualOption });
+    changeSingleOption({});
   };
 
   const handleDestination = (e) => {
@@ -174,10 +182,10 @@ const Filters = ({ t }) => {
     changeDestination({ cover_area });
   };
 
-  // const handleCruise = (e) => {
-  //   let cruise = e.target.value;
-  //   changeCruise({ cruise });
-  // };
+  const handleCruise = (e) => {
+    let cruise = e.target.value;
+    changeCruise({ cruise });
+  };
 
   const handleWhen = (e) => {
     let how_far_in_advance_trip_cover_weeks = e.target.value;
@@ -201,7 +209,8 @@ const Filters = ({ t }) => {
 
   const clearFilters = () => {
     changeInsuranceType({});
-    changeTripLength({});
+    changeSingleOption({});
+    changeAnnualOption({});
     changeDestination({});
     changeCruise({});
     changeWhen({});
@@ -299,11 +308,10 @@ const Filters = ({ t }) => {
                 ({ length, value }, i) => (
                   <Radio
                     key={i}
-                    checked={tripLength.tripLength === value}
-                    onChange={(e) => handleTripLength(e)}
+                    checked={singleOption.singleOption === value}
+                    onChange={(e) => handleSingleOption(e)}
                     label={length}
-                    name="tripLength"
-                    id={`length-${i}`}
+                    name="singleOption"
                     value={value}
                   />
                 )
@@ -316,11 +324,10 @@ const Filters = ({ t }) => {
                 ({ length, value }, i) => (
                   <Radio
                     key={i}
-                    checked={tripLength.tripLength === value}
-                    onChange={(e) => handleTripLength(e)}
+                    checked={annualOption.annualOption === value}
+                    onChange={(e) => handleAnnualOption(e)}
                     label={length}
-                    name="tripLength"
-                    id={`length-${i}`}
+                    name="annualOption"
                     value={value}
                   />
                 )
@@ -380,25 +387,6 @@ const Filters = ({ t }) => {
           </FilterFormFIeld>
         )}
 
-        {/* <FilterFormFIeld>
-          <Legend>
-            {t("headings.filter_by_length_of_trip")}
-            <Tooltip hover text="To be supplied" />
-          </Legend>
-          {t("filters.tripLength", { returnObjects: true }).map(
-            ({ length, value }, i) => (
-              <Radio
-                key={i}
-                checked={tripLength.tripLength === value}
-                onChange={(e) => handleTripLength(e)}
-                label={length}
-                name="tripLength"
-                id={`length-${i}`}
-                value={value}
-              />
-            )
-          )}
-        </FilterFormFIeld> */}
         <FilterFormFIeld>
           <Legend>
             {t("headings.destination")}
@@ -417,7 +405,7 @@ const Filters = ({ t }) => {
             )
           )}
         </FilterFormFIeld>
-        {/* <FilterFormFIeld>
+        <FilterFormFIeld>
           <Legend>
             {t("headings.is_your_trip_a_cruise")}?
             <Tooltip hover text="To be supplied" />
@@ -435,7 +423,7 @@ const Filters = ({ t }) => {
               />
             )
           )}
-        </FilterFormFIeld> */}
+        </FilterFormFIeld>
         <FilterFormFIeld>
           <Legend>
             {t("headings.when_are_you_travelling")}?

@@ -48,8 +48,15 @@ export const filterOfferings = (pool) => {
     // remove empty object from dispatched filter values
     const filteredPool = pool.filter((value) => Object.keys(value).length != 0);
 
-    console.log(filteredPool);
+    let age = 0;
+    filteredPool.map((fill) => {
+      if (fill.age) {
+        age = fill.age;
+      }
+    });
+    filteredPool.shift();
 
+    // console.log(parseInt(age));
     //  dispatch firm if filteredPool is empty
     if (filteredPool.length == 0) {
       dispatch({
@@ -63,11 +70,10 @@ export const filterOfferings = (pool) => {
       // obtain the selected offering through filteredPool
       const selectedOfferings = filteredPool.reduce((acc, value) => {
         // let age = value.cruise_30_days_max_age;
-        // console.log(age);
 
         return acc.filter((offering) => {
           for (var key in value) {
-            // console.log(key);
+            // console.log(age);
             if (typeof value[key] === "number") {
               // console.log(age);
               let subtitle = parseInt(offering[Object.keys(value)]);
@@ -84,26 +90,40 @@ export const filterOfferings = (pool) => {
             if (key === "how_far_in_advance_trip_cover_weeks") {
               return Object.values(value)[0] <= parseInt(offering[key]);
             }
-            if (key === "tripLength") {
+
+            if (key === "singleOption" || key === "annualOption") {
               let land = "land_" + Object.values(value)[0] + "_days_max_age";
               let cruise =
                 "cruise_" + Object.values(value)[0] + "_days_max_age";
+              // let l = `${offering[land]}`;
+              // let c = `${offering[cruise]}`;
 
-              console.log(value);
-              console.log(`${offering[land]}`, `${offering[cruise]}`);
+              // console.log(typeof parseInt(l), typeof parseInt(c));
+
+              console.log(
+                age,
+                `${offering[land]}`,
+                `${offering[cruise]}`,
+                age >= parseInt(`${offering[land]}`),
+                age >= parseInt(`${offering[cruise]}`),
+                parseInt(`${offering[cruise]}`) === 1000,
+                parseInt(`${offering[land]}`) === 1000,
+
+                offering.objectID
+              );
 
               return (
-                Object.values(value)[0] <= offering.cruise_30_days_max_age ||
-                Object.values(value)[0] <= offering.cruise_45_days_max_age ||
-                Object.values(value)[0] <= offering.cruise_55_days_max_age ||
-                Object.values(value)[0] <= offering.land_30_days_max_age ||
-                Object.values(value)[0] <= offering.land_45_days_max_age ||
-                Object.values(value)[0] <= offering.land_55_days_max_age
+                ((parseInt(`${offering[land]}`) != -1 ||
+                  parseInt(`${offering[cruise]}`) != -1) &&
+                  age >= parseInt(`${offering[land]}`)) ||
+                age >= parseFloat(`${offering[cruise]}`) ||
+                parseInt(`${offering[land]}`) === 1000 ||
+                parseFloat(`${offering[cruise]}`) === 1000
               );
             }
-            // return offering[Object.keys(value)].includes(
-            //   Object.values(value)[0]
-            // );
+            return offering[Object.keys(value)].includes(
+              Object.values(value)[0]
+            );
           }
         });
       }, offerings);
