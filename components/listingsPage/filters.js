@@ -89,7 +89,7 @@ const Filters = ({ t }) => {
     age,
     trip_type,
     cover_area,
-    // cruise,
+    cruise,
     how_far_in_advance_trip_cover_weeks,
     singleOption,
     annualOption,
@@ -103,7 +103,7 @@ const Filters = ({ t }) => {
     land_45_days_max_age,
     land_55_days_max_age,
   ];
-  console.log(cruise);
+  // console.log(filtersValues);
 
   const [annual, changeAnnualShow] = useState(false);
   const [single, changeSingleShow] = useState(false);
