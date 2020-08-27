@@ -116,29 +116,50 @@ export const filterOfferings = (pool) => {
             }
 
             if (key === "cruise" && Object.values(value)[0] === "Yes") {
+              console.log(
+                age,
+                offering.cruise_30_days_max_age,
+                offering.cruise_45_days_max_age,
+                offering.cruise_55_days_max_age,
+                age >= parseInt(offering.cruise_30_days_max_age),
+                age >= parseInt(offering.cruise_45_days_max_age),
+                age >= parseInt(offering.cruise_55_days_max_age),
+                parseInt(offering.cruise_30_days_max_age) === 1000,
+                parseInt(offering.cruise_45_days_max_age) === 1000,
+                parseInt(offering.cruise_55_days_max_age) === 1000,
+                offering.objectID
+              );
               return (
-                parseInt(offering.cruise_30_days_max_age) != -1 &&
-                parseInt(offering.cruise_45_days_max_age) != -1 &&
-                parseInt(offering.cruise_55_days_max_age) != -1 &&
-                (age <= parseInt(offering.cruise_30_days_max_age) ||
-                  age <= parseInt(offering.cruise_45_days_max_age) ||
-                  age <= parseInt(offering.cruise_55_days_max_age) ||
-                  parseInt(offering.cruise_30_days_max_age) === 1000 ||
-                  parseInt(offering.cruise_45_days_max_age) === 1000 ||
-                  parseInt(offering.cruise_55_days_max_age) === 1000)
+                // parseInt(offering.cruise_30_days_max_age) != -1 &&
+                // parseInt(offering.cruise_45_days_max_age) != -1 &&
+                // parseInt(offering.cruise_55_days_max_age) != -1 &&
+                (age >= parseInt(offering.cruise_30_days_max_age) ||
+                  age >= parseInt(offering.cruise_45_days_max_age) ||
+                  age >= parseInt(offering.cruise_55_days_max_age) ||
+                  parseInt(offering.cruise_30_days_max_age) == 1000 ||
+                  parseInt(offering.cruise_45_days_max_age) == 1000 ||
+                  parseInt(offering.cruise_55_days_max_age) == 1000) &&
+                parseInt(offering.cruise_30_days_max_age) > 0 &&
+                parseInt(offering.cruise_45_days_max_age) > 0 &&
+                parseInt(offering.cruise_55_days_max_age) > 0
               );
             }
             if (key === "cruise" && Object.values(value)[0] === "No") {
+              console.log(
+                offering.land_30_days_max_age,
+                offering.land_45_days_max_age,
+                offering.land_55_days_max_age
+              );
               return (
-                parseInt(offering.land_30_days_max_age) > -1 &&
-                parseInt(offering.land_45_days_max_age) > -1 &&
-                parseInt(offering.land_55_days_max_age) > -1 &&
-                (age <= parseInt(offering.land_30_days_max_age) ||
-                  age <= parseInt(offering.land_45_days_max_age) ||
-                  age <= parseInt(offering.land_55_days_max_age) ||
-                  parseInt(offering.land_30_days_max_age) === 1000 ||
-                  parseInt(offering.land_45_days_max_age) === 1000 ||
-                  parseInt(offering.land_55_days_max_age) === 1000)
+                // (parseInt(offering.land_30_days_max_age) != -1 ||
+                //   parseInt(offering.land_45_days_max_age) != -1 ||
+                //   parseInt(offering.land_55_days_max_age) != -1) &&
+                age >= parseInt(offering.land_30_days_max_age) ||
+                age >= parseInt(offering.land_45_days_max_age) ||
+                age >= parseInt(offering.land_55_days_max_age) ||
+                parseInt(offering.land_30_days_max_age) === 1000 ||
+                parseInt(offering.land_45_days_max_age) === 1000 ||
+                parseInt(offering.land_55_days_max_age) === 1000
               );
             }
             return offering[Object.keys(value)].includes(
