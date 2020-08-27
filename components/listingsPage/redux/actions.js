@@ -1,5 +1,6 @@
 import {
   GET_FIRMS_SUCCESS,
+  GET_FIRMS_COMBINED_SUCCESS,
   GET_OFFERINGS_SUCCESS,
   FILTER_OFFERING,
 } from "./constants";
@@ -12,11 +13,19 @@ const client = algoliasearch(
 
 const firms = client.initIndex("travel-firms");
 const offerings = client.initIndex("travel-firm-offerings");
+const altFirms = client.initIndex("travel-firms-combined");
 
 export const getAlgoFirms = () => {
   return (dispatch) =>
     firms.search("").then((res) => {
       dispatch(getFirmsSuccess(res));
+    });
+};
+
+export const getAlgoFirmsCombined = () => {
+  return (dispatch) =>
+    altFirms.search("").then((res) => {
+      dispatch(getFirmsCombinedSuccess(res));
     });
 };
 
@@ -27,8 +36,18 @@ export const getAlgoOfferings = () => {
     });
 };
 
+// export const getFirmsSuccess = (firms) => ({
+//   type: GET_FIRMS_SUCCESS,
+//   payload: firms,
+// });
+
 export const getFirmsSuccess = (firms) => ({
   type: GET_FIRMS_SUCCESS,
+  payload: firms,
+});
+
+export const getFirmsCombinedSuccess = (firms) => ({
+  type: GET_FIRMS_COMBINED_SUCCESS,
   payload: firms,
 });
 
@@ -42,8 +61,9 @@ export const filterOfferings = (pool) => {
     // get data from the state
     const offerings = getState().listings.offerings.hits;
     const firms = getState().listings.firms.hits;
+    const alt = getState().listings.firmsCombined.hits;
 
-    // console.log(offerings);
+    // console.log(alt);
 
     // remove empty object from dispatched filter values
     const filteredPool = pool.filter((value) => Object.keys(value).length > 0);

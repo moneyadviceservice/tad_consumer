@@ -9,6 +9,7 @@ import { Section, ExtendedSection } from "../Utils/layouts";
 import {
   getAlgoFirms,
   getAlgoOfferings,
+  getAlgoFirmsCombined,
 } from "../components/listingsPage/redux/actions";
 
 import Listing from "../components/listingsPage";
@@ -43,6 +44,7 @@ const Listings = ({ t }) => {
 Listings.getInitialProps = async ({ reduxStore }) => {
   await reduxStore.dispatch(getAlgoFirms());
   await reduxStore.dispatch(getAlgoOfferings());
+  await reduxStore.dispatch(getAlgoFirmsCombined());
 
   return {
     namespacesRequired: ["listings", "common", "footer"],
