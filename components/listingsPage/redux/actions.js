@@ -82,6 +82,12 @@ export const filterOfferings = (pool) => {
               let subtitle = parseInt(offering[Object.keys(value)]);
               return (
                 subtitle <= 1000 ||
+                // offering.cruise_30_days_max_age == 1000 ||
+                // offering.cruise_45_days_max_age == 1000 ||
+                // offering.cruise_55_days_max_age == 1000 ||
+                // offering.cruise_30_days_max_age == 1000 ||
+                // offering.cruise_45_days_max_age == 1000 ||
+                // offering.cruise_55_days_max_age == 1000 ||
                 Object.values(value)[0] <= offering.cruise_30_days_max_age ||
                 Object.values(value)[0] <= offering.cruise_45_days_max_age ||
                 Object.values(value)[0] <= offering.cruise_55_days_max_age ||
@@ -116,7 +122,10 @@ export const filterOfferings = (pool) => {
                   parseInt(offering.cruise_30_days_max_age) != -1) &&
                   age >= parseInt(offering.cruise_30_days_max_age)) ||
                 age >= parseInt(offering.cruise_45_days_max_age) ||
-                age >= parseInt(offering.cruise_55_days_max_age)
+                age >= parseInt(offering.cruise_55_days_max_age) ||
+                parseInt(offering.cruise_30_days_max_age) === 1000 ||
+                parseInt(offering.cruise_45_days_max_age) === 1000 ||
+                parseInt(offering.cruise_55_days_max_age) === 1000
               );
             }
             if (key === "cruise" && Object.values(value)[0] === "No") {
@@ -126,7 +135,10 @@ export const filterOfferings = (pool) => {
                   parseInt(offering.land_30_days_max_age) != -1) &&
                   age >= parseInt(offering.land_30_days_max_age)) ||
                 age >= parseInt(offering.land_45_days_max_age) ||
-                age >= parseInt(offering.land_55_days_max_age)
+                age >= parseInt(offering.land_55_days_max_age) ||
+                parseInt(offering.land_30_days_max_age) === 1000 ||
+                parseInt(offering.land_45_days_max_age) === 1000 ||
+                parseInt(offering.land_55_days_max_age) === 1000
               );
             }
             return offering[Object.keys(value)].includes(
