@@ -86,7 +86,6 @@ const Filters = ({ t }) => {
   const [land_55_days_max_age, changeLandMax55] = useState({});
 
   const filtersValues = [
-    age,
     trip_type,
     cover_area,
     cruise,

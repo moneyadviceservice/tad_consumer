@@ -48,21 +48,21 @@ export const filterOfferings = (pool) => {
     // remove empty object from dispatched filter values
     const filteredPool = pool.filter((value) => Object.keys(value).length > 0);
 
-    var myArrayFiltered = pool.filter((ele) => {
-      return ele.constructor === Object && Object.keys(ele).length > 0;
-    });
+    // var myArrayFiltered = pool.filter((ele) => {
+    //   return ele.constructor === Object && Object.keys(ele).length > 0;
+    // });
 
     let age = 0;
     filteredPool.map((fill) => {
-      if (fill.age) {
-        age = fill.age;
+      if (fill.cruise_30_days_max_age) {
+        age = fill.cruise_30_days_max_age;
       }
     });
 
     // remove age from filteredPool
-    if (age !== 0) {
-      filteredPool.shift();
-    }
+    // if (age !== 0) {
+    //   filteredPool.shift();
+    // }
 
     //  dispatch firm if filteredPool is empty
     if (filteredPool.length == 0) {
@@ -81,7 +81,7 @@ export const filterOfferings = (pool) => {
             if (typeof value[key] === "number") {
               let subtitle = parseInt(offering[Object.keys(value)]);
               return (
-                subtitle === 1000 ||
+                subtitle <= 1000 ||
                 Object.values(value)[0] <= offering.cruise_30_days_max_age ||
                 Object.values(value)[0] <= offering.cruise_45_days_max_age ||
                 Object.values(value)[0] <= offering.cruise_55_days_max_age ||
