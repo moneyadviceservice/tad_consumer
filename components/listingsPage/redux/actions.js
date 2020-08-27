@@ -108,8 +108,8 @@ export const filterOfferings = (pool) => {
               return (
                 (parseInt(`${offering[land]}`) != -1 ||
                   parseInt(`${offering[cruise]}`) != -1) &&
-                (age >= parseInt(`${offering[land]}`) ||
-                  age >= parseFloat(`${offering[cruise]}`) ||
+                (age <= parseInt(`${offering[land]}`) ||
+                  age <= parseFloat(`${offering[cruise]}`) ||
                   parseInt(`${offering[land]}`) === 1000 ||
                   parseFloat(`${offering[cruise]}`) === 1000)
               );
@@ -120,9 +120,9 @@ export const filterOfferings = (pool) => {
                 ((parseInt(offering.cruise_30_days_max_age) != -1 ||
                   parseInt(offering.cruise_30_days_max_age) != -1 ||
                   parseInt(offering.cruise_30_days_max_age) != -1) &&
-                  age >= parseInt(offering.cruise_30_days_max_age)) ||
-                age >= parseInt(offering.cruise_45_days_max_age) ||
-                age >= parseInt(offering.cruise_55_days_max_age) ||
+                  age <= parseInt(offering.cruise_30_days_max_age)) ||
+                age <= parseInt(offering.cruise_45_days_max_age) ||
+                age <= parseInt(offering.cruise_55_days_max_age) ||
                 parseInt(offering.cruise_30_days_max_age) === 1000 ||
                 parseInt(offering.cruise_45_days_max_age) === 1000 ||
                 parseInt(offering.cruise_55_days_max_age) === 1000
@@ -133,9 +133,9 @@ export const filterOfferings = (pool) => {
                 ((parseInt(offering.land_30_days_max_age) != -1 ||
                   parseInt(offering.land_30_days_max_age) != -1 ||
                   parseInt(offering.land_30_days_max_age) != -1) &&
-                  age >= parseInt(offering.land_30_days_max_age)) ||
-                age >= parseInt(offering.land_45_days_max_age) ||
-                age >= parseInt(offering.land_55_days_max_age) ||
+                  age <= parseInt(offering.land_30_days_max_age)) ||
+                age <= parseInt(offering.land_45_days_max_age) ||
+                age <= parseInt(offering.land_55_days_max_age) ||
                 parseInt(offering.land_30_days_max_age) === 1000 ||
                 parseInt(offering.land_45_days_max_age) === 1000 ||
                 parseInt(offering.land_55_days_max_age) === 1000
