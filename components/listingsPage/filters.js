@@ -73,7 +73,7 @@ const Filters = ({ t }) => {
   const [cover_area, changeDestination] = useState({});
   const [cruise, changeCruise] = useState({});
   const [how_far_in_advance_trip_cover_weeks, changeWhen] = useState({});
-  const [will_cover_undergoing_treatment, changeTreatment] = useState({});
+  // const [will_cover_undergoing_treatment, changeTreatment] = useState({});
   const [will_cover_terminal_prognosis, changeTerminal] = useState({});
   const [will_cover_specialist_equipment, changeEquipment] = useState({});
 
@@ -93,7 +93,7 @@ const Filters = ({ t }) => {
     how_far_in_advance_trip_cover_weeks,
     singleOption,
     annualOption,
-    will_cover_undergoing_treatment,
+    // will_cover_undergoing_treatment,
     will_cover_terminal_prognosis,
     will_cover_specialist_equipment,
     cruise_30_days_max_age,
@@ -192,10 +192,10 @@ const Filters = ({ t }) => {
     changeWhen({ how_far_in_advance_trip_cover_weeks });
   };
 
-  const handleTreatment = (e) => {
-    let will_cover_undergoing_treatment = e.target.value;
-    changeTreatment({ will_cover_undergoing_treatment });
-  };
+  // const handleTreatment = (e) => {
+  //   let will_cover_undergoing_treatment = e.target.value;
+  //   changeTreatment({ will_cover_undergoing_treatment });
+  // };
 
   const handleTerminal = (e) => {
     let will_cover_terminal_prognosis = e.target.value;
@@ -214,7 +214,7 @@ const Filters = ({ t }) => {
     changeDestination({});
     changeCruise({});
     changeWhen({});
-    changeTreatment({});
+    // changeTreatment({});
     changeTerminal({});
     changeEquipment({});
     changeCruise30Max({});
@@ -445,7 +445,7 @@ const Filters = ({ t }) => {
             />
           ))}
         </FilterFormFIeld>
-        <FilterFormFIeld>
+        {/* <FilterFormFIeld>
           <Legend>
             {t("headings.i_am_going_abroad_for_medical_treatment")}
             <Tooltip hover text="To be supplied" />
@@ -466,7 +466,7 @@ const Filters = ({ t }) => {
               value={value}
             />
           ))}
-        </FilterFormFIeld>
+        </FilterFormFIeld> */}
         <FilterFormFIeld>
           <Legend>
             {t("headings.my_doctor_has_given_me_a_terminal_prognosis")}
