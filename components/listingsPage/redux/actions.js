@@ -111,16 +111,22 @@ export const filterOfferings = (pool) => {
                 offering[cruise] != -1
               );
               return (
-                (age >= offering[cruise] || offering[cruise] == 1000) &&
-                offering[cruise] != -1
+                (age >= offering[cruise] &&
+                  age <= offering[cruise] &&
+                  offering[cruise] != -1) ||
+                offering[cruise] === 1000 ||
+                age <= offering[cruise]
               );
             }
             if (key === "cruise" && Object.values(value)[0] === "No") {
               let land = "land_" + insuranceOption + "_days_max_age";
 
               return (
-                (age >= offering[land] || offering[land] == 1000) &&
-                offering[land] != -1
+                (age >= offering[land] &&
+                  age <= offering[land] &&
+                  offering[land] != -1) ||
+                offering[land] === 1000 ||
+                age <= offering[land]
               );
             }
             return offering[Object.keys(value)].includes(
