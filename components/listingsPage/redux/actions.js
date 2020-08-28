@@ -129,6 +129,26 @@ export const filterOfferings = (pool) => {
                 age <= offering[land]
               );
             }
+            if (
+              key === "will_cover_terminal_prognosis" &&
+              Object.values(value)[0] === "No"
+            ) {
+              return (
+                offering[Object.keys(value)].includes("Yes") ||
+                offering[Object.keys(value)].includes("No") ||
+                offering[Object.keys(value)].includes(null)
+              );
+            }
+            if (
+              key === "will_cover_specialist_equipment" &&
+              Object.values(value)[0] === "No"
+            ) {
+              return (
+                offering[Object.keys(value)].includes("Yes") ||
+                offering[Object.keys(value)].includes("No") ||
+                offering[Object.keys(value)].includes(null)
+              );
+            }
             return offering[Object.keys(value)].includes(
               Object.values(value)[0]
             );
