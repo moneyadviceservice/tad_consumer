@@ -75,7 +75,7 @@ export const filterOfferings = (pool) => {
             if (typeof value[key] === "number") {
               let subtitle = parseInt(offering[Object.keys(value)]);
               return (
-                subtitle <= 1000 ||
+                subtitle === 1000 ||
                 Object.values(value)[0] <= offering.cruise_30_days_max_age ||
                 Object.values(value)[0] <= offering.cruise_45_days_max_age ||
                 Object.values(value)[0] <= offering.cruise_55_days_max_age ||
@@ -180,6 +180,7 @@ export const filterOfferings = (pool) => {
         return selected != null;
       });
 
+      console.log(filteredFirm);
       // dispatch the result
       dispatch({
         type: FILTER_OFFERING,
