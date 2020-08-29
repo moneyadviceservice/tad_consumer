@@ -72,6 +72,7 @@ export const filterOfferings = (pool) => {
       const selectedOfferings = filteredPool.reduce((acc, value) => {
         return acc.filter((offering) => {
           for (var key in value) {
+            // filter age
             if (typeof value[key] === "number") {
               let subtitle = parseInt(offering[Object.keys(value)]);
               return (
@@ -84,10 +85,11 @@ export const filterOfferings = (pool) => {
                 Object.values(value)[0] <= offering.land_55_days_max_age
               );
             }
+            // filter when travelling
             if (key === "how_far_in_advance_trip_cover_weeks") {
               return Object.values(value)[0] <= parseInt(offering[key]);
             }
-
+            // filter length of trip
             if (key === "singleOption" || key === "annualOption") {
               let land = "land_" + Object.values(value)[0] + "_days_max_age";
               let cruise =
@@ -102,33 +104,23 @@ export const filterOfferings = (pool) => {
                   parseFloat(`${offering[cruise]}`) === 1000)
               );
             }
-
+            // filter cruise
             if (key === "cruise" && Object.values(value)[0] === "Yes") {
               let cruise = "cruise_" + insuranceOption + "_days_max_age";
-              console.log(
-                age >= offering[cruise],
-                offering[cruise] == 1000,
-                offering[cruise] != -1
-              );
               return (
-                (age >= offering[cruise] &&
-                  age <= offering[cruise] &&
-                  offering[cruise] != -1) ||
-                offering[cruise] === 1000 ||
-                age <= offering[cruise]
+                (age <= offering[cruise] && offering[cruise] != -1) ||
+                (offering[cruise] === 1000 && offering[cruise] > -1)
               );
             }
+            // filter non cruise
             if (key === "cruise" && Object.values(value)[0] === "No") {
               let land = "land_" + insuranceOption + "_days_max_age";
-
               return (
-                (age >= offering[land] &&
-                  age <= offering[land] &&
-                  offering[land] != -1) ||
-                offering[land] === 1000 ||
-                age <= offering[land]
+                (age <= offering[land] && offering[land] != -1) ||
+                (offering[land] === 1000 && offering[land] > -1)
               );
             }
+            // filter terminal prognosis not covered
             if (
               key === "will_cover_terminal_prognosis" &&
               Object.values(value)[0] === "No"
@@ -139,6 +131,7 @@ export const filterOfferings = (pool) => {
                 offering[Object.keys(value)].includes(null)
               );
             }
+            // filter specialist equipment not covered
             if (
               key === "will_cover_specialist_equipment" &&
               Object.values(value)[0] === "No"
@@ -149,6 +142,7 @@ export const filterOfferings = (pool) => {
                 offering[Object.keys(value)].includes(null)
               );
             }
+            // filter others
             return offering[Object.keys(value)].includes(
               Object.values(value)[0]
             );
