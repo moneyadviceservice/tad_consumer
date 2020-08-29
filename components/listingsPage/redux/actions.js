@@ -63,26 +63,25 @@ export const filterOfferings = (pool) => {
     const firms = getState().listings.firms.hits;
     const alt = getState().listings.firmsCombined.hits;
 
+<<<<<<< HEAD
     // console.log(alt);
 
+=======
+>>>>>>> staging
     // remove empty object from dispatched filter values
     const filteredPool = pool.filter((value) => Object.keys(value).length > 0);
 
-    var myArrayFiltered = pool.filter((ele) => {
-      return ele.constructor === Object && Object.keys(ele).length > 0;
-    });
-
     let age = 0;
+    let insuranceOption;
+
     filteredPool.map((fill) => {
-      if (fill.age) {
-        age = fill.age;
+      if (fill.cruise_30_days_max_age) {
+        age = fill.cruise_30_days_max_age;
+      }
+      if (fill.singleOption || fill.annualOption) {
+        insuranceOption = fill.singleOption || fill.annualOption;
       }
     });
-
-    // remove age from filteredPool
-    if (age !== 0) {
-      filteredPool.shift();
-    }
 
     //  dispatch firm if filteredPool is empty
     if (filteredPool.length == 0) {
@@ -122,31 +121,57 @@ export const filterOfferings = (pool) => {
               return (
                 (parseInt(`${offering[land]}`) != -1 ||
                   parseInt(`${offering[cruise]}`) != -1) &&
-                (age >= parseInt(`${offering[land]}`) ||
-                  age >= parseFloat(`${offering[cruise]}`) ||
+                (age <= parseInt(`${offering[land]}`) ||
+                  age <= parseFloat(`${offering[cruise]}`) ||
                   parseInt(`${offering[land]}`) === 1000 ||
                   parseFloat(`${offering[cruise]}`) === 1000)
               );
             }
 
             if (key === "cruise" && Object.values(value)[0] === "Yes") {
+              let cruise = "cruise_" + insuranceOption + "_days_max_age";
+              console.log(
+                age >= offering[cruise],
+                offering[cruise] == 1000,
+                offering[cruise] != -1
+              );
               return (
-                ((parseInt(offering.cruise_30_days_max_age) != -1 ||
-                  parseInt(offering.cruise_30_days_max_age) != -1 ||
-                  parseInt(offering.cruise_30_days_max_age) != -1) &&
-                  age >= parseInt(offering.cruise_30_days_max_age)) ||
-                age >= parseInt(offering.cruise_45_days_max_age) ||
-                age >= parseInt(offering.cruise_55_days_max_age)
+                (age >= offering[cruise] &&
+                  age <= offering[cruise] &&
+                  offering[cruise] != -1) ||
+                offering[cruise] === 1000 ||
+                age <= offering[cruise]
               );
             }
             if (key === "cruise" && Object.values(value)[0] === "No") {
+              let land = "land_" + insuranceOption + "_days_max_age";
+
               return (
-                ((parseInt(offering.land_30_days_max_age) != -1 ||
-                  parseInt(offering.land_30_days_max_age) != -1 ||
-                  parseInt(offering.land_30_days_max_age) != -1) &&
-                  age >= parseInt(offering.land_30_days_max_age)) ||
-                age >= parseInt(offering.land_45_days_max_age) ||
-                age >= parseInt(offering.land_55_days_max_age)
+                (age >= offering[land] &&
+                  age <= offering[land] &&
+                  offering[land] != -1) ||
+                offering[land] === 1000 ||
+                age <= offering[land]
+              );
+            }
+            if (
+              key === "will_cover_terminal_prognosis" &&
+              Object.values(value)[0] === "No"
+            ) {
+              return (
+                offering[Object.keys(value)].includes("Yes") ||
+                offering[Object.keys(value)].includes("No") ||
+                offering[Object.keys(value)].includes(null)
+              );
+            }
+            if (
+              key === "will_cover_specialist_equipment" &&
+              Object.values(value)[0] === "No"
+            ) {
+              return (
+                offering[Object.keys(value)].includes("Yes") ||
+                offering[Object.keys(value)].includes("No") ||
+                offering[Object.keys(value)].includes(null)
               );
             }
             return offering[Object.keys(value)].includes(
@@ -180,6 +205,7 @@ export const filterOfferings = (pool) => {
         return selected != null;
       });
 
+      console.log(filteredFirm);
       // dispatch the result
       dispatch({
         type: FILTER_OFFERING,
