@@ -63,11 +63,6 @@ export const filterOfferings = (pool) => {
     const firms = getState().listings.firms.hits;
     const alt = getState().listings.firmsCombined.hits;
 
-<<<<<<< HEAD
-    // console.log(alt);
-
-=======
->>>>>>> staging
     // remove empty object from dispatched filter values
     const filteredPool = pool.filter((value) => Object.keys(value).length > 0);
 
@@ -136,23 +131,31 @@ export const filterOfferings = (pool) => {
                 offering[cruise] != -1
               );
               return (
-                (age >= offering[cruise] &&
-                  age <= offering[cruise] &&
-                  offering[cruise] != -1) ||
-                offering[cruise] === 1000 ||
-                age <= offering[cruise]
+                (age <= offering[cruise] && offering[cruise] != -1) ||
+                (offering[cruise] === 1000 && offering[cruise] > -1)
               );
+              // return (
+              //   (age >= offering[cruise] &&
+              //     age <= offering[cruise] &&
+              //     offering[cruise] != -1) ||
+              //   offering[cruise] === 1000 ||
+              //   age <= offering[cruise]
+              // );
             }
             if (key === "cruise" && Object.values(value)[0] === "No") {
               let land = "land_" + insuranceOption + "_days_max_age";
-
               return (
-                (age >= offering[land] &&
-                  age <= offering[land] &&
-                  offering[land] != -1) ||
-                offering[land] === 1000 ||
-                age <= offering[land]
+                (age <= offering[land] && offering[land] != -1) ||
+                (offering[land] === 1000 && offering[land] > -1)
               );
+
+              // return (
+              //   (age >= offering[land] &&
+              //     age <= offering[land] &&
+              //     offering[land] != -1) ||
+              //   offering[land] === 1000 ||
+              //   age <= offering[land]
+              // );
             }
             if (
               key === "will_cover_terminal_prognosis" &&
