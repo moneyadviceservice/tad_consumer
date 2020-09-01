@@ -21,14 +21,50 @@ const FilterFormFIeld = styled(Formfield)`
   border-bottom: 1px solid #edf0f0;
   padding-left: 0;
 `;
+const ExtHeading = styled(Heading)`
+  margin-top: 0;
+  margin-bottom: 0;
+  background: #003d8e;
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 12px 18px;
+  display: flex;
+  flex-direction: row;
+  flexwrap: wrap;
+  justify-content: space-between;
+  ${resolveMedia.md`
+   background: #edf0f0;
+    color: #515151
+`};
+`;
+
+const ToggleIcon = styled.span`
+  cursor: pointer;
+  ${resolveMedia.md`
+   display: none
+`};
+`;
+
+const ClearButton = styled.span`
+  font-size: 11px;
+  color: #fff
+  cursor: pointer;
+  text-decoration: none;
+  ${resolveMedia.md`
+   
+   color: #003d8e;
+`};
+`;
 
 const FormDiv = styled.div`
   border: 1px solid #edf0f0;
   padding: 0 18px 18px;
-  display: none;
+
+  display: ${(props) => (props.isMobile === true ? "none" : "block")};
   ${resolveMedia.md`
-      display: block;
-  `};
+    display: block
+ `};
 `;
 
 const Legend = styled.legend`
@@ -103,11 +139,20 @@ const Filters = ({ t }) => {
     land_45_days_max_age,
     land_55_days_max_age,
   ];
-  // console.log(filtersValues);
+
+  // Toggles
 
   const [annual, changeAnnualShow] = useState(false);
   const [single, changeSingleShow] = useState(false);
   const [note, changeNote] = useState(true);
+  const [mobile, ToggleMobile] = useState(false);
+
+  // change Toogle visibility on mobile
+  useEffect(() => {
+    process.browser && window && window.innerWidth <= 850
+      ? ToggleMobile(true)
+      : ToggleMobile(false);
+  }, []);
 
   const SingleTrip = styled.div`
     display: ${(props) => (props.single ? "block" : "none")};
@@ -121,9 +166,9 @@ const Filters = ({ t }) => {
     font-size: 12px;
   `;
 
-  const dispatch = useDispatch();
+  console.log(mobile);
 
-  // console.log(filtersValues);
+  const dispatch = useDispatch();
 
   const offerings = useSelector((state) => state.listings.offerings.hits);
 
@@ -139,6 +184,11 @@ const Filters = ({ t }) => {
       changeLandMax55({ land_55_days_max_age: parseInt(processedAge) });
     }
   }, [age]);
+
+  const handleMobile = (e) => {
+    ToggleMobile(!mobile);
+  };
+  console.log(mobile);
 
   useEffect(() => {
     dispatch(filterOfferings(filtersValues));
@@ -231,29 +281,13 @@ const Filters = ({ t }) => {
 
   return (
     <Form style={{ marginBottom: "40px", color: "#515151" }}>
-      <Heading
-        level={3}
-        style={{
-          marginTop: 0,
-          marginBottom: 0,
-          background: "#edf0f0",
-          borderTopLeftRadius: "5px",
-          borderTopRightRadius: "5px",
-          padding: "12px 18px",
-          display: "flex",
-          flexDirection: "row",
-          flexWrap: "wrap",
-          justifyContent: "space-between",
-        }}
-      >
+      <ExtHeading level={3} style={{}}>
+        <ToggleIcon onClick={(e) => handleMobile(e)}>+</ToggleIcon>
         <span>{t("headings.filter")}</span>
         {process.browser ? (
-          <span
-            style={{ fontSize: "11px", color: "#003D8E", cursor: "pointer" }}
-            onClick={(e) => clearFilters(e)}
-          >
+          <ClearButton onClick={(e) => clearFilters(e)}>
             {t("headings.clear")}
-          </span>
+          </ClearButton>
         ) : (
           <a
             href="/listings"
@@ -268,8 +302,8 @@ const Filters = ({ t }) => {
             {t("headings.clear")}
           </a>
         )}
-      </Heading>
-      <FormDiv>
+      </ExtHeading>
+      <FormDiv isMobile={mobile}>
         <FilterFormFIeld>
           <Legend>
             {t("headings.age_at_time_of_travel")}
