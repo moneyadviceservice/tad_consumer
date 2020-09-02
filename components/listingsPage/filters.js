@@ -2,9 +2,7 @@ import { useState, useEffect } from "react";
 import {
   Heading,
   Radio,
-  Formfield,
   Button,
-  resolveMedia,
   Form,
   Tooltip,
   Paragraph,
@@ -46,7 +44,7 @@ const Filters = ({ t }) => {
   const [land_45_days_max_age, changeLandMax45] = useState({});
   const [land_55_days_max_age, changeLandMax55] = useState({});
 
-  console.log(cruise, singleOption, annualOption);
+  // console.log(cruise, singleOption, annualOption);
   const filtersValues = [
     trip_type,
     cover_area,
@@ -91,8 +89,6 @@ const Filters = ({ t }) => {
     font-size: 12px;
   `;
 
-  console.log(mobile);
-
   const dispatch = useDispatch();
 
   const offerings = useSelector((state) => state.listings.offerings.hits);
@@ -113,7 +109,6 @@ const Filters = ({ t }) => {
   const handleMobile = (e) => {
     ToggleMobile(!mobile);
   };
-  console.log(mobile);
 
   useEffect(() => {
     dispatch(filterOfferings(filtersValues));
