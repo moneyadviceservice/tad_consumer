@@ -207,7 +207,9 @@ const Filters = ({ t }) => {
   return (
     <Form style={{ marginBottom: "40px", color: "#515151" }}>
       <ExtHeading level={3} style={{}}>
-        <ToggleIcon onClick={(e) => handleMobile(e)}>+</ToggleIcon>
+        <ToggleIcon onClick={(e) => handleMobile(e)}>
+          {mobile && mobile === true ? "+" : "-"}
+        </ToggleIcon>
         <span>{t("headings.filter")}</span>
         {process.browser ? (
           <ClearButton onClick={(e) => clearFilters(e)}>
