@@ -69,8 +69,8 @@
     "my_doctor_has_given_me_a_terminal_prognosis": "My doctor has given me a terminal prognosis",
     "do_you_require_cover_for_medical_equipment": "Do you require cover for medical equipment",
     "submit": "Shortlist provider",
-    "showing": "Showing",
-    "of": "of",
+    "showing": "Showing ",
+    "of": " of",
     "firms": "firms"
   },
   "firms": {

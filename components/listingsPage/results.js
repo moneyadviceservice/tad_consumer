@@ -8,6 +8,7 @@ import {
 
 import { i18n } from "../../Utils/translation/i18n";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 
 import ReactHtmlParser from "react-html-parser";
 
@@ -15,7 +16,31 @@ import { DummyCard, CompanyName, SubHead, CommsInfo, Comms } from "./dummy";
 import Loading from "./loading";
 const Results = ({ t }) => {
   const offered = useSelector((state) => state.listings.offered);
-  // console.log(offered);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [firmsPerPage, setFirmsPerPage] = useState(5);
+
+  const indexOfLastFirm = currentPage * firmsPerPage;
+  const indexOfFirstFirm = indexOfLastFirm - firmsPerPage;
+  let lastIndex;
+  let firstIndex;
+
+  if (offered && offered.length <= indexOfLastFirm) {
+    lastIndex = offered.length;
+  } else {
+    lastIndex = indexOfLastFirm;
+  }
+
+  if (offered && offered.length === 0) {
+    firstIndex = offered.length;
+  } else {
+    firstIndex = indexOfFirstFirm + 1;
+  }
+
+  const currentFirms =
+    offered && offered.slice(indexOfFirstFirm, indexOfLastFirm);
+
+  const totalPages = Math.ceil(offered && offered.length / firmsPerPage);
   return (
     <div>
       <Paragraph
@@ -28,8 +53,9 @@ const Results = ({ t }) => {
           width: "100%",
         }}
       >
-        {t("headings.showing")} 1 -10 {t("headings.of")} 1000{" "}
-        {t("headings.firms")}
+        {t("headings.showing")}
+        {firstIndex} - {lastIndex}
+        {t("headings.of")} {offered && offered.length} {t("headings.firms")}
       </Paragraph>
 
       {offered ? (
