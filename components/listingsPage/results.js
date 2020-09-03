@@ -56,6 +56,7 @@ const Results = ({ t }) => {
           flexDirection: "row",
           flexWrap: "wrap",
           justifyContent: "space-between",
+          fontSize: "16px",
         }}
       >
         <span>
@@ -63,7 +64,7 @@ const Results = ({ t }) => {
           {firstIndex} - {lastIndex}
           {t("headings.of")} {offered && offered.length} {t("headings.firms")}
         </span>
-        <span>Firms presented in no particular order</span>
+        <span>{t("headings.order")}</span>
       </Paragraph>
 
       {offered ? (

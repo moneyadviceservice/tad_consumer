@@ -71,7 +71,8 @@
     "submit": "Shortlist provider",
     "showing": "Showing ",
     "of": " of",
-    "firms": "firms"
+    "firms": "firms",
+    "order": "Firms presented in no particular order"
   },
   "firms": {
     "getInTouch": "Get in touch",
