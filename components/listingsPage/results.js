@@ -41,6 +41,7 @@ const Results = ({ t }) => {
     offered && offered.slice(indexOfFirstFirm, indexOfLastFirm);
 
   const totalPages = Math.ceil(offered && offered.length / firmsPerPage);
+  console.log(totalPages);
   return (
     <div>
       <Paragraph
@@ -119,7 +120,7 @@ const Results = ({ t }) => {
         <Loading />
       )}
 
-      {offered && offered.length > 0 ? (
+      {offered && offered.length > 0 && totalPages > 1 ? (
         <Pagination
           currentLng={i18n.language}
           currentPage={currentPage}
