@@ -65,7 +65,7 @@ const Results = ({ t }) => {
             your criteria and try again
           </Paragraph>
         ) : (
-          offered.map((selectedFirm, i) => {
+          currentFirms.map((selectedFirm, i) => {
             return (
               <DummyCard key={i}>
                 <Row style={{ marginBottom: "20px" }}>
@@ -107,7 +107,17 @@ const Results = ({ t }) => {
         <Loading />
       )}
 
-      <Pagination currentLng={i18n.language} currentPage={1} totalPages={20} />
+      {offered && offered.length > 0 ? (
+        <Pagination
+          currentLng={i18n.language}
+          currentPage={currentPage}
+          totalPages={totalPages}
+          nextClick={() => setCurrentPage(currentPage + 1)}
+          prevClick={() => setCurrentPage(currentPage - 1)}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 };

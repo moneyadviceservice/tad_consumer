@@ -75,6 +75,7 @@ export const ClearButton = styled.span`
   color: #fff
   cursor: pointer;
   text-decoration: none;
+  
   ${resolveMedia.md`
    
    color: #003d8e;
