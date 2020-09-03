@@ -51,16 +51,28 @@ const Results = ({ t }) => {
           borderRadius: "5px",
           padding: "15px 18px",
           width: "100%",
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          justifyContent: "space-between",
         }}
       >
-        {t("headings.showing")}
-        {firstIndex} - {lastIndex}
-        {t("headings.of")} {offered && offered.length} {t("headings.firms")}
+        <span>
+          {t("headings.showing")}
+          {firstIndex} - {lastIndex}
+          {t("headings.of")} {offered && offered.length} {t("headings.firms")}
+        </span>
+        <span>Firms presented in no particular order</span>
       </Paragraph>
 
       {offered ? (
         offered.length == 0 ? (
-          <Paragraph margin={{ top: "40px", bottom: "40px" }}>
+          <Paragraph
+            margin={{
+              top: "40px",
+              bottom: "40px",
+            }}
+          >
             There are no results matching your search criteria. Please amend
             your criteria and try again
           </Paragraph>
