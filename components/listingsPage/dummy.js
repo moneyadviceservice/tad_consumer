@@ -3,6 +3,7 @@ import {
   Heading,
   Formfield,
   resolveMedia,
+  Tooltip,
 } from "@moneypensionservice/directories";
 
 export const DummyCard = styled.div`
@@ -98,12 +99,17 @@ export const Legend = styled.legend`
   font-weight: 700;
   width: 100%;
   margin-bottom: 0.75rem;
+  color: #217d21;
 `;
 
 export const Select = styled.select`
   font-size: 16px;
   width: 70%;
   padding: 10px;
+`;
+export const TooltipText = styled(Tooltip)`
+  color: #000;
+  font-weight: 200;
 `;
 
 // Tooltips value
