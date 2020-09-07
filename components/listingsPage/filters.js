@@ -7,6 +7,7 @@ import {
   Tooltip,
   Paragraph,
 } from "@moneypensionservice/directories";
+import ReactHtmlParser from "react-html-parser";
 
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
@@ -229,10 +230,12 @@ const Filters = ({ t }) => {
         <FilterFormFIeld>
           <Legend>
             {t("headings.age_at_time_of_travel")}
-            <Tooltip hover text="To be supplied" />
+            <Tooltip hover text={t("toolTips.age")} />
           </Legend>
           <Select name="age" value={age.age} onChange={(e) => handleAge(e)}>
-            <option value="">{t("headings.age_at_time_of_travel")}</option>
+            <option value="">
+              {t("headings.age_at_time_of_travel_select")}
+            </option>
             {ageRange()}
           </Select>
         </FilterFormFIeld>
@@ -241,7 +244,11 @@ const Filters = ({ t }) => {
           <FilterFormFIeld>
             <Legend>
               {t("headings.filter_by_insurance_type")}
-              <Tooltip minWidth="300px" hover text={insuranceTypeTip} />
+              <Tooltip
+                minWidth="300px"
+                hover
+                text={ReactHtmlParser(t("toolTips.insuranceType"))}
+              />
             </Legend>
             {t("filters.trip_type", { returnObjects: true }).map(
               ({ type, value }, i) => (
@@ -260,6 +267,14 @@ const Filters = ({ t }) => {
             </Heading>
             <Note note={note}>Please select the type of insurance first</Note>
             <SingleTrip single={single}>
+              <span style={{ fontSize: "14px" }}>
+                single trips
+                <Tooltip
+                  minWidth="300px"
+                  hover
+                  text={t("toolTips.singleTrip")}
+                />
+              </span>
               {t("filters.singleTripLength", { returnObjects: true }).map(
                 ({ length, value }, i) => (
                   <Radio
@@ -274,7 +289,14 @@ const Filters = ({ t }) => {
               )}
             </SingleTrip>
             <AnnualTrip annual={annual}>
-              <span style={{ fontSize: "14px" }}>for each individual trip</span>
+              <span style={{ fontSize: "14px" }}>
+                for each individual trip
+                <Tooltip
+                  minWidth="300px"
+                  hover
+                  text={t("toolTips.annualTrip")}
+                />
+              </span>
 
               {t("filters.annualTripLength", { returnObjects: true }).map(
                 ({ length, value }, i) => (
@@ -346,7 +368,7 @@ const Filters = ({ t }) => {
         <FilterFormFIeld>
           <Legend>
             {t("headings.destination")}
-            <Tooltip hover text="To be supplied" />
+            <Tooltip minWidth="300px" hover text={t("toolTips.destination")} />
           </Legend>
           {t("filters.cover_area", { returnObjects: true }).map(
             ({ location, value }, i) => (
@@ -364,7 +386,7 @@ const Filters = ({ t }) => {
         <FilterFormFIeld>
           <Legend>
             {t("headings.is_your_trip_a_cruise")}?
-            <Tooltip hover text="To be supplied" />
+            <Tooltip minWidth="300px" hover text={t("toolTips.cruise")} />
           </Legend>
           {t("filters.cruise", { returnObjects: true }).map(
             ({ response, value }, i) => (
@@ -383,7 +405,7 @@ const Filters = ({ t }) => {
         <FilterFormFIeld>
           <Legend>
             {t("headings.when_are_you_travelling")}?
-            <Tooltip hover text="To be supplied" />
+            <Tooltip minWidth="300px" hover text={t("toolTips.when")} />
           </Legend>
           {t("filters.how_far_in_advance_trip_cover_weeks", {
             returnObjects: true,
@@ -426,7 +448,6 @@ const Filters = ({ t }) => {
         <FilterFormFIeld>
           <Legend>
             {t("headings.my_doctor_has_given_me_a_terminal_prognosis")}
-            <Tooltip hover text="To be supplied" />
           </Legend>
           {t("filters.will_cover_terminal_prognosis", {
             returnObjects: true,
@@ -447,7 +468,7 @@ const Filters = ({ t }) => {
         <FilterFormFIeld>
           <Legend>
             {t("headings.do_you_require_cover_for_medical_equipment")}?
-            <Tooltip hover text="To be supplied" />
+            <Tooltip minWidth="300px" hover text={t("toolTips.equipment")} />
           </Legend>
 
           {t("filters.will_cover_specialist_equipment", {

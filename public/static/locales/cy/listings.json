@@ -59,6 +59,7 @@
     "filter": "Mireinio'ch chwiliad",
     "clear": "Yn glir",
     "age_at_time_of_travel": "Oedran adeg teithio",
+    "age_at_time_of_travel_select": "Dewiswch",
     "filter_by_insurance_type": "Hidlo yn ôl math o yswiriant",
     "filter_by_length_of_trip": "Hyd y daith",
     "destination": "Cyrchfan",
@@ -72,5 +73,15 @@
     "of": " o",
     "firms": "o gwmnïau",
     "order": "Cwmnïau wedi'u cyflwyno mewn unrhyw drefn benodol"
+  },
+  "toolTips": {
+    "age": "Nid yw rhai cwmnïau'n cynnig yswiriant uwchlaw oedran penodol.  The length of trip, whether the trip is a cruise and the destination may affect this.",
+    "singleTrip": "Dewiswch yr opsiwn sy'n gweddu orau i hyd eich taith. Nid yw rhai darparwyr yn cynnig yswiriant ar gyfer teithiau hirach.",
+    "annualTrip": "Dewiswch yr opsiwn sy'n cyd-fynd â'r hyd mwyaf bob taith unigol rydych chi'n bwriadu ei chymryd o fewn y tymor polisi 12 mis. Nid yw rhai darparwyr yn cynnig yswiriant ar gyfer teithiau unigol hirach.",
+    "destination": "Gall cost triniaeth feddygol fod yn fwy mewn rhai gwledydd nag eraill, felly bydd ble rydych chi'n mynd yn cael effaith ar a fydd darparwr yn cynnig yswiriant i chi. Y tri chyrchfan hyn yw'r categorïau mwyaf cyffredin a ddefnyddir gan y mwyafrif o ddarparwyr yswiriant teithio.",
+    "cruise": "Nid yw pob darparwr yn cynnig yswiriant ar gyfer mordeithiau ac efallai bod gan y rhai sydd â therfyn oedran gwahanol ar gyfer mordeithiau.",
+    "when": "Ni fydd pob darparwr yn gadael ichi lunio polisi cyn pryd y byddwch yn teithio oherwydd y posibilrwydd o ganslo. Er enghraifft, fel rheol dim ond hyd at 31 diwrnod ymlaen llaw y gallwch chi gymryd polisi Aml-Deithiau Blynyddol. Gwiriwch y telerau ac amodau ynghylch canslo yn ofalus bob amser cyn prynu yswiriant teithio.",
+    "abroad": "Dim ond ychydig o ddarparwyr fydd yn cynnig yswiriant os ydych chi'n teithio dramor yn benodol i gael triniaeth feddygol.",
+    "equipment": "Os oes angen i chi fynd ag offer meddygol arbenigol drud gyda chi ar eich taith, gwnewch yn siŵr eich bod chi'n gallu ei orchuddio am golled neu ddifrod."
   }
 }
