@@ -248,7 +248,7 @@ const Filters = ({ t }) => {
               <TooltipText
                 minWidth="300px"
                 hover
-                text={ReactHtmlParser(t("toolTips.insuranceType"))}
+                text={t("toolTips.insuranceType")}
               />
             </Legend>
             {t("filters.trip_type", { returnObjects: true }).map(
