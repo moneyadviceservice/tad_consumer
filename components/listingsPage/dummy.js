@@ -110,6 +110,8 @@ export const Select = styled.select`
 export const TooltipText = styled(Tooltip)`
   color: #000;
   font-weight: 200;
+  display: inline-block;
+  margin-left: 20px;
 `;
 
 // Tooltips value
