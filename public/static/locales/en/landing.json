@@ -1,7 +1,7 @@
 {
   "home": {
     "banner": {
-      "heading": "Find a travel insurance provider if</br> you have a serious medical condition",
+      "heading": "Find a travel insurance provider</br> if you have a serious medical condition",
       "register": "Register",
       "login": "Login",
       "or": "or",
@@ -30,7 +30,9 @@
       "button": "View all firms"
     },
     "video": {
-      "heading": "Who is this directory for?"
+      "heading": "Who is this directory for?",
+      "description": "Watch this short video to find out if this directory can help you find the cover you need.",
+      "transcript": "Download the transcript"
     },
     "faqs": {
       "heading": "Frequently asked questions",
