@@ -229,7 +229,7 @@ const Filters = ({ t }) => {
       <FormDiv isMobile={mobile}>
         <FilterFormFIeld>
           <Legend>
-            {t("headings.age_at_time_of_travel")}
+            {t("headings.age_at_time_of_travel")} &nbsp; &nbsp;
             <Tooltip hover text={t("toolTips.age")} />
           </Legend>
           <Select name="age" value={age.age} onChange={(e) => handleAge(e)}>
@@ -243,7 +243,7 @@ const Filters = ({ t }) => {
         {process.browser ? (
           <FilterFormFIeld>
             <Legend>
-              {t("headings.filter_by_insurance_type")}
+              {t("headings.filter_by_insurance_type")} &nbsp; &nbsp;
               <Tooltip
                 minWidth="300px"
                 hover
@@ -268,7 +268,7 @@ const Filters = ({ t }) => {
             <Note note={note}>Please select the type of insurance first</Note>
             <SingleTrip single={single}>
               <span style={{ fontSize: "14px" }}>
-                single trips
+                single trips &nbsp; &nbsp;
                 <Tooltip
                   minWidth="300px"
                   hover
@@ -290,7 +290,7 @@ const Filters = ({ t }) => {
             </SingleTrip>
             <AnnualTrip annual={annual}>
               <span style={{ fontSize: "14px" }}>
-                for each individual trip
+                for each individual trip &nbsp; &nbsp;
                 <Tooltip
                   minWidth="300px"
                   hover
@@ -367,7 +367,7 @@ const Filters = ({ t }) => {
 
         <FilterFormFIeld>
           <Legend>
-            {t("headings.destination")}
+            {t("headings.destination")} &nbsp; &nbsp;
             <Tooltip minWidth="300px" hover text={t("toolTips.destination")} />
           </Legend>
           {t("filters.cover_area", { returnObjects: true }).map(
@@ -385,7 +385,7 @@ const Filters = ({ t }) => {
         </FilterFormFIeld>
         <FilterFormFIeld>
           <Legend>
-            {t("headings.is_your_trip_a_cruise")}?
+            {t("headings.is_your_trip_a_cruise")}? &nbsp; &nbsp;
             <Tooltip minWidth="300px" hover text={t("toolTips.cruise")} />
           </Legend>
           {t("filters.cruise", { returnObjects: true }).map(
@@ -404,7 +404,7 @@ const Filters = ({ t }) => {
         </FilterFormFIeld>
         <FilterFormFIeld>
           <Legend>
-            {t("headings.when_are_you_travelling")}?
+            {t("headings.when_are_you_travelling")}? &nbsp; &nbsp;
             <Tooltip minWidth="300px" hover text={t("toolTips.when")} />
           </Legend>
           {t("filters.how_far_in_advance_trip_cover_weeks", {
@@ -467,7 +467,8 @@ const Filters = ({ t }) => {
         </FilterFormFIeld>
         <FilterFormFIeld>
           <Legend>
-            {t("headings.do_you_require_cover_for_medical_equipment")}?
+            {t("headings.do_you_require_cover_for_medical_equipment")}? &nbsp;
+            &nbsp;
             <Tooltip minWidth="300px" hover text={t("toolTips.equipment")} />
           </Legend>
 
