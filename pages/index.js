@@ -34,7 +34,17 @@ const Homepage = ({ t }) => {
     <Fragment>
       {/* Main heading and firm registration anchor */}
       <Section constrained data-testid="contentRow">
-        <Col sizes={{ xs: 12 }} alignSelf="center" data-testid="contentCol">
+        <Col sizes={{ xs: 12, md: 9 }} data-testid="contentCol">
+          <Heading
+            level={1}
+            color="#006A00"
+            lineHeight="1.1"
+            style={{ marginTop: "20px" }}
+          >
+            {ReactHtmlParser(t("home.banner.heading"))}
+          </Heading>
+        </Col>
+        <Col sizes={{ xs: 12, md: 3 }} data-testid="contentCol">
           <ParagraphAnchor style={{ fontSize: "16px" }}>
             <Anchor
               href="https://radsignup.moneyadviceservice.org.uk/travel_insurance_registrations/new"
@@ -51,16 +61,6 @@ const Homepage = ({ t }) => {
             </Anchor>
             &nbsp;{t("home.banner.as")}
           </ParagraphAnchor>
-        </Col>
-        <Col sizes={{ xs: 12 }} data-testid="contentCol">
-          <Heading
-            level={1}
-            color="#006A00"
-            lineHeight="1.1"
-            style={{ marginTop: "20px" }}
-          >
-            {t("home.banner.heading")}
-          </Heading>
         </Col>
       </Section>
 

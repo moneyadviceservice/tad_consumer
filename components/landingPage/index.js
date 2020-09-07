@@ -10,7 +10,7 @@ const ParagraphAnchor = styled(Paragraph)`
   display: none;
   ${resolveMedia.md`
     text-align: right;
-    margin-top:20px;
+    margin-top: 20px;
     display: block;
   `}
 `;
