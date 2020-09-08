@@ -57,6 +57,7 @@
   "headings": {
     "main": "Dewch o hyd i ddarparwyr yswiriant teithio os oes gennych gyflwr meddygol difrifol",
     "filter": "Mireinio'ch chwiliad",
+    "sub_filter": "Not yet provided",
     "clear": "Yn glir",
     "age_at_time_of_travel": "Oedran adeg teithio",
     "age_at_time_of_travel_select": "Dewiswch",

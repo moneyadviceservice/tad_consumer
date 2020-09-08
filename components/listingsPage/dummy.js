@@ -51,9 +51,6 @@ export const ExtHeading = styled(Heading)`
   margin-bottom: 0;
   background: #003d8e;
   color: #fff;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  padding: 12px 18px;
   display: flex;
   flex-direction: row;
   flexwrap: wrap;
@@ -61,6 +58,18 @@ export const ExtHeading = styled(Heading)`
   ${resolveMedia.md`
    background: #edf0f0;
     color: #515151
+`};
+`;
+
+export const FilterHead = styled.div`
+  background: #003d8e;
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 12px 18px;
+  ${resolveMedia.md`
+  background: #edf0f0;
+   color: #515151
 `};
 `;
 
