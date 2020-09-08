@@ -253,80 +253,82 @@ const Filters = ({ t }) => {
         </FilterFormFIeld>
         {/* Client Insurance Type */}
         {process.browser ? (
-          <FilterFormFIeld>
-            <Legend>
-              {t("headings.filter_by_insurance_type")}
-              <TooltipText
-                minWidth="230px"
-                side="left"
-                hover
-                text={t("toolTips.insuranceType")}
-              />
-            </Legend>
-            {t("filters.trip_type", { returnObjects: true }).map(
-              ({ type, value }, i) => (
-                <Radio
-                  key={i}
-                  checked={trip_type.trip_type === value}
-                  onChange={(e) => handleInsuranceType(e)}
-                  label={type}
-                  name="trip_type"
-                  value={value}
-                />
-              )
-            )}
-            <Heading level={4} color="#217D17">
-              {t("headings.filter_by_length_of_trip")}
-            </Heading>
-            <Note note={note}>Please select the type of insurance first</Note>
-            <SingleTrip single={single}>
-              <span style={{ fontSize: "14px" }}>
-                single trips
+          <>
+            <FilterFormFIeld>
+              <Legend>
+                {t("headings.filter_by_insurance_type")}
                 <TooltipText
                   minWidth="230px"
-                  side="bottom"
+                  side="left"
                   hover
-                  text={t("toolTips.singleTrip")}
+                  text={t("toolTips.insuranceType")}
                 />
-              </span>
-              {t("filters.singleTripLength", { returnObjects: true }).map(
-                ({ length, value }, i) => (
+              </Legend>
+              {t("filters.trip_type", { returnObjects: true }).map(
+                ({ type, value }, i) => (
                   <Radio
                     key={i}
-                    checked={singleOption.singleOption === value}
-                    onChange={(e) => handleSingleOption(e)}
-                    label={length}
-                    name="singleOption"
+                    checked={trip_type.trip_type === value}
+                    onChange={(e) => handleInsuranceType(e)}
+                    label={type}
+                    name="trip_type"
                     value={value}
                   />
                 )
               )}
-            </SingleTrip>
-            <AnnualTrip annual={annual}>
-              <span style={{ fontSize: "14px" }}>
-                for each individual trip
-                <TooltipText
-                  minWidth="230px"
-                  side="bottom"
-                  hover
-                  text={t("toolTips.annualTrip")}
-                />
-              </span>
+            </FilterFormFIeld>
+            <FilterFormFIeld>
+              <Legend>{t("headings.filter_by_length_of_trip")}</Legend>
+              <Note note={note}>Please select the type of insurance first</Note>
+              <SingleTrip single={single}>
+                <span style={{ fontSize: "14px" }}>
+                  single trips
+                  <TooltipText
+                    minWidth="230px"
+                    side="bottom"
+                    hover
+                    text={t("toolTips.singleTrip")}
+                  />
+                </span>
+                {t("filters.singleTripLength", { returnObjects: true }).map(
+                  ({ length, value }, i) => (
+                    <Radio
+                      key={i}
+                      checked={singleOption.singleOption === value}
+                      onChange={(e) => handleSingleOption(e)}
+                      label={length}
+                      name="singleOption"
+                      value={value}
+                    />
+                  )
+                )}
+              </SingleTrip>
+              <AnnualTrip annual={annual}>
+                <span style={{ fontSize: "14px" }}>
+                  for each individual trip
+                  <TooltipText
+                    minWidth="230px"
+                    side="bottom"
+                    hover
+                    text={t("toolTips.annualTrip")}
+                  />
+                </span>
 
-              {t("filters.annualTripLength", { returnObjects: true }).map(
-                ({ length, value }, i) => (
-                  <Radio
-                    key={i}
-                    checked={annualOption.annualOption === value}
-                    onChange={(e) => handleAnnualOption(e)}
-                    label={length}
-                    name="annualOption"
-                    value={value}
-                  />
-                )
-              )}
-            </AnnualTrip>
-          </FilterFormFIeld>
+                {t("filters.annualTripLength", { returnObjects: true }).map(
+                  ({ length, value }, i) => (
+                    <Radio
+                      key={i}
+                      checked={annualOption.annualOption === value}
+                      onChange={(e) => handleAnnualOption(e)}
+                      label={length}
+                      name="annualOption"
+                      value={value}
+                    />
+                  )
+                )}
+              </AnnualTrip>
+            </FilterFormFIeld>
+          </>
         ) : (
           <FilterFormFIeld>
             <Legend>{t("headings.filter_by_insurance_type")}</Legend>
