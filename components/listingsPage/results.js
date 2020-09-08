@@ -12,8 +12,16 @@ import { useState } from "react";
 
 import ReactHtmlParser from "react-html-parser";
 
-import { DummyCard, CompanyName, SubHead, CommsInfo, Comms } from "./dummy";
+import {
+  DummyCard,
+  CompanyName,
+  SubHead,
+  CommsInfo,
+  Comms,
+  randomizeResult,
+} from "./dummy";
 import Loading from "./loading";
+
 const Results = ({ t }) => {
   const offered = useSelector((state) => state.listings.offered);
 
@@ -36,12 +44,14 @@ const Results = ({ t }) => {
   } else {
     firstIndex = indexOfFirstFirm + 1;
   }
+  // console.log(offered.length);
+  offered && randomizeResult(offered);
 
   const currentFirms =
     offered && offered.slice(indexOfFirstFirm, indexOfLastFirm);
 
   const totalPages = Math.ceil(offered && offered.length / firmsPerPage);
-  console.log(totalPages);
+
   return (
     <div>
       <Paragraph

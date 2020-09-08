@@ -7,7 +7,6 @@ import {
   Tooltip,
   Paragraph,
 } from "@moneypensionservice/directories";
-import ReactHtmlParser from "react-html-parser";
 
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
