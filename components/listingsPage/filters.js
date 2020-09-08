@@ -227,6 +227,7 @@ const Filters = ({ t }) => {
           </a>
         )}
       </ExtHeading>
+
       <FormDiv isMobile={mobile}>
         <FilterFormFIeld>
           <Legend>

@@ -75,14 +75,14 @@
     "order": "Cwmnïau wedi'u cyflwyno mewn unrhyw drefn benodol"
   },
   "toolTips": {
-    "age": "Nid yw rhai cwmnïau'n cynnig yswiriant uwchlaw oedran penodol.  Gall hyd y daith, p'un a yw'r daith yn fordaith a'r gyrchfan effeithio ar hyn.",
-    "singleTrip": "Dewiswch yr opsiwn sy'n gweddu orau i hyd eich taith. Nid yw rhai darparwyr yn cynnig yswiriant ar gyfer teithiau hirach.",
-    "insuranceType": "Trip Sengl:  Yn dibynnu ar ba gyflwr (au) meddygol sydd gennych, ble rydych chi'n mynd ac am ba hyd - weithiau gallai polisi Trip Sengl fod yn rhatach nag Aml-daith Flynyddol. Hefyd os cawsoch eich gwrthod am bolisi Aml-deithiau Blynyddol, efallai y cewch gynnig yswiriant o hyd os dewiswch bolisi Trip Sengl. Ond os ydych chi'n bwriadu teithio sawl gwaith yn ystod cyfnod o 12 mis, ceisiwch gael polisi Aml-daith Flynyddol yn gyntaf.                                                                                                                           Aml-Daith Flynyddol: Os ydych chi'n bwriadu teithio sawl gwaith yn ystod cyfnod o 12 mis, gall polisi Aml-deithiau Blynyddol arbed arian i chi. Fel rheol dim ond hyd at 31 diwrnod cyn pryd rydych chi am i'r polisi ddechrau y gallwch chi brynu polisi Aml-deithiau Blynyddol. Os cewch eich gwrthod ar gyfer Aml-daith Flynyddol - neu os ydych chi'n meddwl bod y gost yn ormod - mae'n werth gweld a allwch chi gael polisi Trip Sengl yn lle.",
-    "annualTrip": "Dewiswch yr opsiwn sy'n cyd-fynd â'r hyd mwyaf bob taith unigol rydych chi'n bwriadu ei chymryd o fewn y tymor polisi 12 mis. Nid yw rhai darparwyr yn cynnig yswiriant ar gyfer teithiau unigol hirach.",
-    "destination": "Gall cost triniaeth feddygol fod yn fwy mewn rhai gwledydd nag eraill, felly bydd ble rydych chi'n mynd yn cael effaith ar a fydd darparwr yn cynnig yswiriant i chi. Y tri chyrchfan hyn yw'r categorïau mwyaf cyffredin a ddefnyddir gan y mwyafrif o ddarparwyr yswiriant teithio.",
-    "cruise": "Nid yw pob darparwr yn cynnig yswiriant ar gyfer mordeithiau ac efallai bod gan y rhai sydd â therfyn oedran gwahanol ar gyfer mordeithiau.",
-    "when": "Ni fydd pob darparwr yn gadael ichi lunio polisi cyn pryd y byddwch yn teithio oherwydd y posibilrwydd o ganslo. Er enghraifft, fel rheol dim ond hyd at 31 diwrnod ymlaen llaw y gallwch chi gymryd polisi Aml-Deithiau Blynyddol. Gwiriwch y telerau ac amodau ynghylch canslo yn ofalus bob amser cyn prynu yswiriant teithio.",
-    "abroad": "Dim ond ychydig o ddarparwyr fydd yn cynnig yswiriant os ydych chi'n teithio dramor yn benodol i gael triniaeth feddygol.",
-    "equipment": "Os oes angen i chi fynd ag offer meddygol arbenigol drud gyda chi ar eich taith, gwnewch yn siŵr eich bod chi'n gallu ei orchuddio am golled neu ddifrod."
+    "age": "Not yet supplied",
+    "singleTrip": "Not yet supplied.",
+    "insuranceType": "Trip Sengl:  Not yet supplied.                                                                                                                           Aml-Daith Flynyddol: Not yet supplied.",
+    "annualTrip": "Not yet supplied",
+    "destination": "Not yet supplied,",
+    "cruise": "Not yet supplied.",
+    "when": "Not yet supplied.",
+    "abroad": "Not yet supplied",
+    "equipment": "Not yet supplied."
   }
 }
