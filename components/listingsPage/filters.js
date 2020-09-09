@@ -260,7 +260,8 @@ const Filters = ({ t }) => {
             {ageRange()}
           </Select>
         </FilterFormFIeld>
-        {/* Client Insurance Type */}
+
+        {/* Insurance Type */}
         {process.browser ? (
           <>
             <FilterFormFIeld>
@@ -286,6 +287,7 @@ const Filters = ({ t }) => {
                 )
               )}
             </FilterFormFIeld>
+
             <FilterFormFIeld>
               <Legend>{t("headings.filter_by_length_of_trip")}</Legend>
               <Note note={note}>Please select the type of insurance first</Note>
@@ -390,6 +392,7 @@ const Filters = ({ t }) => {
             )}
           </FilterFormFIeld>
         )}
+
         <FilterFormFIeld>
           <Legend>
             {t("headings.destination")}
