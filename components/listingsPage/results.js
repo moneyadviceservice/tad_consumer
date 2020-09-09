@@ -8,7 +8,7 @@ import {
 
 import { i18n } from "../../Utils/translation/i18n";
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import ReactHtmlParser from "react-html-parser";
 
@@ -44,8 +44,10 @@ const Results = ({ t }) => {
   } else {
     firstIndex = indexOfFirstFirm + 1;
   }
-  // console.log(offered.length);
-  offered && randomizeResult(offered);
+
+  useEffect(() => {
+    offered && randomizeResult(offered);
+  }, []);
 
   const currentFirms =
     offered && offered.slice(indexOfFirstFirm, indexOfLastFirm);
