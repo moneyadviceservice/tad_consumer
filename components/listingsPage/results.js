@@ -45,10 +45,6 @@ const Results = ({ t }) => {
     firstIndex = indexOfFirstFirm + 1;
   }
 
-  useEffect(() => {
-    offered && randomizeResult(offered);
-  }, []);
-
   const currentFirms =
     offered && offered.slice(indexOfFirstFirm, indexOfLastFirm);
 

@@ -3,6 +3,7 @@ import {
   GET_OFFERINGS_SUCCESS,
   FILTER_OFFERING,
 } from "./constants";
+import { randomizeResult } from "../dummy";
 
 const algoliasearch = require("algoliasearch");
 const client = algoliasearch(
@@ -173,6 +174,8 @@ export const filterOfferings = (pool) => {
       const filteredFirm = selectedFirm.filter((selected) => {
         return selected != null;
       });
+
+      // console.log(randomizeResult(filteredFirm));
 
       // console.log(filteredFirm);
       // dispatch the result
