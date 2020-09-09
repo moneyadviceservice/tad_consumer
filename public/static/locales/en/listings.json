@@ -47,8 +47,8 @@
     ],
 
     "will_cover_terminal_prognosis": [
-      { "response": "Yes", "value": "Yes" },
-      { "response": "No", "value": "No" }
+      { "terminal": "Yes", "feedback": "Yes" },
+      { "terminal": "No", "feedback": "No" }
     ],
     "will_cover_specialist_equipment": [
       { "response": "Yes", "value": "Yes" },

@@ -261,85 +261,31 @@ const Filters = ({ t }) => {
           </Select>
         </FilterFormFIeld>
 
-        {/* Insurance Type */}
+        {/* Client Insurance Type */}
         {process.browser ? (
-          <>
-            <FilterFormFIeld>
-              <Legend>
-                {t("headings.filter_by_insurance_type")}
-                <TooltipText
-                  minWidth="230px"
-                  side="left"
-                  hover
-                  text={t("toolTips.insuranceType")}
+          <FilterFormFIeld>
+            <Legend>
+              {t("headings.filter_by_insurance_type")}
+              <TooltipText
+                minWidth="230px"
+                side="left"
+                hover
+                text={t("toolTips.insuranceType")}
+              />
+            </Legend>
+            {t("filters.trip_type", { returnObjects: true }).map(
+              ({ type, value }, i) => (
+                <Radio
+                  key={i}
+                  checked={trip_type.trip_type === value}
+                  onChange={(e) => handleInsuranceType(e)}
+                  label={type}
+                  name="trip_type"
+                  value={value}
                 />
-              </Legend>
-              {t("filters.trip_type", { returnObjects: true }).map(
-                ({ type, value }, i) => (
-                  <Radio
-                    key={i}
-                    checked={trip_type.trip_type === value}
-                    onChange={(e) => handleInsuranceType(e)}
-                    label={type}
-                    name="trip_type"
-                    value={value}
-                  />
-                )
-              )}
-            </FilterFormFIeld>
-
-            <FilterFormFIeld>
-              <Legend>{t("headings.filter_by_length_of_trip")}</Legend>
-              <Note note={note}>Please select the type of insurance first</Note>
-              <SingleTrip single={single}>
-                <span style={{ fontSize: "14px" }}>
-                  single trips
-                  <TooltipText
-                    minWidth="230px"
-                    side="bottom"
-                    hover
-                    text={t("toolTips.singleTrip")}
-                  />
-                </span>
-                {t("filters.singleTripLength", { returnObjects: true }).map(
-                  ({ length, value }, i) => (
-                    <Radio
-                      key={i}
-                      checked={singleOption.singleOption === value}
-                      onChange={(e) => handleSingleOption(e)}
-                      label={length}
-                      name="singleOption"
-                      value={value}
-                    />
-                  )
-                )}
-              </SingleTrip>
-              <AnnualTrip annual={annual}>
-                <span style={{ fontSize: "14px" }}>
-                  for each individual trip
-                  <TooltipText
-                    minWidth="230px"
-                    side="bottom"
-                    hover
-                    text={t("toolTips.annualTrip")}
-                  />
-                </span>
-
-                {t("filters.annualTripLength", { returnObjects: true }).map(
-                  ({ length, value }, i) => (
-                    <Radio
-                      key={i}
-                      checked={annualOption.annualOption === value}
-                      onChange={(e) => handleAnnualOption(e)}
-                      label={length}
-                      name="annualOption"
-                      value={value}
-                    />
-                  )
-                )}
-              </AnnualTrip>
-            </FilterFormFIeld>
-          </>
+              )
+            )}
+          </FilterFormFIeld>
         ) : (
           <FilterFormFIeld>
             <Legend>{t("headings.filter_by_insurance_type")}</Legend>
@@ -392,6 +338,41 @@ const Filters = ({ t }) => {
             )}
           </FilterFormFIeld>
         )}
+
+        <FilterFormFIeld>
+          <Legend>{t("headings.filter_by_length_of_trip")}</Legend>
+          <Note note={note}>Please select the type of insurance first</Note>
+          <SingleTrip single={single}>
+            {t("filters.singleTripLength", { returnObjects: true }).map(
+              ({ length, value }, i) => (
+                <Radio
+                  key={i}
+                  checked={singleOption.singleOption === value}
+                  onChange={(e) => handleSingleOption(e)}
+                  label={length}
+                  name="singleOption"
+                  value={value}
+                />
+              )
+            )}
+          </SingleTrip>
+          <AnnualTrip annual={annual}>
+            <span style={{ fontSize: "14px" }}>for each individual trip</span>
+
+            {t("filters.annualTripLength", { returnObjects: true }).map(
+              ({ length, value }, i) => (
+                <Radio
+                  key={i}
+                  checked={annualOption.annualOption === value}
+                  onChange={(e) => handleAnnualOption(e)}
+                  label={length}
+                  name="annualOption"
+                  value={value}
+                />
+              )
+            )}
+          </AnnualTrip>
+        </FilterFormFIeld>
 
         <FilterFormFIeld>
           <Legend>
@@ -466,25 +447,24 @@ const Filters = ({ t }) => {
           ))}
         </FilterFormFIeld>
         {/* Prognosis */}
-        {/* const [will_cover_terminal_prognosis, changeTerminal] = useState({});
-        const [will_cover_specialist_equipment, changeEquipment] = useState({}); */}
+
         <FilterFormFIeld>
           <Legend>
             {t("headings.my_doctor_has_given_me_a_terminal_prognosis")}
           </Legend>
           {t("filters.will_cover_terminal_prognosis", {
             returnObjects: true,
-          }).map(({ response, value }, i) => (
+          }).map(({ terminal, feedback }, i) => (
             <Radio
               key={i}
               checked={
                 will_cover_terminal_prognosis.will_cover_terminal_prognosis ===
-                value
+                feedback
               }
               onChange={(e) => handleTerminal(e)}
-              label={response}
+              label={terminal}
               name="will_cover_terminal_prognosis"
-              value={value}
+              value={feedback}
             />
           ))}
         </FilterFormFIeld>

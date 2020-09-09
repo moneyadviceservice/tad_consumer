@@ -35,19 +35,19 @@
       { "response": "Na", "value": "No" }
     ],
     "how_far_in_advance_trip_cover_weeks": [
-      { "length": "O fewn 1 mis", "value": "4" },
-      { "length": "Rhwng 1 - 6 mis", "value": "24" },
-      { "length": "Rhwng 6 - 12 mis", "value": "48" },
-      { "length": "Rhwng 12 - 18 mis", "value": "72" },
-      { "length": "Rhwng 18 - 24 mis", "value": "96" }
+      { "when": "O fewn 1 mis", "time": "4" },
+      { "when": "Rhwng 1 - 6 mis", "time": "24" },
+      { "when": "Rhwng 6 - 12 mis", "time": "48" },
+      { "when": "Rhwng 12 - 18 mis", "time": "72" },
+      { "when": "Rhwng 18 - 24 mis", "time": "96" }
     ],
     "will_cover_undergoing_treatment": [
       { "response": "Ydw", "value": "Yes" },
       { "response": "Na", "value": "No" }
     ],
     "will_cover_terminal_prognosis": [
-      { "response": "Ydw", "value": "Yes" },
-      { "response": "Na", "value": "No" }
+      { "terminal": "Ydw", "feedback": "Yes" },
+      { "terminal": "Na", "feedback": "No" }
     ],
     "will_cover_specialist_equipment": [
       { "response": "Ydw", "value": "Yes" },

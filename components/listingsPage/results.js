@@ -50,6 +50,9 @@ const Results = ({ t }) => {
 
   const totalPages = Math.ceil(offered && offered.length / firmsPerPage);
 
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [offered]);
   return (
     <div>
       <Paragraph
