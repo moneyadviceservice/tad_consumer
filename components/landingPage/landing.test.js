@@ -4,6 +4,7 @@ import Homepage from "../../pages/index";
 import { Heading } from "@moneypensionservice/directories";
 import { QuestionButton } from "./index";
 import { findByTestAtrr, checkProps } from "../../Utils/test";
+import { InternalLink } from "../../Utils/layouts";
 
 jest.mock("react-i18next", () => ({
   withTranslation: () => (Component) => {
@@ -40,10 +41,9 @@ describe("HomePage", () => {
     expect(component.length).toBe(8);
   });
   it("should have a button with href pointing to /listings ", () => {
-    const linkButton = wrapper.find(QuestionButton);
-    // console.log(linkButton.debug());
+    const linkButton = wrapper.find(InternalLink);
     expect(
-      linkButton.findWhere((node) => node.props().href === "/listings")
+      linkButton.findWhere((node) => node.prop("href") === "/listings")
     ).toHaveLength(1);
   });
 });
