@@ -33,7 +33,6 @@ const Filters = ({ t }) => {
   const [cover_area, changeDestination] = useState({});
   const [cruise, changeCruise] = useState({});
   const [how_far_in_advance_trip_cover_weeks, changeWhen] = useState({});
-  // const [will_cover_undergoing_treatment, changeTreatment] = useState({});
   const [will_cover_terminal_prognosis, changeTerminal] = useState({});
   const [will_cover_specialist_equipment, changeEquipment] = useState({});
 
@@ -53,7 +52,6 @@ const Filters = ({ t }) => {
     how_far_in_advance_trip_cover_weeks,
     singleOption,
     annualOption,
-    // will_cover_undergoing_treatment,
     will_cover_terminal_prognosis,
     will_cover_specialist_equipment,
     cruise_30_days_max_age,
@@ -63,6 +61,23 @@ const Filters = ({ t }) => {
     land_45_days_max_age,
     land_55_days_max_age,
   ];
+  console.log(
+    "age",
+    cruise_30_days_max_age,
+    cruise_45_days_max_age,
+    cruise_55_days_max_age,
+    land_30_days_max_age,
+    land_45_days_max_age,
+    land_55_days_max_age
+  );
+  console.log("trip type", trip_type);
+  console.log("cover area", cover_area);
+  console.log("cruise area", cruise);
+  console.log("when", how_far_in_advance_trip_cover_weeks);
+  console.log("single", singleOption);
+  console.log("annual", annualOption);
+  console.log("prognosis", will_cover_terminal_prognosis);
+  // console.log("equipment", will_cover_specialist_equipment);
 
   // Toggles
 
@@ -162,11 +177,6 @@ const Filters = ({ t }) => {
     let how_far_in_advance_trip_cover_weeks = e.target.value;
     changeWhen({ how_far_in_advance_trip_cover_weeks });
   };
-
-  // const handleTreatment = (e) => {
-  //   let will_cover_undergoing_treatment = e.target.value;
-  //   changeTreatment({ will_cover_undergoing_treatment });
-  // };
 
   const handleTerminal = (e) => {
     let will_cover_terminal_prognosis = e.target.value;
@@ -380,7 +390,6 @@ const Filters = ({ t }) => {
             )}
           </FilterFormFIeld>
         )}
-
         <FilterFormFIeld>
           <Legend>
             {t("headings.destination")}
@@ -422,7 +431,6 @@ const Filters = ({ t }) => {
                 onChange={(e) => handleCruise(e)}
                 label={response}
                 name="cruise"
-                id={`cruise-${i}`}
                 value={value}
               />
             )
@@ -440,42 +448,23 @@ const Filters = ({ t }) => {
           </Legend>
           {t("filters.how_far_in_advance_trip_cover_weeks", {
             returnObjects: true,
-          }).map(({ length, value }, i) => (
+          }).map(({ when, time }, i) => (
             <Radio
               key={i}
               checked={
                 how_far_in_advance_trip_cover_weeks.how_far_in_advance_trip_cover_weeks ===
-                value
+                time
               }
               onChange={(e) => handleWhen(e)}
-              label={length}
-              name="length"
-              value={value}
+              label={when}
+              name="how_far_in_advance_trip_cover_weeks"
+              value={time}
             />
           ))}
         </FilterFormFIeld>
-        {/* <FilterFormFIeld>
-          <Legend>
-            {t("headings.i_am_going_abroad_for_medical_treatment")}
-            <Tooltip hover text="To be supplied" />
-          </Legend>
-
-          {t("filters.will_cover_undergoing_treatment", {
-            returnObjects: true,
-          }).map(({ response, value }, i) => (
-            <Radio
-              key={i}
-              checked={
-                will_cover_undergoing_treatment.will_cover_undergoing_treatment ===
-                value
-              }
-              onChange={(e) => handleTreatment(e)}
-              label={response}
-              name="will_cover_undergoing_treatment"
-              value={value}
-            />
-          ))}
-        </FilterFormFIeld> */}
+        {/* Prognosis */}
+        {/* const [will_cover_terminal_prognosis, changeTerminal] = useState({});
+        const [will_cover_specialist_equipment, changeEquipment] = useState({}); */}
         <FilterFormFIeld>
           <Legend>
             {t("headings.my_doctor_has_given_me_a_terminal_prognosis")}
@@ -496,6 +485,7 @@ const Filters = ({ t }) => {
             />
           ))}
         </FilterFormFIeld>
+        {/* Equipment */}
         <FilterFormFIeld>
           <Legend>
             {t("headings.do_you_require_cover_for_medical_equipment")}?
@@ -519,7 +509,6 @@ const Filters = ({ t }) => {
               onChange={(e) => handleEquipment(e)}
               label={response}
               name="will_cover_specialist_equipment"
-              id={`equipment-${i}`}
               value={value}
             />
           ))}
