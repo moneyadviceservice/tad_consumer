@@ -1,5 +1,4 @@
 import { Fragment, useState } from "react";
-import Link from "next/link";
 import PropTypes from "prop-types";
 import ReactHtmlParser from "react-html-parser";
 
@@ -34,7 +33,17 @@ const Homepage = ({ t }) => {
     <Fragment>
       {/* Main heading and firm registration anchor */}
       <Section constrained data-testid="contentRow">
-        <Col sizes={{ xs: 12 }} alignSelf="center" data-testid="contentCol">
+        <Col sizes={{ xs: 12, md: 9 }} data-testid="contentCol">
+          <Heading
+            level={1}
+            color="#006A00"
+            lineHeight="1.1"
+            style={{ marginTop: "20px" }}
+          >
+            {ReactHtmlParser(t("home.banner.heading"))}
+          </Heading>
+        </Col>
+        <Col sizes={{ xs: 12, md: 3 }} data-testid="contentCol">
           <ParagraphAnchor style={{ fontSize: "16px" }}>
             <Anchor
               href="https://radsignup.moneyadviceservice.org.uk/travel_insurance_registrations/new"
@@ -52,16 +61,6 @@ const Homepage = ({ t }) => {
             &nbsp;{t("home.banner.as")}
           </ParagraphAnchor>
         </Col>
-        <Col sizes={{ xs: 12 }} data-testid="contentCol">
-          <Heading
-            level={1}
-            color="#006A00"
-            lineHeight="1.1"
-            style={{ marginTop: "20px" }}
-          >
-            {t("home.banner.heading")}
-          </Heading>
-        </Col>
       </Section>
 
       {/* Questions and quote disclaimer */}
@@ -78,15 +77,14 @@ const Homepage = ({ t }) => {
                 )
               )}
             </UnorderedList>
-
             <InternalLink href="/listings">
-              <QuestionButton href="/listings" primary>
+              <QuestionButton primary>
                 {t("home.conditions.button")}
               </QuestionButton>
             </InternalLink>
           </Col>
           <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
-            <AboutBox style={{ marginTop: "50px" }}>
+            <AboutBox style={{ marginTop: "28px" }}>
               <Heading level={3} color="#006A00" style={{ marginTop: 0 }}>
                 {t("home.about.heading")}
               </Heading>
@@ -105,9 +103,8 @@ const Homepage = ({ t }) => {
             </Heading>
             <YoutubeFrame src="https://www.youtube.com/embed/aijzHfO0VC8" />
             <Paragraph color="#515151" textSize="16px" margin={{ top: "20px" }}>
-              Watch this short video to find out if this directory can help you
-              find the cover you need.
-              <Anchor textSize="16px">Download the transcript</Anchor>.
+              {t("home.video.description")}&nbsp;
+              <Anchor textSize="16px">{t("home.video.transcript")}</Anchor>.
             </Paragraph>
           </Col>
           <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
@@ -136,11 +133,7 @@ const Homepage = ({ t }) => {
       {/* Articles and find a broker */}
       <ExtendedSection align="stretch">
         <Section constrained data-testid="contentRow">
-          <Col
-            sizes={{ xs: 12, md: 6 }}
-            data-testid="contentCol"
-            style={{ marginBottom: "50px" }}
-          >
+          <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
             <Heading level={2} color="#006A00">
               {t("home.articles.heading")}
             </Heading>
@@ -155,7 +148,6 @@ const Homepage = ({ t }) => {
           <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
             <InfoTable
               margin={{ bottom: "15px" }}
-              styles={{ paddingLeft: "30px" }}
               sizes={{ xs: 12, md: 4 }}
               title={t("home.broker.heading")}
             >

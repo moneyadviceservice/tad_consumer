@@ -1,11 +1,11 @@
 {
   "home": {
     "banner": {
-      "heading": "Dewch o hyd i ddarparwyr yswiriant teithio os oes gennych gyflwr meddygol difrifol",
+      "heading": "Dewch o hyd i ddarparwr yswiriant teithio os oes gennych gyflwr meddygol difrifol",
       "register": "Cofrestrwch",
       "login": "Fewngofnodwch",
       "or": "neu",
-      "as": "fel cwmni ar y cyfeiriadur"
+      "as": "fel cwmni"
     },
     "about": {
       "heading": "Ynglŷn â'r cyfeiriadur hwn",
@@ -30,7 +30,9 @@
       "button": "Gweld pob cwmni"
     },
     "video": {
-      "heading": "Ar gyfer pwy mae'r cyfeiriadur hwn?"
+      "heading": "Ar gyfer pwy mae'r cyfeiriadur hwn?",
+      "description": "Gwyliwch y fideo fer hon i ddarganfod a all y cyfeiriadur hwn eich helpu chi dewch o hyd i'r clawr sydd ei angen arnoch chi.",
+      "transcript": "Dadlwythwch y trawsgrifiad"
     },
     "faqs": {
       "heading": "Cwestiynau cyffredin",
@@ -91,7 +93,7 @@
       ]
     },
     "broker": {
-      "heading": "Need help shopping around",
+      "heading": "Angen help i siopa o gwmpas",
       "content": "<section style='margin: 15px; font-size: 16px; line-height: 20px; color:#515151'><p>Os nad ydych wedi cael unrhyw ddyfynbrisiau eto ac ar ddechrau eich chwiliad am yswiriant teithio, mae gan Gymdeithas Brocer Yswiriant Prydain (BIBA) wasanaeth sy'n eich cysylltu â Brocer a all wneud y siopa o gwmpas i chi a dod o hyd i chi y fargen orau gan ddarparwyr yswiriant teithio prif ffrwd ac arbenigol</p><br/><p style='font-size: 13px;'><b>Cysylltwch:<b/><br/><br/></p><img src='/assets/Images/phone.svg' style='width: 20px;' /> <span style='font-size: 22px; color:  #18507a;'>&nbsp;<b>0123 456 7891<b/></span><p style='padding-left: 30px; margin-bottom: 30px;'> &#40;Mon - Fri 9:00 am to 5:30 pm&#41;</p><img src='/assets/Images/web.svg'/><span>&nbsp; <a  style=' color:#18507a; font-size: 16px;' href=''>Gwefan</a></span</section>"
     }
   }
