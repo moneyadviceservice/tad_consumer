@@ -8,12 +8,13 @@ import {
 
 import { i18n } from "../../Utils/translation/i18n";
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import ReactHtmlParser from "react-html-parser";
 
 import { DummyCard, CompanyName, SubHead, CommsInfo, Comms } from "./dummy";
 import Loading from "./loading";
+
 const Results = ({ t }) => {
   const offered = useSelector((state) => state.listings.offered);
 
@@ -41,7 +42,11 @@ const Results = ({ t }) => {
     offered && offered.slice(indexOfFirstFirm, indexOfLastFirm);
 
   const totalPages = Math.ceil(offered && offered.length / firmsPerPage);
-  console.log(totalPages);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [offered]);
+
   return (
     <div>
       <Paragraph
@@ -126,8 +131,14 @@ const Results = ({ t }) => {
           currentLng={i18n.language}
           currentPage={currentPage}
           totalPages={totalPages}
-          nextClick={() => setCurrentPage(currentPage + 1)}
-          prevClick={() => setCurrentPage(currentPage - 1)}
+          nextClick={() => {
+            setCurrentPage(currentPage + 1);
+            window.scrollTo(0, 0);
+          }}
+          prevClick={() => {
+            setCurrentPage(currentPage - 1);
+            window.scrollTo(0, 0);
+          }}
         />
       ) : (
         ""
