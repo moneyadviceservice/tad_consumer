@@ -132,8 +132,14 @@ const Results = ({ t }) => {
           currentLng={i18n.language}
           currentPage={currentPage}
           totalPages={totalPages}
-          nextClick={() => setCurrentPage(currentPage + 1)}
-          prevClick={() => setCurrentPage(currentPage - 1)}
+          nextClick={() => {
+            setCurrentPage(currentPage + 1);
+            window.scrollTo(0, 0);
+          }}
+          prevClick={() => {
+            setCurrentPage(currentPage - 1);
+            window.scrollTo(0, 0);
+          }}
         />
       ) : (
         ""
