@@ -45,6 +45,7 @@ const Results = ({ t }) => {
 
   useEffect(() => {
     setCurrentPage(1);
+    window.scrollTo(0, 0);
   }, [offered]);
 
   return (

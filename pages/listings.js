@@ -45,7 +45,7 @@ Listings.getInitialProps = async ({ reduxStore }) => {
   await reduxStore.dispatch(getAlgoFirms());
   await reduxStore.dispatch(getAlgoOfferings());
   const shuffledfirm = await reduxStore.getState().listings.firms.hits;
-  await randomizeResult(shuffledfirm);
+  randomizeResult(shuffledfirm);
 
   return {
     namespacesRequired: ["listings", "common", "footer"],
