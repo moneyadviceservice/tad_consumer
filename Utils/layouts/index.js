@@ -3,18 +3,12 @@ import {
   Anchor,
   Col,
   Row,
-  Button,
 } from "@moneypensionservice/directories";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
 import { withTranslation } from "../translation/i18n";
-
-const StyledLink = styled.a`
-  color: red;
-  background: blue;
-`;
 
 const Section = styled(Row)`
   margin: auto;
@@ -57,12 +51,15 @@ const BreadAnchor = styled(Anchor)`
     content: " \\00203A  ";
     text-decoration: none;
   }
+
   &:hover,
   &:focus {
     outline: none;
     background-color: #e8b940;
     color: #003d8e;
+    text-decoration: none;
   }
+
   &:link {
     text-decoration: none;
     background: none;
@@ -88,11 +85,10 @@ const Breadcrumb = ({ path, t }) => {
     if (paths === "") {
       return false;
     }
-
     let anchorText = eval("`${paths}`");
-
     return <BreadLink key={i} href={paths} name={t(anchorText)} />;
   });
+
   return (
     <BreadcrumbSection align="stretch">
       <Section constrained>
@@ -101,7 +97,6 @@ const Breadcrumb = ({ path, t }) => {
             {t("home")}
           </BreadAnchor>
           <BreadLink href="/" name={t("travel")} />
-
           {crumbs}
         </Col>
       </Section>
