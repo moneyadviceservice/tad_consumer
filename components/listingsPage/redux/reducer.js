@@ -3,7 +3,6 @@ import {
   GET_OFFERINGS_SUCCESS,
   FILTER_OFFERING,
 } from "./constants";
-import { randomizeResult } from "../dummy";
 
 let initialState = {
   firms: [],
@@ -25,7 +24,6 @@ const ListingsReducer = (state = initialState, action) => {
       };
       break;
     case FILTER_OFFERING:
-      randomizeResult(action.payload);
       return {
         ...state,
         offered: action.payload,

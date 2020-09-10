@@ -5,6 +5,7 @@ import { withTranslation } from "../Utils/translation/i18n";
 import styled from "styled-components";
 import { Col, Heading, resolveMedia } from "@moneypensionservice/directories";
 import { Section, ExtendedSection } from "../Utils/layouts";
+import { randomizeResult } from "../components/listingsPage/dummy";
 
 import {
   getAlgoFirms,
@@ -43,6 +44,8 @@ const Listings = ({ t }) => {
 Listings.getInitialProps = async ({ reduxStore }) => {
   await reduxStore.dispatch(getAlgoFirms());
   await reduxStore.dispatch(getAlgoOfferings());
+  const shuffledfirm = await reduxStore.getState().listings.firms.hits;
+  await randomizeResult(shuffledfirm);
 
   return {
     namespacesRequired: ["listings", "common", "footer"],

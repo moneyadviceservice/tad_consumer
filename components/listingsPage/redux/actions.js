@@ -3,7 +3,6 @@ import {
   GET_OFFERINGS_SUCCESS,
   FILTER_OFFERING,
 } from "./constants";
-import { randomizeResult } from "../dummy";
 
 const algoliasearch = require("algoliasearch");
 const client = algoliasearch(

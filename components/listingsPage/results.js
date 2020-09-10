@@ -12,14 +12,7 @@ import { useState, useEffect } from "react";
 
 import ReactHtmlParser from "react-html-parser";
 
-import {
-  DummyCard,
-  CompanyName,
-  SubHead,
-  CommsInfo,
-  Comms,
-  randomizeResult,
-} from "./dummy";
+import { DummyCard, CompanyName, SubHead, CommsInfo, Comms } from "./dummy";
 import Loading from "./loading";
 
 const Results = ({ t }) => {
@@ -53,6 +46,7 @@ const Results = ({ t }) => {
   useEffect(() => {
     setCurrentPage(1);
   }, [offered]);
+
   return (
     <div>
       <Paragraph

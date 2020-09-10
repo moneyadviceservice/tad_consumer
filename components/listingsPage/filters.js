@@ -4,7 +4,6 @@ import {
   Radio,
   Button,
   Form,
-  Tooltip,
   Paragraph,
 } from "@moneypensionservice/directories";
 
@@ -61,23 +60,6 @@ const Filters = ({ t }) => {
     land_45_days_max_age,
     land_55_days_max_age,
   ];
-  console.log(
-    "age",
-    cruise_30_days_max_age,
-    cruise_45_days_max_age,
-    cruise_55_days_max_age,
-    land_30_days_max_age,
-    land_45_days_max_age,
-    land_55_days_max_age
-  );
-  console.log("trip type", trip_type);
-  console.log("cover area", cover_area);
-  console.log("cruise area", cruise);
-  console.log("when", how_far_in_advance_trip_cover_weeks);
-  console.log("single", singleOption);
-  console.log("annual", annualOption);
-  console.log("prognosis", will_cover_terminal_prognosis);
-  // console.log("equipment", will_cover_specialist_equipment);
 
   // Toggles
 
