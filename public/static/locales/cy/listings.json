@@ -73,7 +73,8 @@
     "showing": "Yn dangos ",
     "of": " o",
     "firms": "o gwmnïau",
-    "order": "Cwmnïau wedi'u cyflwyno mewn unrhyw drefn benodol"
+    "order": "Cwmnïau wedi'u cyflwyno mewn unrhyw drefn benodol",
+    "noResult": "Not yet provided"
   },
   "toolTips": {
     "age": "Not yet supplied",

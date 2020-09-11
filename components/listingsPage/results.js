@@ -20,6 +20,7 @@ const Results = ({ t }) => {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [firmsPerPage, setFirmsPerPage] = useState(5);
+  const [isFilter, setFiltering] = useState(false);
 
   const indexOfLastFirm = currentPage * firmsPerPage;
   const indexOfFirstFirm = indexOfLastFirm - firmsPerPage;
@@ -44,11 +45,19 @@ const Results = ({ t }) => {
   const totalPages = Math.ceil(offered && offered.length / firmsPerPage);
 
   useEffect(() => {
+    // reset to page 1 on filter
     setCurrentPage(1);
+    // fake loading state on filter
+    setFiltering(true);
+    // resolve fake loading state after 300ms
+    setTimeout(function() {
+      setFiltering(false);
+    }, 300);
   }, [offered]);
 
   return (
     <div>
+      {/* results heading */}
       <Paragraph
         style={{
           marginTop: 0,
@@ -71,8 +80,10 @@ const Results = ({ t }) => {
         </span>
         <span>{t("headings.order")}</span>
       </Paragraph>
-
-      {offered ? (
+      {/* No firms returned from filtering */}
+      {isFilter ? (
+        <Loading />
+      ) : offered ? (
         offered.length == 0 ? (
           <Paragraph
             margin={{
@@ -80,8 +91,7 @@ const Results = ({ t }) => {
               bottom: "40px",
             }}
           >
-            There are no results matching your search criteria. Please amend
-            your criteria and try again
+            {t("headings.noResult")}
           </Paragraph>
         ) : (
           currentFirms.map((selectedFirm, i) => {
@@ -125,7 +135,7 @@ const Results = ({ t }) => {
       ) : (
         <Loading />
       )}
-
+      {/* Pagination */}
       {offered && offered.length > 0 && totalPages > 1 ? (
         <Pagination
           currentLng={i18n.language}
