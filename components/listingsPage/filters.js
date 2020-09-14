@@ -224,7 +224,6 @@ const Filters = ({ t }) => {
           <Legend>
             {t("headings.age_at_time_of_travel")}
             <TooltipText
-              hover
               minWidth="200px"
               side="left"
               text={t("toolTips.age")}
@@ -245,8 +244,6 @@ const Filters = ({ t }) => {
               {t("headings.filter_by_insurance_type")}
               <TooltipText
                 minWidth="300px"
-                side="left"
-                hover
                 text={t("toolTips.insuranceType")}
               />
             </Legend>
@@ -357,7 +354,6 @@ const Filters = ({ t }) => {
             <TooltipText
               minWidth="230px"
               side="bottom"
-              hover
               text={t("toolTips.destination")}
             />
           </Legend>
@@ -380,7 +376,6 @@ const Filters = ({ t }) => {
             <TooltipText
               minWidth="230px"
               side="bottom"
-              hover
               text={t("toolTips.cruise")}
             />
           </Legend>
@@ -403,7 +398,6 @@ const Filters = ({ t }) => {
             <TooltipText
               minWidth="230px"
               side="left"
-              hover
               text={t("toolTips.when")}
             />
           </Legend>
@@ -452,7 +446,6 @@ const Filters = ({ t }) => {
             <TooltipText
               minWidth="230px"
               side="bottom"
-              hover
               text={t("toolTips.equipment")}
             />
           </Legend>
