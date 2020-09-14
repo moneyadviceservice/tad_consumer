@@ -194,35 +194,30 @@ const Filters = ({ t }) => {
 
   return (
     <Form style={{ marginBottom: "40px", color: "#515151" }}>
-      <FilterHead>
-        <ExtHeading level={3} style={{}}>
-          <ToggleIcon onClick={(e) => handleMobile(e)}>
-            {mobile && mobile === true ? "+" : "-"}
-          </ToggleIcon>
-          <span>{t("headings.filter")}</span>
-          {process.browser ? (
-            <ClearButton onClick={(e) => clearFilters(e)}>
-              {t("headings.clear")}
-            </ClearButton>
-          ) : (
-            <a
-              href="/listings"
-              name=""
-              style={{
-                fontSize: "11px",
-                color: "#003D8E",
-                cursor: "pointer",
-                textDecoration: "none",
-              }}
-            >
-              {t("headings.clear")}
-            </a>
-          )}
-        </ExtHeading>
-        <Paragraph style={{ color: "inherit" }}>
-          {t("headings.sub_filter")}
-        </Paragraph>
-      </FilterHead>
+      <ExtHeading level={3} style={{}}>
+        <ToggleIcon onClick={(e) => handleMobile(e)}>
+          {mobile && mobile === true ? "+" : "-"}
+        </ToggleIcon>
+        <span>{t("headings.filter")}</span>
+        {process.browser ? (
+          <ClearButton onClick={(e) => clearFilters(e)}>
+            {t("headings.clear")}
+          </ClearButton>
+        ) : (
+          <a
+            href="/listings"
+            name=""
+            style={{
+              fontSize: "11px",
+              color: "#003D8E",
+              cursor: "pointer",
+              textDecoration: "none",
+            }}
+          >
+            {t("headings.clear")}
+          </a>
+        )}
+      </ExtHeading>
 
       <FormDiv isMobile={mobile}>
         <FilterFormFIeld>

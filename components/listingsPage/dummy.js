@@ -55,21 +55,12 @@ export const ExtHeading = styled(Heading)`
   flex-direction: row;
   flexwrap: wrap;
   justify-content: space-between;
-  ${resolveMedia.md`
-   background: #edf0f0;
-    color: #515151
-`};
-`;
-
-export const FilterHead = styled.div`
-  background: #003d8e;
-  color: #fff;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   padding: 12px 18px;
   ${resolveMedia.md`
-  background: #edf0f0;
-   color: #515151
+   background: #edf0f0;
+    color: #515151
 `};
 `;
 
