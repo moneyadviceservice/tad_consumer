@@ -21,6 +21,7 @@ import {
   AboutBox,
 } from "../components/landingPage";
 import { Section, ExtendedSection, InternalLink } from "../Utils/layouts";
+import Title from "../Utils/layouts/title";
 
 const Homepage = ({ t }) => {
   const [activeIndex, changeIndex] = useState();
@@ -34,14 +35,7 @@ const Homepage = ({ t }) => {
       {/* Main heading and firm registration anchor */}
       <Section constrained data-testid="contentRow">
         <Col sizes={{ xs: 12, md: 9 }} data-testid="contentCol">
-          <Heading
-            level={1}
-            color="#006A00"
-            lineHeight="1.1"
-            style={{ marginTop: "20px" }}
-          >
-            {ReactHtmlParser(t("home.banner.heading"))}
-          </Heading>
+          <Title />
         </Col>
         <Col sizes={{ xs: 12, md: 3 }} data-testid="contentCol">
           <ParagraphAnchor style={{ fontSize: "16px" }}>

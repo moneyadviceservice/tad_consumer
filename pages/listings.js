@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { Col, Heading, resolveMedia } from "@moneypensionservice/directories";
 import { Section, ExtendedSection } from "../Utils/layouts";
 import { randomizeResult } from "../components/listingsPage/dummy";
+import Title from "../Utils/layouts/title";
 
 import {
   getAlgoFirms,
@@ -26,9 +27,7 @@ const Listings = ({ t }) => {
     <Fragment>
       <Section constrained data-testid="contentRow">
         <Col sizes={{ xs: 12 }} data-testid="contentCol">
-          <Heading level={1} color="#006A00" style={{ marginTop: "20px" }}>
-            {t("headings.main")}
-          </Heading>
+          <Title />
         </Col>
       </Section>
 
