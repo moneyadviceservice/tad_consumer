@@ -85,7 +85,6 @@ const Filters = ({ t }) => {
 
   const Note = styled.span`
     display: ${(props) => (props.note ? "block" : "none")};
-    font-size: 12px;
   `;
 
   const dispatch = useDispatch();
@@ -317,6 +316,14 @@ const Filters = ({ t }) => {
           <Legend>{t("headings.filter_by_length_of_trip")}</Legend>
           <Note note={note}>Please select the type of insurance first</Note>
           <SingleTrip single={single}>
+            <span style={{ fontSize: "14px" }}>
+              select one of the durations
+              <TooltipText
+                minWidth="200px"
+                side="left"
+                text={t("toolTips.singleTrip")}
+              />
+            </span>
             {t("filters.singleTripLength", { returnObjects: true }).map(
               ({ length, value }, i) => (
                 <Radio
@@ -331,7 +338,14 @@ const Filters = ({ t }) => {
             )}
           </SingleTrip>
           <AnnualTrip annual={annual}>
-            <span style={{ fontSize: "14px" }}>for each individual trip</span>
+            <span style={{ fontSize: "14px" }}>
+              for each individual trip
+              <TooltipText
+                minWidth="200px"
+                side="left"
+                text={t("toolTips.annualTrip")}
+              />
+            </span>
 
             {t("filters.annualTripLength", { returnObjects: true }).map(
               ({ length, value }, i) => (
