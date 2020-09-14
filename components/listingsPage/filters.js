@@ -249,7 +249,7 @@ const Filters = ({ t }) => {
             <Legend>
               {t("headings.filter_by_insurance_type")}
               <TooltipText
-                minWidth="230px"
+                minWidth="300px"
                 side="left"
                 hover
                 text={t("toolTips.insuranceType")}

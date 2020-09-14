@@ -143,11 +143,17 @@ const Results = ({ t }) => {
           totalPages={totalPages}
           nextClick={() => {
             setCurrentPage(currentPage + 1);
-            window.scrollTo(0, 0);
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
           }}
           prevClick={() => {
             setCurrentPage(currentPage - 1);
-            window.scrollTo(0, 0);
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
           }}
         />
       ) : (
