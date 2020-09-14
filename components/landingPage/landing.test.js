@@ -24,13 +24,6 @@ describe("HomePage", () => {
     wrapper.unmount();
   });
 
-  it("should have only one h1", () => {
-    const pageHeading = wrapper.find(Heading);
-    expect(
-      pageHeading.findWhere((node) => node.props().level === 1)
-    ).toHaveLength(1);
-  });
-
   it("should contain 4 rows", () => {
     const component = findByTestAtrr(wrapper, "contentRow");
     expect(component.length).toBe(4);

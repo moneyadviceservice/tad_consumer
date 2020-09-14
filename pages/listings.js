@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { Col, Heading, resolveMedia } from "@moneypensionservice/directories";
 import { Section, ExtendedSection } from "../Utils/layouts";
 import { randomizeResult } from "../components/listingsPage/dummy";
-import Title from "../Utils/layouts/title";
+import Title from "../components/title";
 
 import {
   getAlgoFirms,

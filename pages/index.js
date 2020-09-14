@@ -21,7 +21,7 @@ import {
   AboutBox,
 } from "../components/landingPage";
 import { Section, ExtendedSection, InternalLink } from "../Utils/layouts";
-import Title from "../Utils/layouts/title";
+import Title from "../components/title";
 
 const Homepage = ({ t }) => {
   const [activeIndex, changeIndex] = useState();
