@@ -5,6 +5,7 @@ import {
   Button,
   Form,
   Paragraph,
+  Anchor,
 } from "@moneypensionservice/directories";
 
 import styled from "styled-components";
@@ -170,7 +171,8 @@ const Filters = ({ t }) => {
     changeEquipment({ will_cover_specialist_equipment });
   };
 
-  const clearFilters = () => {
+  const clearFilters = (e) => {
+    e.preventDefault();
     changeInsuranceType({});
     changeSingleOption({});
     changeAnnualOption({});
@@ -199,24 +201,22 @@ const Filters = ({ t }) => {
           {mobile && mobile === true ? "+" : "-"}
         </ToggleIcon>
         <span>{t("headings.filter")}</span>
-        {process.browser ? (
-          <ClearButton onClick={(e) => clearFilters(e)}>
-            {t("headings.clear")}
-          </ClearButton>
-        ) : (
-          <a
-            href="/listings"
-            name=""
-            style={{
-              fontSize: "11px",
-              color: "#003D8E",
-              cursor: "pointer",
-              textDecoration: "none",
-            }}
-          >
-            {t("headings.clear")}
-          </a>
-        )}
+
+        <Anchor
+          onClick={(e) => clearFilters(e)}
+          textAlign="right"
+          textSize="11px"
+          width="auto"
+          href=""
+          style={{
+            textDecoration: "none",
+            background: "inherit",
+            color: "inherit",
+            outline: "none",
+          }}
+        >
+          {t("headings.clear")}
+        </Anchor>
       </ExtHeading>
 
       <FormDiv isMobile={mobile}>
