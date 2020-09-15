@@ -6,7 +6,7 @@ import { resolveMedia } from "@moneypensionservice/directories";
 
 import { withTranslation } from "../../Utils/translation/i18n";
 
-const ExtHeading = styled(Heading)`
+export const ExtHeading = styled(Heading)`
   width: 100%;
   color: #006a00;
   line-height: 1.1;

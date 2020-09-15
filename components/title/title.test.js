@@ -1,7 +1,7 @@
 import { shallow } from "enzyme";
 
 import Title from "./index";
-import { Heading } from "@moneypensionservice/directories";
+import { ExtHeading } from "./index";
 
 jest.mock("react-i18next", () => ({
   withTranslation: () => (Component) => {
@@ -22,7 +22,7 @@ describe("Title", () => {
   });
 
   it("should have only one h1", () => {
-    const pageHeading = wrapper.find(Heading);
+    const pageHeading = wrapper.find(ExtHeading);
     expect(
       pageHeading.findWhere((node) => node.props().level === 1)
     ).toHaveLength(1);
