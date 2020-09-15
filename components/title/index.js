@@ -1,19 +1,26 @@
 import { Heading } from "@moneypensionservice/directories";
 import ReactHtmlParser from "react-html-parser";
 import PropTypes from "prop-types";
+import styled from "styled-components";
+import { resolveMedia } from "@moneypensionservice/directories";
 
 import { withTranslation } from "../../Utils/translation/i18n";
+
+const ExtHeading = styled(Heading)`
+  width: 100%;
+  color: #006a00;
+  line-height: 1.1;
+  margin-top: 20px;
+  ${resolveMedia.md`
+  width: 65%;
+  
+`};
+`;
 const Title = ({ t }) => {
   return (
-    <Heading
-      width="70%"
-      level={1}
-      color="#006A00"
-      lineHeight="1.1"
-      style={{ marginTop: "20px" }}
-    >
+    <ExtHeading level={1}>
       {ReactHtmlParser(t("home.banner.heading"))}
-    </Heading>
+    </ExtHeading>
   );
 };
 

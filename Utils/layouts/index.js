@@ -7,7 +7,6 @@ import {
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import Link from "next/link";
-
 import { withTranslation } from "../translation/i18n";
 
 const Section = styled(Row)`
