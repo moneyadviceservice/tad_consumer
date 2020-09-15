@@ -58,8 +58,7 @@
   "headings": {
     "main": "Find travel insurance providers if you have a serious medical condition",
     "filter": "Refine your search",
-    "sub_filter": "Answer these questions to help you narrow down the list of firms to choose from",
-    "clear": "Clear filter",
+    "clear": "Clear filters",
     "age_at_time_of_travel": "Age at time of travel",
     "age_at_time_of_travel_select": "Please select",
     "filter_by_insurance_type": "Filter by insurance type",

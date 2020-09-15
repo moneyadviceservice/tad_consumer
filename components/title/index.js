@@ -6,6 +6,7 @@ import { withTranslation } from "../../Utils/translation/i18n";
 const Title = ({ t }) => {
   return (
     <Heading
+      width="70%"
       level={1}
       color="#006A00"
       lineHeight="1.1"

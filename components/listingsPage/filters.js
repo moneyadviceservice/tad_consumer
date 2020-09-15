@@ -208,8 +208,6 @@ const Filters = ({ t }) => {
           width="auto"
           href=""
           style={{
-            textDecoration: "none",
-            background: "inherit",
             color: "inherit",
             outline: "none",
           }}

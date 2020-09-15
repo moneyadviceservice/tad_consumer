@@ -1,7 +1,6 @@
 import { shallow } from "enzyme";
 
 import Homepage from "../../pages/index";
-import { Heading } from "@moneypensionservice/directories";
 import { QuestionButton } from "./index";
 import { findByTestAtrr, checkProps } from "../../Utils/test";
 import { InternalLink } from "../../Utils/layouts";
