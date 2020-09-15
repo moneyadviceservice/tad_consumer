@@ -12,7 +12,7 @@ export const ExtHeading = styled(Heading)`
   line-height: 1.1;
   margin-top: 20px;
   ${resolveMedia.md`
-  width: 65%;
+  width: 700px;
   
 `};
 `;

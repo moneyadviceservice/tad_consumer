@@ -45,14 +45,14 @@ const Homepage = ({ t }) => {
             >
               {t("home.banner.register")}
             </Anchor>
-            &nbsp;{t("home.banner.or")}
+            {t("home.banner.or")}
             <Anchor
               href="https://radsignup.moneyadviceservice.org.uk/users/sign_in"
               style={{ fontSize: "16px" }}
             >
-              &nbsp; {t("home.banner.login")}
+              {t("home.banner.login")}
             </Anchor>
-            &nbsp;{t("home.banner.as")}
+            {t("home.banner.as")}
           </ParagraphAnchor>
         </Col>
       </Section>
