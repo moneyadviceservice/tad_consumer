@@ -24,3 +24,9 @@
   left: -20px;
   top: -1px;
 }
+.accordion a {
+  color: #003d8e;
+}
+.accordion a:visited {
+  color: #003d8e;
+}

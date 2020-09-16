@@ -141,9 +141,10 @@ const Homepage = ({ t }) => {
           </Col>
           <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
             <InfoTable
+              icon
               margin={{ bottom: "15px" }}
               sizes={{ xs: 12, md: 4 }}
-              title={t("home.broker.heading")}
+              title={ReactHtmlParser(t("home.broker.heading"))}
             >
               {ReactHtmlParser(t("home.broker.content"))}
             </InfoTable>
