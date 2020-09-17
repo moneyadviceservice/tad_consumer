@@ -78,7 +78,16 @@
   "toolTips": {
     "age": "Not yet supplied",
     "singleTrip": "Not yet supplied.",
-    "insuranceType": "Trip Sengl:  Not yet supplied.                                                                                                                           Aml-Daith Flynyddol: Not yet supplied.",
+    "insuranceType": {
+      "single": {
+        "title": "Not yet supplied:",
+        "body": "Not yet supplied"
+      },
+      "annual": {
+        "title": "Not yet supplied:",
+        "body": "Not yet supplied"
+      }
+    },
     "annualTrip": "Not yet supplied",
     "destination": "Not yet supplied,",
     "cruise": "Not yet supplied.",

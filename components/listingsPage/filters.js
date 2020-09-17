@@ -241,7 +241,22 @@ const Filters = ({ t }) => {
               {t("headings.filter_by_insurance_type")}
               <TooltipText
                 minWidth="300px"
-                text={t("toolTips.insuranceType")}
+                text={
+                  <>
+                    <Heading level={4}>
+                      {t("toolTips.insuranceType.single.title")}
+                    </Heading>
+                    <Paragraph textSize="15px">
+                      {t("toolTips.insuranceType.single.body")}
+                    </Paragraph>
+                    <Heading level={4}>
+                      {t("toolTips.insuranceType.annual.title")}
+                    </Heading>
+                    <Paragraph textSize="15px">
+                      {t("toolTips.insuranceType.annual.body")}
+                    </Paragraph>
+                  </>
+                }
               />
             </Legend>
             {t("filters.trip_type", { returnObjects: true }).map(
