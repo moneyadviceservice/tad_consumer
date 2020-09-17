@@ -28,6 +28,7 @@ const AppHead = ({ path, t }) => {
         href="/static/favicon.ico"
       ></link>
       <link rel="stylesheet" href="/static/accordion.css" />
+      <link rel="stylesheet" href="/static/help.css" />
     </Head>
   );
 };
