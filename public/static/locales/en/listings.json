@@ -86,6 +86,8 @@
   },
   "toolTips": {
     "age": "Some firms won’t offer cover above a certain age.  The length of trip, whether the trip is a cruise and the destination may affect this.",
+    "singleTrip": "Not yet supplied.",
+    "annualTrip": "Not yet supplied",
     "insuranceType": {
       "single": {
         "title": "Single Trip:",

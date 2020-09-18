@@ -104,8 +104,36 @@ export const filterOfferings = (pool) => {
                   parseFloat(`${offering[cruise]}`) === 1000)
               );
             }
+            // // filter cruise without insurance option
+            if (
+              key === "cruise" &&
+              Object.values(value)[0] === "Yes" &&
+              typeof insuranceOption === "undefined"
+            ) {
+              return (
+                offering.cruise_30_days_max_age >= 0 ||
+                offering.cruise_45_days_max_age >= 0 ||
+                offering.cruise_55_days_max_age >= 0
+              );
+            }
+            // filter non cruise without insurance option
+            if (
+              key === "cruise" &&
+              Object.values(value)[0] === "No" &&
+              typeof insuranceOption === "undefined"
+            ) {
+              return (
+                offering.land_30_days_max_age >= 0 ||
+                offering.land_45_days_max_age >= 0 ||
+                offering.land_55_days_max_age >= 0
+              );
+            }
             // filter cruise
-            if (key === "cruise" && Object.values(value)[0] === "Yes") {
+            if (
+              key === "cruise" &&
+              Object.values(value)[0] === "Yes" &&
+              typeof insuranceOption !== "undefined"
+            ) {
               let cruise = "cruise_" + insuranceOption + "_days_max_age";
               return (
                 (age <= offering[cruise] && offering[cruise] != -1) ||
@@ -113,13 +141,18 @@ export const filterOfferings = (pool) => {
               );
             }
             // filter non cruise
-            if (key === "cruise" && Object.values(value)[0] === "No") {
+            if (
+              key === "cruise" &&
+              Object.values(value)[0] === "No" &&
+              typeof insuranceOption !== "undefined"
+            ) {
               let land = "land_" + insuranceOption + "_days_max_age";
               return (
                 (age <= offering[land] && offering[land] != -1) ||
                 (offering[land] === 1000 && offering[land] > -1)
               );
             }
+
             // filter terminal prognosis not covered
             if (
               key === "will_cover_terminal_prognosis" &&
