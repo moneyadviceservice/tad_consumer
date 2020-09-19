@@ -11,9 +11,6 @@ import { i18n } from "../../Utils/translation/i18n";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 
-import ReactHtmlParser from "react-html-parser";
-
-import { DummyCard, CompanyName, SubHead, CommsInfo, Comms } from "./dummy";
 import Loading from "./loading";
 
 const Results = ({ t }) => {

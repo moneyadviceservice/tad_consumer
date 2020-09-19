@@ -183,7 +183,7 @@ export const filterOfferings = (pool) => {
         });
       }, offerings);
 
-      // console.log(selectedOfferings);
+      console.log(selectedOfferings);
       // collected the ids of the selected offering into an array of array
       const offered = selectedOfferings.map((offering) => {
         let id = parseInt(offering.objectID);

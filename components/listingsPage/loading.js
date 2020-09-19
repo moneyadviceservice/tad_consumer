@@ -2,7 +2,6 @@ import { Fragment } from "react";
 import { DummyCard, CompanyName, SubHead, CommsInfo, Comms } from "./dummy";
 import { withTranslation } from "../../Utils/translation/i18n";
 import { Col, Row } from "@moneypensionservice/directories";
-import ReactHtmlParser from "react-html-parser";
 
 const Loading = ({ t }) => {
   return (
