@@ -243,16 +243,16 @@ const Filters = ({ t }) => {
                 minWidth="300px"
                 text={
                   <>
-                    <Heading level={4}>
+                    <Heading color="#515151" level={4}>
                       {t("toolTips.insuranceType.single.title")}
                     </Heading>
-                    <Paragraph textSize="15px">
+                    <Paragraph color="#515151" textSize="14px">
                       {t("toolTips.insuranceType.single.body")}
                     </Paragraph>
-                    <Heading level={4}>
+                    <Heading color="#515151" level={4}>
                       {t("toolTips.insuranceType.annual.title")}
                     </Heading>
-                    <Paragraph textSize="15px">
+                    <Paragraph color="#515151" textSize="14px">
                       {t("toolTips.insuranceType.annual.body")}
                     </Paragraph>
                   </>
