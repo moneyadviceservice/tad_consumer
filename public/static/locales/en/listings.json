@@ -22,11 +22,11 @@
     "cover_area": [
       { "location": "UK & Europe", "value": "United Kingdom & Europe" },
       {
-        "location": "Worldwide excluding USA, Canada, Carribeean",
+        "location": "Worldwide excluding USA, Canada, Carribbean",
         "value": "Worldwide excluding USA, Canada & Caribbean"
       },
       {
-        "location": "Worldwide including USA, Canada, Carribeean",
+        "location": "Worldwide including USA, Canada, Carribbean",
         "value": "Worldwide including USA, Canada & Caribbean"
       }
     ],
