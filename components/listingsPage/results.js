@@ -56,28 +56,43 @@ const Results = ({ t }) => {
   return (
     <div>
       {/* results heading */}
-      <Paragraph
+      <div
         style={{
-          marginTop: 0,
-          marginBottom: "20px",
-          background: "#edf0f0",
-          borderRadius: "5px",
-          padding: "15px 18px",
-          width: "100%",
-          display: "flex",
           flexDirection: "row",
           flexWrap: "wrap",
           justifyContent: "space-between",
           fontSize: "16px",
+          display: "flex",
+          background: "#edf0f0",
+          marginBottom: "20px",
+          borderRadius: "5px",
+          padding: "15px 15px",
         }}
       >
-        <span>
-          {t("headings.showing")}
-          {firstIndex} - {lastIndex}
-          {t("headings.of")} {offered && offered.length} {t("headings.firms")}
-        </span>
-        <span>{t("headings.order")}</span>
-      </Paragraph>
+        <div
+          style={{
+            marginTop: 0,
+            width: "100%",
+            display: "flex",
+            marginBottom: "10px",
+            flexDirection: "row",
+            flexWrap: "wrap",
+            justifyContent: "space-between",
+            fontSize: "16px",
+          }}
+        >
+          <span>
+            {t("headings.showing")}
+            {firstIndex} - {lastIndex}
+            {t("headings.of")} {offered && offered.length} {t("headings.firms")}
+          </span>
+          <span>{t("headings.order")}</span>
+        </div>
+        <Anchor style={{ textAlign: "right", fontSize: "16px", margin: 0 }}>
+          Download and print a list of all firms
+        </Anchor>
+      </div>
+
       {/* No firms returned from filtering */}
       {isFilter ? (
         <Loading />
