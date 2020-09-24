@@ -103,6 +103,7 @@ const Results = ({ t }) => {
               fontSize: "16px",
               margin: 0,
               width: "100%",
+              color: "#003d8e",
             }}
             document={<MyDocument firms={firms} />}
             fileName="travel_insurance_listings.pdf"
