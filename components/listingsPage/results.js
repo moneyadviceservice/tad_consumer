@@ -10,11 +10,13 @@ import {
 import { i18n } from "../../Utils/translation/i18n";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import MyDocument from "../pdf";
 import Loading from "./loading";
 
 const Results = ({ t }) => {
   const offered = useSelector((state) => state.listings.offered);
+  const firms = useSelector((state) => state.listings.firms);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [firmsPerPage, setFirmsPerPage] = useState(5);
@@ -53,6 +55,12 @@ const Results = ({ t }) => {
     }, 300);
   }, [offered]);
 
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <div>
       {/* results heading */}
@@ -88,9 +96,24 @@ const Results = ({ t }) => {
           </span>
           <span>{t("headings.order")}</span>
         </div>
-        <Anchor style={{ textAlign: "right", fontSize: "16px", margin: 0 }}>
-          Download and print a list of all firms
-        </Anchor>
+        {isClient && (
+          <PDFDownloadLink
+            style={{
+              textAlign: "right",
+              fontSize: "16px",
+              margin: 0,
+              width: "100%",
+            }}
+            document={<MyDocument firms={firms} />}
+            fileName="travel_insurance_listings.pdf"
+          >
+            {({ blob, url, loading, error }) =>
+              loading
+                ? "Loading document..."
+                : "Download and print a list of all firms"
+            }
+          </PDFDownloadLink>
+        )}
       </div>
 
       {/* No firms returned from filtering */}

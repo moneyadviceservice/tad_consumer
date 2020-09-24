@@ -24,6 +24,7 @@
   "dependencies": {
     "@moneypensionservice/directories": "^1.8.4",
     "@react-pdf/renderer": "^1.6.11",
+    "@react-pdf/styled-components": "^1.4.0",
     "algoliasearch": "^4.4.0",
     "axios": "^0.19.2",
     "express": "^4.17.1",
