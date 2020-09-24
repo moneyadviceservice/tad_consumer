@@ -1,38 +1,11 @@
-import ReactPDF, {
-  PDFDownloadLink,
-  Page,
-  Text,
-  View,
-  Document,
-  Font,
-  StyleSheet,
-} from "@react-pdf/renderer";
+import { Page, Document } from "@react-pdf/renderer";
 import styled from "@react-pdf/styled-components";
-
-// Font.register(
-//   "http://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_dJE7g7J_950vCo.ttf",
-//   { family: "Oswald" }
-// );
-
-Font.register({
-  family: "Montserrat",
-  fonts: [
-    {
-      src: `http://fonts.gstatic.com/s/montserrat/v15/JTUSjIg1_i6t8kCHKm45xW5rygbi49c.ttf`,
-      fontWeight: "normal",
-    },
-    {
-      src: `http://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_bZF7g7J_950vCo.ttf`,
-      fontWeight: "semibold",
-    },
-  ],
-});
 
 const Heading = styled.Text`
   font-size: 30px;
   color: #428513;
   margin-bottom: 15px;
-  font-family: "Montserrat";
+  font-family: "Helvetica";
   font-weight: semibold;
   padding: 0;
 `;
@@ -59,20 +32,18 @@ const TableHeadText = styled.Text`
   width: 25%;
   font-size: 13px;
   color: #006a00;
-  font-family: "Montserrat";
+  font-family: "Helvetica";
   font-weight: semibold;
 `;
 const RowText = styled.Text`
   width: 25%;
   font-size: 10px;
   color: #000;
-  font-family: "Montserrat";
+  font-family: "Helvetica";
   font-weight: medium;
 `;
-
 // Create Document Component
 const MyDocument = (props) => {
-  console.log("in pdf", props.firms);
   return (
     <Document title="List of Travel Insurance Firms">
       <Page
