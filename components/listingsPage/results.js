@@ -109,9 +109,7 @@ const Results = ({ t }) => {
             fileName="travel_insurance_listings.pdf"
           >
             {({ blob, url, loading, error }) =>
-              loading
-                ? "Loading document..."
-                : "Download and print a list of all firms"
+              loading ? "Loading document..." : t("downloadLink")
             }
           </PDFDownloadLink>
         )}
