@@ -5,6 +5,7 @@ import {
   Pagination,
   Anchor,
   CompanyCard,
+  resolveMedia,
 } from "@moneypensionservice/directories";
 
 import { i18n } from "../../Utils/translation/i18n";
@@ -13,6 +14,18 @@ import { useState, useEffect } from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import MyDocument from "../pdf";
 import Loading from "./loading";
+import styled from "styled-components";
+
+const PDFLink = styled(PDFDownloadLink)`
+  font-size: 16px;
+  margin: 0;
+  width: 100%;
+  color: #003d8e;
+  text-align: left;
+  ${resolveMedia.md`
+  text-align: right;
+`};
+`;
 
 const Results = ({ t }) => {
   const offered = useSelector((state) => state.listings.offered);
@@ -97,21 +110,14 @@ const Results = ({ t }) => {
           <span>{t("headings.order")}</span>
         </div>
         {isClient && (
-          <PDFDownloadLink
-            style={{
-              textAlign: "right",
-              fontSize: "16px",
-              margin: 0,
-              width: "100%",
-              color: "#003d8e",
-            }}
+          <PDFLink
             document={<MyDocument firms={firms} t={t} />}
             fileName="travel_insurance_listings.pdf"
           >
             {({ blob, url, loading, error }) =>
               loading ? t("download.loading") : t("download.link")
             }
-          </PDFDownloadLink>
+          </PDFLink>
         )}
       </div>
 
