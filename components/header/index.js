@@ -17,7 +17,7 @@ const PageHeader = ({ t, alternateAddress, path }) => {
   return (
     <Header
       currentLng={i18n.language}
-      // setLng={(e) => changeLanguage(e)}
+      setLng={(e) => changeLanguage(e)}
       lngUrl={alternateAddress}
       i18nLng={headerLang}
     >

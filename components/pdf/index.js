@@ -43,7 +43,7 @@ const RowText = styled.Text`
   font-weight: medium;
 `;
 // Create Document Component
-const MyDocument = (props) => {
+const MyDocument = ({ firms, t }) => {
   return (
     <Document title="List of Travel Insurance Firms">
       <Page
@@ -54,15 +54,19 @@ const MyDocument = (props) => {
           padding: 48,
         }}
       >
-        <Heading>List of Travel Insurance Firms</Heading>
+        <Heading>{t("download.title")}</Heading>
         <TableHeadView>
-          <TableHeadText style={{ width: "38%" }}>Name</TableHeadText>
-          <TableHeadText>Website</TableHeadText>
-          <TableHeadText style={{ width: "12%" }}>Phone</TableHeadText>
-          <TableHeadText>Email</TableHeadText>
+          <TableHeadText style={{ width: "38%" }}>
+            {t("download.header.name")}
+          </TableHeadText>
+          <TableHeadText>{t("download.header.website")}</TableHeadText>
+          <TableHeadText style={{ width: "12%" }}>
+            {t("download.header.phone")}
+          </TableHeadText>
+          <TableHeadText>{t("download.header.email")}</TableHeadText>
         </TableHeadView>
-        {props &&
-          props.firms.hits.map((firm, i) => {
+        {firms &&
+          firms.hits.map((firm, i) => {
             return (
               <RowView key={i}>
                 <RowText style={{ width: "38%" }}>{firm.company}</RowText>

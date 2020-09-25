@@ -95,5 +95,15 @@
     "abroad": "Not yet supplied",
     "equipment": "Not yet supplied."
   },
-  "downloadLink": "Dadlwythwch ac argraffwch restr o'r holl gwmnïau"
+
+  "download": {
+    "title": "Rhestr o Gwmnïau Yswiriant Teithio",
+    "link": "Dadlwythwch ac argraffwch restr o'r holl gwmnïau",
+    "header": {
+      "name": "Enw",
+      "website": "Gwefan",
+      "phone": "Ffôn",
+      "email": "E-bost"
+    }
+  }
 }

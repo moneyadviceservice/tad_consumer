@@ -105,11 +105,11 @@ const Results = ({ t }) => {
               width: "100%",
               color: "#003d8e",
             }}
-            document={<MyDocument firms={firms} />}
+            document={<MyDocument firms={firms} t={t} />}
             fileName="travel_insurance_listings.pdf"
           >
             {({ blob, url, loading, error }) =>
-              loading ? "Loading document..." : t("downloadLink")
+              loading ? "Loading document..." : t("download.link")
             }
           </PDFDownloadLink>
         )}
