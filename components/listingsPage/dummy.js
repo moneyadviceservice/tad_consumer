@@ -57,7 +57,7 @@ export const ExtHeading = styled(Heading)`
   justify-content: space-between;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  padding: 12px 18px;
+  padding: 19px 18px;
   ${resolveMedia.md`
    background: #edf0f0;
     color: #515151

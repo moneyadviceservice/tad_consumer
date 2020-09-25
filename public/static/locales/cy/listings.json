@@ -99,6 +99,7 @@
   "download": {
     "title": "Rhestr o Gwmnïau Yswiriant Teithio",
     "link": "Dadlwythwch ac argraffwch restr o'r holl gwmnïau",
+    "loading": "Dogfen llwytho ...",
     "header": {
       "name": "Enw",
       "website": "Gwefan",

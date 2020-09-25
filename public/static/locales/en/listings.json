@@ -107,6 +107,7 @@
   "download": {
     "title": "List of Travel Insurance Firms",
     "link": "Download and print a list of all firms",
+    "loading": "Loading document...",
     "header": {
       "name": "Name",
       "website": "Website",
