@@ -9,22 +9,22 @@
     },
     "about": {
       "heading": "About this directory",
-      "content": "We can't provide quotes - but we can direct you to specialist firms who can. All firms are authorised and regulated by the Financial Conduct Authority (FCA) and have been through a rigorous selection process to prove their specialism"
+      "content": "We can't provide quotes - but we can direct you to specialist firms that can. All firms are authorised and regulated by the Financial Conduct Authority (FCA) and have been through a rigorous selection process to prove their specialism"
     },
     "conditions": {
       "heading": "Can firms on this directory help me?",
       "questions": [
         {
-          "answer": "Yes if you have been refused travel insurance because of a medical condition"
+          "answer": "Yes, if you have been refused travel insurance because of a medical condition"
         },
         {
-          "answer": "Yes if you have had insurance cancelled because of a medical condition"
+          "answer": "Yes, if you have had insurance cancelled because of a medical condition"
         },
         {
-          "answer": "Yes if you have been offered insurance but had a medical condition excluded"
+          "answer": "Yes, if you have been offered insurance but had a medical condition excluded"
         },
         {
-          "answer": "Yes if you have been offered insurance with a high additional premium because of your medical condition"
+          "answer": "Yes, if you have been offered insurance with a high additional premium because of your medical condition"
         }
       ],
       "button": "View all firms"
@@ -91,7 +91,7 @@
     },
     "broker": {
       "heading": "<a id='need_help'>Need help shopping around?</a>",
-      "content": "<section class='help'><p>If you haven't had any quotes yet and are at the start of your search for travel insurance, the British Insurance Brokers' Association (BIBA) have a service which links you to an insurance Broker who can do the shopping around for you.  A Broker can find you the best deal from both mainstream and specialist travel insurance providers and provide support if you have to make a claim.</p><br/><p class='help__intouch'><b>Get in touch :<b/><br/><br/></p><img src='/assets/Images/phone.svg'/> <span class='help__tel'><a  href='tel:0370 950 1790'>0370 950 1790</a></span><p class='help__opening'> &#40;Mon - Fri 9:00 am to 5:00 pm&#41;</p><p class='help__icon'><img src='/assets/Images/web.svg'/><span class='help__web'> <a  href='https://insurance.biba.org.uk/find-insurance' target='_blank'>Website</a></span></p></section>"
+      "content": "<section class='help'><p>If you haven't had any quotes yet and are at the start of your search for travel insurance, the British Insurance Brokers' Association (BIBA) have a service which links you to an insurance broker who can do the shopping around for you.  A broker can find you the best deal from both mainstream and specialist travel insurance providers and provide support if you have to make a claim.</p><br/><p class='help__intouch'><b>Get in touch :<b/><br/><br/></p><img src='/assets/Images/phone.svg'/> <span class='help__tel'><a  href='tel:0370 950 1790'>0370 950 1790</a></span><p class='help__opening'> &#40;Mon - Fri 9:00 am to 5:00 pm&#41;</p><p class='help__icon'><img src='/assets/Images/web.svg'/><span class='help__web'> <a  href='https://insurance.biba.org.uk/find-insurance' target='_blank'>Website</a></span></p></section>"
     }
   }
 }

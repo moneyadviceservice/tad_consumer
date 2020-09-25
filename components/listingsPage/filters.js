@@ -223,7 +223,11 @@ const Filters = ({ t }) => {
             <TooltipText
               minWidth="200px"
               side="left"
-              text={t("toolTips.age")}
+              text={
+                <Paragraph color="#515151" textSize="14px">
+                  {t("toolTips.age")}
+                </Paragraph>
+              }
             />
           </Legend>
           <Select name="age" value={age.age} onChange={(e) => handleAge(e)}>
@@ -334,7 +338,11 @@ const Filters = ({ t }) => {
               <TooltipText
                 minWidth="200px"
                 side="left"
-                text={t("toolTips.singleTrip")}
+                text={
+                  <Paragraph color="#515151" textSize="14px">
+                    {t("toolTips.singleTrip")}
+                  </Paragraph>
+                }
               />
             </span>
             {t("filters.singleTripLength", { returnObjects: true }).map(
@@ -356,7 +364,11 @@ const Filters = ({ t }) => {
               <TooltipText
                 minWidth="200px"
                 side="left"
-                text={t("toolTips.annualTrip")}
+                text={
+                  <Paragraph color="#515151" textSize="14px">
+                    {t("toolTips.annualTrip")}
+                  </Paragraph>
+                }
               />
             </span>
 
@@ -381,7 +393,11 @@ const Filters = ({ t }) => {
             <TooltipText
               minWidth="230px"
               side="bottom"
-              text={t("toolTips.destination")}
+              text={
+                <Paragraph color="#515151" textSize="14px">
+                  {t("toolTips.destination")}
+                </Paragraph>
+              }
             />
           </Legend>
           {t("filters.cover_area", { returnObjects: true }).map(
@@ -403,7 +419,11 @@ const Filters = ({ t }) => {
             <TooltipText
               minWidth="230px"
               side="bottom"
-              text={t("toolTips.cruise")}
+              text={
+                <Paragraph color="#515151" textSize="14px">
+                  {t("toolTips.cruise")}
+                </Paragraph>
+              }
             />
           </Legend>
           {t("filters.cruise", { returnObjects: true }).map(
@@ -425,7 +445,11 @@ const Filters = ({ t }) => {
             <TooltipText
               minWidth="230px"
               side="left"
-              text={t("toolTips.when")}
+              text={
+                <Paragraph color="#515151" textSize="14px">
+                  {t("toolTips.when")}
+                </Paragraph>
+              }
             />
           </Legend>
           {t("filters.how_far_in_advance_trip_cover_weeks", {
@@ -473,7 +497,11 @@ const Filters = ({ t }) => {
             <TooltipText
               minWidth="230px"
               side="bottom"
-              text={t("toolTips.equipment")}
+              text={
+                <Paragraph color="#515151" textSize="14px">
+                  {t("toolTips.equipment")}
+                </Paragraph>
+              }
             />
           </Legend>
 

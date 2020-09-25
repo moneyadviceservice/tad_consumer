@@ -98,7 +98,7 @@ const Homepage = ({ t }) => {
             <YoutubeFrame src="https://www.youtube.com/embed/aijzHfO0VC8" />
             <Paragraph color="#515151" textSize="16px" margin={{ top: "20px" }}>
               {t("home.video.description")}&nbsp;
-              <Anchor textSize="16px">{t("home.video.transcript")}</Anchor>.
+              <Anchor textSize="16px">{t("home.video.transcript")}</Anchor>
             </Paragraph>
           </Col>
           <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
