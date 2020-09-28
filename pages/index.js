@@ -30,6 +30,7 @@ const Homepage = ({ t }) => {
     const newIndex = activeIndex === current ? -1 : current;
     changeIndex(newIndex);
   };
+
   return (
     <Fragment>
       {/* Main heading and firm registration anchor */}

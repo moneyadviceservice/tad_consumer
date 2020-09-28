@@ -248,16 +248,13 @@ const Filters = ({ t }) => {
                 text={
                   <>
                     <Heading color="#515151" level={4}>
-                      {t("toolTips.insuranceType.single.title")}
+                      {t("toolTips.insuranceType.title")}
                     </Heading>
                     <Paragraph color="#515151" textSize="14px">
-                      {t("toolTips.insuranceType.single.body")}
+                      {t("toolTips.insuranceType.para_1")}
                     </Paragraph>
-                    <Heading color="#515151" level={4}>
-                      {t("toolTips.insuranceType.annual.title")}
-                    </Heading>
                     <Paragraph color="#515151" textSize="14px">
-                      {t("toolTips.insuranceType.annual.body")}
+                      {t("toolTips.insuranceType.para_2")}
                     </Paragraph>
                   </>
                 }
