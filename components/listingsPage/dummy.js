@@ -4,6 +4,7 @@ import {
   Formfield,
   resolveMedia,
   Tooltip,
+  Paragraph,
 } from "@moneypensionservice/directories";
 
 export const DummyCard = styled.div`
@@ -113,7 +114,11 @@ export const TooltipText = styled(Tooltip)`
   display: inline-block;
   margin-left: 20px;
 `;
-
+export const TooltipParagraph = styled(Paragraph)`
+  color: #515151;
+  font-size: 14px;
+  margin: 0;
+`;
 // Select age range
 export const ageRange = () => {
   var arr = [];

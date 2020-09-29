@@ -16,7 +16,7 @@ import {
   Select,
   FilterHead,
   FormDiv,
-  ClearButton,
+  TooltipParagraph,
   ToggleIcon,
   ExtHeading,
   FilterFormFIeld,
@@ -223,11 +223,7 @@ const Filters = ({ t }) => {
             <TooltipText
               minWidth="200px"
               side="left"
-              text={
-                <Paragraph color="#515151" textSize="14px">
-                  {t("toolTips.age")}
-                </Paragraph>
-              }
+              text={<TooltipParagraph>{t("toolTips.age")}</TooltipParagraph>}
             />
           </Legend>
           <Select name="age" value={age.age} onChange={(e) => handleAge(e)}>
@@ -247,15 +243,15 @@ const Filters = ({ t }) => {
                 minWidth="300px"
                 text={
                   <>
-                    <Heading color="#515151" level={4}>
+                    <Heading color="#515151" level={4} style={{ marginTop: 0 }}>
                       {t("toolTips.insuranceType.title")}
                     </Heading>
-                    <Paragraph color="#515151" textSize="14px">
+                    <TooltipParagraph>
                       {t("toolTips.insuranceType.para_1")}
-                    </Paragraph>
-                    <Paragraph color="#515151" textSize="14px">
+                    </TooltipParagraph>
+                    <TooltipParagraph>
                       {t("toolTips.insuranceType.para_2")}
-                    </Paragraph>
+                    </TooltipParagraph>
                   </>
                 }
               />
@@ -336,9 +332,9 @@ const Filters = ({ t }) => {
                 minWidth="200px"
                 side="left"
                 text={
-                  <Paragraph color="#515151" textSize="14px">
+                  <TooltipParagraph>
                     {t("toolTips.singleTrip")}
-                  </Paragraph>
+                  </TooltipParagraph>
                 }
               />
             </span>
@@ -362,9 +358,9 @@ const Filters = ({ t }) => {
                 minWidth="200px"
                 side="left"
                 text={
-                  <Paragraph color="#515151" textSize="14px">
+                  <TooltipParagraph>
                     {t("toolTips.annualTrip")}
-                  </Paragraph>
+                  </TooltipParagraph>
                 }
               />
             </span>
@@ -391,9 +387,7 @@ const Filters = ({ t }) => {
               minWidth="230px"
               side="bottom"
               text={
-                <Paragraph color="#515151" textSize="14px">
-                  {t("toolTips.destination")}
-                </Paragraph>
+                <TooltipParagraph>{t("toolTips.destination")}</TooltipParagraph>
               }
             />
           </Legend>
@@ -416,11 +410,7 @@ const Filters = ({ t }) => {
             <TooltipText
               minWidth="230px"
               side="bottom"
-              text={
-                <Paragraph color="#515151" textSize="14px">
-                  {t("toolTips.cruise")}
-                </Paragraph>
-              }
+              text={<TooltipParagraph>{t("toolTips.cruise")}</TooltipParagraph>}
             />
           </Legend>
           {t("filters.cruise", { returnObjects: true }).map(
@@ -442,11 +432,7 @@ const Filters = ({ t }) => {
             <TooltipText
               minWidth="230px"
               side="left"
-              text={
-                <Paragraph color="#515151" textSize="14px">
-                  {t("toolTips.when")}
-                </Paragraph>
-              }
+              text={<TooltipParagraph>{t("toolTips.when")}</TooltipParagraph>}
             />
           </Legend>
           {t("filters.how_far_in_advance_trip_cover_weeks", {
@@ -495,9 +481,7 @@ const Filters = ({ t }) => {
               minWidth="230px"
               side="bottom"
               text={
-                <Paragraph color="#515151" textSize="14px">
-                  {t("toolTips.equipment")}
-                </Paragraph>
+                <TooltipParagraph>{t("toolTips.equipment")}</TooltipParagraph>
               }
             />
           </Legend>
