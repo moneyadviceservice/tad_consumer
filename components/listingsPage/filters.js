@@ -246,7 +246,7 @@ const Filters = ({ t }) => {
                     <Heading color="#515151" level={4} style={{ marginTop: 0 }}>
                       {t("toolTips.insuranceType.title")}
                     </Heading>
-                    <TooltipParagraph>
+                    <TooltipParagraph style={{ marginBottom: "10px" }}>
                       {t("toolTips.insuranceType.para_1")}
                     </TooltipParagraph>
                     <TooltipParagraph>
