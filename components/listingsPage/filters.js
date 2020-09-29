@@ -195,7 +195,7 @@ const Filters = ({ t }) => {
 
   return (
     <>
-      <div onClick={() => console.log("Test")}>Test</div>
+      <div onClick={() => alert("Test")}>Test</div>
       <Form style={{ marginBottom: "40px", color: "#515151" }}>
         <ExtHeading level={3} style={{}}>
           <ToggleIcon onClick={(e) => handleMobile(e)}>
