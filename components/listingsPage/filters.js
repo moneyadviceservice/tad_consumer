@@ -23,7 +23,6 @@ import {
   Legend,
   TooltipText,
 } from "./dummy";
-import { sendEvent } from "react-gtm";
 
 const Filters = ({ t }) => {
   const [age, changeAge] = useState({});
