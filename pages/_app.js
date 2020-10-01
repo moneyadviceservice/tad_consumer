@@ -10,8 +10,16 @@ import Footer from "../components/footer/";
 import Head from "../Utils/layouts/head";
 
 import { ThemeProvider, Container } from "@moneypensionservice/directories";
+// import TagManager from "react-gtm";
+
+// const tagManagerArgs = {
+//   id: "GTM-WVFLH9",
+// };
 
 class MyApp extends App {
+  // componentDidMount() {
+  //   TagManager.initialize(tagManagerArgs);
+  // }
   // get initial props from the server
   static async getInitialProps({ Component, ctx, reduxStore, req }) {
     let pageProps = {};
