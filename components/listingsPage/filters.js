@@ -70,6 +70,10 @@ const Filters = ({ t }) => {
   const [note, changeNote] = useState(true);
   const [mobile, ToggleMobile] = useState(false);
 
+  if (process.browser) {
+    window.dataLayer = window.dataLayer || [];
+  }
+
   // change Toogle visibility on mobile
   useEffect(() => {
     process.browser && window && window.innerWidth <= 850
@@ -91,6 +95,42 @@ const Filters = ({ t }) => {
   const dispatch = useDispatch();
 
   const offerings = useSelector((state) => state.listings.offerings.hits);
+
+  // google tagging
+  const tag = (e) => {
+    let y;
+    if (e.target.name === "age") {
+      let x = e.target.value;
+
+      if (x >= 18 && x <= 24) {
+        y = "18-24";
+      } else if (x >= 25 && x <= 34) {
+        y = "25-34";
+      } else if (x >= 35 && x <= 44) {
+        y = "35-44";
+      } else if (x >= 45 && x <= 54) {
+        y = "45-54";
+      } else if (x >= 55 && x <= 64) {
+        y = "55-64";
+      } else if (x >= 65 && x <= 74) {
+        y = "65-74";
+      } else {
+        y = "75+";
+      }
+
+      window.dataLayer.push({
+        event: "travelDirectory_RadioButton",
+        buttonName: e.target.name,
+        buttonChoice: y,
+      });
+    } else {
+      window.dataLayer.push({
+        event: "travelDirectory_RadioButton",
+        buttonName: e.target.name,
+        buttonChoice: e.target.value,
+      });
+    }
+  };
 
   // processed the age into variant of cruise and land as required by algolia keys
   useEffect(() => {
@@ -114,13 +154,14 @@ const Filters = ({ t }) => {
   }, [filtersValues]);
 
   const handleAge = (e) => {
+    tag(e);
     let age = e.target.value;
     changeAge({ age });
   };
 
   const handleInsuranceType = (e) => {
     let trip_type = e.target.value;
-
+    tag(e);
     changeInsuranceType({ trip_type });
     if (trip_type === "Single Trip") {
       changeSingleShow(true);
@@ -135,38 +176,45 @@ const Filters = ({ t }) => {
   };
 
   const handleSingleOption = (e) => {
+    tag(e);
     let singleOption = e.target.value;
     changeSingleOption({ singleOption });
     changeAnnualOption({});
   };
 
   const handleAnnualOption = (e) => {
+    tag(e);
     let annualOption = e.target.value;
     changeAnnualOption({ annualOption });
     changeSingleOption({});
   };
 
   const handleDestination = (e) => {
+    tag(e);
     let cover_area = e.target.value;
     changeDestination({ cover_area });
   };
 
   const handleCruise = (e) => {
+    tag(e);
     let cruise = e.target.value;
     changeCruise({ cruise });
   };
 
   const handleWhen = (e) => {
+    tag(e);
     let how_far_in_advance_trip_cover_weeks = e.target.value;
     changeWhen({ how_far_in_advance_trip_cover_weeks });
   };
 
   const handleTerminal = (e) => {
+    tag(e);
     let will_cover_terminal_prognosis = e.target.value;
     changeTerminal({ will_cover_terminal_prognosis });
   };
 
   const handleEquipment = (e) => {
+    tag(e);
     let will_cover_specialist_equipment = e.target.value;
     changeEquipment({ will_cover_specialist_equipment });
   };
