@@ -138,6 +138,7 @@ const Results = ({ t }) => {
           currentFirms.map((selectedFirm, i) => {
             return (
               <CompanyCard
+                key={i}
                 sizes={{ xs: 12, lg: 8 }}
                 data={selectedFirm}
                 currentLng={i18n.language}
