@@ -98,37 +98,32 @@ const Filters = ({ t }) => {
   // google tagging
   const tag = (e) => {
     let y;
-    if (e.target.name === "age") {
-      let x = e.target.value;
 
-      if (x >= 18 && x <= 24) {
-        y = "18-24";
-      } else if (x >= 25 && x <= 34) {
-        y = "25-34";
-      } else if (x >= 35 && x <= 44) {
-        y = "35-44";
-      } else if (x >= 45 && x <= 54) {
-        y = "45-54";
-      } else if (x >= 55 && x <= 64) {
-        y = "55-64";
-      } else if (x >= 65 && x <= 74) {
-        y = "65-74";
-      } else {
-        y = "75+";
-      }
+    let x = e.target.value;
 
-      window.dataLayer.push({
-        event: "travelDirectory_RadioButton",
-        buttonName: e.target.name,
-        buttonChoice: y,
-      });
+    if (e.target.name === "age" && x >= 18 && x <= 24) {
+      y = "18-24";
+    } else if (e.target.name === "age" && x >= 25 && x <= 34) {
+      y = "25-34";
+    } else if (e.target.name === "age" && x >= 35 && x <= 44) {
+      y = "35-44";
+    } else if (e.target.name === "age" && x >= 45 && x <= 54) {
+      y = "45-54";
+    } else if (e.target.name === "age" && x >= 55 && x <= 64) {
+      y = "55-64";
+    } else if (e.target.name === "age" && x >= 65 && x <= 74) {
+      y = "65-74";
+    } else if (e.target.name === "age" && x >= 74) {
+      y = "75+";
     } else {
-      window.dataLayer.push({
-        event: "travelDirectory_RadioButton",
-        buttonName: e.target.name,
-        buttonChoice: e.target.value,
-      });
+      y = x;
     }
+
+    window.dataLayer.push({
+      event: "travelDirectory_RadioButton",
+      buttonName: e.target.name,
+      buttonChoice: y,
+    });
   };
 
   // processed the age into variant of cruise and land as required by algolia keys
