@@ -69,10 +69,6 @@ const Filters = ({ t }) => {
   const [note, changeNote] = useState(true);
   const [mobile, ToggleMobile] = useState(false);
 
-  if (process.browser) {
-    window.dataLayer = window.dataLayer || [];
-  }
-
   // change Toogle visibility on mobile
   useEffect(() => {
     process.browser && window && window.innerWidth <= 850
@@ -96,6 +92,10 @@ const Filters = ({ t }) => {
   const offerings = useSelector((state) => state.listings.offerings.hits);
 
   // google tagging
+
+  if (process.browser) {
+    window.dataLayer = window.dataLayer || [];
+  }
   const tag = (e) => {
     let y;
 
