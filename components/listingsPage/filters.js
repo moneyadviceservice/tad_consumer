@@ -100,8 +100,9 @@ const Filters = ({ t }) => {
     let y;
     if (e.target.name === "age") {
       let x = e.target.value;
-
-      if (x >= 18 && x <= 24) {
+      if (x <= 17) {
+        y = x;
+      } else if (x >= 18 && x <= 24) {
         y = "18-24";
       } else if (x >= 25 && x <= 34) {
         y = "25-34";
