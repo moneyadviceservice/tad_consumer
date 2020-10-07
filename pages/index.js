@@ -96,7 +96,7 @@ const Homepage = ({ t }) => {
             <Heading level={2} color="#006A00">
               {t("home.video.heading")}
             </Heading>
-            <YoutubeFrame src="https://www.youtube.com/watch?v=zz1bzoSQiMQ&feature=youtu.be" />
+            <YoutubeFrame src="https://www.youtube.com/embed/zz1bzoSQiMQ" />
             <Paragraph color="#515151" textSize="16px" margin={{ top: "20px" }}>
               {t("home.video.description")}&nbsp;
               <Anchor textSize="16px">{t("home.video.transcript")}</Anchor>
