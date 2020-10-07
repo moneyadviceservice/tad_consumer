@@ -92,6 +92,18 @@
     "broker": {
       "heading": "<a id='need_help'>Angen help i siopa o gwmpas?</a>",
       "content": "<section class='help'><p>Os nad ydych wedi cael unrhyw ddyfynbrisiau eto ac ar ddechrau eich chwiliad am yswiriant teithio, mae gan Gymdeithas Broceriaid Yswiriant Prydain (BIBA) wasanaeth sy'n eich cysylltu â Brocer yswiriant a all wneud y siopa o gwmpas i chi. Gall Brocer ddod o hyd i'r fargen orau i chi gan ddarparwyr yswiriant teithio prif ffrwd ac arbenigol a darparu cefnogaeth os bydd yn rhaid i chi wneud cais.</p><br/><p class='help__intouch'><b>Cysylltwch :<b/><br/><br/></p><img src='/assets/Images/phone.svg'/> <span class='help__tel'><a  href='tel:0370 950 1790'>0370 950 1790</a></span><p class='help__opening'> &#40;Mon - Fri 9:00 am to 5:00 pm&#41;</p><p class='help__icon'><img src='/assets/Images/web.svg'/><span class='help__web'><a  href='https://insurance.biba.org.uk/find-insurance' target='_blank'>Gwefan</a></span></p></section>"
+    },
+    "transcript": {
+      "topHeading": "Not available",
+      "bottomHeading": "Not available",
+      "para1": "Not available",
+      "para2": "Not available",
+      "para3": "Not available",
+      "para4": "Not available",
+      "para5": "Not available",
+      "para6": "Not available",
+      "para7": "Not available",
+      "para8": "Not available"
     }
   }
 }

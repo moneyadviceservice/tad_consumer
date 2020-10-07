@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import ReactHtmlParser from "react-html-parser";
 
@@ -11,6 +11,7 @@ import {
   Accordion,
   InfoTable,
   Paragraph,
+  resolveMedia,
 } from "@moneypensionservice/directories";
 import {
   ParagraphAnchor,
@@ -23,6 +24,22 @@ import {
 import { Section, ExtendedSection, InternalLink } from "../Utils/layouts";
 import Title from "../components/title";
 
+import styled from "styled-components";
+
+import { PDFDownloadLink, BlobProvider } from "@react-pdf/renderer";
+import MyDocument from "../components/landingPage/videoTranscript";
+
+const PDFLink = styled(PDFDownloadLink)`
+  font-size: 16px;
+  margin: 0;
+  width: 100%;
+  color: #003d8e;
+  text-align: left;
+  ${resolveMedia.md`
+  text-align: right;
+`};
+`;
+
 const Homepage = ({ t }) => {
   const [activeIndex, changeIndex] = useState();
 
@@ -30,6 +47,11 @@ const Homepage = ({ t }) => {
     const newIndex = activeIndex === current ? -1 : current;
     changeIndex(newIndex);
   };
+
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   return (
     <Fragment>
@@ -99,7 +121,17 @@ const Homepage = ({ t }) => {
             <YoutubeFrame src="https://www.youtube.com/embed/zz1bzoSQiMQ" />
             <Paragraph color="#515151" textSize="16px" margin={{ top: "20px" }}>
               {t("home.video.description")}&nbsp;
-              <Anchor textSize="16px">{t("home.video.transcript")}</Anchor>
+              {isClient && (
+                <PDFLink
+                  document={<MyDocument t={t} />}
+                  fileName="Script for Travel Insurance Directory Video"
+                >
+                  {({ blob, url, loading, error }) =>
+                    loading ? "Loading" : t("home.video.transcript")
+                  }
+                </PDFLink>
+              )}
+              {/* <Anchor textSize="16px">{t("home.video.transcript")}</Anchor> */}
             </Paragraph>
           </Col>
           <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
