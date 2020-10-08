@@ -44,6 +44,17 @@ const Filters = ({ t }) => {
   const [land_45_days_max_age, changeLandMax45] = useState({});
   const [land_55_days_max_age, changeLandMax55] = useState({});
 
+  const SingleTrip = styled.div`
+    display: ${(props) => (props.single ? "block" : "none")};
+  `;
+  const AnnualTrip = styled.div`
+    display: ${(props) => (props.annual ? "block" : "none")};
+  `;
+
+  const Note = styled.span`
+    display: ${(props) => (props.note ? "block" : "none")};
+  `;
+
   // console.log(cruise, singleOption, annualOption);
   const filtersValues = [
     trip_type,
@@ -79,17 +90,6 @@ const Filters = ({ t }) => {
       ? ToggleMobile(true)
       : ToggleMobile(false);
   }, []);
-
-  const SingleTrip = styled.div`
-    display: ${(props) => (props.single ? "block" : "none")};
-  `;
-  const AnnualTrip = styled.div`
-    display: ${(props) => (props.annual ? "block" : "none")};
-  `;
-
-  const Note = styled.span`
-    display: ${(props) => (props.note ? "block" : "none")};
-  `;
 
   const dispatch = useDispatch();
 
