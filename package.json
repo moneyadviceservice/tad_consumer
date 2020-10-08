@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/moneyadviceservice/isomorphic_react_prototype#readme",
   "dependencies": {
-    "@moneypensionservice/directories": "^1.8.13",
+    "@moneypensionservice/directories": "^1.8.6",
     "@react-pdf/renderer": "^1.6.11",
     "@react-pdf/styled-components": "^1.4.0",
     "algoliasearch": "^4.4.0",
