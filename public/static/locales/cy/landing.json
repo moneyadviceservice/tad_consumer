@@ -2,96 +2,108 @@
   "home": {
     "banner": {
       "heading": "Dewch o hyd i ddarparwr yswiriant teithio os oes gennych gyflwr meddygol difrifol",
-      "register": "Cofrestrwch",
-      "login": " Fewngofnodwch",
+      "register": "Cofrestru",
+      "login": " Mewngofnodi",
       "or": " neu ",
       "as": " fel cwmni"
     },
     "about": {
-      "heading": "Ynglŷn â'r cyfeiriadur hwn",
-      "content": "Ni allwn ddarparu dyfynbrisiau - ond gallwn eich cyfeirio at gwmnïau arbenigol sy'n gallu. Mae pob cwmni wedi'i awdurdodi a'i reoleiddio gan yr Awdurdod Ymddygiad Ariannol (FCA) ac maent wedi bod trwy broses ddethol drylwyr i brofi eu harbenigedd"
+      "heading": "Am y cyfeirlyfr hwn",
+      "content": "Ni allwn roi amcangyfrif pris - ond gallwn eich cyfeirio at gwmnïau arbenigol sy'n gallu. Mae pob cwmni wedi'i awdurdodi a'i reoleiddio gan yr Awdurdod Ymddygiad Ariannol (FCA) ac maent wedi bod trwy broses ddethol drylwyr i brofi eu harbenigedd"
     },
     "conditions": {
-      "heading": "A all cwmnïau ar y cyfeiriadur hwn fy helpu?",
+      "heading": "A all cwmnïau sy'n y cyfeirlyfr hwn fy helpu?",
       "questions": [
         {
-          "answer": "Oes, os gwrthodwyd yswiriant teithio i chi oherwydd cyflwr meddygol"
+          "answer": "Gallant, os gwrthodwyd yswiriant teithio i chi oherwydd cyflwr meddygol"
         },
         {
-          "answer": "Oes, os ydych wedi cael yswiriant wedi'i ganslo oherwydd cyflwr meddygol"
+          "answer": "Gallant, os ydych wedi cael yswiriant wedi'i ganslo oherwydd cyflwr meddygol"
         },
         {
-          "answer": "Oes, cynigiwyd yswiriant i chi ond bod cyflwr meddygol wedi'i eithrio"
+          "answer": "Gallant, os cynigiwyd yswiriant i chi ond bod cyflwr meddygol wedi'i eithrio"
         },
         {
-          "answer": "Oes, cynigiwyd yswiriant i chi gyda phremiwm ychwanegol uchel oherwydd eich cyflwr meddygol"
+          "answer": "Gallant, os cynigiwyd yswiriant i chi gyda phremiwm ychwanegol uchel oherwydd eich cyflwr meddygol"
         }
       ],
       "button": "Gweld pob cwmni"
     },
     "video": {
-      "heading": "Ar gyfer pwy mae'r cyfeiriadur hwn?",
-      "description": "Gwyliwch y fideo fer hon i ddarganfod a all y cyfeiriadur hwn eich helpu chi dewch o hyd i'r clawr sydd ei angen arnoch chi.",
-      "transcript": "Dadlwythwch drawsgrifiad o'r fideo Cyfeiriadur Yswiriant Teithio."
+      "heading": "Ar gyfer pwy mae'r cyfeirlyfr hwn?",
+      "description": "Gwyliwch y fideo fer hon i ddarganfod a all y cyfeirlyfr hwn eich helpu i ddod o hyd i'r yswiriant sydd ei angen arnoch.",
+      "transcript": "Lawrlwythwch drawsgrifiad o'r fideo Cyfeirlyfr Yswiriant Teithio."
     },
     "faqs": {
       "heading": "Cwestiynau cyffredin",
       "list": [
         {
-          "question": "A oes angen arbenigwr arnaf?",
-          "answer": "<article class='accordion'><p>Os yw unrhyw un o'r canlynol yn berthnasol yna mae'n werth cysylltu â chwmni arbenigol i weld a allant gynnig bargen well neu ratach:</p> <ul><li>You have been refused travel insurance because of a medical condition.</li> <li>An existing policy has been cancelled or amended because of a medical condition.</li><li>You have been offered insurance, but your medical condition has been excluded.</li><li>You have been offered insurance with a high additional premium because of your medical condition.</li></ul><p>The firms on our Directory specialise in providing travel insurance to people who have serious and/or multiple medical conditions that carry a high risk of needing some form of medical intervention while you are on your trip.  Examples of conditions might be cancer, stroke or serious heart condition, respiratory conditions or conditions that have been diagnosed as terminal.</p><p>However, different firms have different views on what conditions are ‘high risk’ and its worth trying more than one.</p></article>"
+          "question": "A oes angen cwmni yswiriant teithio arbenigol arnaf?",
+          "answer": "<article class='accordion'><p>Os yw unrhyw un o'r canlynol yn berthnasol, yna mae'n werth cysylltu â chwmni arbenigol i weld a allant gynnig cytundeb gwell neu ratach:</p> <ul> <li> Gwrthodwyd yswiriant teithio i chi oherwydd cyflwr meddygol. </li> <li>Mae polisi cyfredol wedi'i ganslo neu ei ddiwygio oherwydd cyflwr meddygol. </li> <li>Cynigiwyd yswiriant i chi, ond mae eich cyflwr meddygol wedi'i eithrio.</li> <li>Rydych wedi cael cynnig yswiriant gyda phremiwm ychwanegol uchel oherwydd eich cyflwr meddygol.</li> </ul> <p>Mae'r cwmnïau ar ein Cyfeirlyfr yn arbenigo mewn darparu yswiriant teithio i bobl sydd â chyflyrau meddygol difrifol a/neu luosog sydd â risg uchel o fod ag angen rhyw fath o ymyrraeth feddygol tra'ch bod ar eich taith. Gallai enghreifftiau o gyflyrau fod yn ganser, strôc neu gyflwr difrifol ar y galon, cyflyrau anadlol neu gyflyrau sydd wedi cael eu diagnosio fel terfynol.<p>Fodd bynnag, mae gan wahanol gwmnïau farn wahanol ar ba amodau sy’n ‘risg uchel’ ac mae'n werth rhoi cynnig ar fwy nag un.</p></article>"
         },
         {
-          "question": "I haven’t been offered any insurance yet – I don’t know if I need a specialist.",
-          "answer": "<article class='accordion'><p>Then it’s worth trying a mainstream provider AND a couple of specialists to compare prices and cover offered. You can do this yourself – or you can ask an Insurance Broker to help you. The box at the bottom of this screen <strong>Need help shopping around?</strong> will tell you how.</p></article>"
+          "question": "Beth os na chynigiwyd yswiriant i mi eto?",
+          "answer": "<article class='accordion'><p>Yna mae'n werth rhoi cynnig ar ddarparwr prif ffrwd A chwpl o arbenigwyr i gymharu prisiau a'r yswiriant a gynigir. Gallwch wneud hyn eich hun - neu gallwch ofyn i Brocer Yswiriant eich helpu. Bydd y blwch ar waelod y sgrin hon <a href='#need_help'>Angen help i siopa o amgylch?</a> yn dweud wrthych sut.</p></article>"
         },
         {
-          "question": "Will I definitely be offered insurance and at a lower cost?",
-          "answer": "<article class='accordion'><p>We can’t promise that – but it is worth trying the specialists on our Directory if you are unhappy with the insurance (or the cost of the insurance) you have already been offered – or if you have been declined.</p><p>If you haven’t been offered any insurance yet – then it’s worth trying a mainstream provider AND a couple of the specialists to compare prices and cover offered.  If you need help with this see the box at the bottom of the screen <strong>Need help shopping around?</strong></p></article>"
+          "question": "A fyddaf yn bendant yn cael cynnig yswiriant am gost is?",
+          "answer": "<article class='accordion'><p>Ni allwn addo hynny, ond mae’n werth rhoi cynnig ar yr arbenigwyr yn ein Cyfeirlyfr os ydych yn anhapus gyda’r yswiriant (neu gost yr yswiriant) a gynigiwyd i chi eisoes, neu os cawsoch eich gwrthod. Os na chynigiwyd unrhyw yswiriant i chi eto, yna mae'n werth rhoi cynnig ar ddarparwr prif ffrwd A chwpl o'r arbenigwyr i gymharu prisiau a'r yswiriant a gynigir. Os oes angen help arnoch gyda hyn, gwelwch y blwch ar waelod y sgrin <a href='#need_help'>Angen help i siopa o amgylch?</p></article>"
         },
         {
-          "question": "I’m travelling with someone who doesn’t have a serious medical",
-          "answer": "<article class='accordion'><p>Almost certainly they will be able to get travel insurance cheaper through a mainstream provider.  However, there are two possible problems with that.</p><p>Firstly, if you have to cancel your trip because of your medical condition, the cost of your trip will be fully covered by the insurance – but theirs may not be.  If your travelling companion(s) take out separate insurance, they should read the cancellation terms very carefully.</p><p>Secondly, if you need medical attention while you are away and need to be relocated – or even brought home – any additional costs for you will be covered by the insurance.  However, this won’t be the case for anyone travelling with you. Again, read the terms and conditions very carefully.</p></article>"
+          "question": "Rwy'n teithio gyda rhywun nad oes ganddynt gyflwr meddygol difrifol",
+          "answer": "<article class='accordion'><p>Bron yn sicr y byddant yn gallu cael yswiriant teithio yn rhatach trwy ddarparwr prif ffrwd. Fodd bynnag, mae dwy broblem bosibl gyda hynny. Yn gyntaf, os bydd yn rhaid i chi ganslo'ch taith oherwydd eich cyflwr meddygol, bydd cost eich taith yn cael ei thalu'n llawn gan yr yswiriant - ond efallai na fydd eu costau nhw. Os yw'ch cydymaith(wyr) teithiol yn cymryd yswiriant ar wahân, dylent ddarllen y telerau canslo yn ofalus iawn. Yn ail, os oes angen sylw meddygol arnoch tra'ch bod i ffwrdd ac angen eich adleoli - neu hyd yn oed ddod â chi adref - bydd yr yswiriant yn talu unrhyw gostau ychwanegol i chi. Fodd bynnag, nid yw hyn yn wir am unrhyw un sy'n teithio gyda chi. Unwaith eto, darllenwch y telerau a'r amodau yn ofalus iawn..</p></article>"
         },
         {
-          "question": "I’m taking out insurance on behalf of someone else",
-          "answer": "<article class='accordion'><p>That’s fine.  Just answer the questions using the information for the person travelling.Firms on the Directory are likely to ask you if you have permission to share information on the other person’s behalf and your relationship to them (for example if you are a spouse or parent or carer).   If it’s possible for the person you are acting on behalf of to be with you when you are telephoning specialist firms, that will help to speed things up.</p></article>"
+          "question": "Rwy'n trefnu yswiriant ar ran rhywun arall",
+          "answer": "<article class='accordion'><p>Mae hynny'n iawn. Atebwch y cwestiynau gan ddefnyddio'r wybodaeth ar gyfer y person sy'n teithio. Mae cwmnïau sy'n y Cyfeirlyfr yn debygol o ofyn i chi a oes gennych ganiatâd i rannu gwybodaeth ar ran y person arall a'ch perthynas â nhw (er enghraifft os ydych yn briod neu'n rhiant neu'n ofalwr). Os yw'n bosibl i'r person rydych yn gweithredu ar ei ran fod gyda chi pan fyddwch yn ffonio cwmnïau arbenigol, bydd hynny'n helpu i gyflymu pethau.</p></article>"
         },
         {
-          "question": "Why is it more expensive to get travel insurance to cover some medical conditions?",
-          "answer": "<article class='accordion'><p>There are a number of different factors that insurers take into account when working out how much you have to pay.  For example, the cost of medical treatment can be more in some countries than in others (Spain, United States and Canada are among the more expensive countries).   Insurers will also consider the type and severity of your medical condition(s) and how long you intend to be away.  Your age will also play a part.</p><p>The only way to check that you are getting a good deal is to get quotations from more than one firm.  Unfortunately, it can be quite lengthy going through the full underwriting process but don’t be put off by this.  Most firms offer ‘quick quotes’ where you can talk to someone and provide high level information regarding your condition and get an idea of cost.</p></article>"
+          "question": "Pam ei bod yn ddrytach cael yswiriant teithio i gwmpasu rhai cyflyrau meddygol?",
+          "answer": "<article class='accordion'><p>Mae sawl ffactor y mae yswirwyr yn eu hystyried wrth weithio allan faint sy'n rhaid i chi ei dalu. Er enghraifft, gall y gost o driniaeth feddygol fod yn fwy mewn rhai gwledydd nag eraill (Sbaen, yr Unol Daleithiau a Chanada yw rhai o'r gwledydd drytaf). Bydd yswirwyr hefyd yn ystyried y math a difrifoldeb eich cyflwr(cyflyrau) meddygol a pha mor hir rydych yn bwriadu bod i ffwrdd. Bydd eich oedran hefyd yn chwarae rhan. Yr unig ffordd o wirio eich bod yn cael cynnig da yw cael prisoedd gan fwy nag un cwmni. Yn anffodus, gall y broses tanysgrifennu fod yn hir iawn, ond peidiwch â digaloni. Mae'r rhan fwyaf o gwmniau yn cynnig 'pris cyflym' ble gallwch siarad â rhywun a rhoi gwybodaeth lefel uwch mewn perthynas â'ch cyflwr er mwyn cael syniad o'r gost.</p></article>"
         },
         {
-          "question": "What is medical screening?",
-          "answer": "<article class='accordion'><p>Most firms that provide travel insurance for people with serious medical conditions use a medical screening company. You will be asked questions about your condition(s) and the medication you are taking.  The answers you give will decide whether you will be offered travel insurance and the price you will be asked to pay. Travel insurance providers use different medical screeners and you may get a different decision or price depending on which medical screener considers your application.  So, if you are asking for quotes from more than one travel insurance provider, choose firms that link to different medical screeners. We've given the name of the medical screening company used by each firm to make this easier for you.</p></article>"
+          "question": "Beth yw sgrinio meddygol?",
+          "answer": "<article class='accordion'><p>Mae'r rhan fwyaf o gwmnïau sy'n darparu yswiriant teithio i bobl â chyflyrau meddygol difrifol yn defnyddio cwmni sgrinio meddygol. Gofynnir cwestiynau i chi am eich cyflwr/cyflyrau a'r feddyginiaeth rydych yn ei chymryd. Bydd yr atebion a rowch yn penderfynu a fyddwch yn cael cynnig yswiriant teithio a'r pris y gofynnir i chi ei dalu. Mae darparwyr yswiriant teithio yn defnyddio sgrinwyr meddygol gwahanol ac efallai y cewch benderfyniad neu bris gwahanol yn dibynnu ar ba sgriniwr meddygol sy'n ystyried eich cais. Felly, os ydych yn gofyn am amcangyfrif gan fwy nag un darparwr yswiriant teithio, dewiswch gwmnïau sy'n cysylltu â gwahanol sgrinwyr meddygol. Rydyn ni wedi rhoi enw'r cwmni sgrinio meddygol a ddefnyddir gan bob cwmni i wneud hyn yn haws i chi.</p></article>"
         }
       ]
     },
     "articles": {
-      "heading": "Erthyglau & Canllawiau",
+      "heading": "Erthyglau a Chanllawiau",
       "links": [
         {
           "text": "Yswiriant Teithio pan fydd gennych gyflwr meddygol difrifol",
           "href": "https://www.moneyadviceservice.org.uk/cy/articles/yswiriant-teithio-ar-gyfer-pobl-dros-65-oed-a-chyflyrau-meddygol"
         },
         {
-          "text": "Oes angen Yswiriant Teithio arnoch chi",
+          "text": "Oes angen yswiriant teithio arnoch?",
           "href": "https://www.moneyadviceservice.org.uk/cy/articles/a-oes-arnoch-angen-yswiriant-teithio"
         },
         {
-          "text": "Yswiriant Teithio i bobl dros 65 oed. Sut olwg sydd ar bolisi da",
+          "text": "Yswiriant teithio i bobl dros 65 oed",
           "href": "https://www.moneyadviceservice.org.uk/cy/articles/yswiriant-teithio-ar-gyfer-pobl-dros-65-oed-a-chyflyrau-meddygol"
         },
 
         {
-          "text": "Coronafirws ac yswiriant teithio",
+          "text": "Coronafeirws ac yswiriant teithio",
           "href": "https://www.moneyadviceservice.org.uk/cy/articles/coronafeirws-ac-yswiriant-teithio"
         }
       ]
     },
     "broker": {
-      "heading": "<a id='need_help'>Angen help i siopa o gwmpas?</a>",
-      "content": "<section class='help'><p>Os nad ydych wedi cael unrhyw ddyfynbrisiau eto ac ar ddechrau eich chwiliad am yswiriant teithio, mae gan Gymdeithas Broceriaid Yswiriant Prydain (BIBA) wasanaeth sy'n eich cysylltu â Brocer yswiriant a all wneud y siopa o gwmpas i chi. Gall Brocer ddod o hyd i'r fargen orau i chi gan ddarparwyr yswiriant teithio prif ffrwd ac arbenigol a darparu cefnogaeth os bydd yn rhaid i chi wneud cais.</p><br/><p class='help__intouch'><b>Cysylltwch :<b/><br/><br/></p><img src='/assets/Images/phone.svg'/> <span class='help__tel'><a  href='tel:0370 950 1790'>0370 950 1790</a></span><p class='help__opening'> &#40;Mon - Fri 9:00 am to 5:00 pm&#41;</p><p class='help__icon'><img src='/assets/Images/web.svg'/><span class='help__web'><a  href='https://insurance.biba.org.uk/find-insurance' target='_blank'>Gwefan</a></span></p></section>"
+      "heading": "<a id='need_help'>Angen help i siopa o amgylch?</a>",
+      "content": "<section class='help'><p>Os nad ydych wedi cael unrhyw amcanion pris eto ac rydych ar ddechrau eich chwiliad am yswiriant teithio, mae gan Gymdeithas Broceriaid Yswiriant Prydain (BIBA) wasanaeth sy'n eich cysylltu â brocer yswiriant a all wneud y siopa i chi. Gall brocer ddod o hyd i'r cytundeb orau i chi gan ddarparwyr yswiriant teithio prif ffrwd ac arbenigol a darparu cefnogaeth os oes rhaid i chi wneud cais.</p><br/><p class='help__intouch'><b>Cysylltwch â ni :<b/><br/><br/></p><img src='/assets/Images/phone.svg'/> <span class='help__tel'><a  href='tel:0370 950 1790'>0370 950 1790</a></span><p class='help__opening'> &#40;Llun - Gwe 9:00 am to 5:00 pm&#41;</p><p class='help__icon'><img src='/assets/Images/web.svg'/><span class='help__web'><a  href='https://insurance.biba.org.uk/find-insurance' target='_blank'>Gwefan</a></span></p></section>"
+    },
+    "transcript": {
+      "topHeading": "Not available",
+      "bottomHeading": "Not available",
+      "para1": "Not available",
+      "para2": "Not available",
+      "para3": "Not available",
+      "para4": "Not available",
+      "para5": "Not available",
+      "para6": "Not available",
+      "para7": "Not available",
+      "para8": "Not available"
     }
   }
 }

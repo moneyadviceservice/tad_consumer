@@ -372,10 +372,10 @@ const Filters = ({ t }) => {
 
         <FilterFormFIeld>
           <Legend>{t("headings.filter_by_length_of_trip")}</Legend>
-          <Note note={note}>Please select the type of insurance first</Note>
+          <Note note={note}>{t("headings.selectInsurance")}</Note>
           <SingleTrip single={single}>
             <span style={{ fontSize: "14px" }}>
-              select one of the durations
+              {t("headings.selectDuration")}
               <TooltipText
                 minWidth="200px"
                 side="left"
@@ -401,7 +401,7 @@ const Filters = ({ t }) => {
           </SingleTrip>
           <AnnualTrip annual={annual}>
             <span style={{ fontSize: "14px" }}>
-              for each individual trip
+              {t("headings.foreachTrip")}
               <TooltipText
                 minWidth="200px"
                 side="left"

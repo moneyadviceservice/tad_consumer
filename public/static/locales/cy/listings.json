@@ -6,18 +6,18 @@
       { "range": "Dros 80 mlynedd", "value": "Over 80 years" }
     ],
     "trip_type": [
-      { "type": "Trip Sengl", "value": "Single Trip" },
-      { "type": "Aml-Daith Flynyddol", "value": "Annual Multi-trip" }
+      { "type": "Taith Sengl", "value": "Single Trip" },
+      { "type": "Aml-daith flynyddol", "value": "Annual Multi-trip" }
     ],
     "singleTripLength": [
       { "length": "Hyd at 1 mis", "value": "30" },
       { "length": "1 - 6 mis", "value": "180" },
-      { "length": "DDros 6 mis", "value": "181" }
+      { "length": "Dros 6 mis", "value": "181" }
     ],
     "annualTripLength": [
       { "length": "Heb fod yn hwy na 31 diwrnod", "value": "31" },
       { "length": "Heb fod yn hwy na 45 diwrnod", "value": "45" },
-      { "length": "DHeb fod yn hwy na 55 diwrnod", "value": "55" }
+      { "length": "Heb fod yn hwy na 55 diwrnod", "value": "55" }
     ],
     "cover_area": [
       { "location": "DU ac Ewrop", "value": "United Kingdom & Europe" },
@@ -31,7 +31,7 @@
       }
     ],
     "cruise": [
-      { "response": "Ydw", "value": "Yes" },
+      { "response": "Ie", "value": "Yes" },
       { "response": "Na", "value": "No" }
     ],
     "how_far_in_advance_trip_cover_weeks": [
@@ -42,64 +42,60 @@
       { "when": "Rhwng 18 - 24 mis", "time": "96" }
     ],
     "will_cover_undergoing_treatment": [
-      { "response": "Ydw", "value": "Yes" },
+      { "response": "Ie", "value": "Yes" },
       { "response": "Na", "value": "No" }
     ],
     "will_cover_terminal_prognosis": [
-      { "terminal": "Ydw", "feedback": "Yes" },
+      { "terminal": "Ie", "feedback": "Yes" },
       { "terminal": "Na", "feedback": "No" }
     ],
     "will_cover_specialist_equipment": [
-      { "response": "Ydw", "value": "Yes" },
+      { "response": "Ie", "value": "Yes" },
       { "response": "Na", "value": "No" }
     ]
   },
   "headings": {
-    "main": "Dewch o hyd i ddarparwyr yswiriant teithio os oes gennych gyflwr meddygol difrifol",
-    "filter": "Mireinio'ch chwiliad",
-    "clear": "Not yet provided",
+    "main": "Dod o hyd i ddarparwyr yswiriant teithio os oes gennych gyflwr meddygol difrifol",
+    "filter": "Diwygio eich chwiliad",
+    "clear": "Clirio'r Hidlwyr",
     "age_at_time_of_travel": "Oedran adeg teithio",
     "age_at_time_of_travel_select": "Dewiswch",
     "filter_by_insurance_type": "Hidlo yn ôl math o yswiriant",
     "filter_by_length_of_trip": "Hyd y daith",
     "destination": "Cyrchfan",
     "is_your_trip_a_cruise": "A yw eich taith yn fordaith",
-    "when_are_you_travelling": "Pryd wyt ti'n teithio",
-    "i_am_going_abroad_for_medical_treatment": "Rwy'n mynd dramor i gael triniaeth feddygol",
+    "when_are_you_travelling": "Pryd ydych yn teithio",
     "my_doctor_has_given_me_a_terminal_prognosis": "Mae fy meddyg wedi rhoi prognosis terfynol i mi",
     "do_you_require_cover_for_medical_equipment": "A oes angen yswiriant arnoch ar gyfer offer meddygol",
-    "submit": "Darparwr rhestr fer",
+    "submit": "Rhestr fer darparwyr",
     "showing": "Yn dangos ",
     "of": " o",
-    "firms": "o gwmnïau",
-    "order": "Cwmnïau wedi'u cyflwyno mewn unrhyw drefn benodol",
-    "noResult": "Not yet provided"
+    "firms": "gwmnïau",
+    "order": "Cwmnïau wedi'u cyflwyno heb fod mewn unrhyw drefn benodol",
+    "noResult": "Nid oes unrhyw ganlyniadau sy'n cyfateb i'ch meini prawf chwilio. Diwygiwch eich meini prawf a rhoi cynnig arall arni",
+    "selectInsurance": "Dewiswch y math o yswiriant yn gyntaf",
+    "selectDuration": "dewiswch un o'r cyfnodau",
+    "foreachTrip": "i bob thaith unigol"
   },
   "toolTips": {
-    "age": "Not yet supplied",
-    "singleTrip": "Not yet supplied.",
+    "age": "Nid yw rhai cwmnïau'n cynnig yswiriant dros oedran penodol. Gall hyd y daith, p'un a yw'r daith yn fordaith a'r gyrchfan hefyd effeithio ar hyn.",
+    "singleTrip": "Dewiswch yr opsiwn sy'n gweddu orau i hyd eich taith. Nid yw rhai darparwyr yn cynnig yswiriant ar gyfer teithiau hirach.",
+    "annualTrip": "Dewiswch yr opsiwn sy'n gweddu orau â'r hyd hwyaf bob taith unigol rydych yn bwriadu ei chymryd o fewn tymor 12 mis y polisi . Nid yw rhai darparwyr yn cynnig yswiriant ar gyfer teithiau unigol hirach.",
     "insuranceType": {
-      "single": {
-        "title": "Not yet supplied:",
-        "body": "Not yet supplied"
-      },
-      "annual": {
-        "title": "Not yet supplied:",
-        "body": "Not yet supplied"
-      }
+      "title": "Taith Sengl neu Flynyddol:",
+      "para_1": "Yn dibynnu ar ba gyflwr/gyflyrau meddygol sydd gennych, ble rydych yn mynd ac am ba hyd - weithiau gallai polisi Taith Sengl fod yn rhatach na pholisi Aml-daith Flynyddol. Hefyd os cawsoch eich gwrthod am bolisi Aml-daith, efallai y cewch gynnig yswiriant os dewiswch bolisi Trip Sengl.",
+      "para_2": "Ond os ydych yn bwriadu teithio sawl gwaith yn ystod cyfnod o 12 mis, ceisiwch yn gyntaf am bolisi Aml-daith Flynyddol."
     },
-    "annualTrip": "Not yet supplied",
-    "destination": "Not yet supplied,",
-    "cruise": "Not yet supplied.",
-    "when": "Not yet supplied.",
-    "abroad": "Not yet supplied",
-    "equipment": "Not yet supplied."
+    "destination": "Gall cost triniaeth feddygol fod yn fwy mewn rhai gwledydd nag eraill, felly bydd ble rydych yn mynd yn cael effaith ar a fydd darparwr yn cynnig yswiriant i chi. Y tri chyrchfan hyn yw'r categorïau mwyaf cyffredin a ddefnyddir gan y mwyafrif o ddarparwyr yswiriant teithio.",
+    "cruise": "Nid yw pob darparwr yn cynnig yswiriant ar gyfer mordeithiau, ac efallai bod gan y rhai sydd yn cynnig â therfyn oedran gwahanol ar gyfer mordeithiau.",
+    "when": "Ni fydd pob darparwr yn gadael i chi drefnu polisi ymlaen llaw i bryd y byddwch yn teithio, oherwydd y posibilrwydd o ganslo. Er enghraifft, fel arfer dim ond hyd at 31 diwrnod ymlaen llaw y gallwch drefnu polisi Aml-deithiau Blynyddol. Gwiriwch y telerau ac amodau ynghylch canslo yn ofalus bob amser cyn prynu yswiriant teithio.",
+    "equipment": "Os oes angen i chi fynd ag offer meddygol arbenigol drud gyda chi ar eich taith, gwnewch yn siŵr eich bod yn gallu gael yswiriant am golled neu ddifrod."
   },
 
   "download": {
     "title": "Rhestr o Gwmnïau Yswiriant Teithio",
-    "link": "Dadlwythwch ac argraffwch restr o'r holl gwmnïau",
-    "loading": "Dogfen llwytho ...",
+    "link": "Lawrlwythwch ac argraffwch restr o'r holl gwmnïau",
+    "loading": "Llwytho dogfen...",
     "header": {
       "name": "Enw",
       "website": "Gwefan",

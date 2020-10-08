@@ -74,16 +74,12 @@
     "of": " of",
     "firms": "firms",
     "order": "Firms presented in no particular order",
-    "noResult": "There are no results matching your search criteria. Please amend your criteria and try again"
+    "noResult": "There are no results matching your search criteria. Please amend your criteria and try again",
+    "selectInsurance": "Please select the type of insurance first",
+    "selectDuration": "select one of the durations",
+    "foreachTrip": "for each individual trip"
   },
-  "firms": {
-    "getInTouch": "Get in touch",
-    "moreInfo": "More info",
-    "phoneImg": "<img src='/assets/Images/phone.svg' style='width: 20px;' />",
-    "webImg": "<img src='/assets/Images/web.svg' style='width: 20px;' />",
-    "emailImg": "<img src='/assets/Images/email.svg' style='width: 25px;' />",
-    "more": "<ul style='font-size: 14px; margin-top: 10px; line-height: 1.8;'><li><b>Medical conditions</b> - Specialist cancer insurers. Underwitten individually by a medical professional</li><li><b>Age limits</b> - No upper age limit on Single Trip & Annual Multi-trip</li><li><b>Destinations</b> - All destinations covered</li><li><b>Duration limits</b>  - Up to 6 months for a single continuous trip</li><li><b>Treatment stages</b> - Cover available to patients ; on a waiting list, awaiting test results, terminal prognosis cases. Cover not available to patients; going abroad for treatment</li></ul>"
-  },
+
   "toolTips": {
     "age": "Some firms won’t offer cover above a certain age.  The length of trip, whether the trip is a cruise and the destination may also affect this.",
     "singleTrip": "Choose the option that fits your length of trip best. Some providers won’t offer cover for longer trips.",
@@ -96,7 +92,6 @@
     "destination": "The cost of medical treatment can be more in some countries than others, so where you are going will have an effect on whether a provider will offer you cover. These three destinations are the most common categories used by most travel insurance providers.",
     "cruise": "Not all providers offer insurance cover for cruises and those that do may have a different age limit for cruises.",
     "when": "Not all providers will let you take out a policy in advance of when you are travelling because of the possibility of cancellation. For example you can usually only take out an Annual Multi-trip policy up to 31 days in advance. Always check the terms and conditions regarding cancellation carefully before buying travel insurance.",
-    "abroad": "Only a few providers will offer cover if you are specifically travelling abroad for medical treatment.",
     "equipment": "If you need to take expensive specialist medical equipment with you on your trip, make sure you can get it covered for loss or damage."
   },
   "download": {

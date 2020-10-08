@@ -31,7 +31,7 @@
     },
     "video": {
       "heading": "Who is this directory for?",
-      "description": "Watch this short video to find out if this directory can help you find the cover you need.",
+      "description": "Play this short video to find out if this directory can help you find the cover you need.",
       "transcript": "Download a transcript of the Travel Insurance Directory video."
     },
     "faqs": {
@@ -72,7 +72,7 @@
       "links": [
         {
           "text": "Travel Insurance when you have a serious medical condition",
-          "href": "https://www.moneyadviceservice.org.uk/en/articles/travel-insurance-for-over-65s-and-medical-conditions"
+          "href": "https://www.moneyadviceservice.org.uk/en/articles/travel-insurance-if-you-have-a-medical-condition"
         },
         {
           "text": "Do you need travel insurance?",
@@ -92,6 +92,18 @@
     "broker": {
       "heading": "<a id='need_help'>Need help shopping around?</a>",
       "content": "<section class='help'><p>If you haven't had any quotes yet and are at the start of your search for travel insurance, the British Insurance Brokers' Association (BIBA) have a service which links you to an insurance broker who can do the shopping around for you.  A broker can find you the best deal from both mainstream and specialist travel insurance providers and provide support if you have to make a claim.</p><br/><p class='help__intouch'><b>Get in touch :<b/><br/><br/></p><img src='/assets/Images/phone.svg'/> <span class='help__tel'><a  href='tel:0370 950 1790'>0370 950 1790</a></span><p class='help__opening'> &#40;Mon - Fri 9:00 am to 5:00 pm&#41;</p><p class='help__icon'><img src='/assets/Images/web.svg'/><span class='help__web'> <a  href='https://insurance.biba.org.uk/find-insurance' target='_blank'>Website</a></span></p></section>"
+    },
+    "transcript": {
+      "topHeading": "Script for Travel Insurance Directory",
+      "bottomHeading": "We hope you find the insurance you need - so you can have the trip you deserve",
+      "para1": "Most people agree it’s important to get travel insurance if you’re travelling away from home. But if you a have a serious medical condition, finding the right insurance can be a frustrating,exhausting and expensive experience.",
+      "para2": "We can help.",
+      "para3": "Our directory has a list of firms that specialise in offering travel insurance to people with serious or life-threatening medical conditions.",
+      "para4": "So, if you’ve had your travel insurance declined or cancelled because of a medical condition - or your condition won’t be covered, you are in the right place.",
+      "para5": "Also, if an extra premium has been added to your policy because of your condition, then its worth seeing if any of the firms on our directory can offer a better price.",
+      "para6": "All of the firms are regulated by the Financial Conduct Authority and have been through a very specific entry criteria to prove their specialism.",
+      "para7": "You will have to go to individual firms to get a quote, but it’s worth trying more than one, as prices will vary.",
+      "para8": "But if the process of shopping around starts to get you down and it all feels too difficult, you can ask an insurance broker to do the hard work for you. The box at the bottom of the screen will tell you more about this service."
     }
   }
 }
