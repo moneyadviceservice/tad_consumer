@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/moneyadviceservice/isomorphic_react_prototype#readme",
   "dependencies": {
-    "@moneypensionservice/directories": "^1.8.6",
+    "@moneypensionservice/directories": "^1.9.0",
     "@react-pdf/renderer": "^1.6.11",
     "@react-pdf/styled-components": "^1.4.0",
     "algoliasearch": "^4.4.0",
@@ -42,7 +42,7 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.3.0",
-    "styled-components": "^4.4.1"
+    "styled-components": "^5.x"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.9.0",
