@@ -38,10 +38,6 @@ export default class MyDocument extends Document {
       <Html dir="ltr">
         <Head>
           <Fragment></Fragment>
-          <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-          />
 
           <script
             dangerouslySetInnerHTML={{
