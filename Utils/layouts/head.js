@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { withTranslation } from "../translation/i18n";
+import { GA_TRACKING_ID } from "../gtag";
 
 const AppHead = ({ path, t }) => {
   const route = useRouter().pathname;

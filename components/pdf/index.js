@@ -1,5 +1,6 @@
 import { Page, Document } from "@react-pdf/renderer";
 import styled from "@react-pdf/styled-components";
+import hits from "./firms";
 
 const Heading = styled.Text`
   font-size: 30px;
@@ -42,8 +43,25 @@ const RowText = styled.Text`
   font-family: "Helvetica";
   font-weight: medium;
 `;
+
+const Firms = () => {
+  const firms = hits.hits;
+  return (
+    firms &&
+    firms.map((firm, i) => {
+      return (
+        <RowView key={i}>
+          <RowText>{firm.company}</RowText>
+          <RowText style={{ width: "38%" }}>{firm.online.website}</RowText>
+          <RowText style={{ width: "12%" }}>{firm.online.phone}</RowText>
+          <RowText>{firm.online.email}</RowText>
+        </RowView>
+      );
+    })
+  );
+};
 // Create Document Component
-const MyDocument = ({ firms, t }) => {
+const EnglishListings = () => {
   return (
     <Document title="List of Travel Insurance Firms">
       <Page
@@ -54,31 +72,41 @@ const MyDocument = ({ firms, t }) => {
           padding: 48,
         }}
       >
-        <Heading>{t("download.title")}</Heading>
+        <Heading>List of Travel Insurance Firms</Heading>
         <TableHeadView>
-          <TableHeadText style={{ width: "38%" }}>
-            {t("download.header.name")}
-          </TableHeadText>
-          <TableHeadText>{t("download.header.website")}</TableHeadText>
-          <TableHeadText style={{ width: "12%" }}>
-            {t("download.header.phone")}
-          </TableHeadText>
-          <TableHeadText>{t("download.header.email")}</TableHeadText>
+          <TableHeadText>Name</TableHeadText>
+          <TableHeadText style={{ width: "38%" }}>Website</TableHeadText>
+          <TableHeadText style={{ width: "12%" }}>Phone</TableHeadText>
+          <TableHeadText>Email</TableHeadText>
         </TableHeadView>
-        {firms &&
-          firms.hits.map((firm, i) => {
-            return (
-              <RowView key={i}>
-                <RowText style={{ width: "38%" }}>{firm.company}</RowText>
-                <RowText>{firm.online.website}</RowText>
-                <RowText style={{ width: "12%" }}>{firm.online.phone}</RowText>
-                <RowText>{firm.online.email}</RowText>
-              </RowView>
-            );
-          })}
+        <Firms />
       </Page>
     </Document>
   );
 };
 
-export default MyDocument;
+const WelshListings = () => {
+  return (
+    <Document title="Rhestr o Gwmnïau Yswiriant Teithio">
+      <Page
+        size="A4"
+        orientation="landscape"
+        style={{
+          flexDirection: "column",
+          padding: 48,
+        }}
+      >
+        <Heading>Rhestr o Gwmnïau Yswiriant Teithio</Heading>
+        <TableHeadView>
+          <TableHeadText>Enw</TableHeadText>
+          <TableHeadText style={{ width: "38%" }}>Gwefan</TableHeadText>
+          <TableHeadText style={{ width: "12%" }}>Ffôn</TableHeadText>
+          <TableHeadText>E-bost</TableHeadText>
+        </TableHeadView>
+        <Firms />
+      </Page>
+    </Document>
+  );
+};
+
+export { EnglishListings, WelshListings };

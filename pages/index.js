@@ -2,7 +2,7 @@ import { Fragment, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import ReactHtmlParser from "react-html-parser";
 
-import { withTranslation } from "../Utils/translation/i18n";
+import { i18n, withTranslation } from "../Utils/translation/i18n";
 
 import {
   Col,
@@ -26,8 +26,11 @@ import Title from "../components/title";
 
 import styled from "styled-components";
 
-import { PDFDownloadLink, BlobProvider } from "@react-pdf/renderer";
-import MyDocument from "../components/landingPage/videoTranscript";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import {
+  WelshTranscript,
+  EnglishTranscript,
+} from "../components/landingPage/videoTranscript";
 
 const PDFLink = styled(PDFDownloadLink)`
   font-size: 16px;
@@ -35,13 +38,23 @@ const PDFLink = styled(PDFDownloadLink)`
   width: 100%;
   color: #003d8e;
   text-align: left;
+
   ${resolveMedia.md`
   text-align: right;
 `};
 `;
 
+const ETranscript = styled.span`
+  display: ${(props) => (props.enTranscript ? "none" : "inline")};
+`;
+const WTranscript = styled.span`
+  display: ${(props) => (props.cyTranscript ? "none" : "inline")};
+`;
+
 const Homepage = ({ t }) => {
   const [activeIndex, changeIndex] = useState();
+  const [enTranscript, showEn] = useState(true);
+  const [cyTranscript, showCy] = useState(false);
 
   const handleClick = (current) => {
     const newIndex = activeIndex === current ? -1 : current;
@@ -52,6 +65,10 @@ const Homepage = ({ t }) => {
   useEffect(() => {
     setIsClient(true);
   }, []);
+  useEffect(() => {
+    showEn(i18n.language == "en" ? false : true);
+    showCy(i18n.language == "cy" ? false : true);
+  }, [i18n.language]);
 
   return (
     <Fragment>
@@ -121,17 +138,29 @@ const Homepage = ({ t }) => {
             <YoutubeFrame src="https://www.youtube.com/embed/zz1bzoSQiMQ" />
             <Paragraph color="#515151" textSize="16px" margin={{ top: "20px" }}>
               {t("home.video.description")}&nbsp;
-              {isClient && (
-                <PDFLink
-                  document={<MyDocument t={t} />}
-                  fileName="Script for Travel Insurance Directory Video"
-                >
-                  {({ blob, url, loading, error }) =>
-                    loading ? "Loading" : t("home.video.transcript")
-                  }
-                </PDFLink>
-              )}
-              {/* <Anchor textSize="16px">{t("home.video.transcript")}</Anchor> */}
+              <ETranscript enTranscript={enTranscript}>
+                {isClient && (
+                  <PDFLink
+                    document={<EnglishTranscript t={t} />}
+                    fileName="Script for Travel Insurance Directory Video"
+                  >
+                    Download a transcript of the Travel Insurance Directory
+                    video
+                  </PDFLink>
+                )}
+              </ETranscript>
+              <WTranscript cyTranscript={cyTranscript}>
+                {isClient && (
+                  <PDFLink
+                    showCy
+                    document={<WelshTranscript t={t} />}
+                    fileName="Script for Travel Insurance Directory Video"
+                  >
+                    Lawrlwythwch drawsgrifiad o'r fideo Cyfeirlyfr Yswiriant
+                    Teithio.
+                  </PDFLink>
+                )}
+              </WTranscript>
             </Paragraph>
           </Col>
           <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">

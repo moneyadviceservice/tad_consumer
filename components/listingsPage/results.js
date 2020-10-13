@@ -1,35 +1,23 @@
 import {
   Paragraph,
-  Col,
-  Row,
   Pagination,
-  Anchor,
   CompanyCard,
-  resolveMedia,
 } from "@moneypensionservice/directories";
 
 import { i18n } from "../../Utils/translation/i18n";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import MyDocument from "../pdf";
+import { EnglishListings, WelshListings } from "../pdf";
 import Loading from "./loading";
-import styled from "styled-components";
-
-const PDFLink = styled(PDFDownloadLink)`
-  font-size: 16px;
-  margin: 0;
-  width: 100%;
-  color: #003d8e;
-  text-align: left;
-  ${resolveMedia.md`
-  text-align: right;
-`};
-`;
+import { EListings, WListings } from "./dummy";
 
 const Results = ({ t }) => {
   const offered = useSelector((state) => state.listings.offered);
-  const firms = useSelector((state) => state.listings.firms);
+  // const firms = useSelector((state) => state.listings.firms);
+
+  const [enTranscript, showEn] = useState(true);
+  const [cyTranscript, showCy] = useState(false);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [firmsPerPage, setFirmsPerPage] = useState(5);
@@ -73,7 +61,11 @@ const Results = ({ t }) => {
   useEffect(() => {
     setIsClient(true);
   }, []);
-
+  // Toggle download link file
+  useEffect(() => {
+    showEn(i18n.language == "en" ? false : true);
+    showCy(i18n.language == "cy" ? false : true);
+  }, [i18n.language]);
   return (
     <div>
       {/* results heading */}
@@ -109,16 +101,30 @@ const Results = ({ t }) => {
           </span>
           <span>{t("headings.order")}</span>
         </div>
-        {isClient && (
-          <PDFLink
-            document={<MyDocument firms={firms} t={t} />}
-            fileName="travel_insurance_listings.pdf"
-          >
-            {({ blob, url, loading, error }) =>
-              loading ? t("download.loading") : t("download.link")
-            }
-          </PDFLink>
-        )}
+        {/* Firm Download */}
+        <EListings enTranscript={enTranscript}>
+          {isClient && (
+            <PDFDownloadLink
+              document={<EnglishListings />}
+              fileName="Script for Travel Insurance Directory Video"
+              style={{ color: "#003d8e" }}
+            >
+              Download and print a list of all firms
+            </PDFDownloadLink>
+          )}
+        </EListings>
+        <WListings cyTranscript={cyTranscript}>
+          {isClient && (
+            <PDFDownloadLink
+              showCy
+              document={<WelshListings />}
+              fileName="Script for Travel Insurance Directory Video"
+              style={{ color: "#003d8e" }}
+            >
+              Lawrlwythwch ac argraffwch restr o'r holl gwmnïau
+            </PDFDownloadLink>
+          )}
+        </WListings>
       </div>
 
       {/* No firms returned from filtering */}
