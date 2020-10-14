@@ -1,7 +1,7 @@
 import { Header } from "@moneypensionservice/directories";
 import { i18n, withTranslation } from "../../Utils/translation/i18n";
 
-import Breadcrumb from "../../Utils/layouts";
+import Breadcrumb, { MobileBreadcrumb } from "../../Utils/layouts";
 
 const PageHeader = ({ t, alternateAddress, path }) => {
   const changeLanguage = (e) => {
@@ -22,6 +22,7 @@ const PageHeader = ({ t, alternateAddress, path }) => {
       i18nLng={headerLang}
     >
       <Breadcrumb path={path}></Breadcrumb>
+      <MobileBreadcrumb path={path}></MobileBreadcrumb>
     </Header>
   );
 };
