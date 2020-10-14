@@ -13,8 +13,6 @@ const AppHead = ({ path, t }) => {
     pageTitle = t("head.page.landing");
   }
 
-  const $ = "window";
-
   const script = process.browser ? (
     <script
       dangerouslySetInnerHTML={{
