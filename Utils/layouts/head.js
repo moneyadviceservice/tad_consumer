@@ -46,6 +46,11 @@ const AppHead = ({ path, t }) => {
       ></link>
       <link rel="stylesheet" href="/static/accordion.css" />
       <link rel="stylesheet" href="/static/help.css" />
+      <script
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+        crossorigin="anonymous"
+      ></script>
 
       {script}
     </Head>
