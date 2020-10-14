@@ -21,6 +21,7 @@ import {
   YoutubeFrame,
   AboutBox,
 } from "../components/landingPage";
+import BrokerTable from "../components/landingPage/brokerTable";
 import { Section, ExtendedSection, InternalLink } from "../Utils/layouts";
 import Title from "../components/title";
 
@@ -173,14 +174,13 @@ const Homepage = ({ t }) => {
             )}
           </Col>
           <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
-            <InfoTable
-              icon
+            <BrokerTable
               margin={{ bottom: "15px" }}
+              padding="16px"
               sizes={{ xs: 12, md: 4 }}
-              title={ReactHtmlParser(t("home.broker.heading"))}
-            >
-              {ReactHtmlParser(t("home.broker.content"))}
-            </InfoTable>
+              title={t("home.broker.heading")}
+              content={t("home.broker.content", { returnObjects: true })}
+            ></BrokerTable>
           </Col>
         </Section>
       </ExtendedSection>
