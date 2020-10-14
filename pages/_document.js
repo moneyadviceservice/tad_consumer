@@ -1,8 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
-import { i18n } from "../Utils/translation/i18n";
-
-import { Fragment } from "react";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
