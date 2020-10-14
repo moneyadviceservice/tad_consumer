@@ -14,6 +14,10 @@ const PageHeader = ({ t, alternateAddress, path }) => {
 
   const bread = "Bread";
 
+  console.log("Path: ", path);
+  const mobileBreadcrumb =
+    path == "/listings" ? <MobileBreadcrumb t={t} /> : "";
+
   return (
     <Header
       currentLng={i18n.language}
@@ -21,8 +25,8 @@ const PageHeader = ({ t, alternateAddress, path }) => {
       lngUrl={alternateAddress}
       i18nLng={headerLang}
     >
-      <Breadcrumb path={path}></Breadcrumb>
-      <MobileBreadcrumb path={path}></MobileBreadcrumb>
+      <Breadcrumb t={t} path={path}></Breadcrumb>
+      {mobileBreadcrumb}
     </Header>
   );
 };

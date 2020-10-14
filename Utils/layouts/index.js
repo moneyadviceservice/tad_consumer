@@ -66,6 +66,36 @@ const BreadAnchor = styled(Anchor)`
     border: none;
   }
 `;
+const MobileBreadAnchor = styled(Anchor)`
+  text-decoration: none;
+  border: none;
+  font-size: 14px;
+  padding: 0;
+  &:before {
+    font-size: 24px;
+    line-height: 0;
+    color: #96b4c0;
+    position: relative;
+    top: 4px;
+    padding: 0;
+    content: "\\2190  ";
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    background-color: #e8b940;
+    color: #003d8e;
+    text-decoration: none;
+  }
+
+  &:link {
+    text-decoration: none;
+    background: none;
+    border: none;
+  }
+`;
 
 const InternalLink = ({ children, href }) => (
   <Link href={href} passHref>
@@ -75,6 +105,11 @@ const InternalLink = ({ children, href }) => (
 const BreadLink = ({ href, name }) => (
   <Link href={href} passHref>
     <BreadAnchor>{name}</BreadAnchor>
+  </Link>
+);
+const MobileBreadLink = ({ href, name }) => (
+  <Link href={href} passHref>
+    <MobileBreadAnchor>{name}</MobileBreadAnchor>
   </Link>
 );
 
@@ -108,32 +143,21 @@ export default withTranslation("header")(Breadcrumb);
 
 const MobileExtended = styled(ExtendedSection)`
   display: block;
+  border-bottom: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
   ${resolveMedia.md`
 display: none;
 
 `};
 `;
 
-const MobileBreadcrumb = ({ path }) => {
-  const router = useRouter().pathname;
-  const pathArray = process.browser ? router.split("/") : path.split("/");
-  const crumbs = pathArray.map((paths, i) => {
-    if (paths === "") {
-      return false;
-    }
-    let anchorText = eval("`${paths}`");
-    return <BreadLink key={i} href={paths} name={t(anchorText)} />;
-  });
-
+const MobileBreadcrumb = ({ t }) => {
   return (
     <MobileExtended align="stretch">
       <Section constrained>
-        <Col style={{ display: "inline" }}>
-          <BreadAnchor href="https://www.moneyadviceservice.org.uk/en">
-            Home
-          </BreadAnchor>
-          <BreadLink href="/" name="Hi" />
-          {crumbs}
+        <Col style={{ padding: 0 }}>
+          <MobileBreadLink href="/" name={t("mobile")} />
         </Col>
       </Section>
     </MobileExtended>
