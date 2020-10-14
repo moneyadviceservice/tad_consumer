@@ -12,7 +12,6 @@ import { ThemeProvider, Container } from "@moneypensionservice/directories";
 
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import * as gtag from "../Utils/gtag";
 
 const MyApp = ({
   Component,
