@@ -14,9 +14,9 @@ const BrokerTable = ({ heading, content, ...rest }) => (
       {content.getInTouch}
     </P>
     <Col padding="0">
-      <Row noGutter padding="0">
+      <Row padding="0">
         <img width="20px" src="/assets/Images/phone.svg" />
-        <Col margin={{ left: "0.625rem" }}>
+        <Col padding="0" margin={{ left: "0.625rem" }}>
           <Anchor
             margin="0"
             weight={700}
