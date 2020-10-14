@@ -90,8 +90,14 @@
       ]
     },
     "broker": {
-      "heading": "<a id='need_help'>Angen help i siopa o amgylch?</a>",
-      "content": "<section class='help'><p>Os nad ydych wedi cael unrhyw amcanion pris eto ac rydych ar ddechrau eich chwiliad am yswiriant teithio, mae gan Gymdeithas Broceriaid Yswiriant Prydain (BIBA) wasanaeth sy'n eich cysylltu â brocer yswiriant a all wneud y siopa i chi. Gall brocer ddod o hyd i'r cytundeb orau i chi gan ddarparwyr yswiriant teithio prif ffrwd ac arbenigol a darparu cefnogaeth os oes rhaid i chi wneud cais.</p><br/><p class='help__intouch'><b>Cysylltwch â ni :<b/><br/><br/></p><img src='/assets/Images/phone.svg'/> <span class='help__tel'><a  href='tel:0370 950 1790'>0370 950 1790</a></span><p class='help__opening'> &#40;Llun - Gwe 9:00 am to 5:00 pm&#41;</p><p class='help__icon'><img src='/assets/Images/web.svg'/><span class='help__web'><a  href='https://insurance.biba.org.uk/find-insurance' target='_blank'>Gwefan</a></span></p></section>"
+      "heading": "Angen help i siopa o amgylch?",
+      "content": {
+        "description": "Os nad ydych wedi cael unrhyw amcanion pris eto ac rydych ar ddechrau eich chwiliad am yswiriant teithio, mae gan Gymdeithas Broceriaid Yswiriant Prydain (BIBA) wasanaeth sy'n eich cysylltu â brocer yswiriant a all wneud y siopa i chi. Gall brocer ddod o hyd i'r cytundeb orau i chi gan ddarparwyr yswiriant teithio prif ffrwd ac arbenigol a darparu cefnogaeth os oes rhaid i chi wneud cais.",
+        "getInTouch": "Cysylltwch â ni:",
+        "telNumber": "0370 950 1790",
+        "openingHours": "(Llun - Gwe 9:00 am to 5:00)",
+        "website": "Gwefan"
+      }
     },
     "transcript": {
       "topHeading": "Not available",

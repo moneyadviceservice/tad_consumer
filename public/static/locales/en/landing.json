@@ -90,8 +90,14 @@
       ]
     },
     "broker": {
-      "heading": "<a id='need_help'>Need help shopping around?</a>",
-      "content": "<section class='help'><p>If you haven't had any quotes yet and are at the start of your search for travel insurance, the British Insurance Brokers' Association (BIBA) have a service which links you to an insurance broker who can do the shopping around for you.  A broker can find you the best deal from both mainstream and specialist travel insurance providers and provide support if you have to make a claim.</p><br/><p class='help__intouch'><b>Get in touch :<b/><br/><br/></p><img src='/assets/Images/phone.svg'/> <span class='help__tel'><a  href='tel:0370 950 1790'>0370 950 1790</a></span><p class='help__opening'> &#40;Mon - Fri 9:00 am to 5:00 pm&#41;</p><p class='help__icon'><img src='/assets/Images/web.svg'/><span class='help__web'> <a  href='https://insurance.biba.org.uk/find-insurance' target='_blank'>Website</a></span></p></section>"
+      "heading": "Need help shopping around?",
+      "content": {
+        "description": "If you haven't had any quotes yet and are at the start of your search for travel insurance, the British Insurance Brokers' Association (BIBA) have a service which links you to an insurance broker who can do the shopping around for you.  A broker can find you the best deal from both mainstream and specialist travel insurance providers and provide support if you have to make a claim.",
+        "getInTouch": "Get in touch:",
+        "telNumber": "0370 950 1790",
+        "openingHours": "(Mon - Fri 9:00 am to 5:00)",
+        "website": "Website"
+      }
     },
     "transcript": {
       "topHeading": "Script for Travel Insurance Directory",
