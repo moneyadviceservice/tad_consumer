@@ -6,7 +6,6 @@ import {
   Tooltip,
   Paragraph,
 } from "@moneypensionservice/directories";
-import Link from "next/link";
 
 export const DummyCard = styled.div`
   border: 1px solid #edf0f0;
@@ -88,7 +87,6 @@ export const ClearButton = styled.span`
 export const FormDiv = styled.div`
   border: 1px solid #edf0f0;
   padding: 0 18px 18px;
-
   display: ${(props) => (props.isMobile === true ? "none" : "block")};
   ${resolveMedia.md`
     display: block
@@ -134,22 +132,7 @@ export const ageRange = () => {
 
   return arr;
 };
-const Listings = styled.span`
-  font-size: 16px;
-  margin: 0;
-  width: 100%;
-  text-align: left;
-  ${resolveMedia.md`
-  text-align: right;
-`};
-`;
 
-export const EListings = styled(Listings)`
-  display: ${(props) => (props.enTranscript ? "none" : "inline")};
-`;
-export const WListings = styled(Listings)`
-  display: ${(props) => (props.cyTranscript ? "none" : "inline")};
-`;
 export const randomizeResult = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
