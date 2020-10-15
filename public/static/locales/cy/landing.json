@@ -39,31 +39,74 @@
       "list": [
         {
           "question": "A oes angen cwmni yswiriant teithio arbenigol arnaf?",
-          "answer": "<article class='accordion'><p>Os yw unrhyw un o'r canlynol yn berthnasol, yna mae'n werth cysylltu â chwmni arbenigol i weld a allant gynnig cytundeb gwell neu ratach:</p> <ul> <li> Gwrthodwyd yswiriant teithio i chi oherwydd cyflwr meddygol. </li> <li>Mae polisi cyfredol wedi'i ganslo neu ei ddiwygio oherwydd cyflwr meddygol. </li> <li>Cynigiwyd yswiriant i chi, ond mae eich cyflwr meddygol wedi'i eithrio.</li> <li>Rydych wedi cael cynnig yswiriant gyda phremiwm ychwanegol uchel oherwydd eich cyflwr meddygol.</li> </ul> <p>Mae'r cwmnïau ar ein Cyfeirlyfr yn arbenigo mewn darparu yswiriant teithio i bobl sydd â chyflyrau meddygol difrifol a/neu luosog sydd â risg uchel o fod ag angen rhyw fath o ymyrraeth feddygol tra'ch bod ar eich taith. Gallai enghreifftiau o gyflyrau fod yn ganser, strôc neu gyflwr difrifol ar y galon, cyflyrau anadlol neu gyflyrau sydd wedi cael eu diagnosio fel terfynol.<p>Fodd bynnag, mae gan wahanol gwmnïau farn wahanol ar ba amodau sy’n ‘risg uchel’ ac mae'n werth rhoi cynnig ar fwy nag un.</p></article>"
+          "answer": {
+            "paragraphs": [
+              "Os yw unrhyw un o'r canlynol yn berthnasol, yna mae'n werth cysylltu â chwmni arbenigol i weld a allant gynnig cytundeb gwell neu ratach: ",
+              "Mae'r cwmnïau ar ein Cyfeirlyfr yn arbenigo mewn darparu yswiriant teithio i bobl sydd â chyflyrau meddygol difrifol a/neu luosog sydd â risg uchel o fod ag angen rhyw fath o ymyrraeth feddygol tra'ch bod ar eich taith. Gallai enghreifftiau o gyflyrau fod yn ganser, strôc neu gyflwr difrifol ar y galon, cyflyrau anadlol neu gyflyrau sydd wedi cael eu diagnosio fel terfynol.",
+              "Fodd bynnag, mae gan wahanol gwmnïau farn wahanol ar ba amodau sy’n ‘risg uchel’ ac mae'n werth rhoi cynnig ar fwy nag un."
+            ],
+            "listItems": [
+              "Gwrthodwyd yswiriant teithio i chi oherwydd cyflwr meddygol.",
+              "Mae polisi cyfredol wedi'i ganslo neu ei ddiwygio oherwydd cyflwr meddygol.",
+              "Cynigiwyd yswiriant i chi, ond mae eich cyflwr meddygol wedi'i eithrio.",
+              "Rydych wedi cael cynnig yswiriant gyda phremiwm ychwanegol uchel oherwydd eich cyflwr meddygol."
+            ]
+          }
         },
         {
           "question": "Beth os na chynigiwyd yswiriant i mi eto?",
-          "answer": "<article class='accordion'><p>Yna mae'n werth rhoi cynnig ar ddarparwr prif ffrwd A chwpl o arbenigwyr i gymharu prisiau a'r yswiriant a gynigir. Gallwch wneud hyn eich hun - neu gallwch ofyn i Brocer Yswiriant eich helpu. Bydd y blwch ar waelod y sgrin hon <a href='#need_help'>Angen help i siopa o amgylch?</a> yn dweud wrthych sut.</p></article>"
+          "answer": {
+            "paragraphs": [
+              "Yna mae'n werth rhoi cynnig ar ddarparwr prif ffrwd A chwpl o arbenigwyr i gymharu prisiau a'r yswiriant a gynigir. Gallwch wneud hyn eich hun - neu gallwch ofyn i Brocer Yswiriant eich helpu. Bydd y blwch ar waelod y sgrin hon yn dweud wrthych sut."
+            ],
+            "needHelp": "Angen help i siopa o amgylch?"
+          }
         },
         {
           "question": "A fyddaf yn bendant yn cael cynnig yswiriant am gost is?",
-          "answer": "<article class='accordion'><p>Ni allwn addo hynny, ond mae’n werth rhoi cynnig ar yr arbenigwyr yn ein Cyfeirlyfr os ydych yn anhapus gyda’r yswiriant (neu gost yr yswiriant) a gynigiwyd i chi eisoes, neu os cawsoch eich gwrthod. Os na chynigiwyd unrhyw yswiriant i chi eto, yna mae'n werth rhoi cynnig ar ddarparwr prif ffrwd A chwpl o'r arbenigwyr i gymharu prisiau a'r yswiriant a gynigir. Os oes angen help arnoch gyda hyn, gwelwch y blwch ar waelod y sgrin <a href='#need_help'>Angen help i siopa o amgylch?</p></article>"
+          "answer": {
+            "paragraphs": [
+              "Ni allwn addo hynny, ond mae’n werth rhoi cynnig ar yr arbenigwyr yn ein Cyfeirlyfr os ydych yn anhapus gyda’r yswiriant (neu gost yr yswiriant) a gynigiwyd i chi eisoes, neu os cawsoch eich gwrthod.",
+              "Os na chynigiwyd unrhyw yswiriant i chi eto, yna mae'n werth rhoi cynnig ar ddarparwr prif ffrwd A chwpl o'r arbenigwyr i gymharu prisiau a'r yswiriant a gynigir. Os oes angen help arnoch gyda hyn, gwelwch y blwch ar waelod y sgrin"
+            ],
+            "needHelp": "Angen help i siopa o amgylch?"
+          }
         },
         {
           "question": "Rwy'n teithio gyda rhywun nad oes ganddynt gyflwr meddygol difrifol",
-          "answer": "<article class='accordion'><p>Bron yn sicr y byddant yn gallu cael yswiriant teithio yn rhatach trwy ddarparwr prif ffrwd. Fodd bynnag, mae dwy broblem bosibl gyda hynny. Yn gyntaf, os bydd yn rhaid i chi ganslo'ch taith oherwydd eich cyflwr meddygol, bydd cost eich taith yn cael ei thalu'n llawn gan yr yswiriant - ond efallai na fydd eu costau nhw. Os yw'ch cydymaith(wyr) teithiol yn cymryd yswiriant ar wahân, dylent ddarllen y telerau canslo yn ofalus iawn. Yn ail, os oes angen sylw meddygol arnoch tra'ch bod i ffwrdd ac angen eich adleoli - neu hyd yn oed ddod â chi adref - bydd yr yswiriant yn talu unrhyw gostau ychwanegol i chi. Fodd bynnag, nid yw hyn yn wir am unrhyw un sy'n teithio gyda chi. Unwaith eto, darllenwch y telerau a'r amodau yn ofalus iawn..</p></article>"
+          "answer": {
+            "paragraphs": [
+              "Bron yn sicr y byddant yn gallu cael yswiriant teithio yn rhatach trwy ddarparwr prif ffrwd. Fodd bynnag, mae dwy broblem bosibl gyda hynny.",
+              "Yn gyntaf, os bydd yn rhaid i chi ganslo'ch taith oherwydd eich cyflwr meddygol, bydd cost eich taith yn cael ei thalu'n llawn gan yr yswiriant - ond efallai na fydd eu costau nhw. Os yw'ch cydymaith(wyr) teithiol yn cymryd yswiriant ar wahân, dylent ddarllen y telerau canslo yn ofalus iawn.",
+              "Yn ail, os oes angen sylw meddygol arnoch tra'ch bod i ffwrdd ac angen eich adleoli - neu hyd yn oed ddod â chi adref - bydd yr yswiriant yn talu unrhyw gostau ychwanegol i chi.",
+              "Fodd bynnag, nid yw hyn yn wir am unrhyw un sy'n teithio gyda chi. Unwaith eto, darllenwch y telerau a'r amodau yn ofalus iawn."
+            ]
+          }
         },
         {
           "question": "Rwy'n trefnu yswiriant ar ran rhywun arall",
-          "answer": "<article class='accordion'><p>Mae hynny'n iawn. Atebwch y cwestiynau gan ddefnyddio'r wybodaeth ar gyfer y person sy'n teithio. Mae cwmnïau sy'n y Cyfeirlyfr yn debygol o ofyn i chi a oes gennych ganiatâd i rannu gwybodaeth ar ran y person arall a'ch perthynas â nhw (er enghraifft os ydych yn briod neu'n rhiant neu'n ofalwr). Os yw'n bosibl i'r person rydych yn gweithredu ar ei ran fod gyda chi pan fyddwch yn ffonio cwmnïau arbenigol, bydd hynny'n helpu i gyflymu pethau.</p></article>"
+          "answer": {
+            "paragraphs": [
+              "Mae hynny'n iawn. Atebwch y cwestiynau gan ddefnyddio'r wybodaeth ar gyfer y person sy'n teithio. Mae cwmnïau sy'n y Cyfeirlyfr yn debygol o ofyn i chi a oes gennych ganiatâd i rannu gwybodaeth ar ran y person arall a'ch perthynas â nhw (er enghraifft os ydych yn briod neu'n rhiant neu'n ofalwr). Os yw'n bosibl i'r person rydych yn gweithredu ar ei ran fod gyda chi pan fyddwch yn ffonio cwmnïau arbenigol, bydd hynny'n helpu i gyflymu pethau."
+            ]
+          }
         },
         {
           "question": "Pam ei bod yn ddrytach cael yswiriant teithio i gwmpasu rhai cyflyrau meddygol?",
-          "answer": "<article class='accordion'><p>Mae sawl ffactor y mae yswirwyr yn eu hystyried wrth weithio allan faint sy'n rhaid i chi ei dalu. Er enghraifft, gall y gost o driniaeth feddygol fod yn fwy mewn rhai gwledydd nag eraill (Sbaen, yr Unol Daleithiau a Chanada yw rhai o'r gwledydd drytaf). Bydd yswirwyr hefyd yn ystyried y math a difrifoldeb eich cyflwr(cyflyrau) meddygol a pha mor hir rydych yn bwriadu bod i ffwrdd. Bydd eich oedran hefyd yn chwarae rhan. Yr unig ffordd o wirio eich bod yn cael cynnig da yw cael prisoedd gan fwy nag un cwmni. Yn anffodus, gall y broses tanysgrifennu fod yn hir iawn, ond peidiwch â digaloni. Mae'r rhan fwyaf o gwmniau yn cynnig 'pris cyflym' ble gallwch siarad â rhywun a rhoi gwybodaeth lefel uwch mewn perthynas â'ch cyflwr er mwyn cael syniad o'r gost.</p></article>"
+          "answer": {
+            "paragraphs": [
+              "Mae sawl ffactor y mae yswirwyr yn eu hystyried wrth weithio allan faint sy'n rhaid i chi ei dalu. Er enghraifft, gall y gost o driniaeth feddygol fod yn fwy mewn rhai gwledydd nag eraill (Sbaen, yr Unol Daleithiau a Chanada yw rhai o'r gwledydd drytaf). Bydd yswirwyr hefyd yn ystyried y math a difrifoldeb eich cyflwr(cyflyrau) meddygol a pha mor hir rydych yn bwriadu bod i ffwrdd. Bydd eich oedran hefyd yn chwarae rhan.",
+              "Yr unig ffordd o wirio eich bod yn cael cynnig da yw cael prisoedd gan fwy nag un cwmni. Yn anffodus, gall y broses tanysgrifennu fod yn hir iawn, ond peidiwch â digaloni. Mae'r rhan fwyaf o gwmniau yn cynnig 'pris cyflym' ble gallwch siarad â rhywun a rhoi gwybodaeth lefel uwch mewn perthynas â'ch cyflwr er mwyn cael syniad o'r gost."
+            ]
+          }
         },
         {
           "question": "Beth yw sgrinio meddygol?",
-          "answer": "<article class='accordion'><p>Mae'r rhan fwyaf o gwmnïau sy'n darparu yswiriant teithio i bobl â chyflyrau meddygol difrifol yn defnyddio cwmni sgrinio meddygol. Gofynnir cwestiynau i chi am eich cyflwr/cyflyrau a'r feddyginiaeth rydych yn ei chymryd. Bydd yr atebion a rowch yn penderfynu a fyddwch yn cael cynnig yswiriant teithio a'r pris y gofynnir i chi ei dalu. Mae darparwyr yswiriant teithio yn defnyddio sgrinwyr meddygol gwahanol ac efallai y cewch benderfyniad neu bris gwahanol yn dibynnu ar ba sgriniwr meddygol sy'n ystyried eich cais. Felly, os ydych yn gofyn am amcangyfrif gan fwy nag un darparwr yswiriant teithio, dewiswch gwmnïau sy'n cysylltu â gwahanol sgrinwyr meddygol. Rydyn ni wedi rhoi enw'r cwmni sgrinio meddygol a ddefnyddir gan bob cwmni i wneud hyn yn haws i chi.</p></article>"
+          "answer": {
+            "paragraphs": [
+              "Mae'r rhan fwyaf o gwmnïau sy'n darparu yswiriant teithio i bobl â chyflyrau meddygol difrifol yn defnyddio cwmni sgrinio meddygol. Gofynnir cwestiynau i chi am eich cyflwr/cyflyrau a'r feddyginiaeth rydych yn ei chymryd. Bydd yr atebion a rowch yn penderfynu a fyddwch yn cael cynnig yswiriant teithio a'r pris y gofynnir i chi ei dalu. Mae darparwyr yswiriant teithio yn defnyddio sgrinwyr meddygol gwahanol ac efallai y cewch benderfyniad neu bris gwahanol yn dibynnu ar ba sgriniwr meddygol sy'n ystyried eich cais. Felly, os ydych yn gofyn am amcangyfrif gan fwy nag un darparwr yswiriant teithio, dewiswch gwmnïau sy'n cysylltu â gwahanol sgrinwyr meddygol. Rydyn ni wedi rhoi enw'r cwmni sgrinio meddygol a ddefnyddir gan bob cwmni i wneud hyn yn haws i chi."
+            ]
+          }
         }
       ]
     },
