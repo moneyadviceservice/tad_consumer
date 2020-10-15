@@ -2,6 +2,7 @@ import React from "react";
 import {
   Anchor,
   Col,
+  Row,
   InfoTable,
   Paragraph as P,
 } from "@moneypensionservice/directories";
@@ -19,8 +20,8 @@ const BrokerTable = ({ content, ...rest }) => (
     <P textSize="0.8125rem" weight={700}>
       {content.getInTouch}
     </P>
-    <Col padding="0">
-      <Col direction="row" align="flex-start" padding="0">
+    <Row direction="column" noGutter padding="0">
+      <Col direction="row" align="flex-start">
         <img width="20px" src="/assets/Images/phone.svg" />
         <Col padding="0" margin={{ left: "0.625rem" }}>
           <Anchor
@@ -35,18 +36,18 @@ const BrokerTable = ({ content, ...rest }) => (
           <P textSize="1rem">{content.openingHours}</P>
         </Col>
       </Col>
-      <Col direction="row" padding="0">
+      <Col direction="row">
         <img width="20px" src="/assets/Images/web.svg" />
         <Anchor
           margin={{ left: "0.625rem" }}
           width="auto"
-          href="https://insurance.biba.org.uk/find-insurance"
+          href={content.url}
           target="_blank"
         >
           {content.website}
         </Anchor>
       </Col>
-    </Col>
+    </Row>
   </InfoTable>
 );
 
