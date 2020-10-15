@@ -29,7 +29,7 @@ const BrokerTable = ({ content, ...rest }) => (
             weight={700}
             textSize="1.375rem"
             color="#18507a"
-            href={content.telNumber}
+            href={`tel:${content.telNumber.replace(/\s/g, "")}`}
           >
             {content.telNumber}
           </Anchor>
