@@ -2,19 +2,25 @@ import React from "react";
 import {
   Anchor,
   Col,
-  Row,
   InfoTable,
   Paragraph as P,
 } from "@moneypensionservice/directories";
 
-const BrokerTable = ({ heading, content, ...rest }) => (
-  <InfoTable title={heading} {...rest}>
-    <P margin={{ bottom: "1rem" }}>{content.description}</P>
+const BrokerTable = ({ content, ...rest }) => (
+  <InfoTable {...rest}>
+    <P
+      textSize="1rem"
+      lineHeight="1.4375rem"
+      margin={{ bottom: "1rem" }}
+      color="#515151"
+    >
+      {content.description}
+    </P>
     <P textSize="0.8125rem" weight={700}>
       {content.getInTouch}
     </P>
     <Col padding="0">
-      <Row padding="0">
+      <Col direction="row" align="flex-start" padding="0">
         <img width="20px" src="/assets/Images/phone.svg" />
         <Col padding="0" margin={{ left: "0.625rem" }}>
           <Anchor
@@ -28,8 +34,8 @@ const BrokerTable = ({ heading, content, ...rest }) => (
           </Anchor>
           <P textSize="1rem">{content.openingHours}</P>
         </Col>
-      </Row>
-      <Row padding="0" align="center">
+      </Col>
+      <Col direction="row" padding="0">
         <img width="20px" src="/assets/Images/web.svg" />
         <Anchor
           margin={{ left: "0.625rem" }}
@@ -39,7 +45,7 @@ const BrokerTable = ({ heading, content, ...rest }) => (
         >
           {content.website}
         </Anchor>
-      </Row>
+      </Col>
     </Col>
   </InfoTable>
 );
