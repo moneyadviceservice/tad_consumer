@@ -1,5 +1,6 @@
 import { Header } from "@moneypensionservice/directories";
 import { i18n, withTranslation } from "../../Utils/translation/i18n";
+import { useEffect } from "react";
 
 import Breadcrumb, { MobileBreadcrumb } from "../../Utils/layouts";
 
@@ -12,8 +13,11 @@ const PageHeader = ({ t, alternateAddress, path }) => {
     ? t("Header", { returnObjects: true })
     : t("Header", { returnObjects: true }).Header;
 
-  const mobileBreadcrumb =
-    path == "/listings" ? <MobileBreadcrumb t={t} /> : "";
+  // let mobileBreadcrumb;
+
+  // useEffect(() => {
+  //   mobileBreadcrumb = path == "/listings" ? <MobileBreadcrumb t={t} /> : "";
+  // }, []);
 
   return (
     <Header
@@ -23,7 +27,7 @@ const PageHeader = ({ t, alternateAddress, path }) => {
       i18nLng={headerLang}
     >
       <Breadcrumb path={path}></Breadcrumb>
-      {mobileBreadcrumb}
+      <MobileBreadcrumb t={t} path={path} />
     </Header>
   );
 };

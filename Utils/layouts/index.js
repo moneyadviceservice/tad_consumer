@@ -113,26 +113,21 @@ const MobileBreadLink = ({ href, name }) => (
   </Link>
 );
 
-const MobileExtended = styled(ExtendedSection)`
-  display: block;
-  border-bottom: none;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  ${resolveMedia.md`
-display: none;
-`};
-`;
-
 const MobileBreadcrumb = ({ t }) => {
-  return (
-    <MobileExtended align="stretch">
-      <Section constrained>
-        <Col style={{ padding: 0 }}>
-          <MobileBreadLink href="/" name={t("mobile")} />
-        </Col>
-      </Section>
-    </MobileExtended>
-  );
+  const pathname = useRouter().pathname;
+
+  if (pathname == "/listings") {
+    return (
+      <MobileExtended align="stretch">
+        <Section constrained>
+          <Col style={{ padding: 0 }}>
+            <MobileBreadLink href="/" name={t("mobile")} />
+          </Col>
+        </Section>
+      </MobileExtended>
+    );
+  }
+  return "";
 };
 
 const Breadcrumb = ({ path, t }) => {
