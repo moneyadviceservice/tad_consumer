@@ -37,14 +37,11 @@ const AppHead = ({ path, t }) => {
       <meta property="og:locale:alternate" content="cy-GB" />
       <meta property="og:description" content={t("head.description")} />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      {/* <meta property="og:video" content="https://youtu.be/aijzHfO0VC8" /> */}
       <link
         rel="shortcut icon"
         type="image/x-icon"
         href="/static/favicon.ico"
       ></link>
-      <link rel="stylesheet" href="/static/accordion.css" />
-      <link rel="stylesheet" href="/static/help.css" />
       <script
         src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
@@ -52,6 +49,7 @@ const AppHead = ({ path, t }) => {
       ></script>
 
       {script}
+
     </Head>
   );
 };

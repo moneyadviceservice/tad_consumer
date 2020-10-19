@@ -1,15 +1,14 @@
 import { Fragment, useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import ReactHtmlParser from "react-html-parser";
-
+import styled from "styled-components";
+// utils
 import { withTranslation } from "../Utils/translation/i18n";
-
+import { Section, ExtendedSection, InternalLink } from "../Utils/layouts";
+// components
 import {
   Col,
   Heading,
   Anchor,
-  Accordion,
-  InfoTable,
   Paragraph,
   resolveMedia,
 } from "@moneypensionservice/directories";
@@ -21,11 +20,10 @@ import {
   YoutubeFrame,
   AboutBox,
 } from "../components/landingPage";
-import { Section, ExtendedSection, InternalLink } from "../Utils/layouts";
 import Title from "../components/title";
-
-import styled from "styled-components";
-
+import BrokerTable from "../components/landingPage/brokerTable";
+import FAQ from "../components/landingPage/faq";
+// PDF
 import { PDFDownloadLink, BlobProvider } from "@react-pdf/renderer";
 import MyDocument from "../components/landingPage/videoTranscript";
 
@@ -41,13 +39,6 @@ const PDFLink = styled(PDFDownloadLink)`
 `;
 
 const Homepage = ({ t }) => {
-  const [activeIndex, changeIndex] = useState();
-
-  const handleClick = (current) => {
-    const newIndex = activeIndex === current ? -1 : current;
-    changeIndex(newIndex);
-  };
-
   const [isClient, setIsClient] = useState(false);
   useEffect(() => {
     setIsClient(true);
@@ -79,7 +70,6 @@ const Homepage = ({ t }) => {
           </ParagraphAnchor>
         </Col>
       </Section>
-
       {/* Questions and quote disclaimer */}
       <ExtendedSection align="stretch" background="#edf0f0">
         <Section constrained data-testid="contentRow">
@@ -110,7 +100,6 @@ const Homepage = ({ t }) => {
           </Col>
         </Section>
       </ExtendedSection>
-
       {/* Youtube Video and FAQs */}
       <ExtendedSection align="stretch">
         <Section constrained data-testid="contentRow">
@@ -131,36 +120,29 @@ const Homepage = ({ t }) => {
                   }
                 </PDFLink>
               )}
-              {/* <Anchor textSize="16px">{t("home.video.transcript")}</Anchor> */}
             </Paragraph>
           </Col>
           <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
             <Heading level={2} color="#006A00">
               {t("home.faqs.heading")}
             </Heading>
-            {t("home.faqs.list", {
-              returnObjects: true,
-            }).map(({ question, answer }, i) => (
-              <Accordion
-                color="#003d8e"
-                titleSize="16px"
-                titleWeight="200"
-                key={i}
-                title={question}
-                active={activeIndex === i}
-                onClick={() => handleClick(i)}
-              >
-                {ReactHtmlParser(answer)}
-              </Accordion>
-            ))}
+            <FAQ
+              locale={t("home.faqs.list", { returnObjects: true })}
+              color="#003d8e"
+              titleSize="16px"
+              titleWeight="200"
+            />
           </Col>
         </Section>
       </ExtendedSection>
-
       {/* Articles and find a broker */}
       <ExtendedSection align="stretch">
         <Section constrained data-testid="contentRow">
-          <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
+          <Col
+            sizes={{ xs: 12, md: 6 }}
+            margin={{ bottom: "2rem" }}
+            data-testid="contentCol"
+          >
             <Heading level={2} color="#006A00">
               {t("home.articles.heading")}
             </Heading>
@@ -173,14 +155,13 @@ const Homepage = ({ t }) => {
             )}
           </Col>
           <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
-            <InfoTable
-              icon
+            <BrokerTable
+              id="need_help"
               margin={{ bottom: "15px" }}
               sizes={{ xs: 12, md: 4 }}
-              title={ReactHtmlParser(t("home.broker.heading"))}
-            >
-              {ReactHtmlParser(t("home.broker.content"))}
-            </InfoTable>
+              title={t("home.broker.heading")}
+              content={t("home.broker.content", { returnObjects: true })}
+            ></BrokerTable>
           </Col>
         </Section>
       </ExtendedSection>

@@ -39,31 +39,74 @@
       "list": [
         {
           "question": "Do I need a specialist travel insurance firm?",
-          "answer": "<article class='accordion'><p>If any of the following apply, then a specialist firm is worth contacting to see if they can offer a better or cheaper deal:</p> <ul ><li >You have been refused travel insurance because of a medical condition.</li> <li>An existing policy has been cancelled or amended because of a medical condition.</li><li >You have been offered insurance, but your medical condition has been excluded.</li><li>You have been offered insurance with a high additional premium because of your medical condition.</li></ul><p >The firms on our Directory specialise in providing travel insurance to people who have serious and/or multiple medical conditions that carry a high risk of needing some form of medical intervention while you are on your trip.  Examples of conditions might be cancer, stroke or serious heart condition, respiratory conditions or conditions that have been diagnosed as terminal.<p >However, different firms have different views on what conditions are ‘high risk’ and its worth trying more than one.</p></article>"
+          "answer": {
+            "paragraphs": [
+              "If any of the following apply, then a specialist firm is worth contacting to see if they can offer a better or cheaper deal: ",
+              "The firms on our Directory specialise in providing travel insurance to people who have serious and/or multiple medical conditions that carry a high risk of needing some form of medical intervention while you are on your trip. Examples of conditions might be cancer, stroke or serious heart condition, respiratory conditions or conditions that have been diagnosed as terminal.",
+              "However, different firms have different views on what conditions are ‘high risk’ and its worth trying more than one."
+            ],
+            "listItems": [
+              "You have been refused travel insurance because of a medical condition.",
+              "An existing policy has been cancelled or amended because of a medical condition.",
+              "You have been offered insurance, but your medical condition has been excluded.",
+              "You have been offered insurance with a high additional premium because of your medical condition."
+            ]
+          }
         },
         {
           "question": "What if I haven't been offered insurance yet?",
-          "answer": "<article class='accordion'><p>Then it’s worth trying a mainstream provider AND a couple of specialists to compare prices and cover offered. You can do this yourself – or you can ask an Insurance Broker to help you. The box at the bottom of this screen <a href='#need_help'>Need help shopping around?</a> will tell you how.</p></article>"
+          "answer": {
+            "paragraphs": [
+              "Then it’s worth trying a mainstream provider AND a couple of specialists to compare prices and cover offered. You can do this yourself – or you can ask an Insurance Broker to help you. The box at the bottom of this screen",
+              "will tell you how."
+            ],
+            "needHelp": "Need help shopping around?"
+          }
         },
         {
           "question": "Will I definitely be offered insurance at a lower cost?",
-          "answer": "<article class='accordion'><p>We can’t promise that, but it is worth trying the specialists on our Directory if you are unhappy with the insurance (or the cost of the insurance) you have already been offered, or if you have been declined.</p><p>If you haven’t been offered any insurance yet, then it’s worth trying a mainstream provider AND a couple of the specialists to compare prices and cover offered.  If you need help with this see the box at the bottom of the screen <a href='#need_help'>Need help shopping around?</a></p></article>"
+          "answer": {
+            "paragraphs": [
+              "We can’t promise that, but it is worth trying the specialists on our Directory if you are unhappy with the insurance (or the cost of the insurance) you have already been offered, or if you have been declined.",
+              "If you haven’t been offered any insurance yet, then it’s worth trying a mainstream provider AND a couple of the specialists to compare prices and cover offered. If you need help with this see the box at the bottom of the screen"
+            ],
+            "needHelp": "Need help shopping around?"
+          }
         },
         {
           "question": "I’m travelling with someone who doesn’t have a serious medical condition",
-          "answer": "<article class='accordion'><p>Almost certainly they will be able to get travel insurance cheaper through a mainstream provider.  However, there are two possible problems with that.</p><p>Firstly, if you have to cancel your trip because of your medical condition, the cost of your trip will be fully covered by the insurance – but theirs may not be.  If your travelling companion(s) take out separate insurance, they should read the cancellation terms very carefully.</p><p>Secondly, if you need medical attention while you are away and need to be relocated – or even brought home – any additional costs for you will be covered by the insurance.  However, this won’t be the case for anyone travelling with you. Again, read the terms and conditions very carefully.</p></article>"
+          "answer": {
+            "paragraphs": [
+              "Almost certainly they will be able to get travel insurance cheaper through a mainstream provider.  However, there are two possible problems with that.",
+              "Firstly, if you have to cancel your trip because of your medical condition, the cost of your trip will be fully covered by the insurance – but theirs may not be. If your travelling companion(s) take out separate insurance, they should read the cancellation terms very carefully.",
+              "Secondly, if you need medical attention while you are away and need to be relocated – or even brought home – any additional costs for you will be covered by the insurance. However, this won’t be the case for anyone travelling with you. Again, read the terms and conditions very carefully."
+            ]
+          }
         },
         {
           "question": "I’m taking out insurance on behalf of someone else",
-          "answer": "<article class='accordion'><p>That’s fine.  Just answer the questions using the information for the person travelling.  Firms on the Directory are likely to ask you if you have permission to share information on the other person’s behalf and your relationship to them (for example if you are a spouse or parent or carer).   If it’s possible for the person you are acting on behalf of to be with you when you are telephoning specialist firms, that will help to speed things up.</p></article>"
+          "answer": {
+            "paragraphs": [
+              "That’s fine. Just answer the questions using the information for the person travelling. Firms on the Directory are likely to ask you if you have permission to share information on the other person’s behalf and your relationship to them (for example if you are a spouse or parent or carer). If it’s possible for the person you are acting on behalf of to be with you when you are telephoning specialist firms, that will help to speed things up."
+            ]
+          }
         },
         {
           "question": "Why is it more expensive to get travel insurance to cover some medical conditions?",
-          "answer": "<article class='accordion'><p>There are a number of factors that insurers take into account when working out how much you have to pay.  For example, the cost of medical treatment can be more in some countries than in others (Spain, United States and Canada are among the more expensive countries).   Insurers will also consider the type and severity of your medical condition(s) and how long you intend to be away.  Your age will also play a part.</p><p>The only way to check that you are getting a good deal is to get quotations from more than one firm.  Unfortunately, it can be quite lengthy going through the full underwriting process but don’t be put off by this.  Most firms offer ‘quick quotes’ where you can talk to someone and provide high-level information regarding your condition and get an idea of cost.</article></p>"
+          "answer": {
+            "paragraphs": [
+              "There are a number of factors that insurers take into account when working out how much you have to pay. For example, the cost of medical treatment can be more in some countries than in others (Spain, United States and Canada are among the more expensive countries). Insurers will also consider the type and severity of your medical condition(s) and how long you intend to be away.  Your age will also play a part.",
+              "The only way to check that you are getting a good deal is to get quotations from more than one firm. Unfortunately, it can be quite lengthy going through the full underwriting process but don’t be put off by this. Most firms offer ‘quick quotes’ where you can talk to someone and provide high-level information regarding your condition and get an idea of cost."
+            ]
+          }
         },
         {
           "question": "What is medical screening?",
-          "answer": "<article class='accordion'><p>Most firms that provide travel insurance for people with serious medical conditions use a medical screening company. You will be asked questions about your condition(s) and the medication you are taking.  The answers you give will decide whether you will be offered travel insurance and the price you will be asked to pay. Travel insurance providers use different medical screeners and you may get a different decision or price depending on which medical screener considers your application.  So, if you are asking for quotes from more than one travel insurance provider, choose firms that link to different medical screeners. We've given the name of the medical screening company used by each firm to make this easier for you.</article></p>"
+          "answer": {
+            "paragraphs": [
+              "Most firms that provide travel insurance for people with serious medical conditions use a medical screening company. You will be asked questions about your condition(s) and the medication you are taking. The answers you give will decide whether you will be offered travel insurance and the price you will be asked to pay. Travel insurance providers use different medical screeners and you may get a different decision or price depending on which medical screener considers your application. So, if you are asking for quotes from more than one travel insurance provider, choose firms that link to different medical screeners. We've given the name of the medical screening company used by each firm to make this easier for you."
+            ]
+          }
         }
       ]
     },
@@ -90,8 +133,15 @@
       ]
     },
     "broker": {
-      "heading": "<a id='need_help'>Need help shopping around?</a>",
-      "content": "<section class='help'><p>If you haven't had any quotes yet and are at the start of your search for travel insurance, the British Insurance Brokers' Association (BIBA) have a service which links you to an insurance broker who can do the shopping around for you.  A broker can find you the best deal from both mainstream and specialist travel insurance providers and provide support if you have to make a claim.</p><br/><p class='help__intouch'><b>Get in touch :<b/><br/><br/></p><img src='/assets/Images/phone.svg'/> <span class='help__tel'><a  href='tel:0370 950 1790'>0370 950 1790</a></span><p class='help__opening'> &#40;Mon - Fri 9:00 am to 5:00 pm&#41;</p><p class='help__icon'><img src='/assets/Images/web.svg'/><span class='help__web'> <a  href='https://insurance.biba.org.uk/find-insurance' target='_blank'>Website</a></span></p></section>"
+      "heading": "Need help shopping around?",
+      "content": {
+        "description": "If you haven't had any quotes yet and are at the start of your search for travel insurance, the British Insurance Brokers' Association (BIBA) have a service which links you to an insurance broker who can do the shopping around for you.  A broker can find you the best deal from both mainstream and specialist travel insurance providers and provide support if you have to make a claim.",
+        "getInTouch": "Get in touch:",
+        "telNumber": "0370 950 1790",
+        "openingHours": "(Mon - Fri 9:00 am to 5:00)",
+        "website": "Website",
+        "url": "https://insurance.biba.org.uk/find-insurance"
+      }
     },
     "transcript": {
       "topHeading": "Script for Travel Insurance Directory",
