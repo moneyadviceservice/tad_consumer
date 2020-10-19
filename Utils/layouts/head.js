@@ -13,6 +13,21 @@ const AppHead = ({ path, t }) => {
     pageTitle = t("head.page.landing");
   }
 
+  const script = process.browser ? (
+    <script
+      dangerouslySetInnerHTML={{
+        __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WVFLH9');
+    `,
+      }}
+    />
+  ) : (
+    ""
+  );
+
   return (
     <Head>
       <title>
@@ -22,12 +37,19 @@ const AppHead = ({ path, t }) => {
       <meta property="og:locale:alternate" content="cy-GB" />
       <meta property="og:description" content={t("head.description")} />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      {/* <meta property="og:video" content="https://youtu.be/aijzHfO0VC8" /> */}
       <link
         rel="shortcut icon"
         type="image/x-icon"
         href="/static/favicon.ico"
       ></link>
+      <script
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+        crossorigin="anonymous"
+      ></script>
+
+      {script}
+
     </Head>
   );
 };

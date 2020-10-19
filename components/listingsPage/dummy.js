@@ -87,7 +87,6 @@ export const ClearButton = styled.span`
 export const FormDiv = styled.div`
   border: 1px solid #edf0f0;
   padding: 0 18px 18px;
-
   display: ${(props) => (props.isMobile === true ? "none" : "block")};
   ${resolveMedia.md`
     display: block

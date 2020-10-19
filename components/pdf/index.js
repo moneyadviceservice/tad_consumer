@@ -56,11 +56,13 @@ const MyDocument = ({ firms, t }) => {
       >
         <Heading>{t("download.title")}</Heading>
         <TableHeadView>
-          <TableHeadText style={{ width: "38%" }}>
-            {t("download.header.name")}
+          <TableHeadText>{t("download.header.name")}</TableHeadText>
+          <TableHeadText
+            style={{ width: "40%", whiteSpace: "nowrap", hyphens: "none" }}
+          >
+            {t("download.header.website")}
           </TableHeadText>
-          <TableHeadText>{t("download.header.website")}</TableHeadText>
-          <TableHeadText style={{ width: "12%" }}>
+          <TableHeadText style={{ width: "10%" }}>
             {t("download.header.phone")}
           </TableHeadText>
           <TableHeadText>{t("download.header.email")}</TableHeadText>
@@ -69,9 +71,17 @@ const MyDocument = ({ firms, t }) => {
           firms.hits.map((firm, i) => {
             return (
               <RowView key={i}>
-                <RowText style={{ width: "38%" }}>{firm.company}</RowText>
-                <RowText>{firm.online.website}</RowText>
-                <RowText style={{ width: "12%" }}>{firm.online.phone}</RowText>
+                <RowText>{firm.company}</RowText>
+                <RowText
+                  style={{
+                    width: "40%",
+                    whiteSpace: "nowrap",
+                    hyphens: "none",
+                  }}
+                >
+                  {firm.online.website}
+                </RowText>
+                <RowText style={{ width: "10%" }}>{firm.online.phone}</RowText>
                 <RowText>{firm.online.email}</RowText>
               </RowView>
             );
