@@ -90,7 +90,7 @@ const MobileExtended = styled(ExtendedSection)`
   display: block;
   border-bottom: none;
   padding-top: 15px;
-  padding-bottom: 15px;
+  padding-bottom: 0;
   ${resolveMedia.md`
     display: none;
 `};
