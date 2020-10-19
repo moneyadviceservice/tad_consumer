@@ -13,12 +13,23 @@ const Paragraph = styled.p`
   margin-top: 10px;
   padding: 0 10px 0;
 `;
-const ListItem = styled.li`
-  margin-bottom: 5px;
-`;
 const List = styled.ul`
   margin-left: 30px;
-  list-style-type: disc;
+  list-style-type: none;
+`;
+const ListItem = styled.li`
+  margin-bottom: 5px;
+
+  &:before {
+    content: "\\2022 ";
+    color: #006a00;
+    display: block;
+    position: relative;
+    width: 0;
+    height: 0;
+    left: -20px;
+    top: -1px;
+  }
 `;
 const Anchor = styled.a`
   color: #003d8e;
@@ -47,6 +58,7 @@ const ArticleContent = ({ answer, index }) => {
       </Fragment>
     );
   } else if (index === 1) {
+    // second tab
     return (
       <Fragment>
         <Paragraph>
@@ -57,6 +69,7 @@ const ArticleContent = ({ answer, index }) => {
       </Fragment>
     );
   } else if (index === 2) {
+    // third tab
     return (
       <Fragment>
         <Paragraph>{paragraphs[0]}</Paragraph>
@@ -67,22 +80,9 @@ const ArticleContent = ({ answer, index }) => {
       </Fragment>
     );
   } else {
-    return paragraphs.map(
-      (paragraph, i) => <Paragraph key={i}>{paragraph}</Paragraph>
-      /** 
-      needHelp && paragraphs.length === i + 1 ? (
-        // insert need help anchor in the end of last paragraph
-        <Fragment key={i}>
-          <Paragraph>
-            {`${paragraph} `}
-            <Anchor href="#need_help">{needHelp}</Anchor>
-          </Paragraph>
-        </Fragment>
-      ) : (
-        <Paragraph key={i}>{paragraph}</Paragraph>
-      )
-      */
-    );
+    return paragraphs.map((paragraph, i) => (
+      <Paragraph key={i}>{paragraph}</Paragraph>
+    ));
   }
 };
 
