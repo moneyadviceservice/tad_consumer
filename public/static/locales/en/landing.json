@@ -57,7 +57,8 @@
           "question": "What if I haven't been offered insurance yet?",
           "answer": {
             "paragraphs": [
-              "Then it’s worth trying a mainstream provider AND a couple of specialists to compare prices and cover offered. You can do this yourself – or you can ask an Insurance Broker to help you. The box at the bottom of this screen will tell you how."
+              "Then it’s worth trying a mainstream provider AND a couple of specialists to compare prices and cover offered. You can do this yourself – or you can ask an Insurance Broker to help you. The box at the bottom of this screen",
+              "will tell you how."
             ],
             "needHelp": "Need help shopping around?"
           }
@@ -67,7 +68,7 @@
           "answer": {
             "paragraphs": [
               "We can’t promise that, but it is worth trying the specialists on our Directory if you are unhappy with the insurance (or the cost of the insurance) you have already been offered, or if you have been declined.",
-              "If you haven’t been offered any insurance yet, then it’s worth trying a mainstream provider AND a couple of the specialists to compare prices and cover offered. If you need help with this see the box at the bottom of the screen."
+              "If you haven’t been offered any insurance yet, then it’s worth trying a mainstream provider AND a couple of the specialists to compare prices and cover offered. If you need help with this see the box at the bottom of the screen"
             ],
             "needHelp": "Need help shopping around?"
           }

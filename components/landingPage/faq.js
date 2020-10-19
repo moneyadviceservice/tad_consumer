@@ -33,7 +33,7 @@ const ArticleContent = ({ answer, index }) => {
   const { paragraphs, listItems, needHelp } = answer;
 
   if (index === 0) {
-    // fist faq with list
+    // first faq with list
     return (
       <Fragment>
         <Paragraph>{paragraphs[0]}</Paragraph>
@@ -46,8 +46,30 @@ const ArticleContent = ({ answer, index }) => {
         <Paragraph>{paragraphs[2]}</Paragraph>
       </Fragment>
     );
+  } else if (index === 1) {
+    return (
+      <Fragment>
+        <Paragraph>
+          {`${paragraphs[0]} `}
+          <Anchor href="#need_help">{needHelp}</Anchor>
+          {` ${paragraphs[1]}`}
+        </Paragraph>
+      </Fragment>
+    );
+  } else if (index === 2) {
+    return (
+      <Fragment>
+        <Paragraph>{paragraphs[0]}</Paragraph>
+        <Paragraph>
+          {`${paragraphs[1]} `}
+          <Anchor href="#need_help">{needHelp}</Anchor>
+        </Paragraph>
+      </Fragment>
+    );
   } else {
-    return paragraphs.map((paragraph, i) =>
+    return paragraphs.map(
+      (paragraph, i) => <Paragraph key={i}>{paragraph}</Paragraph>
+      /** 
       needHelp && paragraphs.length === i + 1 ? (
         // insert need help anchor in the end of last paragraph
         <Fragment key={i}>
@@ -59,6 +81,7 @@ const ArticleContent = ({ answer, index }) => {
       ) : (
         <Paragraph key={i}>{paragraph}</Paragraph>
       )
+      */
     );
   }
 };

@@ -138,7 +138,11 @@ const Homepage = ({ t }) => {
       {/* Articles and find a broker */}
       <ExtendedSection align="stretch">
         <Section constrained data-testid="contentRow">
-          <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
+          <Col
+            sizes={{ xs: 12, md: 6 }}
+            margin={{ bottom: "2rem" }}
+            data-testid="contentCol"
+          >
             <Heading level={2} color="#006A00">
               {t("home.articles.heading")}
             </Heading>
@@ -154,7 +158,6 @@ const Homepage = ({ t }) => {
             <BrokerTable
               id="need_help"
               margin={{ bottom: "15px" }}
-              padding="25px"
               sizes={{ xs: 12, md: 4 }}
               title={t("home.broker.heading")}
               content={t("home.broker.content", { returnObjects: true })}

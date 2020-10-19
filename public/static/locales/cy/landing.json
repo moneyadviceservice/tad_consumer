@@ -57,7 +57,8 @@
           "question": "Beth os na chynigiwyd yswiriant i mi eto?",
           "answer": {
             "paragraphs": [
-              "Yna mae'n werth rhoi cynnig ar ddarparwr prif ffrwd A chwpl o arbenigwyr i gymharu prisiau a'r yswiriant a gynigir. Gallwch wneud hyn eich hun - neu gallwch ofyn i Brocer Yswiriant eich helpu. Bydd y blwch ar waelod y sgrin hon yn dweud wrthych sut."
+              "Yna mae'n werth rhoi cynnig ar ddarparwr prif ffrwd A chwpl o arbenigwyr i gymharu prisiau a'r yswiriant a gynigir. Gallwch wneud hyn eich hun - neu gallwch ofyn i Brocer Yswiriant eich helpu. Bydd y blwch ar waelod y sgrin hon",
+              "yn dweud wrthych sut."
             ],
             "needHelp": "Angen help i siopa o amgylch?"
           }
