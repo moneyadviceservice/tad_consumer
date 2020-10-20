@@ -36,7 +36,7 @@ const AppHead = ({ path, t }) => {
       <meta property="og:locale:alternate" content="en-GB" />
       <meta property="og:locale:alternate" content="cy-GB" />
       <meta property="og:description" content={t("head.description")} />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <link
         rel="shortcut icon"
         type="image/x-icon"
@@ -45,11 +45,10 @@ const AppHead = ({ path, t }) => {
       <script
         src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
-        crossorigin="anonymous"
+        crossOrigin="anonymous"
       ></script>
 
       {script}
-
     </Head>
   );
 };
