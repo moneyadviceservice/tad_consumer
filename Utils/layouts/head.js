@@ -33,8 +33,8 @@ const AppHead = ({ path, t }) => {
       <title>
         {t("head.sub_title")} | {pageTitle}
       </title>
-      <meta property="og:locale:alternate" content="en-GB" />
-      <meta property="og:locale:alternate" content="cy-GB" />
+      <meta property="og:locale:alternate" content="en" />
+      <meta property="og:locale:alternate" content="cy" />
       <meta property="og:description" content={t("head.description")} />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <link
