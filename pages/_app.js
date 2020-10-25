@@ -4,7 +4,7 @@ import withReduxStore from "../redux/with-redux-store";
 import { Provider } from "react-redux";
 
 import { appWithTranslation } from "../Utils/translation/i18n";
-import Header from "../components/header";
+import Header from "../components/header/Index";
 import Footer from "../components/footer/";
 import Head from "../Utils/layouts/head";
 

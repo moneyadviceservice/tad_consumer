@@ -19,13 +19,13 @@ import {
   QuestionButton,
   YoutubeFrame,
   AboutBox,
-} from "../components/landingPage";
+} from "../components/landingPage/Index";
 import Title from "../components/title";
-import BrokerTable from "../components/landingPage/brokerTable";
-import FAQ from "../components/landingPage/faq";
+import BrokerTable from "../components/landingPage/BrokerTable";
+import FAQ from "../components/landingPage/FAQ";
 // PDF
 import { PDFDownloadLink, BlobProvider } from "@react-pdf/renderer";
-import MyDocument from "../components/landingPage/videoTranscript";
+import MyDocument from "../components/landingPage/VideoTranscript";
 
 const PDFLink = styled(PDFDownloadLink)`
   font-size: 16px;
