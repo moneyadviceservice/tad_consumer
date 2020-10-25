@@ -4,6 +4,9 @@ import Homepage from "../../pages/index";
 import { QuestionButton } from "./index";
 import { findByTestAtrr, checkProps } from "../../Utils/test";
 import { InternalLink } from "../../Utils/layouts";
+import FAQ from "./faq"
+import BrokerTable from "./brokerTable"
+import Title from "../title"
 
 jest.mock("react-i18next", () => ({
   withTranslation: () => (Component) => {
@@ -23,7 +26,10 @@ describe("HomePage", () => {
     wrapper.unmount();
   });
 
+  
+
   it("should contain 4 rows", () => {
+   
     const component = findByTestAtrr(wrapper, "contentRow");
     expect(component.length).toBe(4);
   });
@@ -38,5 +44,15 @@ describe("HomePage", () => {
       linkButton.findWhere((node) => node.prop("href") === "/listings")
     ).toHaveLength(1);
   });
+
+  it("should render FAQ component", ()=> {
+    expect(wrapper.containsMatchingElement(<FAQ />)).toEqual(true);
+  })
+  it("should render BrokerTable component", ()=> {
+    expect(wrapper.containsMatchingElement(<BrokerTable />)).toEqual(true);
+  })
+  it("should render Title component", ()=> {
+    expect(wrapper.containsMatchingElement(<Title />)).toEqual(true);
+  })
 
 });
