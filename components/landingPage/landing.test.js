@@ -7,6 +7,7 @@ import { InternalLink } from "../../Utils/layouts";
 import FAQ from "./FAQ"
 import BrokerTable from "./BrokerTable"
 import Title from "../title"
+import { Anchor } from "@moneypensionservice/directories"
 
 jest.mock("react-i18next", () => ({
   withTranslation: () => (Component) => {
@@ -38,6 +39,20 @@ describe("HomePage", () => {
     const component = findByTestAtrr(wrapper, "contentCol");
     expect(component.length).toBe(8);
   });
+  it("should render Firms Login/Logout Anchor", () => {
+    expect(wrapper.find(Anchor)).toHaveLength(2);
+  })
+
+  it("firms' register anchor should contain correct href", () => {
+    expect(
+      wrapper.findWhere((node) => node.prop("href") === "https://radsignup.moneyadviceservice.org.uk/travel_insurance_registrations/new")
+    ).toHaveLength(1);
+  })
+  it("firms' login anchor should contain correct href", () => {
+    expect(
+      wrapper.findWhere((node) => node.prop("href") === "https://radsignup.moneyadviceservice.org.uk/users/sign_in")
+    ).toHaveLength(1);
+  })
   it("should have a button with href pointing to /listings ", () => {
     const linkButton = wrapper.find(InternalLink);
     expect(
