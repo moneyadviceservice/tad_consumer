@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 
 import withReduxStore from "../redux/with-redux-store";
-import { Provider } from "react-redux";
+import { Provider,  } from "react-redux";
 
 import { appWithTranslation } from "../Utils/translation/i18n";
 import Header from "../components/header/Index";
@@ -65,3 +65,4 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
 };
 
 export default withReduxStore(appWithTranslation(MyApp));
+export { MyApp }

@@ -8,7 +8,7 @@ const Listing = ({ t }) => {
   return (
     <Fragment>
       <Col sizes={{ xs: 12, md: 4 }}>
-        <Filters t={t} />
+        <Filters />
       </Col>
       <Col sizes={{ xs: 12, md: 8 }}>
         <Results t={t} />

@@ -562,4 +562,5 @@ const Filters = ({ t }) => {
   );
 };
 
-export default Filters;
+export default withTranslation("listings", "common", "footer")(Filters);
+export { Filters }
