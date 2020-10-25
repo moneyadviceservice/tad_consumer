@@ -4,6 +4,7 @@ import Listings from "../../pages/listings";
 import Filters from "./Filters";
 import Results from "./Results"
 import Listing from "./Index";
+import Title from "../title"
 
 import { findByTestAtrr} from "../../Utils/test";
 
@@ -33,6 +34,9 @@ import { findByTestAtrr} from "../../Utils/test";
           const listingRows = findByTestAtrr(listings, "contentRow");
           expect(listingRows.length).toBe(2);
         });
+        it("should render Title component", ()=> {
+            expect(listings.containsMatchingElement(<Title />)).toEqual(true);
+          })
       
       });
       
@@ -54,6 +58,7 @@ import { findByTestAtrr} from "../../Utils/test";
           it("renders Results component", ()=> {
             expect(listing.containsMatchingElement(<Results />)).toEqual(true);
           })
+          
       
         
         });
