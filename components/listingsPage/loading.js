@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { DummyCard, CompanyName, SubHead, CommsInfo, Comms } from "./dummy";
+import { DummyCard, CompanyName, SubHead, CommsInfo, Comms } from "./utils";
 import { withTranslation } from "../../Utils/translation/i18n";
 import { Col, Row } from "@moneypensionservice/directories";
 

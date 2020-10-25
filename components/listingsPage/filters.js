@@ -23,7 +23,7 @@ import {
   FilterFormFIeld,
   Legend,
   TooltipText,
-} from "./dummy";
+} from "./utils";
 const SingleTrip = styled.div`
   display: ${(props) => (props.single ? "block" : "none")};
 `;

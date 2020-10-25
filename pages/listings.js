@@ -5,7 +5,7 @@ import { withTranslation } from "../Utils/translation/i18n";
 import styled from "styled-components";
 import { Col, Heading, resolveMedia } from "@moneypensionservice/directories";
 import { Section, ExtendedSection } from "../Utils/layouts";
-import { randomizeResult } from "../components/listingsPage/dummy";
+import { randomizeResult } from "../components/listingsPage/utils";
 import Title from "../components/title";
 
 import {
@@ -13,7 +13,7 @@ import {
   getAlgoOfferings,
 } from "../components/listingsPage/redux/actions";
 
-import Listing from "../components/listingsPage";
+import Listing from "../components/listingsPage/Index";
 
 const ListingSection = styled(Section)`
   padding: 0;

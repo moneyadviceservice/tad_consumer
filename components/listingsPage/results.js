@@ -12,8 +12,8 @@ import { i18n } from "../../Utils/translation/i18n";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import MyDocument from "../pdf";
-import Loading from "./loading";
+import MyDocument from "./Print";
+import Loading from "./Loading";
 import styled from "styled-components";
 
 const PDFLink = styled(PDFDownloadLink)`

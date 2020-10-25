@@ -1,9 +1,9 @@
 import Enzyme, { shallow } from "enzyme";
 
 import Listings from "../../pages/listings";
-import Filters from "./filters";
-import Results from "./results"
-import Listing from "./index";
+import Filters from "./Filters";
+import Results from "./Results"
+import Listing from "./Index";
 
 import { findByTestAtrr} from "../../Utils/test";
 
