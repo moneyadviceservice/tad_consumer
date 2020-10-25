@@ -11,6 +11,7 @@ import {
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { filterOfferings } from "./redux/actions";
+import { withTranslation } from "../../Utils/translation/i18n";
 import {
   ageRange,
   Select,
@@ -92,7 +93,7 @@ const Filters = ({ t }) => {
 
   const dispatch = useDispatch();
 
-  const offerings = useSelector((state) => state.listings.offerings.hits);
+  // const offerings = useSelector((state) => state.listings.offerings.hits);
 
   // google tagging
   const tag = (e) => {
@@ -241,7 +242,7 @@ const Filters = ({ t }) => {
   };
 
   return (
-    <Form style={{ marginBottom: "40px", color: "#515151" }}>
+    <form style={{ marginBottom: "40px", color: "#515151" }}>
       <ExtHeading level={3} style={{}}>
         <ToggleIcon onClick={(e) => handleMobile(e)}>
           {mobile && mobile === true ? "+" : "-"}
@@ -557,7 +558,7 @@ const Filters = ({ t }) => {
           </Button>
         )}
       </FormDiv>
-    </Form>
+    </form>
   );
 };
 

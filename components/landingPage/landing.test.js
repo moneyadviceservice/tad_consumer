@@ -1,4 +1,4 @@
-import { shallow } from "enzyme";
+import { shallow, render, mount } from "enzyme";
 
 import Homepage from "../../pages/index";
 import { QuestionButton } from "./index";
@@ -38,4 +38,5 @@ describe("HomePage", () => {
       linkButton.findWhere((node) => node.prop("href") === "/listings")
     ).toHaveLength(1);
   });
+
 });

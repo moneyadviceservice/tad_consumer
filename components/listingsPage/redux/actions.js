@@ -38,6 +38,7 @@ export const getOfferingsSuccess = (offerings) => ({
 });
 
 export const filterOfferings = (pool) => {
+  console.log(pool)
   return (dispatch, getState) => {
     // get data from the state
     const offerings = getState().listings.offerings.hits;

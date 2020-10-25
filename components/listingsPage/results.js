@@ -176,4 +176,5 @@ const Results = ({ t }) => {
     </div>
   );
 };
+
 export default Results;
