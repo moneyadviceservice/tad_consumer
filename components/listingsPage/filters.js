@@ -152,6 +152,8 @@ const Filters = ({ t }) => {
     dispatch(filterOfferings(filtersValues));
   }, [filtersValues]);
 
+  console.log(filtersValues)
+
   const handleAge = (e) => {
     tag(e);
     let age = e.target.value;
@@ -242,7 +244,7 @@ const Filters = ({ t }) => {
   };
 
   return (
-    <form style={{ marginBottom: "40px", color: "#515151" }}>
+    <Form style={{ marginBottom: "40px", color: "#515151" }}>
       <ExtHeading level={3} style={{}}>
         <ToggleIcon onClick={(e) => handleMobile(e)}>
           {mobile && mobile === true ? "+" : "-"}
@@ -558,7 +560,7 @@ const Filters = ({ t }) => {
           </Button>
         )}
       </FormDiv>
-    </form>
+    </Form>
   );
 };
 

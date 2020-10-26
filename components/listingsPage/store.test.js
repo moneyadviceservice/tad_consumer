@@ -9,9 +9,16 @@ import expect from 'expect'
 const middlewares = [thunk]
 const mockStore = configureMockStore(middlewares)
 
+const filterValues = [
+    {trip_type: "Single Trip"},
+    {singleOption: "30"},
+    {cover_area: "Worldwide including USA, Canada & Caribbean"}
+]
+
 const firms = [
     {
         id : 21,
+        offering_ids: [1],
         company:"Test 1 Insurance Company",
         online: {
             website: "test1.com",
@@ -21,6 +28,7 @@ const firms = [
     },
     {
         id : 22,
+        offering_ids: [2],
         company:"Test 2 Insurance Company",
         online: {
             website: "test2.com",
@@ -32,6 +40,7 @@ const firms = [
 
 const offerings = [
     {
+        objectID: "1",
         trip_type: ['Single Trip'],
         cover_area: "Worldwide including USA, Canada & Caribbean",
         land_30_days_max_age: 1000,
@@ -41,6 +50,7 @@ const offerings = [
 
     },
     {
+        objectID: "2",
         trip_type: ['Annual Multi Trip'],
         cover_area: "UK & Europe",
         land_30_days_max_age: 98,
@@ -70,6 +80,34 @@ describe("Actions Tests", ()=>{
             }
             expect(actions.getOfferingsSuccess(offerings)).toEqual(expectedAction)
           })
+
+        it("should filter and return firms", () => {
+            const store = mockStore({
+                listings: {
+                    offerings: { hits: offerings},
+                    firms: { hits: firms}
+            }
+            })
+          
+            const expectedActions = [
+                {type: types.FILTER_OFFERING, payload: [{
+                    id: 21,
+                    offering_ids: [ 1 ],
+                    company: 'Test 1 Insurance Company',
+                    online: {
+                      website: 'test1.com',
+                      email: 'test1@tes12.com',
+                      phone: '083736333535'
+                    }
+                  }]}
+                
+              ]
+           
+            store.dispatch(actions.filterOfferings(filterValues))
+            expect(store.getActions()).toEqual(expectedActions)
+           
+
+        })
 })
 
 describe("Reducers Tests", ()=> {
