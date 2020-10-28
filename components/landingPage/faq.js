@@ -3,12 +3,12 @@ import styled from "styled-components";
 import { Accordion } from "@moneypensionservice/directories";
 
 // styled components
-const Article = styled.article`
+const FAQArticle = styled.article`
   font-size: 1rem;
   color: #515151;
   line-height: 1.5rem;
 `;
-const Paragraph = styled.p`
+const FAQParagraph = styled.p`
   margin-bottom: 10px;
   margin-top: 10px;
   padding: 0 10px 0;
@@ -47,41 +47,41 @@ const ArticleContent = ({ answer, index }) => {
     // first faq with list
     return (
       <Fragment>
-        <Paragraph>{paragraphs[0]}</Paragraph>
+        <FAQParagraph>{paragraphs[0]}</FAQParagraph>
         <List>
           {listItems.map((item, i) => (
             <ListItem key={i}>{item}</ListItem>
           ))}
         </List>
-        <Paragraph>{paragraphs[1]}</Paragraph>
-        <Paragraph>{paragraphs[2]}</Paragraph>
+        <FAQParagraph>{paragraphs[1]}</FAQParagraph>
+        <FAQParagraph>{paragraphs[2]}</FAQParagraph>
       </Fragment>
     );
   } else if (index === 1) {
     // second tab
     return (
       <Fragment>
-        <Paragraph>
+        <FAQParagraph>
           {`${paragraphs[0]} `}
           <Anchor href="#need_help">{needHelp}</Anchor>
           {` ${paragraphs[1]}`}
-        </Paragraph>
+        </FAQParagraph>
       </Fragment>
     );
   } else if (index === 2) {
     // third tab
     return (
       <Fragment>
-        <Paragraph>{paragraphs[0]}</Paragraph>
-        <Paragraph>
+        <FAQParagraph>{paragraphs[0]}</FAQParagraph>
+        <FAQParagraph>
           {`${paragraphs[1]} `}
           <Anchor href="#need_help">{needHelp}</Anchor>
-        </Paragraph>
+        </FAQParagraph>
       </Fragment>
     );
   } else {
     return paragraphs.map((paragraph, i) => (
-      <Paragraph key={i}>{paragraph}</Paragraph>
+      <FAQParagraph key={i}>{paragraph}</FAQParagraph>
     ));
   }
 };
@@ -103,9 +103,9 @@ const FAQ = ({ locale, ...rest }) => {
       onClick={() => handleClick(i)}
       {...rest}
     >
-      <Article>
+      <FAQArticle>
         <ArticleContent answer={answer} index={i} />
-      </Article>
+      </FAQArticle>
     </Accordion>
   ));
 };
