@@ -13,7 +13,7 @@ import {
   getAlgoOfferings,
 } from "../components/listingsPage/redux/actions";
 
-import Listing from "../components/listingsPage/Index";
+import Listing from "../components/listingsPage";
 
 const ListingSection = styled(Section)`
   padding: 0;
