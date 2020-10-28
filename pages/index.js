@@ -21,10 +21,9 @@ import {
   AboutBox,
 } from "../components/landingPage";
 import Title from "../components/title";
-import BrokerTable from "../components/landingPage/BrokerTable";
+import {BrokerTable} from "../components/landingPage/BrokerTable";
 import FAQ from "../components/landingPage/FAQ";
-// PDF
-import { PDFDownloadLink, BlobProvider } from "@react-pdf/renderer";
+import { PDFDownloadLink} from "@react-pdf/renderer";
 import MyDocument from "../components/landingPage/VideoTranscript";
 
 const PDFLink = styled(PDFDownloadLink)`
