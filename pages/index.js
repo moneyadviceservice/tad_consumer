@@ -20,7 +20,7 @@ import {
   YoutubeFrame,
   AboutBox,
   BrokerTable
-} from "../components/landingPage";
+} from "../components/landingPage/Parts";
 import Title from "../components/title";
 import FAQ from "../components/landingPage/FAQ";
 import { PDFDownloadLink} from "@react-pdf/renderer";

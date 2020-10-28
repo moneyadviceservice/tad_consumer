@@ -128,6 +128,8 @@ const BrokerTable = ({ content, ...rest }) => (
   </InfoTable>
 );
 
+
+
 export {
   ParagraphAnchor,
   UnorderedList,
