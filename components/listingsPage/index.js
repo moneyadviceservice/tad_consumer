@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 
-import Filters from "./Filters";
-import Results from "./Results";
+import Filters from "./filters";
+import Results from "./results";
 import { Col } from "@moneypensionservice/directories";
 
 const Listing = ({ t }) => {

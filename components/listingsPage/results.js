@@ -15,7 +15,7 @@ import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import MyDocument from "./Print";
-import Loading from "./Loading";
+import Loading from "./loading";
 import styled from "styled-components";
 
 const PDFLink = styled(PDFDownloadLink)`

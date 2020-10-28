@@ -24,7 +24,7 @@ import {
 import Title from "../components/title";
 import {FAQ }from "../components/landingPage/faq";
 import { PDFDownloadLink} from "@react-pdf/renderer";
-import MyDocument from "../components/landingPage/VideoTranscript";
+import MyDocument from "../components/landingPage/videoTranscript";
 
 const PDFLink = styled(PDFDownloadLink)`
   font-size: 16px;
