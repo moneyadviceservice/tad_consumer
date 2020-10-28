@@ -7,6 +7,8 @@ import {
   CompanyCard,
   resolveMedia,
 } from "@moneypensionservice/directories";
+import { withTranslation } from "../../Utils/translation/i18n";
+
 
 import { i18n } from "../../Utils/translation/i18n";
 import { useSelector } from "react-redux";
@@ -177,4 +179,5 @@ const Results = ({ t }) => {
   );
 };
 
-export default Results;
+export default withTranslation("listings")(Results);
+

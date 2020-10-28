@@ -1,12 +1,13 @@
-import Enzyme, { shallow } from "enzyme";
+import { shallow } from "enzyme";
 
-import Listings from "../../pages/listings";
-import Filters from "./Filters";
-import Results from "./Results"
-import Listing from "./Index";
-import Title from "../title"
+import Listings from "../../../pages/listings";
+import Filters from "../Filters";
+import Results from "../Results"
+import Listing from "../Index";
+import Title from "../../title"
 
-import { findByTestAtrr} from "../../Utils/test";
+
+import { findByTestAtrr} from "../../../Utils/test";
 
  jest.mock("react-i18next", () => ({
         withTranslation: () => (Component) => {
@@ -14,6 +15,7 @@ import { findByTestAtrr} from "../../Utils/test";
           return Component;
         },
       }));
+
  
       describe("Listings Page", () => {
         let listings;

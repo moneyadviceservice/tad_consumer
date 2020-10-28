@@ -1,9 +1,8 @@
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
-import * as actions from './redux/actions'
-import * as types from './redux/constants'
-import firmsReducer from "./redux/reducer";
-import fetchMock from 'fetch-mock'
+import * as actions from '../redux/actions'
+import * as types from '../redux/constants'
+import firmsReducer from "../redux/reducer";
 import expect from 'expect'
 
 const middlewares = [thunk]
