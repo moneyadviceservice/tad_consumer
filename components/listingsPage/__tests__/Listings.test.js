@@ -3,7 +3,7 @@ import { shallow } from "enzyme";
 import Listings from "../../../pages/listings";
 import Filters from "../Filters";
 import Results from "../Results"
-import Listing from "../Index";
+import Listing from "../";
 import Title from "../../title"
 
 

@@ -1,6 +1,6 @@
 import { shallow } from "enzyme";
 
-import Header from "./Index";
+import Header from "./";
 import Breadcrumb, { MobileBreadcrumb } from "../../Utils/layouts";
 
 

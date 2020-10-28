@@ -19,7 +19,7 @@ import {
   QuestionButton,
   YoutubeFrame,
   AboutBox,
-} from "../components/landingPage/Index";
+} from "../components/landingPage";
 import Title from "../components/title";
 import BrokerTable from "../components/landingPage/BrokerTable";
 import FAQ from "../components/landingPage/FAQ";

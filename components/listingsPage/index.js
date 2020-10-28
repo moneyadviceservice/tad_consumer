@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 
 import Filters from "./Filters";
 import Results from "./Results";
-import { Row, Col, Heading } from "@moneypensionservice/directories";
+import { Col } from "@moneypensionservice/directories";
 
 const Listing = ({ t }) => {
   return (

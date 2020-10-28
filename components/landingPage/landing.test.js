@@ -1,8 +1,8 @@
 import { shallow, render, mount } from "enzyme";
 
-import Homepage from "../../pages/index";
-import { QuestionButton } from "./Index";
-import { findByTestAtrr, checkProps } from "../../Utils/test";
+import Homepage from "../../pages";
+
+import { findByTestAtrr} from "../../Utils/test";
 import { InternalLink } from "../../Utils/layouts";
 import FAQ from "./FAQ"
 import BrokerTable from "./BrokerTable"
