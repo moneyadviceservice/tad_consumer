@@ -1,8 +1,7 @@
-import { shallow } from "enzyme"
+import { shallow } from 'enzyme'
+import  Results  from '../Results'
+import { Loading } from '../Loading'
 
-import  Results  from "../Results"
-import { Loading } from "../Loading"
-import { useSelector, useDispatch } from 'react-redux'; 
 
 const mockDispatch = jest.fn();
 jest.mock('react-redux', () => ({
