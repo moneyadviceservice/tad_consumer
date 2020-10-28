@@ -1,5 +1,5 @@
 import { shallow } from 'enzyme'
-import  Results  from '../Results'
+import  {Results}  from '../Results'
 import { Loading } from '../Loading'
 
 

@@ -181,3 +181,4 @@ const Results = ({ t }) => {
 
 export default withTranslation("listings")(Results);
 
+export { Results }
