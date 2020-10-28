@@ -1,5 +1,5 @@
 import { shallow } from "enzyme";
-import Filters  from "../Filters";
+import Filters  from "../filters";
 import { FormDiv, ToggleIcon } from "../utils";
 import { findByTestAtrr } from "../../../Utils/test/";
 
