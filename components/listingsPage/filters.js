@@ -574,3 +574,4 @@ const Filters = ({ t }) => {
 
 export default withTranslation("listings")(Filters);
 
+
