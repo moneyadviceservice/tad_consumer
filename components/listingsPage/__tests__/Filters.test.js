@@ -1,10 +1,10 @@
-import { shallow } from "enzyme"
+import { shallow } from "enzyme";
 
-import Filters  from "../Filters"
-import { Form, Legend, Anchor } from "@moneypensionservice/directories"
-import { FormDiv, ToggleIcon } from "../utils"
+import Filters  from "../Filters";
+import { Form, Legend, Anchor } from "@moneypensionservice/directories";
+import { FormDiv, ToggleIcon } from "../utils";
 import { useSelector, useDispatch } from 'react-redux'; 
-import { findByTestAtrr } from "../../../Utils/test/"
+import { findByTestAtrr } from "../../../Utils/test/";
 
 const mockDispatch = jest.fn();
 jest.mock('react-redux', () => ({
