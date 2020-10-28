@@ -19,9 +19,9 @@ import {
   QuestionButton,
   YoutubeFrame,
   AboutBox,
+  BrokerTable
 } from "../components/landingPage";
 import Title from "../components/title";
-import {BrokerTable} from "../components/landingPage/BrokerTable";
 import FAQ from "../components/landingPage/FAQ";
 import { PDFDownloadLink} from "@react-pdf/renderer";
 import MyDocument from "../components/landingPage/VideoTranscript";
