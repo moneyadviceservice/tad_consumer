@@ -51,5 +51,5 @@ const BrokerTable = ({ content, ...rest }) => (
   </InfoTable>
 );
 
-export default BrokerTable;
+// export default BrokerTable;
 export {BrokerTable};
