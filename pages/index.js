@@ -22,7 +22,7 @@ import {
   BrokerTable
 } from "../components/landingPage/Parts";
 import Title from "../components/title";
-import FAQ from "../components/landingPage/FAQ";
+import {FAQ }from "../components/landingPage/FAQ";
 import { PDFDownloadLink} from "@react-pdf/renderer";
 import MyDocument from "../components/landingPage/VideoTranscript";
 
