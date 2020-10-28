@@ -35,7 +35,7 @@ const BreadcrumbSection = styled(ExtendedSection)`
 `};
 `;
 
-const BreadAnchor = styled(Anchor)`
+export const BreadAnchor = styled(Anchor)`
   text-decoration: none;
   border: none;
   font-size: 16px;
@@ -66,7 +66,7 @@ const BreadAnchor = styled(Anchor)`
   }
 `;
 
-const MobileBreadAnchor = styled(BreadAnchor)`
+export const MobileBreadAnchor = styled(BreadAnchor)`
   text-decoration: none;
   border: none;
   font-size: 14px;
@@ -101,13 +101,13 @@ const InternalLink = ({ children, href }) => (
     {children}
   </Link>
 );
-const BreadLink = ({ href, name }) => (
+export const BreadLink = ({ href, name }) => (
   <Link href={href} passHref>
     <BreadAnchor>{name}</BreadAnchor>
   </Link>
 );
 
-const MobileBreadLink = ({ href, name }) => (
+export const MobileBreadLink = ({ href, name }) => (
   <Link href={href} passHref>
     <MobileBreadAnchor>{name}</MobileBreadAnchor>
   </Link>

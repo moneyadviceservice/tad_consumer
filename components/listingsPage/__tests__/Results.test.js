@@ -23,7 +23,5 @@ describe("Results Component Tests", () => {
     const result = shallow(<Results />)
     it("should render loading on initial load",  () => {
         expect(result.containsMatchingElement(<Loading />)).toEqual(true);
-        
-    
     })
 })

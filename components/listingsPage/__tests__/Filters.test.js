@@ -20,16 +20,6 @@ jest.mock("react-i18next", () => ({
   }));
 
 
-//   it("should update state on click", () => {
-//     const changeSize = jest.fn();
-//     const wrapper = mount(<App onClick={changeSize} />);
-//     const handleClick = jest.spyOn(React, "useState");
-//     handleClick.mockImplementation(size => [size, changeSize]);
- 
-//     wrapper.find("#para1").simulate("click");
-//     expect(changeSize).toBeTruthy();
-//   });
-
 
 describe("Filters Component Tests", () => {
 
@@ -77,9 +67,6 @@ describe("Filters Component Tests", () => {
         expect(filters.find(FormDiv).props().isMobile).toBe(true)    
     })
 
-    it("radio", () => {
-        const insurance = findByTestAtrr(filters, "filterByInsurance")
-        console.log(filters.debug())
-    })
+   
     
 })
