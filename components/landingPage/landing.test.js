@@ -5,7 +5,7 @@ import Homepage from "../../pages";
 import { findByTestAtrr} from "../../Utils/test";
 import { InternalLink } from "../../Utils/layouts";
 import FAQ from "./faq"
-import BrokerTable from "./BrokerTable"
+import BrokerTable from "./brokerTable"
 import Title from "../title"
 import { Anchor } from "@moneypensionservice/directories"
 
