@@ -110,4 +110,4 @@ const FAQ = ({ locale, ...rest }) => {
   ));
 };
 
-export  {FAQ};
+export  default FAQ;

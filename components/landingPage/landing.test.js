@@ -1,11 +1,11 @@
-import { shallow, render, mount } from "enzyme";
+import { shallow } from "enzyme";
 
 import Homepage from "../../pages";
 
 import { findByTestAtrr} from "../../Utils/test";
 import { InternalLink } from "../../Utils/layouts";
-import {FAQ }from "./faq"
-// import {BrokerTable} from "./BrokerTable"
+import FAQ from "./faq"
+import BrokerTable from "./BrokerTable"
 import Title from "../title"
 import { Anchor } from "@moneypensionservice/directories"
 
@@ -63,9 +63,9 @@ describe("HomePage", () => {
   it("should render FAQ component", ()=> {
     expect(wrapper.containsMatchingElement(<FAQ />)).toEqual(true);
   })
-  // it("should render BrokerTable component", ()=> {
-  //   expect(wrapper.containsMatchingElement(<BrokerTable />)).toEqual(true);
-  // })
+  it("should render BrokerTable component", ()=> {
+    expect(wrapper.containsMatchingElement(<BrokerTable />)).toEqual(true);
+  })
   it("should render Title component", ()=> {
     expect(wrapper.containsMatchingElement(<Title />)).toEqual(true);
   })

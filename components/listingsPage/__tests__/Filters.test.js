@@ -1,7 +1,7 @@
 import { shallow } from "enzyme";
 import Filters  from "../filters";
 import { FormDiv, ToggleIcon } from "../utils";
-import { findByTestAtrr } from "../../../Utils/test/";
+import { findByTestAtrr } from "../../../Utils/test";
 
 const mockDispatch = jest.fn();
 jest.mock('react-redux', () => ({
