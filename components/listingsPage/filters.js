@@ -273,7 +273,7 @@ const Filters = ({ t }) => {
               text={<TooltipParagraph>{t("toolTips.age")}</TooltipParagraph>}
             />
           </Legend>
-          <Select name="age" value={age.age} onChange={(e) => handleAge(e)}>
+          <Select name="age" value={age.age} onChange={(e) => handleAge(e)} aria-label="Age at time of travel">
             <option value="">
               {t("headings.age_at_time_of_travel_select")}
             </option>
