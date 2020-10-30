@@ -35,9 +35,7 @@ const MyDocument = ({ t }) => {
           padding: 68,
         }}
       >
-        <RowView>
-          <Heading> {t("home.transcript.topHeading")}</Heading>
-        </RowView>
+        
         <RowView>
           <RowText>{t("home.transcript.para1")}</RowText>
         </RowView>
@@ -63,7 +61,7 @@ const MyDocument = ({ t }) => {
           <RowText>{t("home.transcript.para8")}</RowText>
         </RowView>
         <RowView>
-          <Heading>{t("home.transcript.bottomHeading")}</Heading>
+          <RowText>{t("home.transcript.bottomHeading")}</RowText>
         </RowView>
       </Page>
     </Document>
