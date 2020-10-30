@@ -31,7 +31,7 @@
       }
     ],
     "cruise": [
-      { "response": "Ie", "value": "Yes" },
+      { "response": "Ydy", "value": "Yes" },
       { "response": "Na", "value": "No" }
     ],
     "how_far_in_advance_trip_cover_weeks": [
@@ -46,11 +46,11 @@
       { "response": "Na", "value": "No" }
     ],
     "will_cover_terminal_prognosis": [
-      { "terminal": "Ie", "feedback": "Yes" },
+      { "terminal": "Ydy", "feedback": "Yes" },
       { "terminal": "Na", "feedback": "No" }
     ],
     "will_cover_specialist_equipment": [
-      { "response": "Ie", "value": "Yes" },
+      { "response": "Ydy", "value": "Yes" },
       { "response": "Na", "value": "No" }
     ]
   },
