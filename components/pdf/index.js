@@ -1,4 +1,4 @@
-import { Page, Document } from "@react-pdf/renderer";
+import { Page, Document, Font } from "@react-pdf/renderer";
 import styled from "@react-pdf/styled-components";
 
 const Heading = styled.Text`
@@ -42,6 +42,8 @@ const RowText = styled.Text`
   font-family: "Helvetica";
   font-weight: medium;
 `;
+
+Font.registerHyphenationCallback(word => [word]);
 // Create Document Component
 const MyDocument = ({ firms, t }) => {
   return (
