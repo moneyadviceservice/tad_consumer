@@ -148,7 +148,7 @@ const Homepage = ({ t }) => {
             </Heading>
             {t("home.articles.links", { returnObjects: true }).map(
               ({ text, href }, i) => (
-                <Anchor textSize="16px" key={i} href={href}>
+                <Anchor textSize="16px" key={i} href={href} target="_blank">
                   {text}
                 </Anchor>
               )
