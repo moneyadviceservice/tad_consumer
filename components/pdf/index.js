@@ -60,7 +60,7 @@ const MyDocument = ({ firms, t }) => {
         <TableHeadView>
           <TableHeadText>{t("download.header.name")}</TableHeadText>
           <TableHeadText
-            style={{ width: "40%", whiteSpace: "nowrap", hyphens: "none" }}
+            style={{ width: "43%"}}
           >
             {t("download.header.website")}
           </TableHeadText>
@@ -76,9 +76,7 @@ const MyDocument = ({ firms, t }) => {
                 <RowText>{firm.company}</RowText>
                 <RowText
                   style={{
-                    width: "40%",
-                    whiteSpace: "nowrap",
-                    hyphens: "none",
+                    width: "43%",
                   }}
                 >
                   {firm.online.website}
