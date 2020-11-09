@@ -145,9 +145,9 @@ const Breadcrumb = ({ path, t }) => {
     <BreadcrumbSection align="stretch">
       <Section constrained>
         <Col style={{ display: "inline" }}>
-          <BreadAnchor href="https://www.moneyadviceservice.org.uk/en">
+          <BreadAnchor href="https://www.moneyadviceservice.org.uk/en" data-testid="breadAnchor">
             {t("home")}
-          </BreadAnchor>
+          </BreadAnchor >
           <BreadLink href="/" name={t("travel")} />
           {crumbs}
         </Col>

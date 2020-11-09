@@ -4,6 +4,7 @@ import AppHead from "../Utils/layouts/head";
 import { PageFooter} from "../components/footer"
 import BreadCrumb, {BreadAnchor, BreadLink} from "../Utils/layouts"
 import * as nextRouter from 'next/router';
+import { findByTestAtrr} from "../Utils/test";
 
 
 describe("AppJs", () => {
@@ -13,7 +14,7 @@ describe("AppJs", () => {
                 <PageFooter/>
         )).toBe(true);    
     })
-    it("renders header component", () =>{
+    it("renders head component", () =>{
         const app = shallow(<MyApp />).childAt(0).dive();
         expect(app.containsMatchingElement(
                 <AppHead/>
@@ -50,9 +51,12 @@ describe("Breadcrumb", () => {
           };
         
         const bread = shallow(<BreadCrumb {...props}/>).dive()
-        expect(bread.containsMatchingElement(<BreadAnchor/>))
+        const breadAnchor = findByTestAtrr(bread, "breadAnchor");
+        expect(breadAnchor.length).toBe(1);
+        
         
     })
+
     it("contains MAS hompage link", () => {
         let props
         props = {
@@ -74,7 +78,7 @@ describe("Breadcrumb", () => {
           };
         
         const bread = shallow(<BreadCrumb {...props}/>).dive()
-        expect(bread.containsMatchingElement(<BreadLink/>))
+        expect(bread.containsMatchingElement(<BreadLink/>)).toBe(true)
    
         
     })

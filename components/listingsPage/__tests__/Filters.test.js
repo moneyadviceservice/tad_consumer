@@ -21,10 +21,10 @@ jest.mock("react-i18next", () => ({
 describe("Filters Component Tests", () => {
 
     let filters;
-    const ToggleMobile = jest.fn();
+   
       
         beforeEach(() => {
-            filters = shallow(<Filters onClick={ToggleMobile} t={key => []}/>);
+            filters = shallow(<Filters />);
         });
       
         afterEach(() => {
@@ -55,6 +55,24 @@ describe("Filters Component Tests", () => {
        
     
     })
+    
+
+   
+    
+})
+
+describe("Toggle Click", ()=> {
+    let filters;
+    const ToggleMobile = jest.fn();
+      
+        beforeEach(() => {
+            filters = shallow(<Filters />);
+        });
+      
+        afterEach(() => {
+            filters.unmount();
+        });
+
     it("should toggle mobile on click", () => {
         // before click on the toggle icon
         expect(filters.find(FormDiv).props().isMobile).toBe(false)
@@ -63,7 +81,5 @@ describe("Filters Component Tests", () => {
         // after simulated click
         expect(filters.find(FormDiv).props().isMobile).toBe(true)    
     })
-
-   
     
 })
