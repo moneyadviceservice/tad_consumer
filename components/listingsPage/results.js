@@ -125,7 +125,7 @@ const Results = ({ t }) => {
 
       {/* No firms returned from filtering */}
       {isFilter ? (
-        <Loading />
+        <Loading data-testid="loadingDummy"/>
       ) : offered ? (
         offered.length == 0 ? (
           <Paragraph
@@ -149,7 +149,7 @@ const Results = ({ t }) => {
           })
         )
       ) : (
-        <Loading />
+        <Loading  data-testid="loadingDummy"/>
       )}
       {/* Pagination */}
       {offered && offered.length > 0 && totalPages > 1 ? (

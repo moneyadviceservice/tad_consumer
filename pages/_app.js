@@ -10,8 +10,7 @@ import Head from "../Utils/layouts/head";
 
 import { ThemeProvider, Container } from "@moneypensionservice/directories";
 
-import { useEffect } from "react";
-import { useRouter } from "next/router";
+
 
 const MyApp = ({
   Component,
@@ -23,7 +22,7 @@ const MyApp = ({
   return (
     <Provider store={reduxStore}>
       <ThemeProvider>
-        <Head path={path} />
+        <Head path={path}  data-testid="contentHead" />
         <Header path={path} alternateAddress={alternateAddress} />
         <Container
           as="main"
@@ -32,7 +31,7 @@ const MyApp = ({
         >
           <Component {...pageProps} />
         </Container>
-        <Footer />
+        <Footer  data-testid="contentFooter" />
       </ThemeProvider>
     </Provider>
   );

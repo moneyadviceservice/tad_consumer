@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme'
 import  {Results } from '../results'
 import { Loading } from '../loading'
-
+import { findByTestAtrr } from "../../../Utils/test"
 
 const mockDispatch = jest.fn();
 jest.mock('react-redux', () => ({
@@ -21,6 +21,8 @@ describe("Results Component Tests", () => {
 
     const result = shallow(<Results />)
     it("should render loading on initial load",  () => {
-        expect(result.containsMatchingElement(<Loading />)).toEqual(true);
+      const component = findByTestAtrr(result, "loadingDummy");
+      expect(component.length).toBe(1);
+        
     })
 })

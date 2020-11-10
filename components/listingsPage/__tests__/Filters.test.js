@@ -23,11 +23,11 @@ describe("Filters Component Tests", () => {
     let filters;
    
       
-        beforeEach(() => {
+        beforeAll(() => {
             filters = shallow(<Filters />);
         });
       
-        afterEach(() => {
+        afterAll(() => {
             filters.unmount();
         });
 
@@ -63,13 +63,13 @@ describe("Filters Component Tests", () => {
 
 describe("Toggle Click", ()=> {
     let filters;
-    const ToggleMobile = jest.fn();
+    
       
-        beforeEach(() => {
+        beforeAll(() => {
             filters = shallow(<Filters />);
         });
       
-        afterEach(() => {
+        afterAll(() => {
             filters.unmount();
         });
 

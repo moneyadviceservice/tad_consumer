@@ -8,17 +8,29 @@ import { findByTestAtrr} from "../Utils/test";
 
 
 describe("AppJs", () => {
-    it("renders footer component", () =>{
-        const app = shallow(<MyApp />).childAt(0).dive();
-        expect(app.containsMatchingElement(
-                <PageFooter/>
-        )).toBe(true);    
+
+  let app;
+    
+      
+  beforeAll(() => {
+    app = shallow(<MyApp />);
+  });
+
+  afterAll(() => {
+    app.unmount();
+  });
+
+    it("renders footer component", () => {
+        
+        const component = findByTestAtrr(app, "contentHead");
+        expect(component.length).toBe(1);
+          
     })
-    it("renders head component", () =>{
-        const app = shallow(<MyApp />).childAt(0).dive();
-        expect(app.containsMatchingElement(
-                <AppHead/>
-        )).toBe(true);    
+    it("renders head component", () => {
+        
+        const component = findByTestAtrr(app, "contentFooter");
+        expect(component.length).toBe(1);
+         
     })
 
 
