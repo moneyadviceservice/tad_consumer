@@ -7,7 +7,9 @@ import * as nextRouter from 'next/router';
 import { findByTestAtrr} from "../Utils/test";
 
 
+
 describe("AppJs", () => {
+ 
 
   let app;
     
@@ -20,13 +22,13 @@ describe("AppJs", () => {
     app.unmount();
   });
 
-    it("renders footer component", () => {
+    it("renders head component", () => {
         
         const component = findByTestAtrr(app, "contentHead");
         expect(component.length).toBe(1);
           
     })
-    it("renders head component", () => {
+    it("renders footer component", () => {
         
         const component = findByTestAtrr(app, "contentFooter");
         expect(component.length).toBe(1);

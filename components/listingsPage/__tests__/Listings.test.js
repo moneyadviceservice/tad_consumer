@@ -20,11 +20,11 @@ import { findByTestAtrr} from "../../../Utils/test";
       describe("Listings Page", () => {
         let listings;
       
-        beforeEach(() => {
+        beforeAll(() => {
           listings = shallow(<Listings />);
         });
       
-        afterEach(() => {
+        afterAll(() => {
           listings.unmount();
         });
       
@@ -46,11 +46,11 @@ import { findByTestAtrr} from "../../../Utils/test";
           let listing;
           
         
-          beforeEach(() => {
+          beforeAll(() => {
             listing = shallow(<Listing />);
           });
         
-          afterEach(() => {
+          afterAll(() => {
             listing.unmount();
           });
         
