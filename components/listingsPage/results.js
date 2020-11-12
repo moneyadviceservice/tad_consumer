@@ -7,12 +7,14 @@ import {
   CompanyCard,
   resolveMedia,
 } from "@moneypensionservice/directories";
+import { withTranslation } from "../../Utils/translation/i18n";
+
 
 import { i18n } from "../../Utils/translation/i18n";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import MyDocument from "../pdf";
+import MyDocument from "./Print";
 import Loading from "./loading";
 import styled from "styled-components";
 
@@ -123,7 +125,7 @@ const Results = ({ t }) => {
 
       {/* No firms returned from filtering */}
       {isFilter ? (
-        <Loading />
+        <Loading data-testid="loadingDummy"/>
       ) : offered ? (
         offered.length == 0 ? (
           <Paragraph
@@ -147,7 +149,7 @@ const Results = ({ t }) => {
           })
         )
       ) : (
-        <Loading />
+        <Loading  data-testid="loadingDummy"/>
       )}
       {/* Pagination */}
       {offered && offered.length > 0 && totalPages > 1 ? (
@@ -176,4 +178,7 @@ const Results = ({ t }) => {
     </div>
   );
 };
-export default Results;
+
+export default withTranslation("listings")(Results);
+
+export { Results }

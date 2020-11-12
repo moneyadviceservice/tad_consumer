@@ -1,3 +1,7 @@
+import { applyMiddleware, createStore } from 'redux';
+import rootReducer from '../../redux/rootReducer';
+import { middlewares } from '../../redux/store';
+
 export const findByTestAtrr = (component, attr) => {
   const wrapper = component.find(`[data-testid='${attr}']`);
   return wrapper;
@@ -11,4 +15,9 @@ export const checkProps = (component, expectedProps) => {
     component.name
   );
   return propsErr;
+};
+
+export const testStore = (initialState) => {
+  const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore);
+  return createStoreWithMiddleware(rootReducer, initialState);
 };

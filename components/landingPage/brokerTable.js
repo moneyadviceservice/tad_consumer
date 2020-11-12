@@ -52,3 +52,4 @@ const BrokerTable = ({ content, ...rest }) => (
 );
 
 export default BrokerTable;
+

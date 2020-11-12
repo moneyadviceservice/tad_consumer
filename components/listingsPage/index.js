@@ -2,13 +2,13 @@ import React, { Fragment } from "react";
 
 import Filters from "./filters";
 import Results from "./results";
-import { Row, Col, Heading } from "@moneypensionservice/directories";
+import { Col } from "@moneypensionservice/directories";
 
 const Listing = ({ t }) => {
   return (
     <Fragment>
       <Col sizes={{ xs: 12, md: 4 }}>
-        <Filters t={t} />
+        <Filters t={t}/>
       </Col>
       <Col sizes={{ xs: 12, md: 8 }}>
         <Results t={t} />

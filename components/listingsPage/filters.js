@@ -11,6 +11,7 @@ import {
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { filterOfferings } from "./redux/actions";
+import { withTranslation } from "../../Utils/translation/i18n";
 import {
   ageRange,
   Select,
@@ -22,7 +23,7 @@ import {
   FilterFormFIeld,
   Legend,
   TooltipText,
-} from "./dummy";
+} from "./utils";
 const SingleTrip = styled.div`
   display: ${(props) => (props.single ? "block" : "none")};
 `;
@@ -92,7 +93,6 @@ const Filters = ({ t }) => {
 
   const dispatch = useDispatch();
 
-  const offerings = useSelector((state) => state.listings.offerings.hits);
 
   // google tagging
   const tag = (e) => {
@@ -150,6 +150,7 @@ const Filters = ({ t }) => {
   useEffect(() => {
     dispatch(filterOfferings(filtersValues));
   }, [filtersValues]);
+
 
   const handleAge = (e) => {
     tag(e);
@@ -218,7 +219,7 @@ const Filters = ({ t }) => {
   };
 
   const clearFilters = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     changeInsuranceType({});
     changeSingleOption({});
     changeAnnualOption({});
@@ -241,9 +242,9 @@ const Filters = ({ t }) => {
   };
 
   return (
-    <Form style={{ marginBottom: "40px", color: "#515151" }}>
+    <Form style={{ marginBottom: "40px", color: "#515151" }} data-testid="filterForm">
       <ExtHeading level={3} style={{}}>
-        <ToggleIcon onClick={(e) => handleMobile(e)}>
+        <ToggleIcon onClick={(e) => handleMobile(e)} >
           {mobile && mobile === true ? "+" : "-"}
         </ToggleIcon>
         <span>{t("headings.filter")}</span>
@@ -264,16 +265,18 @@ const Filters = ({ t }) => {
       </ExtHeading>
 
       <FormDiv isMobile={mobile}>
-        <FilterFormFIeld>
+        <FilterFormFIeld data-testid="filterFormField">
           <Legend>
             {t("headings.age_at_time_of_travel")}
             <TooltipText
               minWidth="200px"
               side="left"
               text={<TooltipParagraph>{t("toolTips.age")}</TooltipParagraph>}
+              data-testid="filterTooltip"
             />
           </Legend>
-          <Select name="age" value={age.age} onChange={(e) => handleAge(e)} aria-label="Age at time of travel">
+
+          <Select name="age" value={age.age} onChange={(e) => handleAge(e)} aria-label="Age at time of travel" data-testid="filterSelect">
             <option value="">
               {t("headings.age_at_time_of_travel_select")}
             </option>
@@ -283,7 +286,7 @@ const Filters = ({ t }) => {
 
         {/* Client Insurance Type */}
         {process.browser ? (
-          <FilterFormFIeld>
+          <FilterFormFIeld data-testid="filterFormField">
             <Legend>
               {t("headings.filter_by_insurance_type")}
               <TooltipText
@@ -301,6 +304,7 @@ const Filters = ({ t }) => {
                     </TooltipParagraph>
                   </>
                 }
+                data-testid="filterTooltip"
               />
             </Legend>
             {t("filters.trip_type", { returnObjects: true }).map(
@@ -312,64 +316,65 @@ const Filters = ({ t }) => {
                   label={type}
                   name="trip_type"
                   value={value}
+
                 />
               )
             )}
           </FilterFormFIeld>
         ) : (
-          <FilterFormFIeld>
-            <Legend>{t("headings.filter_by_insurance_type")}</Legend>
-            {t("filters.trip_type", { returnObjects: true }).map(
-              ({ type, value }, i) => (
-                <Radio
-                  key={i}
-                  checked={trip_type.trip_type === value}
-                  onChange={(e) => handleInsuranceType(e)}
-                  label={type}
-                  name="trip_type"
-                  value={value}
-                />
-              )
-            )}
-            <Heading level={4}>
-              {t("headings.filter_by_length_of_trip")}
-            </Heading>
-            <Paragraph textSize="12px">
-              Choose only if you selected Single Trip
+            <FilterFormFIeld data-testid="filterFormField">
+              <Legend>{t("headings.filter_by_insurance_type")}</Legend>
+              {t("filters.trip_type", { returnObjects: true }).map(
+                ({ type, value }, i) => (
+                  <Radio
+                    key={i}
+                    checked={trip_type.trip_type === value}
+                    onChange={(e) => handleInsuranceType(e)}
+                    label={type}
+                    name="trip_type"
+                    value={value}
+                  />
+                )
+              )}
+              <Heading level={4}>
+                {t("headings.filter_by_length_of_trip")}
+              </Heading>
+              <Paragraph textSize="12px">
+                Choose only if you selected Single Trip
             </Paragraph>
-            {t("filters.singleTripLength", { returnObjects: true }).map(
-              ({ length, value }, i) => (
-                <Radio
-                  style={{ fontSize: "13px" }}
-                  key={i}
-                  checked={tripLength.tripLength === value}
-                  onChange={(e) => handleTripLength(e)}
-                  label={length}
-                  name="tripLength"
-                  value={value}
-                />
-              )
-            )}
-            <Paragraph textSize="12px" style={{ marginTop: "20px" }}>
-              Choose only if you selected Annual Multi-trip
+              {t("filters.singleTripLength", { returnObjects: true }).map(
+                ({ length, value }, i) => (
+                  <Radio
+                    style={{ fontSize: "13px" }}
+                    key={i}
+                    checked={tripLength.tripLength === value}
+                    onChange={(e) => handleTripLength(e)}
+                    label={length}
+                    name="tripLength"
+                    value={value}
+                  />
+                )
+              )}
+              <Paragraph textSize="12px" style={{ marginTop: "20px" }}>
+                Choose only if you selected Annual Multi-trip
             </Paragraph>
-            {t("filters.annualTripLength", { returnObjects: true }).map(
-              ({ length, value }, i) => (
-                <Radio
-                  style={{ fontSize: "13px" }}
-                  key={i}
-                  checked={tripLength.tripLength === value}
-                  onChange={(e) => handleTripLength(e)}
-                  label={length}
-                  name="tripLength"
-                  value={value}
-                />
-              )
-            )}
-          </FilterFormFIeld>
-        )}
+              {t("filters.annualTripLength", { returnObjects: true }).map(
+                ({ length, value }, i) => (
+                  <Radio
+                    style={{ fontSize: "13px" }}
+                    key={i}
+                    checked={tripLength.tripLength === value}
+                    onChange={(e) => handleTripLength(e)}
+                    label={length}
+                    name="tripLength"
+                    value={value}
+                  />
+                )
+              )}
+            </FilterFormFIeld>
+          )}
 
-        <FilterFormFIeld>
+        <FilterFormFIeld data-testid="filterFormField">
           <Legend>{t("headings.filter_by_length_of_trip")}</Legend>
           <Note note={note}>{t("headings.selectInsurance")}</Note>
           <SingleTrip single={single}>
@@ -383,6 +388,7 @@ const Filters = ({ t }) => {
                     {t("toolTips.singleTrip")}
                   </TooltipParagraph>
                 }
+                data-testid="filterTooltip"
               />
             </span>
             {t("filters.singleTripLength", { returnObjects: true }).map(
@@ -409,6 +415,7 @@ const Filters = ({ t }) => {
                     {t("toolTips.annualTrip")}
                   </TooltipParagraph>
                 }
+                data-testid="filterTooltip"
               />
             </span>
 
@@ -427,7 +434,7 @@ const Filters = ({ t }) => {
           </AnnualTrip>
         </FilterFormFIeld>
 
-        <FilterFormFIeld>
+        <FilterFormFIeld data-testid="filterFormField">
           <Legend>
             {t("headings.destination")}
             <TooltipText
@@ -436,6 +443,7 @@ const Filters = ({ t }) => {
               text={
                 <TooltipParagraph>{t("toolTips.destination")}</TooltipParagraph>
               }
+              data-testid="filterTooltip"
             />
           </Legend>
           {t("filters.cover_area", { returnObjects: true }).map(
@@ -451,13 +459,14 @@ const Filters = ({ t }) => {
             )
           )}
         </FilterFormFIeld>
-        <FilterFormFIeld>
+        <FilterFormFIeld data-testid="filterFormField">
           <Legend>
             {t("headings.is_your_trip_a_cruise")}?
             <TooltipText
               minWidth="230px"
               side="bottom"
               text={<TooltipParagraph>{t("toolTips.cruise")}</TooltipParagraph>}
+              data-testid="filterTooltip"
             />
           </Legend>
           {t("filters.cruise", { returnObjects: true }).map(
@@ -473,13 +482,14 @@ const Filters = ({ t }) => {
             )
           )}
         </FilterFormFIeld>
-        <FilterFormFIeld>
+        <FilterFormFIeld data-testid="filterFormField">
           <Legend>
             {t("headings.when_are_you_travelling")}?
             <TooltipText
               minWidth="230px"
               side="left"
               text={<TooltipParagraph>{t("toolTips.when")}</TooltipParagraph>}
+              data-testid="filterTooltip"
             />
           </Legend>
           {t("filters.how_far_in_advance_trip_cover_weeks", {
@@ -500,7 +510,7 @@ const Filters = ({ t }) => {
         </FilterFormFIeld>
         {/* Prognosis */}
 
-        <FilterFormFIeld>
+        <FilterFormFIeld data-testid="filterFormField">
           <Legend>
             {t("headings.my_doctor_has_given_me_a_terminal_prognosis")}
           </Legend>
@@ -521,7 +531,7 @@ const Filters = ({ t }) => {
           ))}
         </FilterFormFIeld>
         {/* Equipment */}
-        <FilterFormFIeld>
+        <FilterFormFIeld data-testid="filterFormField">
           <Legend>
             {t("headings.do_you_require_cover_for_medical_equipment")}?
             <TooltipText
@@ -529,7 +539,9 @@ const Filters = ({ t }) => {
               side="bottom"
               text={
                 <TooltipParagraph>{t("toolTips.equipment")}</TooltipParagraph>
+
               }
+              data-testid="filterTooltip"
             />
           </Legend>
 
@@ -552,13 +564,16 @@ const Filters = ({ t }) => {
         {process.browser ? (
           ""
         ) : (
-          <Button primary type="submit">
-            {t("headings.submit")}
-          </Button>
-        )}
+            <Button primary type="submit">
+              {t("headings.submit")}
+            </Button>
+          )}
       </FormDiv>
     </Form>
   );
 };
 
-export default Filters;
+export default withTranslation("listings")(Filters);
+
+
+
