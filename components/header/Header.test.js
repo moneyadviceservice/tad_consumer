@@ -1,5 +1,5 @@
 import { shallow } from "enzyme";
-
+import * as nextRouter from 'next/router';
 import Header from "./";
 import Breadcrumb, { MobileBreadcrumb } from "../../Utils/layouts";
 
@@ -13,6 +13,9 @@ jest.mock("react-i18next", () => ({
 
 
 describe("Header component", ()=>{
+
+    nextRouter.useRouter = jest.fn();
+    nextRouter.useRouter.mockImplementation(() => ({ route: '/' }));
     const header = shallow(<Header/>)
    
     it("should render BreadCrumb component", ()=> {
