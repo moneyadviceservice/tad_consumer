@@ -19,12 +19,12 @@ import {
   QuestionButton,
   YoutubeFrame,
   AboutBox,
-} from "../components/landingPage";
+ 
+} from "../components/landingPage/subComponents";
+import BrokerTable from "../components/landingPage/brokerTable"
 import Title from "../components/title";
-import BrokerTable from "../components/landingPage/brokerTable";
 import FAQ from "../components/landingPage/faq";
-// PDF
-import { PDFDownloadLink, BlobProvider } from "@react-pdf/renderer";
+import { PDFDownloadLink} from "@react-pdf/renderer";
 import MyDocument from "../components/landingPage/videoTranscript";
 
 const PDFLink = styled(PDFDownloadLink)`

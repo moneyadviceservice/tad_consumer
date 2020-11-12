@@ -1,17 +1,16 @@
 import React, { Fragment } from "react";
 
 import withReduxStore from "../redux/with-redux-store";
-import { Provider } from "react-redux";
+import { Provider,  } from "react-redux";
 
 import { appWithTranslation } from "../Utils/translation/i18n";
 import Header from "../components/header";
-import Footer from "../components/footer/";
+import Footer from "../components/footer";
 import Head from "../Utils/layouts/head";
 
 import { ThemeProvider, Container } from "@moneypensionservice/directories";
 
-import { useEffect } from "react";
-import { useRouter } from "next/router";
+
 
 const MyApp = ({
   Component,
@@ -23,7 +22,7 @@ const MyApp = ({
   return (
     <Provider store={reduxStore}>
       <ThemeProvider>
-        <Head path={path} />
+        <Head path={path}  data-testid="contentHead" />
         <Header path={path} alternateAddress={alternateAddress} />
         <Container
           as="main"
@@ -32,7 +31,7 @@ const MyApp = ({
         >
           <Component {...pageProps} />
         </Container>
-        <Footer />
+        <Footer  data-testid="contentFooter" />
       </ThemeProvider>
     </Provider>
   );
@@ -65,3 +64,4 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
 };
 
 export default withReduxStore(appWithTranslation(MyApp));
+export { MyApp }
