@@ -10,6 +10,8 @@ const NextI18NextInstance = new NextI18Next({
   interpolation: {
     escapeValue: false,
   },
+  browserLanguageDetection: true
+
 });
 
 module.exports = NextI18NextInstance;

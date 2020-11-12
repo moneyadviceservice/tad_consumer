@@ -1,7 +1,7 @@
-import React, { Fragment } from "react";
+
 
 import withReduxStore from "../redux/with-redux-store";
-import { Provider,  } from "react-redux";
+import { Provider, } from "react-redux";
 
 import { appWithTranslation } from "../Utils/translation/i18n";
 import Header from "../components/header";
@@ -22,7 +22,7 @@ const MyApp = ({
   return (
     <Provider store={reduxStore}>
       <ThemeProvider>
-        <Head path={path}  data-testid="contentHead" />
+        <Head path={path} data-testid="contentHead" />
         <Header path={path} alternateAddress={alternateAddress} />
         <Container
           as="main"
@@ -31,7 +31,7 @@ const MyApp = ({
         >
           <Component {...pageProps} />
         </Container>
-        <Footer  data-testid="contentFooter" />
+        <Footer data-testid="contentFooter" />
       </ThemeProvider>
     </Provider>
   );
@@ -49,9 +49,8 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
   let host = !process.browser ? ctx.req.headers.host : "";
   let path = !process.browser ? ctx.pathname : "";
 
-  let alternateAddress = !process.browser
-    ? `${protocol}://${host}/${alternateLang}${path}`
-    : "";
+  let alternateAddress =
+    `${protocol}://${host}/${alternateLang}${path}`;
 
   pageProps = await Component.getInitialProps(ctx);
 

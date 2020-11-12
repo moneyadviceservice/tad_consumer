@@ -6,8 +6,7 @@ import {
 } from "@moneypensionservice/directories";
 import styled from "styled-components";
 import { useRouter } from "next/router";
-import Link from "next/link";
-import { withTranslation } from "../translation/i18n";
+import { withTranslation, Link } from "../translation/i18n";
 
 const Section = styled(Row)`
   margin: auto;
