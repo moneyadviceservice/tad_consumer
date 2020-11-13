@@ -12,7 +12,7 @@ const PageHeader = ({ t, alternateAddress, path }) => {
   const pathname = useRouter().pathname;
   const clientAlt = `/${clientLng}${pathname}`
   const altAdd = !process.browser ? alternateAddress : clientAlt;
-
+  
 
   return (
     <Header
