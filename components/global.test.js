@@ -106,7 +106,7 @@ describe("Breadcrumb", () => {
         const breadlink = bread.find(BreadLink)
         expect(breadlink.length).toBe(2)
         expect(breadlink.at(0).findWhere((node) => node.prop("href") === "/")).toHaveLength(1);
-        expect(breadlink.at(1).findWhere((node) => node.prop("href") === "listings")).toHaveLength(1);
+        expect(breadlink.at(1).findWhere((node) => node.prop("href") === "/listings")).toHaveLength(1);
       
 
         
