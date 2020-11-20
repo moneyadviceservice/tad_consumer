@@ -242,7 +242,11 @@ const Filters = ({ t }) => {
   };
 
   return (
-    <Form style={{ marginBottom: "40px", color: "#515151" }} data-testid="filterForm">
+    <Form 
+      action="/listings"
+      method="post"
+      style={{ marginBottom: "40px", color: "#515151" }} 
+      data-testid="filterForm">
       <ExtHeading level={3} style={{}}>
         <ToggleIcon onClick={(e) => handleMobile(e)} >
           {mobile && mobile === true ? "+" : "-"}
