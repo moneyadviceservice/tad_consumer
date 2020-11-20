@@ -22,7 +22,7 @@ const ListingSection = styled(Section)`
 `};
 `;
 
-const Listings = ({ t }) => {
+const Listings = ({ t, query }) => {
   return (
     <Fragment>
       <Section constrained data-testid="contentRow">
@@ -33,14 +33,14 @@ const Listings = ({ t }) => {
 
       <ExtendedSection align="stretch" style={{ paddingTop: 0 }}>
         <ListingSection constrained data-testid="contentRow">
-          <Listing t={t} />
+          <Listing t={t}  query={query}/>
         </ListingSection>
       </ExtendedSection>
     </Fragment>
   );
 };
 
-Listings.getInitialProps = async ({ reduxStore }) => {
+Listings.getInitialProps = async ({ reduxStore, query }) => {
   await reduxStore.dispatch(getAlgoFirms());
   await reduxStore.dispatch(getAlgoOfferings());
   const shuffledfirm = await reduxStore.getState().listings.firms.hits;
@@ -48,6 +48,7 @@ Listings.getInitialProps = async ({ reduxStore }) => {
 
   return {
     namespacesRequired: ["listings", "common", "footer"],
+    query: query,
   };
 };
 

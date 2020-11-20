@@ -35,7 +35,7 @@ const Note = styled.span`
   display: ${(props) => (props.note ? "block" : "none")};
 `;
 
-const Filters = ({ t }) => {
+const Filters = ({ t, query }) => {
   const [age, changeAge] = useState({});
   const [trip_type, changeInsuranceType] = useState({});
   const [tripLength, changeTripLength] = useState({});
@@ -240,6 +240,51 @@ const Filters = ({ t }) => {
     changeSingleShow(false);
     changeNote(true);
   };
+    // NONFRONTEND CODE STARTS
+
+  // setup alternate values for form input to trigger checked attr
+  let altAge = t("headings.age_at_time_of_travel");
+  let altTripType = "";
+  let altCoverArea = "";
+  let altCruise= "";
+  let altWhen = "";
+  let altCoverOngoingTreatment = "";
+  let altTerminalPrognnosis = "";
+  let altCoverSpecialEquipment = "";
+  let altTripLength = "";
+
+  // Code to repopulate the input from the url
+ 
+  for (const property in query) {
+    if (`${property}` === "cruise_30_days_max_age") {
+      altAge = `${query[property]}`;
+    }
+    if (`${property}` === "trip_type") {
+      altTripType = `${query[property]}`;
+    }
+    if (`${property}` === "tripLength") {
+      altTripLength = `${query[property]}`;
+    }
+    if (`${property}` === "cover_area") {
+      altCoverArea = `${query[property]}`;
+    }
+    if (`${property}` === "cruise") {
+      altCruise = `${query[property]}`;
+    }
+    if (`${property}` === "how_far_in_advance_trip_cover_weeks") {
+      altWhen = `${query[property]}`;
+    }
+    if (`${property}` === "will_cover_undergoing_treatment") {
+      altCoverOngoingTreatment = `${query[property]}`;
+    }
+    if (`${property}` === "will_cover_terminal_prognosis") {
+      altTerminalPrognnosis = `${query[property]}`;
+    }
+    if (`${property}` === "will_cover_specialist_equipment") {
+      altCoverSpecialEquipment = `${query[property]}`;
+    }
+  }
+  // NONFRONTEND CODE ENDS
 
   return (
     <Form 
@@ -281,8 +326,8 @@ const Filters = ({ t }) => {
           </Legend>
 
           <Select name="age" value={age.age} onChange={(e) => handleAge(e)} aria-label="Age at time of travel" data-testid="filterSelect">
-            <option value="">
-              {t("headings.age_at_time_of_travel_select")}
+          <option value="" selected={!process.browser ? altAge : age.age}>
+              {!process.browser ? altAge : t("headings.age_at_time_of_travel")}
             </option>
             {ageRange()}
           </Select>
@@ -326,13 +371,14 @@ const Filters = ({ t }) => {
             )}
           </FilterFormFIeld>
         ) : (
+          // Server
             <FilterFormFIeld data-testid="filterFormField">
-              <Legend>{t("headings.filter_by_insurance_type")}</Legend>
+              <Legend> Server {t("headings.filter_by_insurance_type")}</Legend>
               {t("filters.trip_type", { returnObjects: true }).map(
                 ({ type, value }, i) => (
                   <Radio
                     key={i}
-                    checked={trip_type.trip_type === value}
+                    checked={altTripType === value}
                     onChange={(e) => handleInsuranceType(e)}
                     label={type}
                     name="trip_type"
@@ -341,7 +387,7 @@ const Filters = ({ t }) => {
                 )
               )}
               <Heading level={4}>
-                {t("headings.filter_by_length_of_trip")}
+               Server {t("headings.filter_by_length_of_trip")}
               </Heading>
               <Paragraph textSize="12px">
                 Choose only if you selected Single Trip
@@ -351,7 +397,7 @@ const Filters = ({ t }) => {
                   <Radio
                     style={{ fontSize: "13px" }}
                     key={i}
-                    checked={tripLength.tripLength === value}
+                    checked={altTripLength === value}
                     onChange={(e) => handleTripLength(e)}
                     label={length}
                     name="tripLength"
@@ -454,7 +500,9 @@ const Filters = ({ t }) => {
             ({ location, value }, i) => (
               <Radio
                 key={i}
-                checked={cover_area.cover_area === value}
+                checked={!process.browser
+                  ? altCoverArea === value
+                  : cover_area.cover_area === value}
                 onChange={(e) => handleDestination(e)}
                 label={location}
                 name="cover_area"
@@ -477,7 +525,10 @@ const Filters = ({ t }) => {
             ({ response, value }, i) => (
               <Radio
                 key={i}
-                checked={cruise.cruise === value}
+                checked={!process.browser
+                  ? altCruise === value
+                  : cruise.cruise ===
+                    value}
                 onChange={(e) => handleCruise(e)}
                 label={response}
                 name="cruise"
@@ -502,8 +553,10 @@ const Filters = ({ t }) => {
             <Radio
               key={i}
               checked={
-                how_far_in_advance_trip_cover_weeks.how_far_in_advance_trip_cover_weeks ===
-                time
+                !process.browser
+                  ? altWhen === time
+                  : how_far_in_advance_trip_cover_weeks.how_far_in_advance_trip_cover_weeks ===
+                    time
               }
               onChange={(e) => handleWhen(e)}
               label={when}
@@ -524,7 +577,9 @@ const Filters = ({ t }) => {
             <Radio
               key={i}
               checked={
-                will_cover_terminal_prognosis.will_cover_terminal_prognosis ===
+                !process.browser
+                ? altTerminalPrognnosis === feedback
+                : will_cover_terminal_prognosis.will_cover_terminal_prognosis ===
                 feedback
               }
               onChange={(e) => handleTerminal(e)}
@@ -555,8 +610,10 @@ const Filters = ({ t }) => {
             <Radio
               key={i}
               checked={
-                will_cover_specialist_equipment.will_cover_specialist_equipment ===
-                value
+                !process.browser
+                  ? altCoverSpecialEquipment === value
+                  : will_cover_specialist_equipment.will_cover_specialist_equipment ===
+                    value
               }
               onChange={(e) => handleEquipment(e)}
               label={response}

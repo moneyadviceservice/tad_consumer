@@ -40,12 +40,12 @@ const handle = app.getRequestHandler();
     res.redirect("/listings?" + queryString())
   })
 
-  // server.use(nextI18NextMiddleware(nextI18next));
+ 
 
   server.get("*",nextI18NextMiddleware(nextI18next) , (req, res) =>{
     return handle(req, res)
   });
 
   await server.listen(port);
-  console.log(`> Ready on http://localhost:${port}`); // eslint-disable-line no-console
+  console.log(`> Travel directory running on http://localhost:${port}`); 
 })();
