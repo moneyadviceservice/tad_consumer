@@ -219,7 +219,7 @@ const Filters = ({ t, query }) => {
   };
 
   const clearFilters = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     changeInsuranceType({});
     changeSingleOption({});
     changeAnnualOption({});
@@ -487,6 +487,8 @@ const Filters = ({ t, query }) => {
             )}
           </AnnualTrip>
         </FilterFormFIeld>
+
+
 
         <FilterFormFIeld data-testid="filterFormField">
           <Legend>

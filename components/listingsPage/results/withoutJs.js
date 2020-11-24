@@ -63,10 +63,10 @@ import {
             </span>
             <span>{t("headings.order")}</span>
           </div>
-         
+          
          
         </div>
-        {offered.map((selectedFirm, i) => {
+         {offered.map((selectedFirm, i) => {
               return (
                 <CompanyCard
                   key={i}
@@ -76,6 +76,8 @@ import {
                 />
               );
             })}
+
+            
       </div>
     );
   };

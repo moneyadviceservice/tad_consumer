@@ -1,6 +1,5 @@
 import { shallow } from 'enzyme'
-import  {Results } from '../results'
-import { Loading } from '../loading'
+import  {Results } from '../results/withJs'
 import { findByTestAtrr } from "../../../Utils/test"
 
 const mockDispatch = jest.fn();
