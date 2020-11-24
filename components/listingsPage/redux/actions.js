@@ -50,6 +50,8 @@ export const filterOfferings = (pool) => {
     let age = 0;
     let insuranceOption;
 
+    console.log(filteredPool)
+
     filteredPool.map((fill) => {
       if (fill.cruise_30_days_max_age) {
         age = fill.cruise_30_days_max_age;
@@ -184,7 +186,7 @@ export const filterOfferings = (pool) => {
         });
       }, offerings);
 
-    
+    console.log(selectedOfferings)
       // collected the ids of the selected offering into an array of array
       const offered = selectedOfferings.map((offering) => {
         let id = parseInt(offering.objectID);

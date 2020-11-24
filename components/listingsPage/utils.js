@@ -139,3 +139,8 @@ export const randomizeResult = (array) => {
     [array[i], array[j]] = [array[j], array[i]];
   }
 };
+
+
+export const dispayFirms = (selected) => selectedFirm.filter((selected) => {
+  return selected != null;
+});

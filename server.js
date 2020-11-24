@@ -19,17 +19,20 @@ const handle = app.getRequestHandler();
 
   server.post("/listings", (req, res) => {
     let query = req.body;
+    console.log(query)
+
     if (query.age != ""){
-      query.cruise_30_days_max_age = query.age;
-      query.cruise_45_days_max_age = query.age;
-      query.cruise_55_days_max_age = query.age;
-      query.land_30_days_max_age = query.age;
-      query.land_45_days_max_age = query.age;
-      query.land_55_days_max_age = query.age;
+      let age = query.age
+      query.cruise_30_days_max_age = age;
+      query.cruise_45_days_max_age = age;
+      query.cruise_55_days_max_age = age;
+      query.land_30_days_max_age = age;
+      query.land_45_days_max_age = age;
+      query.land_55_days_max_age = age;
     }
     delete query.age;
     const queryString = () => {
-      var out = [];
+      let out = [];
       for (var key in query){
         if(query.hasOwnProperty(key)){
           out.push(key + "=" + encodeURIComponent(query[key]));

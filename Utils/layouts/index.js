@@ -136,12 +136,12 @@ const Breadcrumb = ({ path, t }) => {
     if (paths === "") {
       return false;
     }
-    console.log(paths)
+    
     let anchorText = eval("`${paths}`");
     let hrefSlash = `/${paths}`
     return <BreadLink key={i} href={hrefSlash} name={t(anchorText)} />;
   });
-  console.log(crumbs)
+ 
 
   return (
     <BreadcrumbSection align="stretch">

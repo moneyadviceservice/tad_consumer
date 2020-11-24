@@ -400,7 +400,7 @@ const Filters = ({ t, query }) => {
                     checked={altTripLength === value}
                     onChange={(e) => handleTripLength(e)}
                     label={length}
-                    name="tripLength"
+                    name="singleOption"
                     value={value}
                   />
                 )
@@ -416,7 +416,7 @@ const Filters = ({ t, query }) => {
                     checked={tripLength.tripLength === value}
                     onChange={(e) => handleTripLength(e)}
                     label={length}
-                    name="tripLength"
+                    name="annualOption"
                     value={value}
                   />
                 )
