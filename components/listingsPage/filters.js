@@ -251,7 +251,8 @@ const Filters = ({ t, query }) => {
   let altCoverOngoingTreatment = "";
   let altTerminalPrognnosis = "";
   let altCoverSpecialEquipment = "";
-  let altTripLength = "";
+  let altAnnualOption = "";
+  let altSingleOption = "";
 
   // Code to repopulate the input from the url
  
@@ -262,8 +263,11 @@ const Filters = ({ t, query }) => {
     if (`${property}` === "trip_type") {
       altTripType = `${query[property]}`;
     }
-    if (`${property}` === "tripLength") {
-      altTripLength = `${query[property]}`;
+    if (`${property}` === "annualOption") {
+      altAnnualOption = `${query[property]}`;
+    }
+    if (`${property}` === "singleOption") {
+      altSingleOption = `${query[property]}`;
     }
     if (`${property}` === "cover_area") {
       altCoverArea = `${query[property]}`;
@@ -373,7 +377,7 @@ const Filters = ({ t, query }) => {
         ) : (
           // Server
             <FilterFormFIeld data-testid="filterFormField">
-              <Legend> Server {t("headings.filter_by_insurance_type")}</Legend>
+              <Legend> {t("headings.filter_by_insurance_type")}</Legend>
               {t("filters.trip_type", { returnObjects: true }).map(
                 ({ type, value }, i) => (
                   <Radio
@@ -387,7 +391,7 @@ const Filters = ({ t, query }) => {
                 )
               )}
               <Heading level={4}>
-               Server {t("headings.filter_by_length_of_trip")}
+               {t("headings.filter_by_length_of_trip")}
               </Heading>
               <Paragraph textSize="12px">
                 Choose only if you selected Single Trip
@@ -397,7 +401,7 @@ const Filters = ({ t, query }) => {
                   <Radio
                     style={{ fontSize: "13px" }}
                     key={i}
-                    checked={altTripLength === value}
+                    checked={altSingleOption === value}
                     onChange={(e) => handleTripLength(e)}
                     label={length}
                     name="singleOption"
@@ -413,7 +417,7 @@ const Filters = ({ t, query }) => {
                   <Radio
                     style={{ fontSize: "13px" }}
                     key={i}
-                    checked={tripLength.tripLength === value}
+                    checked={altAnnualOption === value}
                     onChange={(e) => handleTripLength(e)}
                     label={length}
                     name="annualOption"
