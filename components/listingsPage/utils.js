@@ -144,19 +144,30 @@ export const randomizeResult = (array) => {
 export const listingsPDF = (selectedFirms) => {
   return(
     <div>
-        <h1>List of Travel Insurance Firms</h1>
-        <div>Name</div>
-        <div>Website</div>
-        <div>Phone</div>
-        <div>Email</div>
-        { selectedFirms.map((firm)=>{
+        <h1 style={{ color: '#006a00'}}>List of Travel Insurance Firms</h1>
+        { selectedFirms.map((firm, i)=>{
         return (
-          <div>
-            <div>{firm.company}</div>
-            <div>{firm.online.website}</div>
-            <div>{firm.online.phone}</div>
-            <div>{firm.online.email}</div>
-            ----------------------------
+          <div key={i}
+              style={{
+                padding: '15px',
+                fontSize: '16px',
+                width: '70%',
+                fontSize: '.75rem',
+                lineHeight: '1rem',
+              }}
+          >
+            <div style={{
+              color: '#003d8e',
+              fontSize: '1rem',
+              lineHeight: '1.5rem',
+              fontWeight: '900',
+              }}>{firm.company}</div>
+             <div style={{wordWrap: 'break-word'}}>{firm.online.website}</div>
+             <div>{firm.online.phone}</div>
+             <div style={{
+              fontSize: '.75rem',
+              lineHeight: '1rem',
+              }}>{firm.online.email}</div>
           </div>
           )
       })}

@@ -50,7 +50,7 @@ Listings.getInitialProps = async ({ reduxStore, query, req, res }) => {
 
   let filteredFirm = []
 
-  const exportPDF = query.exportPDF === 'true';
+  const exportPDF = query.listingsPDF === 'true';
   const isServer = !!req;
   
   if (isServer && exportPDF) {

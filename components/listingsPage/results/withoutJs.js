@@ -1,19 +1,10 @@
 import {
-    Paragraph,
-    Col,
-    Row,
-    Pagination,
+   
     Anchor,
     CompanyCard,
     resolveMedia,
   } from "@moneypensionservice/directories";
   import { withTranslation, i18n } from "../../../Utils/translation/i18n";
-  
-  import { useSelector } from "react-redux";
-  import { useState, useEffect } from "react";
-  import { PDFDownloadLink } from "@react-pdf/renderer";
-  import MyDocument from "./Print";
-  import Loading from "./loading";
   import styled from "styled-components";
  
   
@@ -64,7 +55,7 @@ import {
             </span>
             <span>{t("headings.order")}</span>
           </div>
-          <PDFLink href="/listings?exportPDF=true">{t("download.link")}</PDFLink>
+          <PDFLink href="/listings?listingsPDF=true">{t("download.link")}</PDFLink>
          
         </div>
          {offered.map((selectedFirm, i) => {
@@ -76,9 +67,7 @@ import {
                   currentLng={i18n.language}
                 />
               );
-            })}
-
-            
+            })}   
       </div>
     );
   };
