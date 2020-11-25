@@ -21,6 +21,9 @@
     "url": "https://github.com/moneyadviceservice/isomorphic_react_prototype/issues"
   },
   "homepage": "https://github.com/moneyadviceservice/isomorphic_react_prototype#readme",
+  "browser": {
+    "html-pdf": false
+  },
   "dependencies": {
     "@moneypensionservice/directories": "^1.9.3",
     "@react-pdf/renderer": "^1.6.11",
@@ -31,6 +34,7 @@
     "expect": "^26.6.1",
     "express": "^4.17.1",
     "fetch-mock": "^9.10.7",
+    "html-pdf": "^2.2.0",
     "i18next": "^19.8.2",
     "install": "^0.13.0",
     "next": "^9.5.5",

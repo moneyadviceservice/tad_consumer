@@ -15,8 +15,9 @@ import {
   import MyDocument from "./Print";
   import Loading from "./loading";
   import styled from "styled-components";
+ 
   
-  const PDFLink = styled(PDFDownloadLink)`
+  const PDFLink = styled(Anchor)`
     font-size: 16px;
     margin: 0;
     width: 100%;
@@ -63,7 +64,7 @@ import {
             </span>
             <span>{t("headings.order")}</span>
           </div>
-          
+          <PDFLink href="/listings?exportPDF=true">{t("download.link")}</PDFLink>
          
         </div>
          {offered.map((selectedFirm, i) => {
