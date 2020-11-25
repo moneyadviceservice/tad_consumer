@@ -307,7 +307,7 @@ const Filters = ({ t, query }) => {
           textAlign="right"
           textSize="11px"
           width="auto"
-          href=""
+          href="/listings"
           style={{
             color: "inherit",
             outline: "none",
