@@ -50,9 +50,11 @@ Listings.getInitialProps = async ({ reduxStore, query, req, res }) => {
 
   let filteredFirm = []
 
+  // pdf download query string
   const exportPDF = query.listingsPDF === 'true';
   const isServer = !!req;
   
+  // create pdf and download when ?listingsPDF=true is added to listing page string
   if (isServer && exportPDF) {
     const buffer = await pdfHelper.componentToPDFBuffer(
       listingsPDF(shuffledfirm)  
@@ -64,10 +66,11 @@ Listings.getInitialProps = async ({ reduxStore, query, req, res }) => {
     res.type('pdf');
     res.send(buffer);
   }
-
+  // return shuffledfirm when nothing is submitted in non js environment
   if(Object.keys(query).length === 0 && query.constructor === Object){
     filteredFirm = shuffledfirm
   }
+  // return filtered firm when form is submitted to the backend
   filteredFirm = displayFirms(query, offerings, shuffledfirm)
   
   return {

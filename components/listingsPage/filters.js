@@ -377,7 +377,26 @@ const Filters = ({ t, query }) => {
         ) : (
           // Server
             <FilterFormFIeld data-testid="filterFormField">
-              <Legend> {t("headings.filter_by_insurance_type")}</Legend>
+              <Legend> 
+                {t("headings.filter_by_insurance_type")}
+                <TooltipText
+                minWidth="300px"
+                text={
+                  <>
+                    <Heading color="#515151" level={4} style={{ marginTop: 0 }}>
+                      {t("toolTips.insuranceType.title")}
+                    </Heading>
+                    <TooltipParagraph style={{ marginBottom: "10px" }}>
+                      {t("toolTips.insuranceType.para_1")}
+                    </TooltipParagraph>
+                    <TooltipParagraph>
+                      {t("toolTips.insuranceType.para_2")}
+                    </TooltipParagraph>
+                  </>
+                }
+                data-testid="filterTooltip"
+              />
+              </Legend>
               {t("filters.trip_type", { returnObjects: true }).map(
                 ({ type, value }, i) => (
                   <Radio
@@ -397,12 +416,24 @@ const Filters = ({ t, query }) => {
 
         {/*  annual and single options */}
         {!process.browser?(
-          <FilterFormFIeld>
+          <FilterFormFIeld data-testid="filterFormField">
             <Legend>
             {t("headings.filter_by_length_of_trip")}
             </Legend>
             <Paragraph textSize="12px">
               Choose only if you selected Single Trip
+              <span style={{ fontSize: "14px" }}>
+              <TooltipText
+                minWidth="200px"
+                side="left"
+                text={
+                  <TooltipParagraph>
+                    {t("toolTips.singleTrip")}
+                  </TooltipParagraph>
+                }
+                data-testid="filterTooltip"
+              />
+            </span>
               </Paragraph>
                 {t("filters.singleTripLength", { returnObjects: true }).map(
                   ({ length, value }, i) => (
@@ -419,6 +450,18 @@ const Filters = ({ t, query }) => {
                 )}
                 <Paragraph textSize="12px" style={{ marginTop: "20px" }}>
                   Choose only if you selected Annual Multi-trip
+                  <span style={{ fontSize: "14px" }}>
+                  <TooltipText
+                    minWidth="200px"
+                    side="left"
+                    text={
+                      <TooltipParagraph>
+                        {t("toolTips.annualTrip")}
+                      </TooltipParagraph>
+                    }
+                    data-testid="filterTooltip"
+                  />
+                </span>
             </Paragraph>
               {t("filters.annualTripLength", { returnObjects: true }).map(
                 ({ length, value }, i) => (
