@@ -51,7 +51,7 @@ import {
           >
             <span>
               {t("headings.showing")}
-              1 {t("headings.of")} {offered.length}
+              1 - {offered.length}
             </span>
             <span>{t("headings.order")}</span>
           </div>

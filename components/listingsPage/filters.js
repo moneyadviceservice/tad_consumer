@@ -390,27 +390,35 @@ const Filters = ({ t, query }) => {
                   />
                 )
               )}
-              <Heading level={4}>
-               {t("headings.filter_by_length_of_trip")}
-              </Heading>
-              <Paragraph textSize="12px">
-                Choose only if you selected Single Trip
-            </Paragraph>
-              {t("filters.singleTripLength", { returnObjects: true }).map(
-                ({ length, value }, i) => (
-                  <Radio
-                    style={{ fontSize: "13px" }}
-                    key={i}
-                    checked={altSingleOption === value}
-                    onChange={(e) => handleTripLength(e)}
-                    label={length}
-                    name="singleOption"
-                    value={value}
-                  />
-                )
-              )}
-              <Paragraph textSize="12px" style={{ marginTop: "20px" }}>
-                Choose only if you selected Annual Multi-trip
+              
+            </FilterFormFIeld>
+          )}
+
+
+        {/*  annual and single options */}
+        {!process.browser?(
+          <FilterFormFIeld>
+            <Legend>
+            {t("headings.filter_by_length_of_trip")}
+            </Legend>
+            <Paragraph textSize="12px">
+              Choose only if you selected Single Trip
+              </Paragraph>
+                {t("filters.singleTripLength", { returnObjects: true }).map(
+                  ({ length, value }, i) => (
+                    <Radio
+                      style={{ fontSize: "13px" }}
+                      key={i}
+                      checked={altSingleOption === value}
+                      onChange={(e) => handleTripLength(e)}
+                      label={length}
+                      name="singleOption"
+                      value={value}
+                    />
+                  )
+                )}
+                <Paragraph textSize="12px" style={{ marginTop: "20px" }}>
+                  Choose only if you selected Annual Multi-trip
             </Paragraph>
               {t("filters.annualTripLength", { returnObjects: true }).map(
                 ({ length, value }, i) => (
@@ -425,10 +433,9 @@ const Filters = ({ t, query }) => {
                   />
                 )
               )}
-            </FilterFormFIeld>
-          )}
-
-        <FilterFormFIeld data-testid="filterFormField">
+         </FilterFormFIeld>
+        ):(
+          <FilterFormFIeld data-testid="filterFormField">
           <Legend>{t("headings.filter_by_length_of_trip")}</Legend>
           <Note note={note}>{t("headings.selectInsurance")}</Note>
           <SingleTrip single={single}>
@@ -487,6 +494,8 @@ const Filters = ({ t, query }) => {
             )}
           </AnnualTrip>
         </FilterFormFIeld>
+        )}
+        
 
 
 
