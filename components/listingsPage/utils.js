@@ -178,6 +178,8 @@ export const listingsPDF = (selectedFirms) => {
 
 export const displayFirms = (query, offerings, shuffledfirm) => {
 
+  if(!process.browser){
+
   let filteredPool = Object.entries(query).map((e) => ( { [e[0]]: e[1] } ));
 
   let age = 0;
@@ -343,5 +345,6 @@ export const displayFirms = (query, offerings, shuffledfirm) => {
           return selected != null;
         });
 
-        return filteredFirm
+        return filteredFirm 
+      }
 }
