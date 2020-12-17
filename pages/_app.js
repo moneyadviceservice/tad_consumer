@@ -9,7 +9,7 @@ import Footer from "../components/footer";
 import Head from "../Utils/layouts/head";
 
 import { ThemeProvider, Container } from "@moneypensionservice/directories";
-
+import './tad_consumer_reskin.css'
 
 
 const MyApp = ({
