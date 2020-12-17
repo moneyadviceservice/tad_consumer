@@ -8,7 +8,7 @@ import { withTranslation } from "../../Utils/translation/i18n";
 
 export const ExtHeading = styled(Heading)`
   width: 100%;
-  color: #006a00;
+  
   line-height: 1.1;
   margin-top: 20px;
   ${resolveMedia.md`
@@ -18,7 +18,7 @@ export const ExtHeading = styled(Heading)`
 `;
 const Title = ({ t }) => {
   return (
-    <ExtHeading level={1}>
+    <ExtHeading level={1} color="orange">
       {ReactHtmlParser(t("home.banner.heading"))}
     </ExtHeading>
   );
