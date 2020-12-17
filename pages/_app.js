@@ -14,7 +14,7 @@ import { ThemeProvider, Container } from "@moneypensionservice/directories";
 
 const MyApp = ({
   Component,
-  pageProps,
+  pageProps = {},
   reduxStore,
   path,
   alternateAddress,
