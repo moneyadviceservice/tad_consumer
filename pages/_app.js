@@ -14,16 +14,22 @@ import './tad_consumer_reskin.css'
 
 const MyApp = ({
   Component,
-  pageProps,
+  pageProps = {},
   reduxStore,
   path,
   alternateAddress,
 }) => {
+
+  const syndicated = pageProps.syndicated
+
   return (
     <Provider store={reduxStore}>
       <ThemeProvider>
         <Head path={path} data-testid="contentHead" />
-        <Header path={path} alternateAddress={alternateAddress} />
+        {
+          !syndicated && <Header path={path} alternateAddress={alternateAddress} />
+        }
+        
         <Container
           as="main"
           style={{ paddingRight: "0", paddingLeft: "0" }}
@@ -31,7 +37,11 @@ const MyApp = ({
         >
           <Component {...pageProps} />
         </Container>
-        <Footer data-testid="contentFooter" />
+
+        {
+          !syndicated && <Footer data-testid="contentFooter" />
+        }
+        
       </ThemeProvider>
     </Provider>
   );
@@ -53,6 +63,8 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
     `${protocol}://${host}/${alternateLang}${path}`;
 
   pageProps = await Component.getInitialProps(ctx);
+  pageProps.syndicated = ctx.req.headers["x-syndicated-tool"]
+
 
   return {
     pageProps: pageProps,

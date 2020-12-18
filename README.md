@@ -47,6 +47,18 @@ The documentation for these can be found here:
 - [Jest](https://jestjs.io/docs/en/getting-started).
 - [Enzyme](https://enzymejs.github.io/enzyme/)
 
+
+### Syndication Testing
+
+This project uses Cypress to test syndication e.g. non-rendering of Header & Footer Components.
+
+ To run tests:
+```sh
+npm run cypress
+
+```
+
+
 ### Location
 
 Where a component has its own folder, the test should be colocated in the folder, however, where the component share folder with other files, the test should be located in `__test__` folder.
