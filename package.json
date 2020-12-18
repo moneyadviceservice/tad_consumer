@@ -51,7 +51,8 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.3.0",
-    "styled-components": "^5.x"
+    "styled-components": "^5.x",
+    "wait-on": "^5.2.0"
   },
   "devDependencies": {
     "@testing-library/dom": "^7.26.3",
