@@ -1,28 +1,33 @@
 @font-face{
     font-family: 'Roobert-Regular';
-    src: font-url('/assets/Roobert-Regular.woff2') format('woff2'),
-         font-url('/assets/Roobert-Regular.woff') format('woff');
+    src: font-url('/public/assets/Roobert-Regular.woff2') format('woff2'),
+         font-url('/public/assets/Roobert-Regular.woff') format('woff');
 }
 @font-face{
     font-family: 'Roobert-bold';
-    src: font-url('/assets/Roobert-Bold.woff2') format('woff2'),
-         font-url('/assets/Roobert-Bold.woff') format('woff');
+    src: font-url('/public/assets/Roobert-Bold.woff2') format('woff2'),
+         font-url('/public/assets/Roobert-Bold.woff') format('woff');
 }
 main {
     font-family: 'Roobert-Regular', sans-serif;
     font-style: normal;
 }
 
+/*----------------------------- Tad consumer landing page styles ----------------------------*/
+
+/*** Panel Background ***/
 main .hgoVrP{
     background-color: #F3F1F3;
 }
 
-h1.StyledHeading-xxi4nn-0,
-h2.StyledHeading-xxi4nn-0 {
+/*** Headings ***/
+h1.ebEJfV,
+h2.eXKFIl {
     font-weight: bold;
     color: #0F19A0;
 }
 
+/*** List Item Styles ***/
 ul.subComponents__UnorderedList-nzd029-1 li {
     color: #000B3B;
 }
@@ -33,15 +38,17 @@ ul.subComponents__UnorderedList-nzd029-1 li::before {
     -webkit-mask-image: url(/assets/Images/MAS_tick-105.svg);
 }
 
+/*** About box border ***/
 div.subComponents__AboutBox-nzd029-5 {
     border-color: #00788F;
     color:#000B3B
 }
-
+/*** About box heading ***/
 div.subComponents__AboutBox-nzd029-5 h3 {
     color: #0F19A0;
 }
 
+/*** Frequently asked question panel styles ***/
 svg.gNIBTo path, svg.lnghlC path {
     stroke:#C82A87;
 }
@@ -53,20 +60,19 @@ div.fQxXrJ {
     border-left-color: #00788F;
 }
 
-a.ebdbHJ, a.fNhjgf, a.bFzSQw {
+/*** Hyperlinks styles ***/
+a.ebdbHJ, div.iXHOhb a.fNhjgf, div.bHDTNM a.fNhjgf,  div.dgzgA a.bFzSQw  {
     color: #C82A87;
 }
 
-a.ebdbHJ:hover {
-    text-decoration: none;
+a.ebdbHJ:hover, div.iXHOhb a.fNhjgf:hover, div.dgzgA a.bFzSQw:hover {
     color: #AE0060;
 }
-a.fNhjgf:hover, a.bFzSQw:hover {
-    color: #AE0060;
-}
-a.ebdbHJ:visited, a.fNhjgf:visited, a.bFzSQw:visited {
+
+a.ebdbHJ:visited, div.iXHOhb a.fNhjgf:visited, div.dgzgA a.bFzSQw:visited {
     color: #792B9E;
 }
+
 
 h3.ekcFyQ {
     color:#000B3B;
@@ -77,6 +83,7 @@ p.dxEuUz, p.cMWkvj, p.fmZqpL {
     color:#000B3B;
 }
 
+/*** View all firms button ***/
 a.ccQANn {
     box-sizing: border-box;
     font-family: 'Roobert-Regular', sans-serif;
@@ -109,6 +116,7 @@ a.ccQANn {
     outline: none!important;
   }
 
+  /*** Nees help shopping around around styles ***/
   div#need_help {
     background: #FFFFFF;
     border: 8px solid #F0F05A;
@@ -118,22 +126,29 @@ a.ccQANn {
   }
 
   h3.ekcFyQ {
-    display: block;
+    height: 61px;
+    z-index: 9999999999;
+  }
+  h3.ekcFyQ:before {
+    content: "";
     background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEiIGhlaWdodD0iNzkiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CgogPGc+CiAgPHRpdGxlPmJhY2tncm91bmQ8L3RpdGxlPgogIDxyZWN0IGZpbGw9Im5vbmUiIGlkPSJjYW52YXNfYmFja2dyb3VuZCIgaGVpZ2h0PSI2MDIiIHdpZHRoPSI4MDIiIHk9Ii0xIiB4PSItMSI+PC9yZWN0PgogPC9nPgogPGc+CiAgPHRpdGxlPkxheWVyIDE8L3RpdGxlPgogIDxwYXRoIGlkPSJzdmdfMSIgZmlsbD0iI0M3MzA3RSIgZD0ibTAsMzhsMCwtMzhsMTAuMDk2LDBsMC4wMTQ1LDM4bDAuMDA2NSwzLjU1M2MwLDYuMzExIDQuMjAyLDEwLjc3NCAxMC4yMDMsMTAuNzc0bDAuNjgsMGwwLDAuMDAzbDksMGwwLC0wLjAwM2w3LjE0NywwbC0xMC4wMjQsLTEwLjAyNmw2LjYzNiwtNi42MzZsMTMuODM3LDEzLjgzNWM0LjE1Miw0LjE1MyA0LjE1MiwxMC44ODUgMCwxNS4wMzlsLTEzLjgzNywxMy44MzZsLTYuNjM2LC02LjYzN2wxMC4wMjQsLTEwLjAyNmwtNy4xNDcsMGwwLC0wLjAwMmwtOSwwbDAsMC4wMDJsLTEuNjUzLDBjLTExLjM3OSwwIC0xOS4zNDcsLTcuNjU2IC0xOS4zNDcsLTE4LjYyM2wwLC01LjA4OXoiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+CiA8L2c+Cjwvc3ZnPg==);
     background-repeat: no-repeat;
-    background-position: 9% 0%;
-    background-size: 40px;
-    height: 85px;
-    text-align: left;
-    padding-left: 95px;
-    padding-top: 25px;
-    font-size: 32px;
-    line-height: 39px;
-    z-index: 9999999999;
-    margin-top: -8px;
+    background-size: 50%;
+    display: block;
+    position: relative;
+    width: 69px;
+    height: 75px;
+    top: -1px;
+    left: 11px;
   }
-  
+
   div.esOBTz {
     padding-left: 95px;
-    padding-bottom: 20px;
+    padding-top: 0px;
   }
+
+  /*------------------------------------------------------------------------------------------*/
+
+  /*----------------------------- Tad consumer filter page styles ----------------------------*/
+
+
