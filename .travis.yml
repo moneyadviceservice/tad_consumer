@@ -12,4 +12,4 @@ install:
 script:
   - npm run test
   - npm run dev & wait-on http://localhost:3000
-  - $(npm bin)/cypress run --record
+  - $(npm bin)/cypress run
