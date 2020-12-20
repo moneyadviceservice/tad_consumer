@@ -1,22 +1,24 @@
 @font-face{
     font-family: 'Roobert-Regular';
-    src: font-url('/public/assets/Roobert-Regular.woff2') format('woff2'),
-         font-url('/public/assets/Roobert-Regular.woff') format('woff');
+    src: url('/assets/Fonts/Roobert-Regular.woff2') format('woff2'),
+         url('/assets/Fonts/Roobert-Regular.woff') format('woff');
 }
 @font-face{
     font-family: 'Roobert-bold';
-    src: font-url('/public/assets/Roobert-Bold.woff2') format('woff2'),
-         font-url('/public/assets/Roobert-Bold.woff') format('woff');
+    src: url('/assets/Fonts/Roobert-Bold.woff2') format('woff2'),
+         url('/assets/Fonts/Roobert-Bold.woff') format('woff');
 }
-main {
+/* main {
     font-family: 'Roobert-Regular', sans-serif;
     font-style: normal;
-}
+} */
 
 /*----------------------------- Tad consumer landing page styles ----------------------------*/
 
 /*** Panel Background ***/
 main .hgoVrP{
+    font-family: 'Roobert-Regular', sans-serif!important;
+    font-style: normal;
     background-color: #F3F1F3;
 }
 
@@ -61,15 +63,28 @@ div.fQxXrJ {
 }
 
 /*** Hyperlinks styles ***/
-a.ebdbHJ, div.iXHOhb a.fNhjgf, div.bHDTNM a.fNhjgf,  div.dgzgA a.bFzSQw  {
+/* a.ebdbHJ, div.iXHOhb a.fNhjgf, div.bHDTNM a.fNhjgf,  div.dgzgA a.bFzSQw, a.wlHJG, a.fNhjgf {
     color: #C82A87;
 }
 
-a.ebdbHJ:hover, div.iXHOhb a.fNhjgf:hover, div.dgzgA a.bFzSQw:hover {
+a.ebdbHJ:hover, div.iXHOhb a.fNhjgf:hover, div.dgzgA a.bFzSQw:hover, a.wlHJG:hover, a.fNhjgf:hover {
     color: #AE0060;
 }
 
-a.ebdbHJ:visited, div.iXHOhb a.fNhjgf:visited, div.dgzgA a.bFzSQw:visited {
+a.ebdbHJ:visited, div.iXHOhb a.fNhjgf:visited, div.dgzgA a.bFzSQw:visited, a.wlHJG:visited, a.fNhjgf:visited {
+    color: #792B9E;
+} */
+
+
+a.ebdbHJ, div.iXHOhb a.fNhjgf, div.bHDTNM a.fNhjgf,  div.dgzgA a.bFzSQw , a.wlHJG {
+    color: #C82A87;
+}
+
+a.ebdbHJ:hover, div.iXHOhb a.fNhjgf:hover, div.dgzgA a.bFzSQw:hover, a.wlHJG:hover {
+    color: #AE0060;
+}
+
+a.ebdbHJ:visited, div.iXHOhb a.fNhjgf:visited, div.dgzgA a.bFzSQw:visited, a.wlHJG:visited {
     color: #792B9E;
 }
 
@@ -116,7 +131,7 @@ a.ccQANn {
     outline: none!important;
   }
 
-  /*** Nees help shopping around around styles ***/
+  /*** Need help shopping around around styles ***/
   div#need_help {
     background: #FFFFFF;
     border: 8px solid #F0F05A;
@@ -147,8 +162,163 @@ a.ccQANn {
     padding-top: 0px;
   }
 
-  /*------------------------------------------------------------------------------------------*/
-
+  .bHDTNM img{
+    width: 20px;
+    height: 20px;
+}
+  
   /*----------------------------- Tad consumer filter page styles ----------------------------*/
 
+h3.cnkvmM {
+    background-color: #F3F1F3;
+}
 
+
+ legend.hXsZEE {
+     color: #0F19A0;
+ }
+
+ /*** Information Icon style ***/
+
+a.kLqhMp {
+    width: 30px;
+    height: 30px;
+    background-color: #F3F1F3;
+	color: #C82A87;
+    border: 3px solid #C82A87;
+    
+    
+    
+}
+a.kLqhMp:focus, a.kLqhMp:hover {
+    background-color:  #F0F05A;
+    border-color: #8200D1;
+    color: #8200D1;
+    outline: none;
+}
+
+/* @media print{
+    display: none;
+} */
+
+p.dJJTVy {
+    color: #000B3B;
+}
+
+button.hSqzmj {
+    background-color: #F3F1F3;
+    border: 3px solid #C82A87;
+}
+
+button.hSqzmj svg path {
+    fill: #C82A87 !important;
+    stroke: #c82a87;
+    stroke-width: 2.75;
+}
+
+button.hSqzmj:focus, button.hSqzmj:hover {
+    background-color: #F0F05A;
+    border-color: #8200D1;
+    color: #8200D1;
+    outline: none;
+}
+
+
+/*** Select box style ***/
+select.dXGwTl {
+    width: 285px;
+    background-color: #FFFFFF;
+    -webkit-appearance: auto;
+    -moz-appearance: auto;
+    padding: 7px 12px 7px 12px;
+    height: auto;
+    border-radius: 4px;
+}
+
+select.dXGwTl:focus {
+    border: 2px solid #8200D1;
+    border-radius: 0;
+    background-color: #F0F05A;
+    outline: 0;
+}
+
+/*** Radio button style ***/
+.hhgDcV input[type='radio']:focus, .hhgDcV input[type='radio']:hover {
+    outline-color: #8200D1 !important;
+}
+
+a.edsDRp, button.jEdQwJ {
+    background: #FFFFFF;
+    color: #C82A87;
+    font-size: 16px;
+    border: 1px solid #C82A87;
+    border-radius: 4px;
+    box-shadow: 0px 3px 0px rgba(0, 11, 59, 0.25);
+    padding: 12px 16px;
+}
+
+a.edsDRp:hover, button.jEdQwJ:hover {
+    background: #F3F1F3;
+    border: 1px solid #AE0060;
+}
+
+a.edsDRp:focus, button.jEdQwJ:focus {
+    background-color:  #F0F05A;
+    border: 3px solid  #8200D1;
+    color:  #000B3B;
+}
+
+a.edsDRp:active{
+    font-weight: 600;
+    background: #F3F1F3;
+    color:  #000B3B;
+    border: 3px solid  #8200D1;
+    box-shadow: 0px 3px 0px FFFFFF, inset 0px 5px 2px rgba(0, 11, 59, 0.25);
+}
+
+a.edsDRp svg {
+    fill: #C82A87;
+}
+
+a.edsDRp svg path {
+    fill: #C82A87;
+}
+
+span.jUgykA {
+    color: #000B3B;
+}
+
+a.jrTSaU {
+    color:#C82A87;
+}
+
+
+
+
+/*** Opening hours link style ***/
+
+span.hSXHBx span a {
+    color: #C82A87;
+}
+
+span.hSXHBx span a:hover{
+    color: #AE0060;
+}
+
+span.hSXHBx span a:visited {
+    color: #792B9E;
+}
+
+/*** Firms Results Panel Header style ***/
+
+div.eVGWZ div:first-child {
+    background: none !important;
+}
+div.eVGWZ div div:first-child{
+    background: #F3F1F3 !important;
+}
+
+
+div.eVGWZ div div:not(:first-child) div {
+    background: #ffffff !important;
+}
