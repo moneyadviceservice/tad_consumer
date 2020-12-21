@@ -8,10 +8,6 @@
     src: url('/assets/Fonts/Roobert-Bold.woff2') format('woff2'),
          url('/assets/Fonts/Roobert-Bold.woff') format('woff');
 }
-/* main {
-    font-family: 'Roobert-Regular', sans-serif;
-    font-style: normal;
-} */
 
 /*----------------------------- Tad consumer landing page styles ----------------------------*/
 
@@ -63,18 +59,6 @@ div.fQxXrJ {
 }
 
 /*** Hyperlinks styles ***/
-/* a.ebdbHJ, div.iXHOhb a.fNhjgf, div.bHDTNM a.fNhjgf,  div.dgzgA a.bFzSQw, a.wlHJG, a.fNhjgf {
-    color: #C82A87;
-}
-
-a.ebdbHJ:hover, div.iXHOhb a.fNhjgf:hover, div.dgzgA a.bFzSQw:hover, a.wlHJG:hover, a.fNhjgf:hover {
-    color: #AE0060;
-}
-
-a.ebdbHJ:visited, div.iXHOhb a.fNhjgf:visited, div.dgzgA a.bFzSQw:visited, a.wlHJG:visited, a.fNhjgf:visited {
-    color: #792B9E;
-} */
-
 
 a.ebdbHJ, div.iXHOhb a.fNhjgf, div.bHDTNM a.fNhjgf,  div.dgzgA a.bFzSQw , a.wlHJG {
     color: #C82A87;
@@ -131,7 +115,7 @@ a.ccQANn {
     outline: none!important;
   }
 
-  /*** Need help shopping around around styles ***/
+  /*** Need help shopping around styles ***/
   div#need_help {
     background: #FFFFFF;
     border: 8px solid #F0F05A;
@@ -169,6 +153,7 @@ a.ccQANn {
   
   /*----------------------------- Tad consumer filter page styles ----------------------------*/
 
+  /*** Refine your search panel style ***/
 h3.cnkvmM {
     background-color: #F3F1F3;
 }
@@ -247,6 +232,7 @@ select.dXGwTl:focus {
     outline-color: #8200D1 !important;
 }
 
+/*** Phone, Website, Email and Next button style ***/
 a.edsDRp, button.jEdQwJ {
     background: #FFFFFF;
     color: #C82A87;
@@ -284,6 +270,7 @@ a.edsDRp svg path {
     fill: #C82A87;
 }
 
+/*** Paragraph + Info style ***/
 span.jUgykA {
     color: #000B3B;
 }
