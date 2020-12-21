@@ -85,7 +85,7 @@ p.dxEuUz, p.cMWkvj, p.fmZqpL {
 /*** View all firms button ***/
 a.ccQANn {
     box-sizing: border-box;
-    font-family: 'Roobert-Regular', sans-serif;
+    font-family: 'Roobert-Medium', sans-serif;
     background: #C82A87;
     color: #ffffff;
     font-size: 16px;
@@ -234,6 +234,7 @@ select.dXGwTl:focus {
 
 /*** Phone, Website, Email and Next button style ***/
 a.edsDRp, button.jEdQwJ {
+    font-family: 'Roobert-Medium', sans-serif;
     background: #FFFFFF;
     color: #C82A87;
     font-size: 16px;
