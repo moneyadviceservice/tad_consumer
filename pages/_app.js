@@ -63,7 +63,7 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
     `${protocol}://${host}/${alternateLang}${path}`;
 
   pageProps = await Component.getInitialProps(ctx);
-  pageProps.syndicated = ctx.req.headers["x-syndicated-tool"]
+  pageProps.syndicated = ctx.req ? ctx.req.headers["x-syndicated-tool"] : ""
 
 
   return {
