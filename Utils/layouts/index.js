@@ -6,8 +6,7 @@ import {
 } from "@moneypensionservice/directories";
 import styled from "styled-components";
 import { useRouter } from "next/router";
-import Link from "next/link";
-import { withTranslation } from "../translation/i18n";
+import { withTranslation, Link } from "../translation/i18n";
 
 const Section = styled(Row)`
   margin: auto;
@@ -35,7 +34,7 @@ const BreadcrumbSection = styled(ExtendedSection)`
 `};
 `;
 
-const BreadAnchor = styled(Anchor)`
+export const BreadAnchor = styled(Anchor)`
   text-decoration: none;
   border: none;
   font-size: 16px;
@@ -66,16 +65,69 @@ const BreadAnchor = styled(Anchor)`
   }
 `;
 
+export const MobileBreadAnchor = styled(BreadAnchor)`
+  text-decoration: none;
+  border: none;
+  font-size: 14px;
+  padding: 0;
+  &:before {
+    font-size: 24px;
+    line-height: 0;
+    color: #96b4c0;
+    position: relative;
+    top: 4px;
+    padding: 0;
+    content: "\\2190  ";
+    text-decoration: none;
+  }
+  &:after {
+    content: "";
+  }
+`;
+
+const MobileExtended = styled(ExtendedSection)`
+  display: block;
+  border-bottom: none;
+  padding-top: 15px;
+  padding-bottom: 0;
+  ${resolveMedia.md`
+    display: none;
+`};
+`;
+
 const InternalLink = ({ children, href }) => (
   <Link href={href} passHref>
     {children}
   </Link>
 );
-const BreadLink = ({ href, name }) => (
+export const BreadLink = ({ href, name }) => (
   <Link href={href} passHref>
     <BreadAnchor>{name}</BreadAnchor>
   </Link>
 );
+
+export const MobileBreadLink = ({ href, name }) => (
+  <Link href={href} passHref>
+    <MobileBreadAnchor>{name}</MobileBreadAnchor>
+  </Link>
+);
+
+const MobileBreadcrumb = ({ t }) => {
+  const pathname = useRouter().pathname;
+
+  if (pathname == "/listings") {
+    return (
+      <MobileExtended align="stretch">
+        <Section constrained>
+          <Col style={{ padding: 0 }}>
+            <MobileBreadLink href="/" name={t("mobile")} />
+          </Col>
+        </Section>
+      </MobileExtended>
+    );
+  }
+  return "";
+};
 
 const Breadcrumb = ({ path, t }) => {
   const router = useRouter().pathname;
@@ -84,17 +136,20 @@ const Breadcrumb = ({ path, t }) => {
     if (paths === "") {
       return false;
     }
+    
     let anchorText = eval("`${paths}`");
-    return <BreadLink key={i} href={paths} name={t(anchorText)} />;
+    let hrefSlash = `/${paths}`
+    return <BreadLink key={i} href={hrefSlash} name={t(anchorText)} />;
   });
+ 
 
   return (
     <BreadcrumbSection align="stretch">
       <Section constrained>
         <Col style={{ display: "inline" }}>
-          <BreadAnchor href="https://www.moneyadviceservice.org.uk/en">
+          <BreadAnchor href="https://www.moneyadviceservice.org.uk/en" data-testid="breadAnchor">
             {t("home")}
-          </BreadAnchor>
+          </BreadAnchor >
           <BreadLink href="/" name={t("travel")} />
           {crumbs}
         </Col>
@@ -105,4 +160,4 @@ const Breadcrumb = ({ path, t }) => {
 
 export default withTranslation("header")(Breadcrumb);
 
-export { Section, ExtendedSection, InternalLink };
+export { Section, ExtendedSection, InternalLink, MobileBreadcrumb };

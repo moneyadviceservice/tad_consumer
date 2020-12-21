@@ -1,12 +1,6 @@
-import { Page, Document } from "@react-pdf/renderer";
+import { Page, Document, Font } from "@react-pdf/renderer";
 import styled from "@react-pdf/styled-components";
 
-const Heading = styled.Text`
-  font-size: 13px;
-  font-family: "Helvetica";
-  font-weight: bold;
-  padding: 0;
-`;
 
 const RowView = styled.View`
   display: flex;
@@ -23,6 +17,12 @@ const RowText = styled.Text`
   font-weight: medium;
   line-height: 1.5;
 `;
+
+Font.registerHyphenationCallback(word => {
+  // Return entire word as unique part
+  return [word];
+});
+
 // Create Document Component
 const MyDocument = ({ t }) => {
   return (
@@ -35,9 +35,7 @@ const MyDocument = ({ t }) => {
           padding: 68,
         }}
       >
-        <RowView>
-          <Heading> {t("home.transcript.topHeading")}</Heading>
-        </RowView>
+        
         <RowView>
           <RowText>{t("home.transcript.para1")}</RowText>
         </RowView>
@@ -63,7 +61,7 @@ const MyDocument = ({ t }) => {
           <RowText>{t("home.transcript.para8")}</RowText>
         </RowView>
         <RowView>
-          <Heading>{t("home.transcript.bottomHeading")}</Heading>
+          <RowText>{t("home.transcript.bottomHeading")}</RowText>
         </RowView>
       </Page>
     </Document>

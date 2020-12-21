@@ -1,9 +1,8 @@
 import { Fragment } from "react";
-import { DummyCard, CompanyName, SubHead, CommsInfo, Comms } from "./dummy";
-import { withTranslation } from "../../Utils/translation/i18n";
+import { DummyCard, CompanyName, SubHead, CommsInfo, Comms } from "../utils";
 import { Col, Row } from "@moneypensionservice/directories";
 
-const Loading = ({ t }) => {
+const Loading = () => {
   return (
     <Fragment>
       <DummyCard>
@@ -298,4 +297,4 @@ const Loading = ({ t }) => {
   );
 };
 
-export default withTranslation("listings", "common", "footer")(Loading);
+export default Loading;

@@ -116,7 +116,7 @@
       "links": [
         {
           "text": "Yswiriant Teithio pan fydd gennych gyflwr meddygol difrifol",
-          "href": "https://www.moneyadviceservice.org.uk/cy/articles/yswiriant-teithio-ar-gyfer-pobl-dros-65-oed-a-chyflyrau-meddygol"
+          "href": "https://www.moneyadviceservice.org.uk/cy/articles/travel-insurance-if-you-have-a-medical-condition"
         },
         {
           "text": "Oes angen yswiriant teithio arnoch?",
@@ -145,16 +145,15 @@
       }
     },
     "transcript": {
-      "topHeading": "Not available",
-      "bottomHeading": "Not available",
-      "para1": "Not available",
-      "para2": "Not available",
-      "para3": "Not available",
-      "para4": "Not available",
-      "para5": "Not available",
-      "para6": "Not available",
-      "para7": "Not available",
-      "para8": "Not available"
+      "bottomHeading": "Gobeithio y dewch chi o hyd i'r yswiriant sydd ei angen arnoch chi - er mwyn i chi gael y daith rydych chi'n ei haeddu",
+      "para1": "Mae'r rhan fwyaf o bobl yn cytuno ei bod hi'n bwysig cael yswiriant teithio os ydych chi'n teithio oddi cartref. Ond os oes gennych gyflwr meddygol difrifol, gall dod o hyd i'r yswiriant cywir fod yn brofiad rhwystredig, blinedig a drud.",
+      "para2": "Gallwn helpu.",
+      "para3": "Mae gan ein cyfeirlyfr restr o gwmnïau sy'n arbenigo mewn cynnig yswiriant teithio i bobl â chyflyrau meddygol difrifol neu sy'n peryglu bywyd.",
+      "para4": "Felly, os yw'ch yswiriant teithio wedi dirywio neu wedi'i ganslo oherwydd cyflwr meddygol - neu os nad yw'ch cyflwr wedi'i orchuddio, rydych chi yn y lle iawn.",
+      "para5": "Hefyd, os ychwanegwyd premiwm ychwanegol at eich polisi oherwydd eich cyflwr, yna mae'n werth gweld a all unrhyw un o'r cwmnïau ar ein cyfeirlyfr gynnig gwell pris.",
+      "para6": "Mae pob un o'r cwmnïau'n cael eu rheoleiddio gan yr Awdurdod Ymddygiad Ariannol ac wedi bod trwy feini prawf mynediad penodol iawn i brofi eu harbenigedd.",
+      "para7": "Bydd yn rhaid i chi fynd at gwmnïau unigol i gael dyfynbris, ond mae'n werth rhoi cynnig ar fwy nag un, gan y bydd prisiau'n amrywio.",
+      "para8": "Ond os yw'r broses o siopa o gwmpas yn dechrau eich siomi a bod y cyfan yn teimlo'n rhy anodd, gallwch ofyn i frocer yswiriant wneud y gwaith caled i chi. Bydd y blwch ar waelod y sgrin yn dweud mwy wrthych am y gwasanaeth hwn."
     }
   }
 }

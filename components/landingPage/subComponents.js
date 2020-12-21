@@ -2,9 +2,15 @@ import styled from "styled-components";
 import {
   resolveMedia,
   Button,
-  Col,
+
   Paragraph,
+  Anchor,
+  Col,
+  Row,
+  InfoTable,
+  Paragraph as P,
 } from "@moneypensionservice/directories";
+
 
 const ParagraphAnchor = styled(Paragraph)`
   display: none;
@@ -79,6 +85,8 @@ const BrokerOpening = styled.div`
   margin-bottom: 30px;
 `;
 
+
+
 export {
   ParagraphAnchor,
   UnorderedList,
@@ -87,4 +95,5 @@ export {
   YoutubeFrame,
   AboutBox,
   BrokerOpening,
+ 
 };

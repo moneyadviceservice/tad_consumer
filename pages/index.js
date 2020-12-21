@@ -1,8 +1,9 @@
 import { Fragment, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+
 // utils
-import { withTranslation } from "../Utils/translation/i18n";
+import { i18n, withTranslation } from "../Utils/translation/i18n";
 import { Section, ExtendedSection, InternalLink } from "../Utils/layouts";
 // components
 import {
@@ -19,12 +20,12 @@ import {
   QuestionButton,
   YoutubeFrame,
   AboutBox,
-} from "../components/landingPage";
+
+} from "../components/landingPage/subComponents";
+import BrokerTable from "../components/landingPage/brokerTable"
 import Title from "../components/title";
-import BrokerTable from "../components/landingPage/brokerTable";
 import FAQ from "../components/landingPage/faq";
-// PDF
-import { PDFDownloadLink, BlobProvider } from "@react-pdf/renderer";
+import { PDFDownloadLink } from "@react-pdf/renderer";
 import MyDocument from "../components/landingPage/videoTranscript";
 
 const PDFLink = styled(PDFDownloadLink)`
@@ -38,11 +39,13 @@ const PDFLink = styled(PDFDownloadLink)`
 `};
 `;
 
-const Homepage = ({ t }) => {
+const Homepage = ({ t, path }) => {
   const [isClient, setIsClient] = useState(false);
   useEffect(() => {
     setIsClient(true);
   }, []);
+
+
 
   return (
     <Fragment>
@@ -84,7 +87,8 @@ const Homepage = ({ t }) => {
                 )
               )}
             </UnorderedList>
-            <InternalLink href="/listings">
+
+            <InternalLink href="/listings" >
               <QuestionButton primary>
                 {t("home.conditions.button")}
               </QuestionButton>
@@ -148,7 +152,7 @@ const Homepage = ({ t }) => {
             </Heading>
             {t("home.articles.links", { returnObjects: true }).map(
               ({ text, href }, i) => (
-                <Anchor textSize="16px" key={i} href={href}>
+                <Anchor textSize="16px" key={i} href={href} target="_blank">
                   {text}
                 </Anchor>
               )
