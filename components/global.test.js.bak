@@ -1,7 +1,7 @@
 import { shallow } from "enzyme";
 import   {MyApp } from "../pages/_app"
 import AppHead from "../Utils/layouts/head";
-import { PageFooter} from "../components/footer"
+import { PageFooter} from "./footer"
 import BreadCrumb, {BreadAnchor, BreadLink} from "../Utils/layouts"
 import * as nextRouter from 'next/router';
 import { findByTestAtrr} from "../Utils/test";
