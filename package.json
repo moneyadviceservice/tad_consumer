@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
     "test": "NODE_ENV=test jest --verbose",
+    "cypress": "node_modules/.bin/cypress run",
     "testwatch": "jest --watchAll"
   },
   "repository": {
@@ -50,7 +51,8 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.3.0",
-    "styled-components": "^5.x"
+    "styled-components": "^5.x",
+    "wait-on": "^5.2.0"
   },
   "devDependencies": {
     "@testing-library/dom": "^7.26.3",
@@ -59,6 +61,7 @@
     "babel-eslint": "^10.0.3",
     "babel-jest": "^26.6.1",
     "babel-plugin-styled-components": "^1.10.6",
+    "cypress": "^6.1.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.8.0",
