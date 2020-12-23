@@ -57,14 +57,14 @@ const Homepage = ({ t, path }) => {
         <Col sizes={{ xs: 12, md: 3 }} data-testid="contentCol">
           <ParagraphAnchor style={{ fontSize: "16px" }}>
             <Anchor
-              href="https://radsignup.moneyadviceservice.org.uk/travel_insurance_registrations/new"
+              href="https://radsignup.moneyhelper.org/travel_insurance_registrations/new"
               style={{ fontSize: "16px" }}
             >
               {t("home.banner.register")}
             </Anchor>
             {t("home.banner.or")}
             <Anchor
-              href="https://radsignup.moneyadviceservice.org.uk/users/sign_in"
+              href="https://radsignup.moneyhelper.org/users/sign_in"
               style={{ fontSize: "16px" }}
             >
               {t("home.banner.login")}

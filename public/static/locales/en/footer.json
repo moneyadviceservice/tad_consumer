@@ -54,15 +54,15 @@
       },
       "link_items": [
         {
-          "href": "https://www.moneyadviceservice.org.uk/en/static/about-us",
+          "href": "https://www.moneyhelper.org/en/static/about-us",
           "text": "About us"
         },
         {
-          "href": "https://www.moneyadviceservice.org.uk/en/categories/our-debt-work",
+          "href": "https://www.moneyhelper.org/en/categories/our-debt-work",
           "text": "Our debt work"
         },
         {
-          "href": "https://www.moneyadviceservice.org.uk/en/static/media-centre",
+          "href": "https://www.moneyhelper.org/en/static/media-centre",
           "text": "Media centre"
         },
         {
@@ -70,15 +70,15 @@
           "text": "Financial Capability"
         },
         {
-          "href": "https://www.moneyadviceservice.org.uk/en/categories/partners",
+          "href": "https://www.moneyhelper.org/en/categories/partners",
           "text": "Partners"
         },
         {
-          "href": "https://www.moneyadviceservice.org.uk/en/static/jobs",
+          "href": "https://www.moneyhelper.org/en/static/jobs",
           "text": "Jobs"
         },
         {
-          "href": "https://www.moneyadviceservice.org.uk/en/categories/tools-and-calculators",
+          "href": "https://www.moneyhelper.org/en/categories/tools-and-calculators",
           "text": "Tools & Calculators"
         }
       ],
@@ -98,27 +98,27 @@
       },
       "list_items": [
         {
-          "href": "https://www.moneyadviceservice.org.uk/en/static/contact-us",
+          "href": "https://www.moneyhelper.org/en/static/contact-us",
           "text": "Contact us"
         },
         {
-          "href": "https://www.moneyadviceservice.org.uk/en/static/terms-and-conditions",
+          "href": "https://www.moneyhelper.org/en/static/terms-and-conditions",
           "text": "Terms & Conditions"
         },
         {
-          "href": "https://www.moneyadviceservice.org.uk/en/corporate/privacy",
+          "href": "https://www.moneyhelper.org/en/corporate/privacy",
           "text": "Privacy Notice"
         },
         {
-          "href": "https://www.moneyadviceservice.org.uk/en/static/accessibility",
+          "href": "https://www.moneyhelper.org/en/static/accessibility",
           "text": "Accessibility"
         },
         {
-          "href": "https://www.moneyadviceservice.org.uk/en/static/cookie_notice_en",
+          "href": "https://www.moneyhelper.org/en/static/cookie_notice_en",
           "text": "Cookies"
         },
         {
-          "href": "https://www.moneyadviceservice.org.uk/en/sitemap",
+          "href": "https://www.moneyhelper.org/en/sitemap",
           "text": "Sitemap"
         }
       ]
