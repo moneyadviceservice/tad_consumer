@@ -19,7 +19,7 @@
 /*----------------------------- Tad consumer landing page styles ----------------------------*/
 
 /*** Panel Background ***/
-main .hgoVrP{
+main[class^=styledContainer__ContainerWrapper]{
     font-family: 'Roobert-Regular', sans-serif!important;
     font-style: normal;
     background-color: #F3F1F3;
@@ -28,6 +28,7 @@ main .hgoVrP{
 /*** Headings ***/
 h1[class^=StyledHeading],
 h2[class^=StyledHeading]{
+    font-family: 'Roobert-Bold', sans-serif!important;
     font-weight: bold;
     color: #0F19A0;
 }
