@@ -26,8 +26,8 @@ main .hgoVrP{
 }
 
 /*** Headings ***/
-h1.ebEJfV,
-h2.eXKFIl {
+h1[class^=StyledHeading],
+h2[class^=StyledHeading]{
     font-weight: bold;
     color: #0F19A0;
 }
@@ -90,7 +90,7 @@ p.dxEuUz, p.cMWkvj, p.fmZqpL {
 }
 
 /*** View all firms button ***/
-a.ccQANn {
+a[class^=buttonStyles__ButtonWrapper]{
     box-sizing: border-box;
     font-family: 'Roobert-SemiBold', sans-serif;
     background: #C82A87;
@@ -102,19 +102,19 @@ a.ccQANn {
     padding: 8px 16px; 
   }
   
-  a.ccQANn:hover{
+  a[class^=buttonStyles__ButtonWrapper]:hover{
     background: #AE0060;
     border: 3px solid #AE0060;
     outline: none!important;
   }
   
-  a.ccQANn:focus{
+  a[class^=buttonStyles__ButtonWrapper]:focus{
     background-color: #F0F05A;
     border: 3px solid #8200D1;
     color: #000B3B;
     outline: none!important;
   }
-  a.ccQANn:active{
+  a[class^=buttonStyles__ButtonWrapper]:active{
     background: #9C0052;
     color: #ffffff;
     border: 3px solid #F0F05A;
@@ -129,7 +129,6 @@ a.ccQANn {
     box-sizing: border-box;
     border-radius: 0px 0px 0px 36px;
     padding-top: 8px;
-   
   }
 
   h3.ekcFyQ {
@@ -180,7 +179,7 @@ h3.cnkvmM {
 }
 
 
- legend.hXsZEE {
+ legend[class^=utils__Legend]{
      color: #0F19A0;
  }
 
@@ -211,18 +210,19 @@ p.dJJTVy {
     color: #000B3B;
 }
 
-button.hSqzmj {
+button[class^=buttonStyles__ButtonWrapper]{
     background-color: #F3F1F3;
     border: 3px solid #C82A87;
 }
 
-button.hSqzmj svg path {
+button[class^=buttonStyles__ButtonWrapper] svg path {
     fill: #C82A87 !important;
     stroke: #c82a87;
     stroke-width: 2.75;
 }
 
-button.hSqzmj:focus, button.hSqzmj:hover {
+button[class^=buttonStyles__ButtonWrapper]:focus, 
+button[class^=buttonStyles__ButtonWrapper]:hover {
     background-color: #F0F05A;
     border-color: #8200D1;
     color: #8200D1;
@@ -249,8 +249,9 @@ select.dXGwTl:focus {
 }
 
 /*** Radio button style ***/
-.hhgDcV input[type='radio']:focus, .hhgDcV input[type='radio']:hover {
-    outline-color: #8200D1 !important;
+/* .hhgDcV input[type='radio']:focus, .hhgDcV input[type='radio']:hover { */
+input[type=radio][class^=StyledRadio__Field]:hover{
+    outline: 0.187rem solid #8200D1 !important;
 }
 
 /*** Phone, Website, Email and Next button style ***/
