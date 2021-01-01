@@ -34,41 +34,48 @@ h2[class^=StyledHeading]{
 }
 
 /*** List Item Styles ***/
-ul.subComponents__UnorderedList-nzd029-1 li {
+ul[class^=subComponents__UnorderedList] li {
     color: #000B3B;
 }
 
-ul.subComponents__UnorderedList-nzd029-1 li::before {
+ul[class^=subComponents__UnorderedList] li::before {
     background: #0F19A0;
     mask-image: url(/assets/Images/MAS_tick-105.svg);
     -webkit-mask-image: url(/assets/Images/MAS_tick-105.svg);
 }
 
 /*** About box border ***/
-div.subComponents__AboutBox-nzd029-5 {
+div[class*=subComponents__AboutBox] {
     border-color: #00788F;
     color:#000B3B
 }
 /*** About box heading ***/
-div.subComponents__AboutBox-nzd029-5 h3 {
+div[class*=subComponents__AboutBox] h3 {
     color: #0F19A0;
 }
 
 /*** Frequently asked question panel styles ***/
-svg.gNIBTo path, svg.lnghlC path {
+/* 
+TODO what was this for?    
+, svg.lnghlC path 
+*/
+svg[class^=StyledAccordion__Icon] path { 
     stroke:#C82A87;
 }
-p.hMehJj {
+p[class^=StyledParagraph] {
     color: #C82A87;
 }
 
+/* 
+TODO what was this for?  
 div.fQxXrJ {
     border-left-color: #00788F;
-}
+} */
 
 /*** Hyperlinks styles ***/
 
-a.ebdbHJ, div.iXHOhb a.fNhjgf, div.bHDTNM a.fNhjgf,  div.dgzgA a.bFzSQw , a.wlHJG {
+a[class^=pages__PDFLink]
+{
     color: #C82A87;
 }
 
