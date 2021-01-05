@@ -64,12 +64,9 @@
         text-decoration: none!important;
         font-weight: bold;
         line-height: 18px;
-        /* &:focus{
-            background-color: #F0F05A;
-            border-color: #8200D1;
-            color: #8200D1;
-            outline: none;
-        } */
+        font-family: 'Times New Roman', Times, serif!important;
+        font-weight: bold!important;
+        font-style: italic!important;
     }
     a[class*=StyledTooltip__Icon-sc]:focus,
     a[class*=StyledTooltip__Icon-sc]:active{
@@ -80,6 +77,13 @@
     }
     span[class*=StyledTooltip__Tip-sc]{
         box-shadow: none;
+        border-color: #0f19a0;
+    }
+    button[class*=StyledTooltip__TipClose-sc]{
+        border-color: #0f19a0;
+    }
+    button[class*=StyledTooltip__TipClose-sc] svg path{
+        stroke: #0f19a0;
     }
     p[class*=utils__TooltipParagraph-sc]{
         font-family: 'Roobert-Regular', sans-serif;
