@@ -29,15 +29,61 @@
         border-color: #00788F;
         color: #000B3B;
     }
+    p[class*=StyledParagraph-sc],
+    div[class*=filters] span{
+        color: #000B3B;
+    }
+    div[class*=styledCol__ColWrapper-sc] div[class*=styledCol__ColWrapper-sc] span{
+        color: #000b3b;
+        font-family: 'Roobert-Bold', sans-serif;
+    }
+    div[class*=styledCol__ColWrapper-sc] span{
+        color: #000b3b;
+    }
 /* --------------------------------------------------------------------- */
 
 /* -- Headings --------------------------------------------------------- */
     h1[class^=StyledHeading],
     h2[class^=StyledHeading],
-    h3[class^=StyledHeading]{
+    h3[class^=StyledHeading],
+    legend[class^=utils__Legend-sc]{
         font-family: 'Roobert-Bold', sans-serif!important;
         font-weight: bold;
         color: #0F19A0;
+    }
+    h3[class*=utils__ExtHeading-sc]{
+        background-color: #f3f1f3;
+    }
+/* --------------------------------------------------------------------- */
+
+/* -- Tooltips --------------------------------------------------------- */
+    a[class*=StyledTooltip__Icon-sc]{
+        background-color: #F3F1F3;
+        color: #C82A87;
+        border: 3px solid #C82A87!important;
+        text-decoration: none!important;
+        font-weight: bold;
+        line-height: 18px;
+        /* &:focus{
+            background-color: #F0F05A;
+            border-color: #8200D1;
+            color: #8200D1;
+            outline: none;
+        } */
+    }
+    a[class*=StyledTooltip__Icon-sc]:focus,
+    a[class*=StyledTooltip__Icon-sc]:active{
+        background-color: #F0F05A;
+        border-color: #8200D1;
+        color: #8200D1;
+        outline: none;
+    }
+    span[class*=StyledTooltip__Tip-sc]{
+        box-shadow: none;
+    }
+    p[class*=utils__TooltipParagraph-sc]{
+        font-family: 'Roobert-Regular', sans-serif;
+        font-size: 16px;
     }
 /* --------------------------------------------------------------------- */
 
@@ -73,9 +119,38 @@
         box-shadow: 0px 3px 0px #ffffff, inset 0px 5px 2px rgba(0, 11, 59, 0.25);
         outline: none!important;
     }
-  /* --------------------------------------------------------------------- */
+    button[class*=StyledPagination__PaginationButton]{
+        background: #ffffff;
+        border: 1px solid #C82A87;
+        color: #C82A87;
+        padding: 8px 16px;
+        box-shadow: 0px 3px 0px rgba(0, 11, 59, 0.25);
+    }
+    button[class*=StyledPagination__PaginationButton]:hover{
+        background: #f3f1f3;
+        border: 1px solid #AE0060;
+        color: #AE0060;
+        box-shadow: 0px 1px 0px rgba(0, 11, 59, 0.25);
+    }
+    button[class*=StyledPagination__PaginationButton]:active{
+        border: 3px solid #8200D1;
+        background: #f3f1f3;
+        box-shadow: 0px 1px 0px #FFFFFF, inset 0px 5px 2px rgba(0, 11, 59, 0.25);
+        padding: 6px 16px;
+    }
+    button[class*=StyledPagination__PaginationButton]:focus{
+        background: #F0F05A;
+        border: 3px solid #8200D1;
+        box-shadow: 0px 1px 0px rgba(0, 11, 59, 0.25);
+        padding: 6px 16px;
+    }
+    a[class*=StyledCompanyCard__CardButton-sc] svg,
+    a[class*=StyledCompanyCard__CardButton-sc] svg path{
+        fill: #ffffff;
+    }
+/* --------------------------------------------------------------------- */
 
-  /* -- Lists / Accordions /inline links --------------------------------- */
+/* -- Lists / Accordions /inline links --------------------------------- */
     li[class^=subComponents__ListItem]{
         color: #000B3B;
     }
@@ -93,22 +168,31 @@
     button[class*=StyledAccordion__AccordionBtn] p,
     a[class*=faq__Anchor-sc],
     a[class*=pages__PDFLink-sc],
-    a[class*=StyledAnchor-sc]{
+    a[class*=StyledAnchor-sc],
+    a[class*=withJs__PDFLink-sc],
+    a[class*=StyledCompanyCard__TooltipAnchor-sc]{
         color: #C82A87;
         text-decoration: underline;
         border-bottom: 4px solid transparent;
+        font-style: normal;
+        font-weight: normal;
+        font-family: 'Roobert-Regular', sans-serif;
     }
     button[class*=StyledAccordion__AccordionBtn] p:hover,
     a[class*=faq__Anchor-sc]:hover,
     a[class*=pages__PDFLink-sc]:hover,
-    a[class*=StyledAnchor-sc]:hover{
+    a[class*=StyledAnchor-sc]:hover,
+    a[class*=withJs__PDFLink-sc]:hover,
+    a[class*=StyledCompanyCard__TooltipAnchor-sc]:hover{
         color: #AE0060;
         text-decoration: none;
     }
     button[class*=StyledAccordion__AccordionBtn] p:focus,
     a[class*=faq__Anchor-sc]:focus,
     a[class*=pages__PDFLink-sc]:focus,
-    a[class*=StyledAnchor-sc]:focus{
+    a[class*=StyledAnchor-sc]:focus,
+    a[class*=withJs__PDFLink-sc]:focus,
+    a[class*=StyledCompanyCard__TooltipAnchor-sc]:focus{
         color: #000B3B;
         background-color: #F0F05A;
         text-decoration: none;
@@ -118,9 +202,12 @@
     div[class*=StyledAccordion__ContentContainer]{
         border-color: #00788F;
     }
-  /* --------------------------------------------------------------------- */
+    a[class*=StyledAnchor-sc]{
+        font-size: 16px;
+    }
+/* --------------------------------------------------------------------- */
 
-  /* -- Info box --------------------------------------------------------- */
+/* -- Info box --------------------------------------------------------- */
     div[class*=StyledInfoTable__TableContainer]{
         border: 8px solid #F0F05A;
         border-radius: 0 0 0 36px;
@@ -159,4 +246,27 @@
             padding: 0 0 0 40px!important;
         }
     }
-  /* --------------------------------------------------------------------- */
+/* --------------------------------------------------------------------- */
+
+/* -- Form elements ---------------------------------------------------- */
+    select[class^=utils__Select-sc]{
+        width: 285px;
+        background-color: #ffffff;
+        /* -webkit-appearance: none;
+        -moz-appearance: none; */
+        padding: 7px 12px 7px 12px;
+        height: auto;
+        border-radius: 4px;
+    }
+    select[class^=utils__Select-sc]:focus{
+        border: 2px solid #8200D1;
+        border-radius: 0;
+        background-color: #F0F05A;
+        outline: none!important;
+        border-radius: 4px;
+    }
+    input[class^=StyledRadio__Field-sc]:focus,
+    input[class^=StyledRadio__Field-sc]:hover{
+        outline-color: #8200D1!important;
+    }
+/* --------------------------------------------------------------------- */
