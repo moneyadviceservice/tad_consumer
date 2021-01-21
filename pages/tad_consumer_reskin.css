@@ -35,8 +35,13 @@
     }
     div[class*=styledCol__ColWrapper-sc] div[class*=styledCol__ColWrapper-sc] span{
         color: #000b3b;
-        font-family: 'Roobert-Bold', sans-serif;
+        font-family: 'Roobert-Bold', sans-serif;   
     }
+
+    div[class*=styledCol__ColWrapper-sc] div[class*=styledCol__ColWrapper-sc] span[class*=StyledTooltip__Tip-sc] {
+        font-family: 'Roobert-Regular', sans-serif;
+    }
+
     div[class*=styledCol__ColWrapper-sc] span{
         color: #000b3b;
     }
@@ -168,7 +173,7 @@
         stroke: #C82A87;
     }
     button[class*=StyledAccordion__AccordionBtn]:focus{
-        outline: none;
+        outline: 2px solid #8200D1;
     }
     button[class*=StyledAccordion__AccordionBtn] p,
     a[class*=faq__Anchor-sc],
@@ -204,6 +209,8 @@
         border-bottom: 4px solid #8200D1;
         outline: none;
     }
+
+
     div[class*=StyledAccordion__ContentContainer]{
         border-color: #00788F;
     }
