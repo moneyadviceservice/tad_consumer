@@ -38,7 +38,7 @@ export const getOfferingsSuccess = (offerings) => ({
 });
 
 export const filterOfferings = (pool) => {
-  
+
   return (dispatch, getState) => {
     // get data from the state
     const offerings = getState().listings.offerings.hits;
@@ -82,9 +82,11 @@ export const filterOfferings = (pool) => {
                 subtitle === 1000 ||
                 Object.values(value)[0] <= offering.cruise_30_days_max_age ||
                 Object.values(value)[0] <= offering.cruise_45_days_max_age ||
+                Object.values(value)[0] <= offering.cruise_50_days_max_age ||
                 Object.values(value)[0] <= offering.cruise_55_days_max_age ||
                 Object.values(value)[0] <= offering.land_30_days_max_age ||
                 Object.values(value)[0] <= offering.land_45_days_max_age ||
+                Object.values(value)[0] <= offering.land_50_days_max_age ||
                 Object.values(value)[0] <= offering.land_55_days_max_age
               );
             }
@@ -116,6 +118,7 @@ export const filterOfferings = (pool) => {
               return (
                 offering.cruise_30_days_max_age >= 0 ||
                 offering.cruise_45_days_max_age >= 0 ||
+                offering.cruise_50_days_max_age >= 0 ||
                 offering.cruise_55_days_max_age >= 0
               );
             }
@@ -128,6 +131,7 @@ export const filterOfferings = (pool) => {
               return (
                 offering.land_30_days_max_age >= 0 ||
                 offering.land_45_days_max_age >= 0 ||
+                offering.land_50_days_max_age >= 0 ||
                 offering.land_55_days_max_age >= 0
               );
             }
@@ -205,14 +209,14 @@ export const filterOfferings = (pool) => {
         }
       });
 
-     
+
 
       // filtered empty object out of the selectedFirm
       const filteredFirm = selectedFirm.filter((selected) => {
         return selected != null;
       });
 
-      
+
 
       // console.log(randomizeResult(filteredFirm));
 
