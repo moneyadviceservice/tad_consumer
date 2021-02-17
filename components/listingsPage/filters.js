@@ -49,10 +49,12 @@ const Filters = ({ t, query }) => {
 
   const [cruise_30_days_max_age, changeCruise30Max] = useState({});
   const [cruise_45_days_max_age, changeCruise45Max] = useState({});
+  const [cruise_50_days_max_age, changeCruise50Max] = useState({});
   const [cruise_55_days_max_age, changeCruise55Max] = useState({});
 
   const [land_30_days_max_age, changeLandMax30] = useState({});
   const [land_45_days_max_age, changeLandMax45] = useState({});
+  const [land_50_days_max_age, changeLandMax50] = useState({});
   const [land_55_days_max_age, changeLandMax55] = useState({});
 
   // console.log(cruise, singleOption, annualOption);
@@ -67,9 +69,11 @@ const Filters = ({ t, query }) => {
     will_cover_specialist_equipment,
     cruise_30_days_max_age,
     cruise_45_days_max_age,
+    cruise_50_days_max_age,
     cruise_55_days_max_age,
     land_30_days_max_age,
     land_45_days_max_age,
+    land_50_days_max_age,
     land_55_days_max_age,
   ];
 
@@ -136,9 +140,11 @@ const Filters = ({ t, query }) => {
     if (processedAge) {
       changeCruise30Max({ cruise_30_days_max_age: parseInt(processedAge) });
       changeCruise45Max({ cruise_45_days_max_age: parseInt(processedAge) });
+      changeCruise50Max({ cruise_50_days_max_age: parseInt(processedAge) });
       changeCruise55Max({ cruise_55_days_max_age: parseInt(processedAge) });
       changeLandMax30({ land_30_days_max_age: parseInt(processedAge) });
       changeLandMax45({ land_45_days_max_age: parseInt(processedAge) });
+      changeLandMax50({ land_50_days_max_age: parseInt(processedAge) });
       changeLandMax55({ land_55_days_max_age: parseInt(processedAge) });
     }
   }, [age]);
@@ -231,9 +237,11 @@ const Filters = ({ t, query }) => {
     changeEquipment({});
     changeCruise30Max({});
     changeCruise45Max({});
+    changeCruise50Max({});
     changeCruise55Max({});
     changeLandMax30({});
     changeLandMax45({});
+    changeLandMax50({});
     changeLandMax55({});
     changeAge({ age: "" });
     changeAnnualShow(false);
@@ -255,7 +263,7 @@ const Filters = ({ t, query }) => {
   let altSingleOption = "";
 
   // Code to repopulate the input from the url
- 
+
   for (const property in query) {
     if (`${property}` === "cruise_30_days_max_age") {
       altAge = `${query[property]}`;
@@ -291,10 +299,10 @@ const Filters = ({ t, query }) => {
   // NONFRONTEND CODE ENDS
 
   return (
-    <Form 
+    <Form
       action="/listings"
       method="post"
-      style={{ marginBottom: "40px", color: "#515151" }} 
+      style={{ marginBottom: "40px", color: "#515151" }}
       data-testid="filterForm">
       <ExtHeading level={3} style={{}}>
         <ToggleIcon onClick={(e) => handleMobile(e)} >
@@ -377,7 +385,7 @@ const Filters = ({ t, query }) => {
         ) : (
           // Server
             <FilterFormFIeld data-testid="filterFormField">
-              <Legend> 
+              <Legend>
                 {t("headings.filter_by_insurance_type")}
                 <TooltipText
                 minWidth="300px"
@@ -409,7 +417,7 @@ const Filters = ({ t, query }) => {
                   />
                 )
               )}
-              
+
             </FilterFormFIeld>
           )}
 
@@ -538,7 +546,7 @@ const Filters = ({ t, query }) => {
           </AnnualTrip>
         </FilterFormFIeld>
         )}
-        
+
 
 
 

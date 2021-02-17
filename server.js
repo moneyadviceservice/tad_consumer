@@ -25,9 +25,11 @@ const handle = app.getRequestHandler();
       let age = query.age
       query.cruise_30_days_max_age = age;
       query.cruise_45_days_max_age = age;
+      query.cruise_50_days_max_age = age;
       query.cruise_55_days_max_age = age;
       query.land_30_days_max_age = age;
       query.land_45_days_max_age = age;
+      query.land_50_days_max_age = age;
       query.land_55_days_max_age = age;
     }
     delete query.age;
@@ -43,12 +45,12 @@ const handle = app.getRequestHandler();
     res.redirect("/listings?" + queryString())
   })
 
- 
+
 
   server.get("*",nextI18NextMiddleware(nextI18next) , (req, res) =>{
     return handle(req, res)
   });
 
   await server.listen(port);
-  console.log(`> Travel directory running on http://localhost:${port}`); 
+  console.log(`> Travel directory running on http://localhost:${port}`);
 })();
