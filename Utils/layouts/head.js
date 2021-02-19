@@ -1,8 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { withTranslation } from "../translation/i18n";
-import getConfig from "next/config";
-const { publicRuntimeConfig } = getConfig();
+
 
 const AppHead = ({ path, t }) => {
   const route = useRouter().pathname;
