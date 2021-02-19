@@ -9,6 +9,9 @@ function Error() {
   );
 }
 
-Error.getInitialProps = async () => ({});
+Error.getInitialProps = async ({ req, res, err }) => ({});
 
 export default Error;
+
+
+
