@@ -11,8 +11,8 @@
     ],
     "singleTripLength": [
       { "length": "Hyd at 1 mis", "value": "30" },
-      { "length": "1 - 6 mis", "value": "180" },
-      { "length": "Dros 6 mis", "value": "181" }
+      { "length": "1 - 6 mis", "value": "45" },
+      { "length": "Dros 6 mis", "value": "55" }
     ],
     "annualTripLength": [
       { "length": "Heb fod yn hwy na 31 diwrnod", "value": "31" },
