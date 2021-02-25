@@ -77,9 +77,9 @@ export const ClearButton = styled.span`
   color: #fff
   cursor: pointer;
   text-decoration: none;
-  
+
   ${resolveMedia.md`
-   
+
    color: #003d8e;
 `};
 `;
@@ -173,7 +173,7 @@ export const listingsPDF = (selectedFirms) => {
       })}
       </div>
   )
- 
+
 };
 
 export const displayFirms = (query, offerings, shuffledfirm) => {
@@ -194,7 +194,7 @@ export const displayFirms = (query, offerings, shuffledfirm) => {
     }
   });
 
-  // FILTERING OFFERINGS 
+  // FILTERING OFFERINGS
     //start
     const selectedOfferings = filteredPool.reduce((acc, value) => {
       return acc.filter((offering) => {
@@ -203,21 +203,25 @@ export const displayFirms = (query, offerings, shuffledfirm) => {
           if (
             key == "cruise_30_days_max_age" ||
             key == "cruise_45_days_max_age" ||
+            key == "cruise_50_days_max_age" ||
             key == "cruise_55_days_max_age" ||
             key == "land_30_days_max_age" ||
             key == "land_45_days_max_age" ||
+            key == "land_50_days_max_age" ||
             key == "land_55_days_max_age"
             ) {
             let subtitle = parseInt(offering[Object.keys(value)]);
             let intAge  = parseInt(value[key])
-            
+
             return (
               subtitle === 1000 ||
               intAge <= offering.cruise_30_days_max_age ||
               intAge <= offering.cruise_45_days_max_age ||
+              intAge <= offering.cruise_50_days_max_age ||
               intAge <= offering.cruise_55_days_max_age ||
               intAge <= offering.land_30_days_max_age ||
               intAge <= offering.land_45_days_max_age ||
+              intAge <= offering.land_50_days_max_age ||
               intAge <= offering.land_55_days_max_age
             );
           }
@@ -225,14 +229,14 @@ export const displayFirms = (query, offerings, shuffledfirm) => {
           //  filter when travelling
           if (key === "how_far_in_advance_trip_cover_weeks") {
             return parseInt(Object.values(value)[0]) <= parseInt(offering[key])
-            
+
           }
           // filter length of trip
           if (key === "singleOption" || key === "annualOption") {
             let land = "land_" + Object.values(value)[0] + "_days_max_age";
             let cruise =
               "cruise_" + Object.values(value)[0] + "_days_max_age";
-        
+
             return (
               (parseInt(`${offering[land]}`) != -1 ||
                 parseInt(`${offering[cruise]}`) != -1) &&
@@ -251,6 +255,7 @@ export const displayFirms = (query, offerings, shuffledfirm) => {
             return (
               offering.cruise_30_days_max_age >= 0 ||
               offering.cruise_45_days_max_age >= 0 ||
+              offering.cruise_50_days_max_age >= 0 ||
               offering.cruise_55_days_max_age >= 0
             );
           }
@@ -263,6 +268,7 @@ export const displayFirms = (query, offerings, shuffledfirm) => {
             return (
               offering.land_30_days_max_age >= 0 ||
               offering.land_45_days_max_age >= 0 ||
+              offering.land_50_days_max_age >= 0 ||
               offering.land_55_days_max_age >= 0
             );
           }
@@ -313,7 +319,7 @@ export const displayFirms = (query, offerings, shuffledfirm) => {
               offering[Object.keys(value)].includes(null)
             );
           }
-          
+
           return (offering[Object.keys(value)].includes(Object.values(value)[0]) )
         }
       });
@@ -345,6 +351,6 @@ export const displayFirms = (query, offerings, shuffledfirm) => {
           return selected != null;
         });
 
-        return filteredFirm 
+        return filteredFirm
       }
 }
