@@ -10,7 +10,7 @@ const mockStore = configureMockStore(middlewares)
 
 const filterValues = [
     {trip_type: "Single Trip"},
-    {singleOption: "30"},
+    {singleOption: "50"},
     {cover_area: "Worldwide including USA, Canada & Caribbean"}
 ]
 
@@ -44,8 +44,10 @@ const offerings = [
         cover_area: "Worldwide including USA, Canada & Caribbean",
         land_30_days_max_age: 1000,
         cruise_30_days_max_age: 75,
-        cruis_45_days_max_age: 86,
+        cruise_45_days_max_age: 86,
         land_45_days_max_age: 58,
+        cruise_50_days_max_age: 86,
+        land_50_days_max_age: 58
 
     },
     {
@@ -54,14 +56,16 @@ const offerings = [
         cover_area: "UK & Europe",
         land_30_days_max_age: 98,
         cruise_30_days_max_age: 57,
-        cruis_45_days_max_age: 67,
+        cruise_45_days_max_age: 67,
         land_45_days_max_age: 51,
+        cruise_50_days_max_age: 67,
+        land_50_days_max_age: 51
 
     }
 ]
 
 describe("Actions Tests", ()=>{
-  
+
         it('should return all firms', () => {
           const testFirms = firms;
           const expectedAction = {
@@ -87,7 +91,7 @@ describe("Actions Tests", ()=>{
                     firms: { hits: firms}
             }
             })
-          
+
             const expectedActions = [
                 {type: types.FILTER_OFFERING, payload: [{
                     id: 21,
@@ -99,12 +103,12 @@ describe("Actions Tests", ()=>{
                       phone: '083736333535'
                     }
                   }]}
-                
+
               ]
-           
+
             store.dispatch(actions.filterOfferings(filterValues))
             expect(store.getActions()).toEqual(expectedActions)
-           
+
 
         })
 })
@@ -121,5 +125,5 @@ describe("Reducers Tests", ()=> {
           });
           expect(newState.firms).toEqual(firms);
         });
-      
+
 })

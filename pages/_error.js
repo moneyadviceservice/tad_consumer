@@ -12,3 +12,6 @@ function Error() {
 Error.getInitialProps = async () => ({});
 
 export default Error;
+
+
+
