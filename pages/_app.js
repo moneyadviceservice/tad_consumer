@@ -19,17 +19,11 @@ const MyApp = ({
   path,
   alternateAddress,
 }) => {
-
-  const syndicated = pageProps.syndicated
-
   return (
     <Provider store={reduxStore}>
       <ThemeProvider>
         <Head path={path} data-testid="contentHead" />
-        {
-          !syndicated && <Header path={path} alternateAddress={alternateAddress} />
-        }
-        
+        <Header path={path} alternateAddress={alternateAddress} />
         <Container
           as="main"
           style={{ paddingRight: "0", paddingLeft: "0" }}
@@ -37,11 +31,7 @@ const MyApp = ({
         >
           <Component {...pageProps} />
         </Container>
-
-        {
-          !syndicated && <Footer data-testid="contentFooter" />
-        }
-        
+        <Footer data-testid="contentFooter" />
       </ThemeProvider>
     </Provider>
   );
@@ -63,8 +53,6 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
     `${protocol}://${host}/${alternateLang}${path}`;
 
   pageProps = await Component.getInitialProps(ctx);
-  pageProps.syndicated = ctx.req ? ctx.req.headers["x-syndicated-tool"] : ""
-
 
   return {
     pageProps: pageProps,
