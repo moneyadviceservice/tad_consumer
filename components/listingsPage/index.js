@@ -3,6 +3,7 @@ import React, { Fragment } from "react";
 import Filters from "./filters";
 import Results from "./results";
 import { Col } from "@moneypensionservice/directories";
+import Breadcrumb, { MobileBreadcrumb } from "../../Utils/layouts";
 
 const Listing = ({ t, query, offered }) => {
   return (
