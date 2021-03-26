@@ -19,7 +19,7 @@ const Section = styled(Row)`
 const ExtendedSection = styled(Row)`
   padding-top: 30px;
   padding-bottom: 30px;
-  border-bottom: 1px solid #cbdae0;
+  border-bottom: 1px solid #9da1ca;
 `;
 
 const BreadcrumbSection = styled(ExtendedSection)`
@@ -135,20 +135,22 @@ const Breadcrumb = ({ path, t }) => {
     if (paths === "") {
       return false;
     }
-    
+
     let anchorText = eval("`${paths}`");
-    let hrefSlash = `/${paths}`
+    let hrefSlash = `/${paths}`;
     return <BreadLink key={i} href={hrefSlash} name={t(anchorText)} />;
   });
- 
 
   return (
     <BreadcrumbSection align="stretch">
       <Section constrained>
         <Col style={{ display: "inline" }}>
-          <BreadAnchor href="https://www.moneyadviceservice.org.uk/en" data-testid="breadAnchor">
+          <BreadAnchor
+            href="https://www.moneyadviceservice.org.uk/en"
+            data-testid="breadAnchor"
+          >
             {t("home")}
-          </BreadAnchor >
+          </BreadAnchor>
           <BreadLink href="/" name={t("travel")} />
           {crumbs}
         </Col>
