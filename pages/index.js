@@ -20,9 +20,8 @@ import {
   QuestionButton,
   YoutubeFrame,
   AboutBox,
-
 } from "../components/landingPage/subComponents";
-import BrokerTable from "../components/landingPage/brokerTable"
+import BrokerTable from "../components/landingPage/brokerTable";
 import Title from "../components/title";
 import FAQ from "../components/landingPage/faq";
 import { PDFDownloadLink } from "@react-pdf/renderer";
@@ -44,8 +43,6 @@ const Homepage = ({ t, path }) => {
   useEffect(() => {
     setIsClient(true);
   }, []);
-
-
 
   return (
     <Fragment>
@@ -88,7 +85,7 @@ const Homepage = ({ t, path }) => {
               )}
             </UnorderedList>
 
-            <InternalLink href="/listings" >
+            <InternalLink href="/listings">
               <QuestionButton primary>
                 {t("home.conditions.button")}
               </QuestionButton>
@@ -111,7 +108,7 @@ const Homepage = ({ t, path }) => {
             <Heading level={2} color="#006A00">
               {t("home.video.heading")}
             </Heading>
-            <YoutubeFrame src="https://www.youtube.com/embed/zz1bzoSQiMQ" />
+            <YoutubeFrame src={t("home.video.url")} />
             <Paragraph color="#515151" textSize="16px" margin={{ top: "20px" }}>
               {t("home.video.description")}&nbsp;
               {isClient && (
