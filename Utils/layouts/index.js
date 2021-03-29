@@ -7,6 +7,7 @@ import {
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import { withTranslation, Link } from "../translation/i18n";
+
 const Section = styled(Row)`
   margin: auto;
   ${resolveMedia.md`
@@ -24,13 +25,11 @@ const ExtendedSection = styled(Row)`
 
 const BreadcrumbSection = styled(ExtendedSection)`
   display: none;
-  ${resolveMedia.md`
-    display: block;
-    background: #edf0f0;
-    border-bottom: none;
-    padding-top: 15px;
-    padding-bottom: 15px
-`};
+  display: block;
+  background: #edf0f0;
+  border-bottom: none;
+  padding-top: 15px;
+  padding-bottom: 15px
 `;
 
 export const BreadAnchor = styled(Anchor)`
@@ -38,14 +37,14 @@ export const BreadAnchor = styled(Anchor)`
   border: none;
   font-size: 16px;
 
-  &:after {
-    font-size: 32px;
+  &:before {
+    font-size: 24px;
     line-height: 0;
     color: #96b4c0;
     position: relative;
     top: 4px;
-    padding: 0 6px;
-    content: " \\00203A  ";
+    padding: 0;
+    content: "\\2190  ";
     text-decoration: none;
   }
 
@@ -64,26 +63,6 @@ export const BreadAnchor = styled(Anchor)`
   }
 `;
 
-export const MobileBreadAnchor = styled(BreadAnchor)`
-  text-decoration: none;
-  border: none;
-  font-size: 14px;
-  padding: 0;
-  &:before {
-    font-size: 24px;
-    line-height: 0;
-    color: #96b4c0;
-    position: relative;
-    top: 4px;
-    padding: 0;
-    content: "\\2190  ";
-    text-decoration: none;
-  }
-  &:after {
-    content: "";
-  }
-`;
-
 const MobileExtended = styled(ExtendedSection)`
   display: block;
   border-bottom: none;
@@ -99,41 +78,19 @@ const InternalLink = ({ children, href }) => (
     {children}
   </Link>
 );
+
 export const BreadLink = ({ href, name }) => (
   <Link href={href} passHref>
     <BreadAnchor>{name}</BreadAnchor>
   </Link>
 );
 
-export const MobileBreadLink = ({ href, name }) => (
-  <Link href={href} passHref>
-    <MobileBreadAnchor>{name}</MobileBreadAnchor>
-  </Link>
-);
-
-const MobileBreadcrumb = ({ t }) => {
-  const pathname = useRouter().pathname;
-
-  if (pathname == "/listings") {
-    return (
-      <MobileExtended align="stretch">
-        <Section constrained>
-          <Col style={{ padding: 0 }}>
-            <MobileBreadLink href="/" name={t("mobile")} />
-          </Col>
-        </Section>
-      </MobileExtended>
-    );
-  }
-  return "";
-};
-
-const Breadcrumb = ({ path, t }) => {
+const Breadcrumb = ({ t }) => {
   return (
     <BreadcrumbSection align="stretch">
       <Section constrained>
         <Col style={{ display: "inline" }}>
-          <BreadAnchor href="https://www.moneyadviceservice.org.uk/en" data-testid="breadAnchor">
+          <BreadAnchor href="/" data-testid="breadAnchor">
             {t("home")}
           </BreadAnchor >
         </Col>
@@ -144,4 +101,4 @@ const Breadcrumb = ({ path, t }) => {
 
 export default withTranslation("header")(Breadcrumb);
 
-export { Section, ExtendedSection, InternalLink, MobileBreadcrumb };
+export { Section, ExtendedSection, InternalLink };
