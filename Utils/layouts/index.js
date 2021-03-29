@@ -129,19 +129,6 @@ const MobileBreadcrumb = ({ t }) => {
 };
 
 const Breadcrumb = ({ path, t }) => {
-  const router = useRouter().pathname;
-  const pathArray = process.browser ? router.split("/") : path.split("/");
-  const crumbs = pathArray.map((paths, i) => {
-    if (paths === "") {
-      return false;
-    }
-    
-    let anchorText = eval("`${paths}`");
-    let hrefSlash = `/${paths}`
-    return <BreadLink key={i} href={hrefSlash} name={t(anchorText)} />;
-  });
- 
-
   return (
     <BreadcrumbSection align="stretch">
       <Section constrained>
@@ -149,8 +136,6 @@ const Breadcrumb = ({ path, t }) => {
           <BreadAnchor href="https://www.moneyadviceservice.org.uk/en" data-testid="breadAnchor">
             {t("home")}
           </BreadAnchor >
-          <BreadLink href="/" name={t("travel")} />
-          {crumbs}
         </Col>
       </Section>
     </BreadcrumbSection>
