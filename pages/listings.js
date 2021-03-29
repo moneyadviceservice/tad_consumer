@@ -1,20 +1,18 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import pdfHelper from "../components/listingsPage/results/pdfHelper"
-
 import { withTranslation } from "../Utils/translation/i18n";
 import styled from "styled-components";
 import { Col, resolveMedia } from "@moneypensionservice/directories";
 import { Section, ExtendedSection } from "../Utils/layouts";
 import { randomizeResult, listingsPDF, displayFirms} from "../components/listingsPage/utils";
 import Title from "../components/title";
-
 import {
   getAlgoFirms,
   getAlgoOfferings,
 } from "../components/listingsPage/redux/actions";
-
 import Listing from "../components/listingsPage";
+import Breadcrumb from "../Utils/layouts";
 
 const ListingSection = styled(Section)`
   padding: 0;
@@ -26,6 +24,8 @@ const ListingSection = styled(Section)`
 const Listings = ({ t, query, offered }) => {
   return (
     <Fragment>
+      <Breadcrumb></Breadcrumb>
+
       <Section constrained data-testid="contentRow">
         <Col sizes={{ xs: 12 }} data-testid="contentCol">
           <Title />
