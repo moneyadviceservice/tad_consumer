@@ -174,11 +174,11 @@ const Homepage = ({ t, path }) => {
 };
 
 Homepage.getInitialProps = async () => ({
-  namespacesRequired: ["landing", "common", "footer"],
+  namespacesRequired: ["landing", "common"],
 });
 
 Homepage.propTypes = {
   t: PropTypes.func.isRequired,
 };
 
-export default withTranslation("landing", "common", "footer")(Homepage);
+export default withTranslation("landing", "common")(Homepage);
