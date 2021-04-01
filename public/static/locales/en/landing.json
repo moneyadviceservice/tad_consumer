@@ -30,6 +30,7 @@
       "button": "View all firms"
     },
     "video": {
+      "url": "https://www.youtube.com/embed/OSCMOwYZ4jE",
       "heading": "Who is this directory for?",
       "description": "Play this short video to find out if this directory can help you find the cover you need.",
       "transcript": "Download a transcript of the Travel Insurance Directory video."
@@ -115,20 +116,20 @@
       "links": [
         {
           "text": "Travel Insurance when you have a serious medical condition",
-          "href": "https://www.moneyadviceservice.org.uk/en/articles/travel-insurance-if-you-have-a-medical-condition"
+          "href": "https://www.moneyhelper.org.uk/en/everyday-money/insurance/travel-insurance/travel-insurance-if-you-have-a-medical-condition"
         },
         {
           "text": "Do you need travel insurance?",
-          "href": "https://www.moneyadviceservice.org.uk/en/articles/do-you-need-travel-insurance"
+          "href": "https://www.moneyhelper.org.uk/en/everyday-money/insurance/travel-insurance/do-you-need-travel-insurance"
         },
         {
           "text": "Travel insurance for the over 65s",
-          "href": "https://www.moneyadviceservice.org.uk/en/articles/travel-insurance-for-over-65s-and-medical-conditions"
+          "href": "https://www.moneyhelper.org.uk/en/everyday-money/insurance/travel-insurance/travel-insurance-for-over-65s-and-medical-conditions"
         },
 
         {
           "text": "Coronavirus and travel insurance",
-          "href": "https://www.moneyadviceservice.org.uk/en/articles/coronavirus-and-travel-insurance"
+          "href": "https://www.moneyhelper.org.uk/en/everyday-money/insurance/travel-insurance/coronavirus-and-travel-insurance"
         }
       ]
     },

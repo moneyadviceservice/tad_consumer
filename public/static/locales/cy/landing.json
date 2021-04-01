@@ -30,6 +30,7 @@
       "button": "Gweld pob cwmni"
     },
     "video": {
+      "url": "https://www.youtube.com/embed/sTdXnzreDR4",
       "heading": "Ar gyfer pwy mae'r cyfeirlyfr hwn?",
       "description": "Gwyliwch y fideo fer hon i ddarganfod a all y cyfeirlyfr hwn eich helpu i ddod o hyd i'r yswiriant sydd ei angen arnoch.",
       "transcript": "Lawrlwythwch drawsgrifiad o'r fideo Cyfeirlyfr Yswiriant Teithio."
@@ -116,20 +117,20 @@
       "links": [
         {
           "text": "Yswiriant Teithio pan fydd gennych gyflwr meddygol difrifol",
-          "href": "https://www.moneyadviceservice.org.uk/cy/articles/travel-insurance-if-you-have-a-medical-condition"
+          "href": "https://www.moneyhelper.org.uk/cy/everyday-money/insurance/travel-insurance/travel-insurance-if-you-have-a-medical-condition"
         },
         {
           "text": "Oes angen yswiriant teithio arnoch?",
-          "href": "https://www.moneyadviceservice.org.uk/cy/articles/a-oes-arnoch-angen-yswiriant-teithio"
+          "href": "https://www.moneyhelper.org.uk/cy/everyday-money/insurance/travel-insurance/do-you-need-travel-insurance"
         },
         {
           "text": "Yswiriant teithio i bobl dros 65 oed",
-          "href": "https://www.moneyadviceservice.org.uk/cy/articles/yswiriant-teithio-ar-gyfer-pobl-dros-65-oed-a-chyflyrau-meddygol"
+          "href": "https://www.moneyhelper.org.uk/cy/everyday-money/insurance/travel-insurance/travel-insurance-for-over-65s-and-medical-conditions"
         },
 
         {
           "text": "Coronafeirws ac yswiriant teithio",
-          "href": "https://www.moneyadviceservice.org.uk/cy/articles/coronafeirws-ac-yswiriant-teithio"
+          "href": "https://www.moneyhelper.org.uk/cy/everyday-money/insurance/travel-insurance/coronavirus-and-travel-insurance"
         }
       ]
     },

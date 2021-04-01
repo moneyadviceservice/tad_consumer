@@ -17,9 +17,7 @@ const BrokerTable = ({ content, ...rest }) => (
     >
       {content.description}
     </P>
-    <P textSize="0.8125rem" weight={700}>
-      {content.getInTouch}
-    </P>
+    <P>{content.getInTouch}</P>
     <Row direction="column" noGutter padding="0">
       <Col direction="row" align="flex-start">
         <img width="20px" src="/assets/Images/phone.svg" />
@@ -37,15 +35,14 @@ const BrokerTable = ({ content, ...rest }) => (
         </Col>
       </Col>
       <Col direction="row">
-        <img width="20px" src="/assets/Images/web.svg" />
-        <Anchor
-          margin={{ left: "0.625rem" }}
-          width="auto"
-          href={content.url}
-          target="_blank"
-        >
+        <Anchor width="auto" href={content.url} target="_blank">
           {content.website}
         </Anchor>
+        <img
+          width="18px"
+          height="auto"
+          src="/assets/Images/external_link.svg"
+        />
       </Col>
     </Row>
   </InfoTable>
