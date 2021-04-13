@@ -35,7 +35,7 @@ const ListItem = styled.li`
   margin-bottom: 12px;
   font-size: 16px;
   display: inline-block;
-  color: #515151;
+  color: #000;
   position: relative;
   padding-left: 30px;
   line-height: 1.5;
@@ -55,7 +55,13 @@ const ListItem = styled.li`
 const QuestionButton = styled(Button)`
   width: 100%;
   text-align: center;
-
+  background:#c82a87;
+  color: #fff;
+  border-bottom: 3px solid #ae0060;
+  &:hover {
+    background: #e244a1;
+    border-bottom: 3px solid #C81A7A;
+};
   ${resolveMedia.md`
     width: auto;
 `};
@@ -72,13 +78,14 @@ const YoutubeFrame = styled.iframe.attrs((props) => ({
 
 const AboutBox = styled(Col)`
   margin: 22px 0 22px 0;
-  border: 2px solid #00bebe;
+  border: 1px solid #106098;
   padding: 25px;
   font-size: 16px;
   background: #fff;
   font-weight: 200;
   color: #515151;
   line-height: 20px;
+  border-bottom-left-radius: 25px;
 `;
 const BrokerOpening = styled.div`
   padding-left: 30px;

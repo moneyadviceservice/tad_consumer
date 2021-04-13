@@ -73,10 +73,10 @@ const Homepage = ({ t, path }) => {
         </Section>
       </ExtendedSection>
       {/* Questions and quote disclaimer */}
-      <ExtendedSection align="stretch" background="#edf0f0">
+      <ExtendedSection align="stretch" background="#F3F1F3">
         <Section constrained data-testid="contentRow">
           <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
-            <Heading level={2} color="#006A00">
+            <Heading level={2} color="#000">
               {t("home.conditions.heading")}
             </Heading>
             <UnorderedList>
@@ -94,8 +94,8 @@ const Homepage = ({ t, path }) => {
             </InternalLink>
           </Col>
           <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
-            <AboutBox style={{ marginTop: "28px" }}>
-              <Heading level={3} color="#006A00" style={{ marginTop: 0 }}>
+            <AboutBox style={{ marginTop: "70px" }}>
+              <Heading level={3} color="#000" style={{ marginTop: 0 }}>
                 {t("home.about.heading")}
               </Heading>
               {t("home.about.content")}
