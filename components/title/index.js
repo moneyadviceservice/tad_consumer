@@ -8,7 +8,7 @@ import { withTranslation } from "../../Utils/translation/i18n";
 
 export const ExtHeading = styled(Heading)`
   width: 100%;
-  
+  color: #0f19a0;
   line-height: 1.1;
   margin-top: 20px;
   ${resolveMedia.md`

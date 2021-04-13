@@ -47,29 +47,31 @@ const Homepage = ({ t, path }) => {
   return (
     <Fragment>
       {/* Main heading and firm registration anchor */}
-      <Section constrained data-testid="contentRow">
-        <Col sizes={{ xs: 12, md: 9 }} data-testid="contentCol">
-          <Title />
-        </Col>
-        <Col sizes={{ xs: 12, md: 3 }} data-testid="contentCol">
-          <ParagraphAnchor style={{ fontSize: "16px" }}>
-            <Anchor
-              href="https://radsignup.moneyadviceservice.org.uk/travel_insurance_registrations/new"
-              style={{ fontSize: "16px" }}
-            >
-              {t("home.banner.register")}
-            </Anchor>
-            {t("home.banner.or")}
-            <Anchor
-              href="https://radsignup.moneyadviceservice.org.uk/users/sign_in"
-              style={{ fontSize: "16px" }}
-            >
-              {t("home.banner.login")}
-            </Anchor>
-            {t("home.banner.as")}
-          </ParagraphAnchor>
-        </Col>
-      </Section>
+      <ExtendedSection bgImg>
+        <Section background constrained data-testid="contentRow">
+            <Col sizes={{ xs: 12, md: 9 }} data-testid="contentCol">
+            <Title />
+            </Col>
+            <Col sizes={{ xs: 12, md: 3 }} data-testid="contentCol">
+            <ParagraphAnchor style={{ fontSize: "16px" }}>
+                <Anchor
+                href="https://radsignup.moneyadviceservice.org.uk/travel_insurance_registrations/new"
+                style={{ fontSize: "16px" }}
+                >
+                {t("home.banner.register")}
+                </Anchor>
+                {t("home.banner.or")}
+                <Anchor
+                href="https://radsignup.moneyadviceservice.org.uk/users/sign_in"
+                style={{ fontSize: "16px" }}
+                >
+                {t("home.banner.login")}
+                </Anchor>
+                {t("home.banner.as")}
+            </ParagraphAnchor>
+            </Col>
+        </Section>
+      </ExtendedSection>
       {/* Questions and quote disclaimer */}
       <ExtendedSection align="stretch" background="#edf0f0">
         <Section constrained data-testid="contentRow">
