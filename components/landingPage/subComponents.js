@@ -21,6 +21,10 @@ const ParagraphAnchor = styled(Paragraph)`
   `}
 `;
 
+const AEMAnchor = styled(Anchor)`
+    color: #037F8C;
+`;
+
 const UnorderedList = styled.ul`
   display: flex;
   flex-wrap: wrap;
@@ -102,5 +106,5 @@ export {
   YoutubeFrame,
   AboutBox,
   BrokerOpening,
- 
+  AEMAnchor
 };

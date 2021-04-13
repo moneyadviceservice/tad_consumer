@@ -3,6 +3,13 @@ import styled from "styled-components";
 import { Accordion } from "@moneypensionservice/directories";
 
 // styled components
+
+const AEMAccordion = styled(Accordion)`
+    border-bottom: 1px solid #106098;
+     &:nth-child(1) {
+        border-bottom:1px solid #106098 !important;
+    }
+`;
 const FAQArticle = styled.article`
   font-size: 1rem;
   color: #515151;
@@ -96,7 +103,7 @@ const FAQ = ({ locale, ...rest }) => {
   };
 
   return locale.map(({ question, answer }, i) => (
-    <Accordion
+    <AEMAccordion
       key={i}
       title={question}
       active={activeIndex === i}
@@ -106,7 +113,7 @@ const FAQ = ({ locale, ...rest }) => {
       <FAQArticle>
         <ArticleContent answer={answer} index={i} />
       </FAQArticle>
-    </Accordion>
+    </AEMAccordion>
   ));
 };
 

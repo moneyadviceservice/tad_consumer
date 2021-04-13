@@ -9,7 +9,6 @@ import { Section, ExtendedSection, InternalLink } from "../Utils/layouts";
 import {
   Col,
   Heading,
-  Anchor,
   Paragraph,
   resolveMedia,
 } from "@moneypensionservice/directories";
@@ -19,6 +18,7 @@ import {
   ListItem,
   QuestionButton,
   YoutubeFrame,
+  AEMAnchor as Anchor,
   AboutBox,
 } from "../components/landingPage/subComponents";
 import BrokerTable from "../components/landingPage/brokerTable";
@@ -31,7 +31,7 @@ const PDFLink = styled(PDFDownloadLink)`
   font-size: 16px;
   margin: 0;
   width: 100%;
-  color: #003d8e;
+  color: #037F8C;
   text-align: left;
   ${resolveMedia.md`
   text-align: right;
@@ -107,7 +107,7 @@ const Homepage = ({ t, path }) => {
       <ExtendedSection align="stretch">
         <Section constrained data-testid="contentRow">
           <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
-            <Heading level={2} color="#006A00">
+            <Heading level={2} color="#000">
               {t("home.video.heading")}
             </Heading>
             <YoutubeFrame src={t("home.video.url")} />
@@ -126,14 +126,14 @@ const Homepage = ({ t, path }) => {
             </Paragraph>
           </Col>
           <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
-            <Heading level={2} color="#006A00">
+            <Heading level={2} color="#000">
               {t("home.faqs.heading")}
             </Heading>
             <FAQ
               locale={t("home.faqs.list", { returnObjects: true })}
-              color="#003d8e"
-              titleSize="16px"
-              titleWeight="200"
+              color="#037F8C"
+              titleSize="18px"
+              titleWeight="700"
             />
           </Col>
         </Section>
@@ -146,7 +146,7 @@ const Homepage = ({ t, path }) => {
             margin={{ bottom: "2rem" }}
             data-testid="contentCol"
           >
-            <Heading level={2} color="#006A00">
+            <Heading level={2} color="#000">
               {t("home.articles.heading")}
             </Heading>
             {t("home.articles.links", { returnObjects: true }).map(
