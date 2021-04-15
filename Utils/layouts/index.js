@@ -7,7 +7,7 @@ import {
   import styled from "styled-components";
   import { useRouter } from "next/router";
   import { withTranslation, Link } from "../translation/i18n";
-  import titleBackground from "../../public/assets/Images/title_bg_img.png"
+
   
   const Section = styled(Row)`
     margin: auto;
@@ -23,7 +23,7 @@ import {
     padding-bottom: 30px;
  
     ${({ bgImg }) => bgImg && `
-    background-image: url(${titleBackground});
+    background-image: url("/assets/Images/title_bg_img.png");
   `}
   `;
   

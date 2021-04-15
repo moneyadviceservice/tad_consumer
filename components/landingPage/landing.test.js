@@ -9,6 +9,7 @@ import BrokerTable from "./brokerTable"
 import Title from "../title"
 import { Anchor } from "@moneypensionservice/directories"
 
+
 jest.mock("react-i18next", () => ({
   withTranslation: () => (Component) => {
     Component.defaultProps = { ...Component.defaultProps, t: () => [] };
