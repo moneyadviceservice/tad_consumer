@@ -39,7 +39,7 @@ const ListItem = styled.li`
   }
 `;
 const Anchor = styled.a`
-  color: #003d8e;
+  color: #00788F;
 
   &:visited {
     color: #003d8e;

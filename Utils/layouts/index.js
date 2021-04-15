@@ -21,7 +21,7 @@ import {
   const ExtendedSection = styled(Row)`
     padding-top: 30px;
     padding-bottom: 30px;
-    border-bottom: 1px solid #cbdae0;
+ 
     ${({ bgImg }) => bgImg && `
     background-image: url(${titleBackground});
   `}
@@ -40,11 +40,11 @@ import {
     text-decoration: none;
     border: none;
     font-size: 16px;
-  
+    color: #c82a87;
     &:before {
       font-size: 24px;
       line-height: 0;
-      color: #96b4c0;
+      color: #c82a87;
       position: relative;
       top: 4px;
       padding: 0;
@@ -85,24 +85,24 @@ import {
   
   export const BreadLink = ({ href, name }) => (
     <Link href={href} passHref>
-      <BreadAnchor>{name}</BreadAnchor>
+      <BreadAnchor style={{color:"#c82a87", fontWeight: "500"}}>{name}</BreadAnchor>
     </Link>
   );
   
+  
   const Breadcrumb = ({ t }) => {
+
     return (
       <BreadcrumbSection align="stretch">
         <Section constrained>
           <Col style={{ display: "inline" }}>
-            <BreadAnchor href="/" data-testid="breadAnchor">
-              {t("home")}
-            </BreadAnchor >
+            <BreadLink name={t("home")} href="/" data-testid="breadAnchor"/>
           </Col>
         </Section>
       </BreadcrumbSection>
     );
   };
   
-  export default withTranslation("header")(Breadcrumb);
+  export default withTranslation("common")(Breadcrumb);
   
   export { Section, ExtendedSection, InternalLink };

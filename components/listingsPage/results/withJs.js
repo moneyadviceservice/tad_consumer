@@ -15,17 +15,20 @@ import {
   import MyDocument from "./Print";
   import Loading from "./loading";
   import styled from "styled-components";
+  import { AEMCompanyCard, AEMPagination } from "../utils"
   
   const PDFLink = styled(PDFDownloadLink)`
     font-size: 16px;
     margin: 0;
     width: 100%;
-    color: #003d8e;
+    color:  #037F8C;
     text-align: left;
     ${resolveMedia.md`
     text-align: right;
   `};
   `;
+
+  
   
   const Results = ({ t }) => {
     const offered = useSelector((state) => state.listings.offered);
@@ -84,7 +87,7 @@ import {
             justifyContent: "space-between",
             fontSize: "16px",
             display: "flex",
-            background: "#edf0f0",
+            backgroundColor: "#F3F1F3",
             marginBottom: "20px",
             borderRadius: "5px",
             padding: "15px 15px",
@@ -97,6 +100,7 @@ import {
               display: "flex",
               marginBottom: "10px",
               flexDirection: "row",
+              backgroundColor: "#F3F1F3",
               flexWrap: "wrap",
               justifyContent: "space-between",
               fontSize: "16px",
@@ -137,7 +141,7 @@ import {
           ) : (
             currentFirms.map((selectedFirm, i) => {
               return (
-                <CompanyCard
+                <AEMCompanyCard
                   key={i}
                   sizes={{ xs: 12, lg: 8 }}
                   data={selectedFirm}
@@ -155,7 +159,7 @@ import {
         
         {/* Pagination */}
         {offered && offered.length > 0 && totalPages > 1 ? (
-          <Pagination
+          <AEMPagination
             currentLng={i18n.language}
             currentPage={currentPage}
             totalPages={totalPages}

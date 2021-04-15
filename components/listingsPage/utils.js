@@ -5,7 +5,17 @@ import {
   resolveMedia,
   Tooltip,
   Paragraph,
+  Radio,
+  Button,
+  Inline,
+  CompanyCard,
+  Pagination
 } from "@moneypensionservice/directories";
+import { AEMAnchor as Anchor } from "../landingPage/subComponents"
+
+export const AEMRadio = styled(Radio)`
+    color: #000;
+`;
 
 export const DummyCard = styled.div`
   border: 1px solid #edf0f0;
@@ -19,8 +29,9 @@ export const DummyCard = styled.div`
 `;
 
 export const CompanyName = styled.h2`
-  color: #003d8e;
+  color: #0f19a0;
   border-bottom: 1px solid #edf0f0;
+  margin-bottom: 20px
 `;
 
 export const SubHead = styled.h5`
@@ -46,6 +57,7 @@ export const FilterFormFIeld = styled(Formfield)`
   padding-bottom: 20px;
   border-bottom: 1px solid #edf0f0;
   padding-left: 0;
+  color: #000;
 `;
 export const ExtHeading = styled(Heading)`
   margin-top: 0;
@@ -99,7 +111,7 @@ export const Legend = styled.legend`
   font-weight: 700;
   width: 100%;
   margin-bottom: 0.75rem;
-  color: #217d21;
+  color: #000;
 `;
 
 export const Select = styled.select`
@@ -112,6 +124,12 @@ export const TooltipText = styled(Tooltip)`
   font-weight: 200;
   display: inline-block;
   margin-left: 20px;
+  a{
+      border: 1px solid #00788F;
+      background: #F3F1F3;
+      color: #00788F;
+  }
+  
 `;
 export const TooltipParagraph = styled(Paragraph)`
   color: #515151;
@@ -354,3 +372,67 @@ export const displayFirms = (query, offerings, shuffledfirm) => {
         return filteredFirm
       }
 }
+
+export const AEMCompanyCard = styled(CompanyCard)`
+
+    box-shadow: 4px 4px 4px rgba(0, 11, 59, 0.25);
+    padding: 25px;
+    border-bottom-left-radius: 25px;
+    border: 1px solid #106098;
+        a{
+            color: #00788F;
+            font-weight: 600;
+            text-decoration: none;
+
+        &:hover {
+            color: #00788F
+        }
+        }
+        a[class^="buttonStyles__ButtonWrapper"] {
+            border: 1px solid  #c82a87;
+            color:  #c82a87;
+            font-weight: 700
+            box-sizing: border-box;
+            font-size: 16px;
+            box-shadow: 0px 2px 0px rgba(0, 11, 59, 0.25);
+            &:hover{
+                box-shadow: 0px 3px 0px rgba(0, 11, 59, 0.25);
+            }
+            &:active, &:focus {
+                background: #F3F1F3;
+            }
+        }
+
+        
+
+        h2{
+            color: #0f19a0;
+        }
+        & svg{
+            fill: #c82a87;
+            & path {
+                fill: #c82a87;
+            }
+        }
+    
+  `;
+
+  export const AEMPagination = styled(Pagination)`
+        button{
+            background: #fff;
+            color: #c82a87; 
+            font-weight: 700;
+            border: 1px solid #c82a87;
+            &:hover{
+                background: #F3F1F3;
+                border: 1px solid #c82a87;
+                box-shadow: 0px 3px 0px rgba(0, 11, 59, 0.25);
+            }
+            &:active, &:focus {
+                background: #F3F1F3;
+                border: 1px solid #c82a87;
+            }
+        }
+  `;
+
+

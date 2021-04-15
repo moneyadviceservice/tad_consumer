@@ -18,7 +18,7 @@ export const ExtHeading = styled(Heading)`
 `;
 const Title = ({ t }) => {
   return (
-    <ExtHeading level={1} color="orange">
+    <ExtHeading level={1}>
       {ReactHtmlParser(t("home.banner.heading"))}
     </ExtHeading>
   );

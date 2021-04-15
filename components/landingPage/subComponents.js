@@ -22,7 +22,7 @@ const ParagraphAnchor = styled(Paragraph)`
 `;
 
 const AEMAnchor = styled(Anchor)`
-    color: #037F8C;
+    color: #00788F;
 `;
 
 const UnorderedList = styled.ul`

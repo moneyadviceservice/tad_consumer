@@ -25,13 +25,13 @@ const Listings = ({ t, query, offered }) => {
   return (
     <Fragment>
       <Breadcrumb></Breadcrumb>
-
-      <Section constrained data-testid="contentRow">
-        <Col sizes={{ xs: 12 }} data-testid="contentCol">
-          <Title />
-        </Col>
-      </Section>
-
+      <ExtendedSection bgImg style={{marginBottom: "50px"}}>
+        <Section constrained data-testid="contentRow">
+            <Col sizes={{ xs: 12 }} data-testid="contentCol">
+            <Title />
+            </Col>
+        </Section>
+      </ExtendedSection>
       <ExtendedSection align="stretch" style={{ paddingTop: 0 }}>
         <ListingSection constrained data-testid="contentRow">
           <Listing t={t}  query={query} offered={offered}/>
