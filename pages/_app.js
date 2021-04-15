@@ -3,7 +3,7 @@ import { Provider, } from "react-redux";
 import { appWithTranslation } from "../Utils/translation/i18n";
 import Head from "../Utils/layouts/head";
 import { ThemeProvider, Container } from "@moneypensionservice/directories";
-import './tad_consumer_reskin.css';
+
 
 const MyApp = ({
   Component,
