@@ -23,6 +23,7 @@ const ParagraphAnchor = styled(Paragraph)`
 
 const AEMAnchor = styled(Anchor)`
     color: #00788F;
+    
 `;
 
 const UnorderedList = styled.ul`
@@ -59,13 +60,22 @@ const ListItem = styled.li`
 const QuestionButton = styled(Button)`
   width: 100%;
   text-align: center;
-  background:#c82a87;
+  background:#C82A87;
   color: #fff;
-  border-bottom: 3px solid #ae0060;
+  border-bottom: 3px solid #B7BBE4;
   &:hover {
-    background: #e244a1;
-    border-bottom: 3px solid #C81A7A;
+    background: #AE0060;
+    border-bottom: 1px solid #C81A7A;
 };
+&:active {
+    background: #9C0052;
+    border: 5px solid #F0F05A;
+}
+&:focus {
+    background: #F0F05A;
+    border: 5px solid #8200D1;
+    color: #000B3B;
+}
   ${resolveMedia.md`
     width: auto;
 `};
