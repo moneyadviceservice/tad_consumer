@@ -7,7 +7,8 @@ import { InternalLink } from "../../Utils/layouts";
 import FAQ from "./faq"
 import BrokerTable from "./brokerTable"
 import Title from "../title"
-import { Anchor } from "@moneypensionservice/directories"
+import { AEMAnchor as Anchor } from "./subComponents"
+
 
 jest.mock("react-i18next", () => ({
   withTranslation: () => (Component) => {

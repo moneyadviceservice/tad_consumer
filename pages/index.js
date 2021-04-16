@@ -9,9 +9,9 @@ import { Section, ExtendedSection, InternalLink } from "../Utils/layouts";
 import {
   Col,
   Heading,
-  Anchor,
   Paragraph,
   resolveMedia,
+
 } from "@moneypensionservice/directories";
 import {
   ParagraphAnchor,
@@ -19,6 +19,7 @@ import {
   ListItem,
   QuestionButton,
   YoutubeFrame,
+  AEMAnchor as Anchor,
   AboutBox,
 } from "../components/landingPage/subComponents";
 import BrokerTable from "../components/landingPage/brokerTable";
@@ -31,7 +32,7 @@ const PDFLink = styled(PDFDownloadLink)`
   font-size: 16px;
   margin: 0;
   width: 100%;
-  color: #003d8e;
+  color: #037F8C;
   text-align: left;
   ${resolveMedia.md`
   text-align: right;
@@ -47,34 +48,36 @@ const Homepage = ({ t, path }) => {
   return (
     <Fragment>
       {/* Main heading and firm registration anchor */}
-      <Section constrained data-testid="contentRow">
-        <Col sizes={{ xs: 12, md: 9 }} data-testid="contentCol">
-          <Title />
-        </Col>
-        <Col sizes={{ xs: 12, md: 3 }} data-testid="contentCol">
-          <ParagraphAnchor style={{ fontSize: "16px" }}>
-            <Anchor
-              href="https://radsignup.moneyadviceservice.org.uk/travel_insurance_registrations/new"
-              style={{ fontSize: "16px" }}
-            >
-              {t("home.banner.register")}
-            </Anchor>
-            {t("home.banner.or")}
-            <Anchor
-              href="https://radsignup.moneyadviceservice.org.uk/users/sign_in"
-              style={{ fontSize: "16px" }}
-            >
-              {t("home.banner.login")}
-            </Anchor>
-            {t("home.banner.as")}
-          </ParagraphAnchor>
-        </Col>
-      </Section>
+      <ExtendedSection bgImg>
+        <Section background constrained data-testid="contentRow">
+            <Col sizes={{ xs: 12, md: 9 }} data-testid="contentCol">
+            <Title />
+            </Col>
+            <Col sizes={{ xs: 12, md: 3 }} data-testid="contentCol">
+            <ParagraphAnchor style={{ fontSize: "16px" }}>
+                <Anchor
+                href="https://radsignup.moneyadviceservice.org.uk/travel_insurance_registrations/new"
+                style={{ fontSize: "16px" }}
+                >
+                {t("home.banner.register")}
+                </Anchor>
+                {t("home.banner.or")}
+                <Anchor
+                href="https://radsignup.moneyadviceservice.org.uk/users/sign_in"
+                style={{ fontSize: "16px" }}
+                >
+                {t("home.banner.login")}
+                </Anchor>
+                {t("home.banner.as")}
+            </ParagraphAnchor>
+            </Col>
+        </Section>
+      </ExtendedSection>
       {/* Questions and quote disclaimer */}
-      <ExtendedSection align="stretch" background="#edf0f0">
+      <ExtendedSection align="stretch" background="#F3F1F3">
         <Section constrained data-testid="contentRow">
           <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
-            <Heading level={2} color="#006A00">
+            <Heading level={2} color="#000">
               {t("home.conditions.heading")}
             </Heading>
             <UnorderedList>
@@ -92,8 +95,8 @@ const Homepage = ({ t, path }) => {
             </InternalLink>
           </Col>
           <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
-            <AboutBox style={{ marginTop: "28px" }}>
-              <Heading level={3} color="#006A00" style={{ marginTop: 0 }}>
+            <AboutBox style={{ marginTop: "70px" }}>
+              <Heading level={3} color="#000" style={{ marginTop: 0 }}>
                 {t("home.about.heading")}
               </Heading>
               {t("home.about.content")}
@@ -105,7 +108,7 @@ const Homepage = ({ t, path }) => {
       <ExtendedSection align="stretch">
         <Section constrained data-testid="contentRow">
           <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
-            <Heading level={2} color="#006A00">
+            <Heading level={2} color="#000">
               {t("home.video.heading")}
             </Heading>
             <YoutubeFrame src={t("home.video.url")} />
@@ -124,14 +127,14 @@ const Homepage = ({ t, path }) => {
             </Paragraph>
           </Col>
           <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
-            <Heading level={2} color="#006A00">
+            <Heading level={2} color="#000">
               {t("home.faqs.heading")}
             </Heading>
             <FAQ
               locale={t("home.faqs.list", { returnObjects: true })}
-              color="#003d8e"
-              titleSize="16px"
-              titleWeight="200"
+              color="#C82A87"
+              titleSize="18px"
+              titleWeight="700"
             />
           </Col>
         </Section>
@@ -144,7 +147,7 @@ const Homepage = ({ t, path }) => {
             margin={{ bottom: "2rem" }}
             data-testid="contentCol"
           >
-            <Heading level={2} color="#006A00">
+            <Heading level={2} color="#000">
               {t("home.articles.heading")}
             </Heading>
             {t("home.articles.links", { returnObjects: true }).map(

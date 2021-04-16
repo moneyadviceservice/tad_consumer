@@ -3,10 +3,23 @@ import styled from "styled-components";
 import { Accordion } from "@moneypensionservice/directories";
 
 // styled components
+
+const AEMAccordion = styled(Accordion)`
+    
+    border-top: 1px solid #106098;
+     &:last-child {
+        border-bottom:1px solid #106098;
+    }
+    button{
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+`;
 const FAQArticle = styled.article`
   font-size: 1rem;
   color: #515151;
   line-height: 1.5rem;
+  
 `;
 const FAQParagraph = styled.p`
   margin-bottom: 10px;
@@ -32,7 +45,7 @@ const ListItem = styled.li`
   }
 `;
 const Anchor = styled.a`
-  color: #003d8e;
+  color: #00788F;
 
   &:visited {
     color: #003d8e;
@@ -96,7 +109,7 @@ const FAQ = ({ locale, ...rest }) => {
   };
 
   return locale.map(({ question, answer }, i) => (
-    <Accordion
+    <AEMAccordion
       key={i}
       title={question}
       active={activeIndex === i}
@@ -106,7 +119,7 @@ const FAQ = ({ locale, ...rest }) => {
       <FAQArticle>
         <ArticleContent answer={answer} index={i} />
       </FAQArticle>
-    </Accordion>
+    </AEMAccordion>
   ));
 };
 
