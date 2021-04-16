@@ -24,6 +24,7 @@ import {
  
     ${({ bgImg }) => bgImg && `
     background-image: url("/assets/Images/title_bg_img.png");
+    
   `}
   `;
   
