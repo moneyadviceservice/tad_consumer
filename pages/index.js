@@ -132,7 +132,7 @@ const Homepage = ({ t, path }) => {
             </Heading>
             <FAQ
               locale={t("home.faqs.list", { returnObjects: true })}
-              color="#037F8C"
+              color="#C82A87"
               titleSize="18px"
               titleWeight="700"
             />
