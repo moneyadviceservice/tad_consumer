@@ -389,18 +389,32 @@ export const AEMCompanyCard = styled(CompanyCard)`
         }
         }
         a[class^="buttonStyles__ButtonWrapper"] {
-            border: 1px solid  #c82a87;
-            color:  #c82a87;
-            font-weight: 700
-            box-sizing: border-box;
-            font-size: 16px;
-            box-shadow: 0px 2px 0px rgba(0, 11, 59, 0.25);
-            &:hover{
+           
+                background: #fff;
+                color: #C82A87; 
+                font-weight: 700;
+                border: 1px solid #C82A87;
                 box-shadow: 0px 3px 0px rgba(0, 11, 59, 0.25);
-            }
-            &:active, &:focus {
-                background: #F3F1F3;
-            }
+                
+                &:hover{
+                    background: #F3F1F3;
+                    border: 1px solid #AE0060;
+                    box-shadow: 0px 1px 0px rgba(0, 11, 59, 0.25);
+                    color: #AE0060;
+                }
+                &:active{
+                    color: #000B3B;
+                    background: #F3F1F3;
+                    border: 3px solid #8200D1;
+                    Offset: 0px, 5px rgba(0, 11, 59, 0.25)
+                }
+                 &:focus {
+                    color: #000B3B;
+                    background: #F0F05A;
+                    border: 3px solid #8200D1;
+                    Offset: 0px, 1px rgba(0, 11, 59, 0.25)
+                }
+            
         }
 
         
@@ -420,17 +434,28 @@ export const AEMCompanyCard = styled(CompanyCard)`
   export const AEMPagination = styled(Pagination)`
         button{
             background: #fff;
-            color: #c82a87; 
+            color: #C82A87; 
             font-weight: 700;
-            border: 1px solid #c82a87;
+            border: 1px solid #C82A87;
+            box-shadow: 0px 3px 0px rgba(0, 11, 59, 0.25);
+            
             &:hover{
                 background: #F3F1F3;
-                border: 1px solid #c82a87;
-                box-shadow: 0px 3px 0px rgba(0, 11, 59, 0.25);
+                border: 1px solid #AE0060;
+                box-shadow: 0px 1px 0px rgba(0, 11, 59, 0.25);
+                color: #AE0060;
             }
-            &:active, &:focus {
+            &:active{
+                color: #000B3B;
                 background: #F3F1F3;
-                border: 1px solid #c82a87;
+                border: 3px solid #8200D1;
+                Offset: 0px, 5px rgba(0, 11, 59, 0.25)
+            }
+             &:focus {
+                color: #000B3B;
+                background: #F0F05A;
+                border: 3px solid #8200D1;
+                Offset: 0px, 1px rgba(0, 11, 59, 0.25)
             }
         }
   `;

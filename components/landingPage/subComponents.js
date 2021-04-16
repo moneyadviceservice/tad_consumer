@@ -23,6 +23,24 @@ const ParagraphAnchor = styled(Paragraph)`
 
 const AEMAnchor = styled(Anchor)`
     color: #00788F;
+    &:hover{
+        color: #AE0060;
+        text-decoration: none;
+    }
+    &:hover{
+        color: #9C0052;
+        text-decoration: none;
+    }
+    &:focus{
+        color: #000B3B;
+        border-bottom: 4px solid #8200D1;
+        background: #F0F05A;
+    }
+    &:visited{
+        color: #792B9E;
+        text-decoration: underline;
+    }
+
     
 `;
 
