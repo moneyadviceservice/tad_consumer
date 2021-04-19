@@ -95,7 +95,7 @@ const Homepage = ({ t, path }) => {
             </InternalLink>
           </Col>
           <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
-            <AboutBox style={{ marginTop: "70px" }}>
+            <AboutBox >
               <Heading level={3} color="#000" style={{ marginTop: 0 }}>
                 {t("home.about.heading")}
               </Heading>

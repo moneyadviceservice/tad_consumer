@@ -110,7 +110,7 @@ const YoutubeFrame = styled.iframe.attrs((props) => ({
 
 const AboutBox = styled(Col)`
   margin: 22px 0 22px 0;
-  border: 1px solid #106098;
+  border: 1px solid #9DA1CA;
   padding: 25px;
   font-size: 16px;
   background: #fff;

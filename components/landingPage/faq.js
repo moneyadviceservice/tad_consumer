@@ -6,9 +6,9 @@ import { Accordion } from "@moneypensionservice/directories";
 
 const AEMAccordion = styled(Accordion)`
     
-    border-top: 1px solid #106098;
+    border-top: 1px solid #9DA1CA;
      &:last-child {
-        border-bottom:1px solid #106098;
+        border-bottom:1px solid #9DA1CA;
     }
     button{
         flex-direction: row-reverse;
