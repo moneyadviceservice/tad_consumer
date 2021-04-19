@@ -9,7 +9,7 @@ import {
 } from "@moneypensionservice/directories";
 
 const AEMInfoTable = styled(InfoTable)`
-    border: 1px solid #106098;
+    border: 1px solid #9DA1CA;
     border-bottom-left-radius: 25px;
     h3{
         font-weight: 600;

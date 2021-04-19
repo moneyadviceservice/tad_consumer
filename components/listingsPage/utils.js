@@ -378,7 +378,7 @@ export const AEMCompanyCard = styled(CompanyCard)`
     box-shadow: 4px 4px 4px rgba(0, 11, 59, 0.25);
     padding: 25px;
     border-bottom-left-radius: 25px;
-    border: 1px solid #106098;
+    border: 1px solid #9DA1CA;
         a{
             color: #00788F;
             font-weight: 600;
