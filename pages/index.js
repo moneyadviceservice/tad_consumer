@@ -57,6 +57,7 @@ const Homepage = ({ t, path }) => {
             <ParagraphAnchor style={{ fontSize: "16px" }}>
                 <Anchor
                 href="https://radsignup.moneyadviceservice.org.uk/travel_insurance_registrations/new"
+                target="_blank"
                 style={{ fontSize: "16px" }}
                 >
                 {t("home.banner.register")}
@@ -64,6 +65,7 @@ const Homepage = ({ t, path }) => {
                 {t("home.banner.or")}
                 <Anchor
                 href="https://radsignup.moneyadviceservice.org.uk/users/sign_in"
+                target="_blank"
                 style={{ fontSize: "16px" }}
                 >
                 {t("home.banner.login")}
