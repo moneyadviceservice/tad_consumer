@@ -48,7 +48,7 @@ const Homepage = ({ t, path }) => {
   return (
     <Fragment>
       {/* Main heading and firm registration anchor */}
-      <ExtendedSection bgImg>
+      <ExtendedSection bgImg  style={{paddingTop: "15px", paddingBottom: "15px"}}>
         <Section background constrained data-testid="contentRow">
             <Col sizes={{ xs: 12, md: 9 }} data-testid="contentCol">
             <Title />
