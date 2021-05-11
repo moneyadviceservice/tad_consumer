@@ -1,7 +1,10 @@
-import { Header } from "@moneypensionservice/directories";
+import { Col,   Paragraph,   resolveMedia, Heading } from "@moneypensionservice/directories";
 import { i18n, withTranslation } from "../../Utils/translation/i18n";
 import { useRouter } from "next/router";
+import styled from "styled-components";
 import Breadcrumb, { MobileBreadcrumb } from "../../Utils/layouts";
+import MoneyHelperBanner from "../../Utils/layouts/banner";
+import SubHeader  from "../../Utils/layouts/header";
 
 const PageHeader = ({ t, alternateAddress, path }) => {
   let headerLang = !process.browser
@@ -13,16 +16,16 @@ const PageHeader = ({ t, alternateAddress, path }) => {
   const clientAlt = `/${clientLng}${pathname}`
   const altAdd = !process.browser ? alternateAddress : clientAlt;
   
+  
 
   return (
-    <Header
-      currentLng={i18n.language}
-      lngUrl={altAdd}
-      i18nLng={headerLang}
-    >
+    <div>
+        <MoneyHelperBanner/>
+    
+        <SubHeader/>
       <Breadcrumb path={path}></Breadcrumb>
       <MobileBreadcrumb t={t} path={path} />
-    </Header>
+      </div>
   );
 };
 

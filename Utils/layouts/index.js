@@ -3,6 +3,7 @@ import {
   Anchor,
   Col,
   Row,
+  Paragraph
 } from "@moneypensionservice/directories";
 import styled from "styled-components";
 import { useRouter } from "next/router";
@@ -23,8 +24,11 @@ const ExtendedSection = styled(Row)`
   border-bottom: 1px solid #cbdae0;
 `;
 
-const BreadcrumbSection = styled(ExtendedSection)`
-  display: none;
+export const HeaderSection = styled(ExtendedSection)`
+${({ bread }) => bread && `
+display: none;
+  `}
+  
   ${resolveMedia.md`
     display: block;
     background: #edf0f0;
@@ -129,6 +133,41 @@ const MobileBreadcrumb = ({ t }) => {
   return "";
 };
 
+export const SubSection = styled(Section)`
+  
+    
+    display: flex;
+    flex-direction: column;
+  ${resolveMedia.md`
+    display: flex;
+    flex-direction: row;
+   
+`};
+  `;
+
+
+  export const MoneyHelperLogo = styled(Col)`
+  display: flex;
+  flex-direction: row;
+  ${resolveMedia.md`
+    justify-content: flex-end;
+ 
+`};
+  `;
+
+  export const BannerText = styled(Paragraph)`
+  font-size: 16px; 
+  line-height: 1.3rem;
+   color: #fff;
+    
+    ${resolveMedia.md`
+    width: 80%;
+ 
+`};
+  `;
+
+
+
 const Breadcrumb = ({ path, t }) => {
   const router = useRouter().pathname;
   const pathArray = process.browser ? router.split("/") : path.split("/");
@@ -144,7 +183,7 @@ const Breadcrumb = ({ path, t }) => {
  
 
   return (
-    <BreadcrumbSection align="stretch">
+    <HeaderSection bread align="stretch">
       <Section constrained>
         <Col style={{ display: "inline" }}>
           <BreadAnchor href="https://www.moneyadviceservice.org.uk/en" data-testid="breadAnchor">
@@ -154,7 +193,7 @@ const Breadcrumb = ({ path, t }) => {
           {crumbs}
         </Col>
       </Section>
-    </BreadcrumbSection>
+    </HeaderSection>
   );
 };
 
