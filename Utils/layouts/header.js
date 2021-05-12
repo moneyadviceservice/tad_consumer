@@ -1,21 +1,48 @@
 import React from "react"
-import { HeaderSection, SubSection, BannerText, MoneyHelperLogo } from "."
-import { withTranslation } from "../translation/i18n";
-import {Col, Heading} from "@moneypensionservice/directories";
+import { HeaderSection, Section, BannerText, MoneyHelperLogo } from "."
+import { i18n, withTranslation } from "../translation/i18n";
+import {Anchor, Col, Heading, resolveMedia} from "@moneypensionservice/directories";
+import { useRouter } from "next/router";
+import MASLogoEN from "./MASLogoEN"
+import MASLogoCY from "./MASLogoCY"
+
+// import MasLogoEng from '../../assets/Images/mas_logo_en.svg'
+// import MasLogoCy from '../../assets/Images/mas_logo_cy.svg'
+// import MapsLogoEng from '../../assets/Images/maps_logo_en.svg'
+// import MapsLogoCy from '../../assets/Images/maps_logo_cy.svg'
 
 
-const Header = ({ t }) => {
+
+const Header = ({ t, alt, alternateAddress }) => {
+
+
+    
+    const clientLng = i18n.language == "en" ? "cy" : "en";
+    const pathname = useRouter().pathname;
+    const clientAlt = `/${clientLng}${pathname}`
+    const altAdd = !process.browser ? alternateAddress : clientAlt;
+    // console.log(alternateAddress)
     return (
-        <HeaderSection align="stretch" style={{ background: "#0F19A0" }} >
-            <SubSection constrained >
-                <Col>
-                    <Heading level={3} textSize="19px" lineHeight="0.5rem" color="#fff">{t("bannerHeading")}</Heading>
-                    <BannerText>{t("banner")}</BannerText>
+        <HeaderSection align="stretch" style={{ background: "#428513" }} >
+            <Section constrained >
+                <Col style={{width: "200px !important"}}>
+                {(i18n.language === "en")  && (<MASLogoEN /> )}
+                {(i18n.language === "cy")  && (<MASLogoCY/> )}
+                  
                 </Col>
-                <MoneyHelperLogo>
-                    logo
-           </MoneyHelperLogo>
-            </SubSection>
+                <Col grow={false}>
+              <Anchor
+                color="white"
+                textSize="0.875rem"
+                weight="500"
+                margin="0"
+                href={alt}
+                data-testid="localeAnchor"
+              >
+                {t("Header.localeButton")}
+              </Anchor>
+            </Col>
+            </Section>
 
         </HeaderSection>
     )

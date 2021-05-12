@@ -11,6 +11,8 @@ const PageHeader = ({ t, alternateAddress, path }) => {
     ? t("Header", { returnObjects: true })
     : t("Header", { returnObjects: true }).Header;
 
+  
+
   const clientLng = i18n.language == "en" ? "cy" : "en";
   const pathname = useRouter().pathname;
   const clientAlt = `/${clientLng}${pathname}`
@@ -20,9 +22,9 @@ const PageHeader = ({ t, alternateAddress, path }) => {
 
   return (
     <div>
-        <MoneyHelperBanner/>
+        <MoneyHelperBanner clientLng={clientLng}/>
     
-        <SubHeader/>
+        <SubHeader alt={alternateAddress}/>
       <Breadcrumb path={path}></Breadcrumb>
       <MobileBreadcrumb t={t} path={path} />
       </div>

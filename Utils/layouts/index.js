@@ -21,7 +21,7 @@ const Section = styled(Row)`
 const ExtendedSection = styled(Row)`
   padding-top: 30px;
   padding-bottom: 30px;
-  border-bottom: 1px solid #cbdae0;
+ 
 `;
 
 export const HeaderSection = styled(ExtendedSection)`
@@ -35,6 +35,17 @@ display: none;
     border-bottom: none;
     padding-top: 15px;
     padding-bottom: 15px
+`};
+`;
+
+export const BannerSection = styled(HeaderSection)`
+
+  
+  ${resolveMedia.md`
+  
+    padding-top: 0;
+    padding-bottom: 5px
+  
 `};
 `;
 
@@ -138,22 +149,15 @@ export const SubSection = styled(Section)`
     
     display: flex;
     flex-direction: column;
-  ${resolveMedia.md`
-    display: flex;
+  ${resolveMedia.xs`
+   
     flex-direction: row;
    
 `};
   `;
 
 
-  export const MoneyHelperLogo = styled(Col)`
-  display: flex;
-  flex-direction: row;
-  ${resolveMedia.md`
-    justify-content: flex-end;
- 
-`};
-  `;
+  
 
   export const BannerText = styled(Paragraph)`
   font-size: 16px; 
@@ -161,7 +165,7 @@ export const SubSection = styled(Section)`
    color: #fff;
     
     ${resolveMedia.md`
-    width: 80%;
+    
  
 `};
   `;

@@ -41,9 +41,13 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
   // get initial props from the server
   let pageProps = {};
   let alternateLang = "";
+
+
   if (!process.browser) {
     alternateLang = ctx.req.language === "en" ? "cy" : "en";
+ 
   }
+  
 
   let protocol = !process.browser ? ctx.req.protocol : "";
   let host = !process.browser ? ctx.req.headers.host : "";
@@ -51,7 +55,7 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
 
   let alternateAddress =
     `${protocol}://${host}/${alternateLang}${path}`;
-
+  
   pageProps = await Component.getInitialProps(ctx);
 
   return {
