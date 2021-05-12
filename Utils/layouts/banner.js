@@ -8,7 +8,7 @@ import LogoEN from "./LogoEN.jsx"
 import LogoCY from "./LogoCY.jsx"
 
 export const MoneyHelperLogo = styled(Col)`
-  display: flex;
+  
   flex-direction: row;
   ${resolveMedia.md`
     justify-content: flex-end;
@@ -40,7 +40,7 @@ const MoneyHelperBanner = ({ t }) => {
         <BannerSection align="stretch" style={{ background: "#0F19A0" }} >
             <SubSection constrained >
                 <Col width="85%">
-                    <Heading level={3} textSize="19px" lineHeight="0.5rem" color="#fff">{t("bannerHeading")}</Heading>
+                    <Heading level={3} textSize="19px" lineHeight="1rem" color="#fff">{t("bannerHeading")}</Heading>
                     <BannerText>{t("banner")}</BannerText>
                 </Col>
                 <LargeLogo>
