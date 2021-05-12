@@ -163,6 +163,7 @@ export const SubSection = styled(Section)`
   font-size: 16px; 
   line-height: 1.3rem;
    color: #fff;
+
     
     ${resolveMedia.md`
     
