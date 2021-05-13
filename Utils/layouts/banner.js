@@ -18,16 +18,16 @@ export const MoneyHelperLogo = styled(Col)`
 
   export const LargeLogo = styled(MoneyHelperLogo)`
   display: none;
-  ${resolveMedia.md`
+  ${resolveMedia.sm`
     display: flex;
    padding-top: 15px;
  
 `};
   `
   export const InlineLogo = styled(MoneyHelperLogo)`
-  display: block;
+  display: flex;
   margin-top: 10px;
-  ${resolveMedia.md`
+  ${resolveMedia.sm`
     display: none;
  
 `};
@@ -39,7 +39,7 @@ const MoneyHelperBanner = ({ t }) => {
     return (
         <BannerSection align="stretch" style={{ background: "#0F19A0" }} >
             <SubSection constrained >
-                <Col width="85%">
+                <Col width="75%">
                     <Heading level={3} textSize="19px" lineHeight="1rem" color="#fff">{t("bannerHeading")}</Heading>
                     <BannerText>{t("banner")}</BannerText>
                 </Col>
