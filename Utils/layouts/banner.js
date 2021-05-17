@@ -41,7 +41,7 @@ const MoneyHelperBanner = ({ t }) => {
         <BannerSection align="stretch" style={{ background: "#0F19A0" }} >
             <SubSection constrained >
                 <Col width="75%" >
-                    <Heading level={3} textSize="19px" lineHeight="1rem" color="#fff">{t("bannerHeading")}</Heading>
+                    <Heading level={3} textSize="19px" lineHeight="1.5rem" color="#fff">{t("bannerHeading")}</Heading>
                     <BannerText>{t("banner")}</BannerText>
                 </Col>
                 <LargeLogo>
