@@ -21,7 +21,6 @@ const Header = ({ t, alt, alternateAddress }) => {
     const pathname = useRouter().pathname;
     const clientAlt = `/${clientLng}${pathname}`
     const altAdd = !process.browser ? alternateAddress : clientAlt;
-    // console.log(alternateAddress)
     return (
         <HeaderSection align="stretch" style={{ background: "#428513" }} >
             <Section constrained >
