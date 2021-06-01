@@ -25,7 +25,7 @@
     "html-pdf": false
   },
   "dependencies": {
-    "@moneypensionservice/directories": "^1.9.3",
+    "@moneypensionservice/directories": "^1.9.4",
     "@react-pdf/renderer": "^1.6.11",
     "@react-pdf/styled-components": "^1.4.0",
     "algoliasearch": "^4.4.0",
