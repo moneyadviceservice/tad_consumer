@@ -1,0 +1,8 @@
+{
+  "redirects": {
+    "https://mas-tad-consumer-staging.herokuapp.com/en/": {
+      "url": "https://www.moneyhelper.org.uk/en/everyday-money/insurance/travel-insurance-directory",
+      "status": 302
+    }
+  }
+}
