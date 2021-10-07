@@ -17,12 +17,9 @@ const PageHeader = ({ t, alternateAddress, path }) => {
   const pathname = useRouter().pathname;
 
   if (typeof window !== "undefined") {
-    var pathName = window.location.pathname;
-    if(pathname == "/en") {
-      window.location.href = "https://www.moneyhelper.org.uk/en/everyday-money/insurance/travel-insurance-directory";
-    } else {
-      window.location.href = "https://www.moneyhelper.org.uk/cy/everyday-money/insurance/travel-insurance-directory";
-    }
+    if(alternateAddress.indexOf("traveldirectory.moneyadviceservice.lc.org.uk") !== -1) {
+      useRouter().push(`https://www.moneyhelper.org.uk/${i18n.language}/everyday-money/insurance/travel-insurance-directory`)
+    } 
   }
 
   const clientAlt = `/${clientLng}${pathname}`
