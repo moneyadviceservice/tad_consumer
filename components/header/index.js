@@ -15,6 +15,16 @@ const PageHeader = ({ t, alternateAddress, path }) => {
 
   const clientLng = i18n.language == "en" ? "cy" : "en";
   const pathname = useRouter().pathname;
+
+  if (typeof window !== "undefined") {
+    var pathName = window.location.pathname;
+    if(pathname == "/en") {
+      window.location.href = "https://www.moneyhelper.org.uk/en/everyday-money/insurance/travel-insurance-directory";
+    } else {
+      window.location.href = "https://www.moneyhelper.org.uk/cy/everyday-money/insurance/travel-insurance-directory";
+    }
+  }
+
   const clientAlt = `/${clientLng}${pathname}`
   const altAdd = !process.browser ? alternateAddress : clientAlt;
   
