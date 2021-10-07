@@ -17,7 +17,7 @@ const PageHeader = ({ t, alternateAddress, path }) => {
   const pathname = useRouter().pathname;
 
   if (typeof window !== "undefined") {
-    if(alternateAddress.indexOf("traveldirectory.moneyadviceservice.lc.org.uk") !== -1) {
+    if(alternateAddress.indexOf("traveldirectory.moneyadviceservice.org.uk") !== -1) {
       useRouter().push(`https://www.moneyhelper.org.uk/${i18n.language}/everyday-money/insurance/travel-insurance-directory`)
     } 
   }
