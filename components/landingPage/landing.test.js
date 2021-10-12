@@ -46,12 +46,12 @@ describe("HomePage", () => {
 
   it("firms' register anchor should contain correct href", () => {
     expect(
-      wrapper.findWhere((node) => node.prop("href") === "https://radsignup.moneyadviceservice.org.uk/travel_insurance_registrations/new")
+      wrapper.findWhere((node) => node.prop("href") === "https://radsignup.moneyhelper.org.uk/travel_insurance_registrations/new")
     ).toHaveLength(1);
   })
   it("firms' login anchor should contain correct href", () => {
     expect(
-      wrapper.findWhere((node) => node.prop("href") === "https://radsignup.moneyadviceservice.org.uk/users/sign_in")
+      wrapper.findWhere((node) => node.prop("href") === "https://radsignup.moneyhelper.org.uk/users/sign_in")
     ).toHaveLength(1);
   })
   it("should have a button with href pointing to /listings ", () => {
