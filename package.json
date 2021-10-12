@@ -28,6 +28,7 @@
     "@moneypensionservice/directories": "^2.0.0",
     "@react-pdf/renderer": "^1.6.11",
     "@react-pdf/styled-components": "^1.4.0",
+    "@svgr/webpack": "^5.5.0",
     "algoliasearch": "^4.4.0",
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
@@ -75,7 +76,6 @@
     "jest-dom": "^4.0.0",
     "moxios": "^0.4.0",
     "prettier": "^1.19.1",
-    "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.12.0"
   }
 }
