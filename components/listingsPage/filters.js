@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import {
   Heading,
-  Radio,
   Button,
   Form,
   Paragraph,
-  Anchor,
 } from "@moneypensionservice/directories";
+import { AEMAnchor as Anchor } from "../landingPage/subComponents"
 
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
@@ -23,6 +22,7 @@ import {
   FilterFormFIeld,
   Legend,
   TooltipText,
+  AEMRadio as Radio
 } from "./utils";
 const SingleTrip = styled.div`
   display: ${(props) => (props.single ? "block" : "none")};
@@ -302,9 +302,9 @@ const Filters = ({ t, query }) => {
     <Form
       action="/listings"
       method="post"
-      style={{ marginBottom: "40px", color: "#515151" }}
+      style={{ marginBottom: "40px", color: "#000" }}
       data-testid="filterForm">
-      <ExtHeading level={3} style={{}}>
+      <ExtHeading level={3} style={{ color: "#000", background: "#F3F1F3"}}>
         <ToggleIcon onClick={(e) => handleMobile(e)} >
           {mobile && mobile === true ? "+" : "-"}
         </ToggleIcon>
@@ -317,7 +317,6 @@ const Filters = ({ t, query }) => {
           width="auto"
           href="/listings"
           style={{
-            color: "inherit",
             outline: "none",
           }}
         >

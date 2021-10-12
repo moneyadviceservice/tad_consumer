@@ -1,14 +1,23 @@
 import React from "react";
+import styled from "styled-components";
+import { AEMAnchor as Anchor } from "../landingPage/subComponents"
 import {
-  Anchor,
   Col,
   Row,
   InfoTable,
   Paragraph as P,
 } from "@moneypensionservice/directories";
 
+const AEMInfoTable = styled(InfoTable)`
+    border: 1px solid #9DA1CA;
+    border-bottom-left-radius: 25px;
+    h3{
+        font-weight: 600;
+    padding-top: 30px
+`;
+
 const BrokerTable = ({ content, ...rest }) => (
-  <InfoTable {...rest}>
+  <AEMInfoTable {...rest} tableColor="none" titleColor="#000">
     <P
       textSize="1rem"
       lineHeight="1.4375rem"
@@ -17,18 +26,16 @@ const BrokerTable = ({ content, ...rest }) => (
     >
       {content.description}
     </P>
-    <P textSize="0.8125rem" weight={700}>
-      {content.getInTouch}
-    </P>
+    <P>{content.getInTouch}</P>
     <Row direction="column" noGutter padding="0">
       <Col direction="row" align="flex-start">
         <img width="20px" src="/assets/Images/phone.svg" />
         <Col padding="0" margin={{ left: "0.625rem" }}>
           <Anchor
             margin="0"
-            weight={700}
-            textSize="1.375rem"
-            color="#18507a"
+            weight={100}
+            textSize="1rem"
+            color="#000"
             href={`tel:${content.telNumber.replace(/\s/g, "")}`}
           >
             {content.telNumber}
@@ -37,19 +44,18 @@ const BrokerTable = ({ content, ...rest }) => (
         </Col>
       </Col>
       <Col direction="row">
-        <img width="20px" src="/assets/Images/web.svg" />
-        <Anchor
-          margin={{ left: "0.625rem" }}
-          width="auto"
-          href={content.url}
-          target="_blank"
-        >
+        
+        <img
+        
+        width="20"
+          src="/assets/Images/web-old.svg"
+        />
+        <Anchor width="auto" href={content.url} target="_blank" style={{ marginBottom : "0", paddingLeft: "10px"}}>
           {content.website}
         </Anchor>
       </Col>
     </Row>
-  </InfoTable>
+  </AEMInfoTable>
 );
 
 export default BrokerTable;
-

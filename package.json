@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "14.x",
+    "npm": "6.x"
+  },
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
@@ -25,7 +29,7 @@
     "html-pdf": false
   },
   "dependencies": {
-    "@moneypensionservice/directories": "^1.9.3",
+    "@moneypensionservice/directories": "^2.0.0",
     "@react-pdf/renderer": "^1.6.11",
     "@react-pdf/styled-components": "^1.4.0",
     "@svgr/webpack": "^5.5.0",
@@ -52,7 +56,8 @@
     "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.3.0",
     "rollbar": "^2.21.0",
-    "styled-components": "^5.x"
+    "styled-components": "^5.x",
+    "wait-on": "^5.2.0"
   },
   "devDependencies": {
     "@testing-library/dom": "^7.26.3",
@@ -61,6 +66,7 @@
     "babel-eslint": "^10.0.3",
     "babel-jest": "^26.6.1",
     "babel-plugin-styled-components": "^1.10.6",
+    "cypress": "^6.1.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.8.0",
@@ -74,7 +80,6 @@
     "jest-dom": "^4.0.0",
     "moxios": "^0.4.0",
     "prettier": "^1.19.1",
-    "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.12.0"
   }
 }

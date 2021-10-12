@@ -35,6 +35,7 @@ import {
             marginBottom: "20px",
             borderRadius: "5px",
             padding: "15px 15px",
+            backgroundColor: "#F3F1F3",
           }}
         >
           <div
@@ -45,6 +46,7 @@ import {
               marginBottom: "10px",
               flexDirection: "row",
               flexWrap: "wrap",
+              backgroundColor: "#F3F1F3",
               justifyContent: "space-between",
               fontSize: "16px",
             }}
