@@ -76,7 +76,7 @@ const ArticleContent = ({ answer, index }) => {
       <Fragment>
         <FAQParagraph>
           {`${paragraphs[0]} `}
-          <Anchor href="#need_help">{needHelp}</Anchor>
+          <strong>{needHelp}</strong>
           {` ${paragraphs[1]}`}
         </FAQParagraph>
       </Fragment>
@@ -88,7 +88,7 @@ const ArticleContent = ({ answer, index }) => {
         <FAQParagraph>{paragraphs[0]}</FAQParagraph>
         <FAQParagraph>
           {`${paragraphs[1]} `}
-          <Anchor href="#need_help">{needHelp}</Anchor>
+          <strong>{needHelp}</strong>
         </FAQParagraph>
       </Fragment>
     );
