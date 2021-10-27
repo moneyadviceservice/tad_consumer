@@ -11,7 +11,7 @@ import {
   
   import { useSelector } from "react-redux";
   import { useState, useEffect } from "react";
-  import { PDFDownloadLink } from "@react-pdf/renderer";
+  import { BlobProvider, PDFDownloadLink } from "@react-pdf/renderer";
   import MyDocument from "./Print";
   import Loading from "./loading";
   import styled from "styled-components";
@@ -28,7 +28,13 @@ import {
   `};
   `;
 
-  
+const PDFLinkStyle = {
+  fontSize: '16px',
+  margin: 0,
+  width: '100%',
+  color:  '#037F8C',
+  textAlign: 'left'
+};
   
   const Results = ({ t }) => {
     const offered = useSelector((state) => state.listings.offered);
@@ -77,6 +83,7 @@ import {
       setIsClient(true);
     }, []);
   
+    const fileName = "travel_insurance_listings.pdf"
     return (
       <div>
         {/* results heading */}
@@ -114,6 +121,7 @@ import {
             <span>{t("headings.order")}</span>
           </div>
           {isClient && (
+            <div>
             <PDFLink
               document={<MyDocument firms={firms} t={t} />}
               fileName="travel_insurance_listings.pdf"
@@ -122,7 +130,16 @@ import {
                 loading ? t("download.loading") : t("download.link")
               }
             </PDFLink>
-          )}
+            <BlobProvider
+            document={<MyDocument firms={firms} t={t} />}
+          >
+            {({ blob, url, loading, error }) => {
+              const text = loading ? t("download.loading") : t("download.link");
+              return (<a style={PDFLinkStyle} target="_parent" download={fileName} href={url}>{text}</a>);
+          }}
+          </BlobProvider>
+          </div>
+         )}
         </div>
   
         {/* No firms returned from filtering */}
