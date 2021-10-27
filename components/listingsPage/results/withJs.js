@@ -16,25 +16,17 @@ import {
   import Loading from "./loading";
   import styled from "styled-components";
   import { AEMCompanyCard, AEMPagination } from "../utils"
-  
-  const PDFLink = styled(PDFDownloadLink)`
-    font-size: 16px;
-    margin: 0;
-    width: 100%;
-    color:  #037F8C;
-    text-align: left;
-    ${resolveMedia.md`
-    text-align: right;
-  `};
-  `;
 
-const PDFLinkStyle = {
-  fontSize: '16px',
-  margin: 0,
-  width: '100%',
-  color:  '#037F8C',
-  textAlign: 'left'
-};
+    const AnchorLink = styled(Anchor)`
+      font-size: 16px;
+      margin: 0;
+      width: 100%;
+      color:  #037F8C;
+      text-align: left;
+      ${resolveMedia.md`
+      text-align: right;
+    `};
+    `;
   
   const Results = ({ t }) => {
     const offered = useSelector((state) => state.listings.offered);
@@ -121,24 +113,22 @@ const PDFLinkStyle = {
             <span>{t("headings.order")}</span>
           </div>
           {isClient && (
-            <div>
-            <PDFLink
-              document={<MyDocument firms={firms} t={t} />}
-              fileName="travel_insurance_listings.pdf"
-            >
-              {({ blob, url, loading, error }) =>
-                loading ? t("download.loading") : t("download.link")
-              }
-            </PDFLink>
             <BlobProvider
             document={<MyDocument firms={firms} t={t} />}
           >
             {({ blob, url, loading, error }) => {
               const text = loading ? t("download.loading") : t("download.link");
-              return (<a style={PDFLinkStyle} target="_parent" download={fileName} href={url}>{text}</a>);
+              return (
+              <AnchorLink 
+                target="_parent" 
+                download={fileName} 
+                href={url}
+              >
+                  {text}
+              </AnchorLink>
+              );
           }}
-          </BlobProvider>
-          </div>
+            </BlobProvider>
          )}
         </div>
   
