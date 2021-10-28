@@ -26,6 +26,20 @@ import {
       ${resolveMedia.md`
       text-align: right;
     `};
+      &:focus:not(:focus-visible) {
+        outline: none;
+      }
+      &:focus {
+        background-color: unset;
+        color: #037F8C;
+      }
+      &:active {
+        color: #037F8C;
+      }
+      &:hover {
+        color: #037F8C;
+      }
+
     `;
   
   const Results = ({ t }) => {
