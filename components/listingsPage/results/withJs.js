@@ -11,11 +11,11 @@ import {
   
   import { useSelector } from "react-redux";
   import { useState, useEffect } from "react";
-  import { BlobProvider, PDFDownloadLink } from "@react-pdf/renderer";
+  import { BlobProvider } from "@react-pdf/renderer";
   import MyDocument from "./Print";
   import Loading from "./loading";
   import styled from "styled-components";
-  import { AEMCompanyCard, AEMPagination } from "../utils"
+  import { AEMCompanyCard, AEMPagination } from "../utils";
 
     const AnchorLink = styled(Anchor)`
       font-size: 16px;
@@ -75,7 +75,7 @@ import {
       setIsClient(true);
     }, []);
   
-    const fileName = "travel_insurance_listings.pdf"
+    const fileName = "travel_insurance_listings.pdf";
     return (
       <div>
         {/* results heading */}
