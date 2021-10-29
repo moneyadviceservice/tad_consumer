@@ -11,24 +11,36 @@ import {
   
   import { useSelector } from "react-redux";
   import { useState, useEffect } from "react";
-  import { PDFDownloadLink } from "@react-pdf/renderer";
+  import { BlobProvider } from "@react-pdf/renderer";
   import MyDocument from "./Print";
   import Loading from "./loading";
   import styled from "styled-components";
-  import { AEMCompanyCard, AEMPagination } from "../utils"
-  
-  const PDFLink = styled(PDFDownloadLink)`
-    font-size: 16px;
-    margin: 0;
-    width: 100%;
-    color:  #037F8C;
-    text-align: left;
-    ${resolveMedia.md`
-    text-align: right;
-  `};
-  `;
+  import { AEMCompanyCard, AEMPagination } from "../utils";
 
-  
+    const AnchorLink = styled(Anchor)`
+      font-size: 16px;
+      margin: 0;
+      width: 100%;
+      color:  #037F8C;
+      text-align: left;
+      ${resolveMedia.md`
+      text-align: right;
+    `};
+      &:focus:not(:focus-visible) {
+        outline: none;
+      }
+      &:focus {
+        background-color: unset;
+        color: #037F8C;
+      }
+      &:active {
+        color: #037F8C;
+      }
+      &:hover {
+        color: #037F8C;
+      }
+
+    `;
   
   const Results = ({ t }) => {
     const offered = useSelector((state) => state.listings.offered);
@@ -77,6 +89,7 @@ import {
       setIsClient(true);
     }, []);
   
+    const fileName = "travel_insurance_listings.pdf";
     return (
       <div>
         {/* results heading */}
@@ -114,15 +127,23 @@ import {
             <span>{t("headings.order")}</span>
           </div>
           {isClient && (
-            <PDFLink
-              document={<MyDocument firms={firms} t={t} />}
-              fileName="travel_insurance_listings.pdf"
-            >
-              {({ blob, url, loading, error }) =>
-                loading ? t("download.loading") : t("download.link")
-              }
-            </PDFLink>
-          )}
+            <BlobProvider
+            document={<MyDocument firms={firms} t={t} />}
+          >
+            {({ blob, url, loading, error }) => {
+              const text = loading ? t("download.loading") : t("download.link");
+              return (
+              <AnchorLink 
+                target="_parent" 
+                download={fileName} 
+                href={url}
+              >
+                  {text}
+              </AnchorLink>
+              );
+          }}
+            </BlobProvider>
+         )}
         </div>
   
         {/* No firms returned from filtering */}
