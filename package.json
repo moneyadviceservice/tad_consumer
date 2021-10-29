@@ -29,7 +29,7 @@
     "html-pdf": false
   },
   "dependencies": {
-    "@moneypensionservice/directories": "^2.0.0",
+    "@moneypensionservice/directories": "^2.0.1",
     "@react-pdf/renderer": "^1.6.11",
     "@react-pdf/styled-components": "^1.4.0",
     "@svgr/webpack": "^5.5.0",
