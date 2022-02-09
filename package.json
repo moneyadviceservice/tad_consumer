@@ -12,7 +12,11 @@
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
     "test": "NODE_ENV=test jest --verbose",
-    "testwatch": "jest --watchAll"
+    "testwatch": "jest --watchAll",
+    "preinstall": "npx npm-force-resolutions"
+  },
+  "resolutions": {
+    "dfa": "1.1.0"
   },
   "repository": {
     "type": "git",
@@ -29,6 +33,7 @@
     "html-pdf": false
   },
   "dependencies": {
+    "@babel/runtime": "^7.17.2",
     "@moneypensionservice/directories": "^2.0.1",
     "@react-pdf/renderer": "^1.6.11",
     "@react-pdf/styled-components": "^1.4.0",
