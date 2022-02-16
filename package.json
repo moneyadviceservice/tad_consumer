@@ -33,6 +33,7 @@
     "html-pdf": false
   },
   "dependencies": {
+    "@webcomponents/shadydom": "^1.7.4",
     "@babel/runtime": "^7.17.2",
     "@moneypensionservice/directories": "^2.0.1",
     "@react-pdf/renderer": "^1.6.11",
