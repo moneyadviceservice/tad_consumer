@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import styled from "styled-components";
 import { Accordion } from "@moneypensionservice/directories";
+import { mediaDetectIE11 } from "../../Utils/layouts/ie11";
 
 // styled components
 
@@ -11,6 +12,10 @@ const AEMAccordion = styled(Accordion)`
         border-bottom:1px solid #9DA1CA;
     }
     button{
+        @media ${mediaDetectIE11} {
+          min-height: 35px;
+          max-height: 58px;
+        }
         flex-direction: row-reverse;
         justify-content: space-between;
     }
