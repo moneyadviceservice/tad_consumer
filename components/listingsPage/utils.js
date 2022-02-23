@@ -12,6 +12,7 @@ import {
   Pagination
 } from "@moneypensionservice/directories";
 import { AEMAnchor as Anchor } from "../landingPage/subComponents"
+import { mediaDetectIE11 } from "../../Utils/layouts/ie11";
 
 export const AEMRadio = styled(Radio)`
     color: #000;
@@ -395,6 +396,10 @@ export const AEMCompanyCard = styled(CompanyCard)`
                 font-weight: 700;
                 border: 1px solid #C82A87;
                 box-shadow: 0px 3px 0px rgba(0, 11, 59, 0.25);
+
+                @media ${mediaDetectIE11} {
+                  height: 50px;
+                }
                 
                 &:hover{
                     background: #F3F1F3;
