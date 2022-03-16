@@ -102,6 +102,7 @@ const QuestionButton = styled(Button)`
 const YoutubeFrame = styled.iframe.attrs((props) => ({
   frameBorder: 0,
   height: 315,
+  width: '100%'
 }))`
   position: relative;
   top: 0;
