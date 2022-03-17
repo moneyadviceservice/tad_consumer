@@ -9,11 +9,13 @@ import {
 } from "@moneypensionservice/directories";
 
 const AEMInfoTable = styled(InfoTable)`
+    width: 100%;
     border: 1px solid #9DA1CA;
     border-bottom-left-radius: 25px;
     h3{
         font-weight: 600;
-    padding-top: 30px
+    padding-top: 30px;
+    }
 `;
 
 const BrokerTable = ({ content, ...rest }) => (
