@@ -44,6 +44,7 @@ const AppHead = ({ path, t }) => {
         type="image/x-icon"
         href="/static/favicon.ico"
       ></link>
+      <link rel="canonical" href="https://www.moneyhelper.org.uk/en/everyday-money/insurance/travel-insurance-directory"></link>
       <script
         dangerouslySetInnerHTML={{
             __html: `
