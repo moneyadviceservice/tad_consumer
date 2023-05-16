@@ -2,7 +2,6 @@ import styled from "styled-components";
 import {
   resolveMedia,
   Button,
-
   Paragraph,
   Anchor,
   Col,
@@ -10,7 +9,6 @@ import {
   InfoTable,
   Paragraph as P,
 } from "@moneypensionservice/directories";
-
 
 const ParagraphAnchor = styled(Paragraph)`
   display: none;
@@ -22,26 +20,24 @@ const ParagraphAnchor = styled(Paragraph)`
 `;
 
 const AEMAnchor = styled(Anchor)`
-    color: #00788F;
-    &:hover{
-        color: #AE0060;
-        text-decoration: none;
-    }
-    &:hover{
-        color: #9C0052;
-        text-decoration: none;
-    }
-    &:focus{
-        color: #000B3B;
-        border-bottom: 4px solid #8200D1;
-        background: #F0F05A;
-    }
-    &:visited{
-        color: #792B9E;
-        text-decoration: underline;
-    }
-
-    
+  color: #00788f;
+  &:hover {
+    color: #ae0060;
+    text-decoration: none;
+  }
+  &:hover {
+    color: #9c0052;
+    text-decoration: none;
+  }
+  &:focus {
+    color: #000b3b;
+    border-bottom: 4px solid #8200d1;
+    background: #f0f05a;
+  }
+  &:visited {
+    color: #792b9e;
+    text-decoration: underline;
+  }
 `;
 
 const UnorderedList = styled.ul`
@@ -73,27 +69,31 @@ const ListItem = styled.li`
     position: absolute;
     left: 0;
   }
+
+  &:nth-of-type(5):before {
+    background-image: url(/assets/Images/MAS_cross-105.svg);
+  }
 `;
 
 const QuestionButton = styled(Button)`
   width: 100%;
   text-align: center;
-  background:#C82A87;
+  background: #c82a87;
   color: #fff;
-  border-bottom: 3px solid #B7BBE4;
+  border-bottom: 3px solid #b7bbe4;
   &:hover {
-    background: #AE0060;
-    border-bottom: 1px solid #C81A7A;
-};
-&:active {
-    background: #9C0052;
-    border: 5px solid #F0F05A;
-}
-&:focus {
-    background: #F0F05A;
-    border: 5px solid #8200D1;
-    color: #000B3B;
-}
+    background: #ae0060;
+    border-bottom: 1px solid #c81a7a;
+  }
+  &:active {
+    background: #9c0052;
+    border: 5px solid #f0f05a;
+  }
+  &:focus {
+    background: #f0f05a;
+    border: 5px solid #8200d1;
+    color: #000b3b;
+  }
   ${resolveMedia.md`
     width: auto;
 `};
@@ -102,7 +102,7 @@ const QuestionButton = styled(Button)`
 const YoutubeFrame = styled.iframe.attrs((props) => ({
   frameBorder: 0,
   height: 315,
-  width: '100%'
+  width: "100%",
 }))`
   position: relative;
   top: 0;
@@ -111,7 +111,7 @@ const YoutubeFrame = styled.iframe.attrs((props) => ({
 
 const AboutBox = styled(Col)`
   margin: 22px 0 22px 0;
-  border: 1px solid #9DA1CA;
+  border: 1px solid #9da1ca;
   padding: 25px;
   font-size: 16px;
   background: #fff;
@@ -125,8 +125,6 @@ const BrokerOpening = styled.div`
   margin-bottom: 30px;
 `;
 
-
-
 export {
   ParagraphAnchor,
   UnorderedList,
@@ -135,5 +133,5 @@ export {
   YoutubeFrame,
   AboutBox,
   BrokerOpening,
-  AEMAnchor
+  AEMAnchor,
 };

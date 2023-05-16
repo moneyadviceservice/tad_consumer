@@ -26,6 +26,9 @@
         },
         {
           "answer": "Yes, if you have been offered insurance with a high additional premium because of your medical condition"
+        },
+        {
+          "answer": "No, if you are awaiting a diagnosis for a serious medical condition or a revised diagnosis of a pre-existing medical condition"
         }
       ],
       "button": "View all firms"
@@ -51,7 +54,8 @@
               "You have been refused travel insurance because of a medical condition.",
               "An existing policy has been cancelled or amended because of a medical condition.",
               "You have been offered insurance, but your medical condition has been excluded.",
-              "You have been offered insurance with a high additional premium because of your medical condition."
+              "You have been offered insurance with a high additional premium because of your medical condition.",
+              "You are awaiting a diagnosis for a serious medical condition or a revised diagnosis of a pre-existing medical condition"
             ]
           }
         },

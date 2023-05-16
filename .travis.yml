@@ -2,12 +2,9 @@ language: node_js
 node_js: 14
 dist: trusty
 cache:
-  directories:
-    - node_modules
+  npm: false
 install:
-  - npm install
   - npm ci
 script:
   - npm run test
-  - npm run dev & wait-on http://localhost:3000
-  
+  - npm run dev & wait-on http://localhost:3002

@@ -25,6 +25,9 @@
         },
         {
           "answer": "Gallant, os cynigiwyd yswiriant i chi gyda phremiwm ychwanegol uchel oherwydd eich cyflwr meddygol"
+        },
+        {
+          "answer": "Na, os ydych yn aros am ddiagnosis o gyflwr meddygol difrifol neu ddiagnosis diwygiedig o gyflwr meddygol sydd gennych eisoes"
         }
       ],
       "button": "Gweld pob cwmni"
@@ -50,7 +53,8 @@
               "Gwrthodwyd yswiriant teithio i chi oherwydd cyflwr meddygol.",
               "Mae polisi cyfredol wedi'i ganslo neu ei ddiwygio oherwydd cyflwr meddygol.",
               "Cynigiwyd yswiriant i chi, ond mae eich cyflwr meddygol wedi'i eithrio.",
-              "Rydych wedi cael cynnig yswiriant gyda phremiwm ychwanegol uchel oherwydd eich cyflwr meddygol."
+              "Rydych wedi cael cynnig yswiriant gyda phremiwm ychwanegol uchel oherwydd eich cyflwr meddygol.",
+              "Dych yn aros am ddiagnosis o gyflwr meddygol difrifol neu ddiagnosis diwygiedig o gyflwr meddygol sydd gennych eisoes"
             ]
           }
         },
