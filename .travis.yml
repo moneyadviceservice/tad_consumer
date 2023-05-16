@@ -2,8 +2,7 @@ language: node_js
 node_js: 14
 dist: trusty
 cache:
-  directories:
-    - node_modules
+  npm: false
 install:
   - npm ci
 script:
