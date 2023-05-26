@@ -26,7 +26,7 @@ const RowView = styled.View`
   padding-bottom: 5px;
   padding-top: 5px;
   border-bottom: 1px;
-  border-color: #428513;
+  border-color: #428513;  
 `;
 const TableHeadText = styled.Text`
   width: 25%;
@@ -41,6 +41,14 @@ const RowText = styled.Text`
   color: #000;
   font-family: "Helvetica";
   font-weight: medium;
+`;
+const RowLink = styled.Link`
+  width: 25%;
+  font-size: 10px;
+  color: #000;
+  font-family: "Helvetica";
+  font-weight: medium;
+  text-decoration: none;
 `;
 
 Font.registerHyphenationCallback(word => [word]);
@@ -74,15 +82,17 @@ const MyDocument = ({ firms, t }) => {
             return (
               <RowView key={i}>
                 <RowText>{firm.company}</RowText>
-                <RowText
-                  style={{
-                    width: "43%",
-                  }}
-                >
-                  {firm.online.website}
-                </RowText>
+                <RowLink
+                    src={firm.online.website}
+                    style={{
+                      width: "43%",
+                    }}
+                  >{firm.online.website.length>60 ? firm.online.website.substring(0, 60)+'...' : firm.online.website}
+                </RowLink>
                 <RowText style={{ width: "10%" }}>{firm.online.phone}</RowText>
-                <RowText>{firm.online.email}</RowText>
+                <RowText
+                  >{firm.online.email}
+                </RowText>
               </RowView>
             );
           })}
