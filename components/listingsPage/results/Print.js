@@ -48,7 +48,6 @@ const RowLink = styled.Link`
   color: #000;
   font-family: "Helvetica";
   font-weight: medium;
-  text-decoration: none;
 `;
 
 Font.registerHyphenationCallback(word => [word]);
