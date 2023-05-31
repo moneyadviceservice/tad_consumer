@@ -57,7 +57,7 @@ import {
             </span>
             <span>{t("headings.order")}</span>
           </div>
-          <PDFLink target="_parent" href="/listings?listingsPDF=true">{t("download.link")}</PDFLink>
+          <PDFLink target="_target" href="/listings?listingsPDF=true">{t("download.link")}</PDFLink>
          
         </div>
          {offered.map((selectedFirm, i) => {
