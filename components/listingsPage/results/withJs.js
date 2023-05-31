@@ -134,7 +134,7 @@ import {
               const text = loading ? t("download.loading") : t("download.link");
               return (
               <AnchorLink 
-                target="_parent" 
+                target="_blank" 
                 download={fileName} 
                 href={url}
               >
