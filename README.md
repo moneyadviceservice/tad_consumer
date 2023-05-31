@@ -2,22 +2,7 @@
 
 Consumer search for the Travel Adviser Directory. 
 
-This directory was built as a MAS-branded standalone directory. This is currently live at [this address](https://traveldirectory.moneyadviceservice.org.uk) and hosted and administered via this [Heroku account](https://dashboard.heroku.com/apps/mas-tad-consumer-production).
-
-## Transition to AEM
-
-During the transition period before the finalisation of the 3-2-1 project we will run two environments for this directory in order to allow the site to: 
-- continue to function as a standalone MAS-branded directory and
-- be built as a component mounted in AEM without headers and footers and with the new Money Helper branding
-
-The Money Helper branded component is now contained in the `12191_Main-only-for-AEM` branch of this repo, and this is administered and deployed via the [mas-tad-consumer-aem-321](https://dashboard.heroku.com/apps/mas-tad-consumer-aem-321) Heroku account.
-
-This means that any changes required to the standalone directory will be made to the current `master` branch and the `12191_Main-only-for-AEM` will need to be rebased to the updated master once these are merged.
-
-Any changes required only for the Money Helper branded site should be made to the `12191_Main-only-for-AEM` branch and this should then be the branch that is deployed for mounting on the AEM site.
-
-Once the transition is complete the standalone MAS-branded directory will no longer be live and the changes in the `12191_Main-only-for-AEM` branch can be merged into the master branch.
-
+This directory was built as a MAS-branded standalone directory. This is currently live at [this address](https://traveldirectory.moneyhelper.org.uk) and hosted and administered via this [Heroku account](https://dashboard.heroku.com/apps/mas-tad-consumer-production).
 
 ## Prerequisites
 
@@ -43,10 +28,18 @@ cd tad_consumer
 1. Create a PR to merge into master;
 2. Get the approval to 2 devs;
 3. Once you get the approval of 2 devs, checkout the staging branch (which is connected to the heroku staging environment) and merge with your feature branch
-4. check the progress on https://mas-tad-consumer-staging.herokuapp.com/
+4. Check the progress on [the staging embed](https://test.moneyhelper.org.uk/en/everyday-money/insurance/use-our-travel-insurance-directory)
 5. Get a QA to have a look at your changes
 
+## Deployment to production
+
+1. Push to the production heroku instance (do not promote from staging)
+2. Check here in the [production embed](https://www.moneyhelper.org.uk/en/everyday-money/insurance/use-our-travel-insurance-directory)
+
+
 ## Test
+
+`npm run test`
 
 ### Run
 
