@@ -35,6 +35,7 @@ const AppHead = ({ path, t }) => {
       <title>
         {t("head.sub_title")} | {pageTitle}
       </title>
+      <meta name="robots" content="noindex" />
       <meta property="og:locale:alternate" content="en" />
       <meta property="og:locale:alternate" content="cy" />
       <meta property="og:description" content={t("head.description")} />
