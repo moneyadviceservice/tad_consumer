@@ -46,6 +46,7 @@ const Filters = ({ t, query }) => {
   const [how_far_in_advance_trip_cover_weeks, changeWhen] = useState({});
   const [will_cover_terminal_prognosis, changeTerminal] = useState({});
   const [will_cover_specialist_equipment, changeEquipment] = useState({});
+  const [will_cover_undergoing_treatment, changeTreatment] = useState({});
 
   const [cruise_30_days_max_age, changeCruise30Max] = useState({});
   const [cruise_45_days_max_age, changeCruise45Max] = useState({});
@@ -67,6 +68,7 @@ const Filters = ({ t, query }) => {
     annualOption,
     will_cover_terminal_prognosis,
     will_cover_specialist_equipment,
+    will_cover_undergoing_treatment,
     cruise_30_days_max_age,
     cruise_45_days_max_age,
     cruise_50_days_max_age,
@@ -224,6 +226,12 @@ const Filters = ({ t, query }) => {
     changeEquipment({ will_cover_specialist_equipment });
   };
 
+  const handleTreatment = (e) => {
+    tag(e);
+    let will_cover_undergoing_treatment = e.target.value;
+    changeTreatment({ will_cover_undergoing_treatment });
+  };
+
   const clearFilters = (e) => {
     e.preventDefault();
     changeInsuranceType({});
@@ -232,7 +240,7 @@ const Filters = ({ t, query }) => {
     changeDestination({});
     changeCruise({});
     changeWhen({});
-    // changeTreatment({});
+    changeTreatment({});
     changeTerminal({});
     changeEquipment({});
     changeCruise30Max({});
@@ -630,8 +638,42 @@ const Filters = ({ t, query }) => {
             />
           ))}
         </FilterFormFIeld>
-        {/* Prognosis */}
 
+        {/* Undergoing treatment */}
+        <FilterFormFIeld data-testid="filterFormField">
+          <Legend>
+            {t("headings.are_you_undergoing_treatment")}?
+            <TooltipText
+              minWidth="230px"
+              side="bottom"
+              text={
+                <TooltipParagraph>{t("toolTips.treatment")}</TooltipParagraph>
+
+              }
+              data-testid="filterTooltip"
+            />
+          </Legend>
+
+          {t("filters.will_cover_undergoing_treatment", {
+            returnObjects: true,
+          }).map(({ response, value }, i) => (
+            <Radio
+              key={i}
+              checked={
+                !process.browser
+                  ? altCoverOngoingTreatment === value
+                  : will_cover_undergoing_treatment.will_cover_undergoing_treatment ===
+                    value
+              }
+              onChange={(e) => handleTreatment(e)}
+              label={response}
+              name="will_cover_undergoing_treatment"
+              value={value}
+            />
+          ))}
+        </FilterFormFIeld>
+
+        {/* Prognosis */}
         <FilterFormFIeld data-testid="filterFormField">
           <Legend>
             {t("headings.my_doctor_has_given_me_a_terminal_prognosis")}
@@ -654,6 +696,7 @@ const Filters = ({ t, query }) => {
             />
           ))}
         </FilterFormFIeld>
+
         {/* Equipment */}
         <FilterFormFIeld data-testid="filterFormField">
           <Legend>
@@ -687,6 +730,7 @@ const Filters = ({ t, query }) => {
             />
           ))}
         </FilterFormFIeld>
+
         {process.browser ? (
           ""
         ) : (

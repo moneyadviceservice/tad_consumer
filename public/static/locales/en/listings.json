@@ -70,6 +70,7 @@
     "i_am_going_abroad_for_medical_treatment": "I am going abroad for medical treatment",
     "my_doctor_has_given_me_a_terminal_prognosis": "My doctor has given me a terminal prognosis",
     "do_you_require_cover_for_medical_equipment": "Do you require cover for medical equipment",
+    "are_you_undergoing_treatment": "Are you undergoing treatment",
     "submit": "Shortlist provider",
     "showing": "Showing ",
     "of": " of",
@@ -93,7 +94,8 @@
     "destination": "The cost of medical treatment can be more in some countries than others, so where you are going will have an effect on whether a provider will offer you cover. These three destinations are the most common categories used by most travel insurance providers.",
     "cruise": "Not all providers offer insurance cover for cruises and those that do may have a different age limit for cruises.",
     "when": "Not all providers will let you take out a policy in advance of when you are travelling because of the possibility of cancellation. For example you can usually only take out an Annual Multi-trip policy up to 31 days in advance. Always check the terms and conditions regarding cancellation carefully before buying travel insurance.",
-    "equipment": "If you need to take expensive specialist medical equipment with you on your trip, make sure you can get it covered for loss or damage."
+    "equipment": "If you need to take expensive specialist medical equipment with you on your trip, make sure you can get it covered for loss or damage.",
+    "treatment": "Not all providers offer cover if you are receiving treatment, but many will."
   },
   "download": {
     "title": "List of Travel Insurance Firms",

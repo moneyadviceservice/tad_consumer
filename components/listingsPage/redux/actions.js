@@ -38,7 +38,6 @@ export const getOfferingsSuccess = (offerings) => ({
 });
 
 export const filterOfferings = (pool) => {
-
   return (dispatch, getState) => {
     // get data from the state
     const offerings = getState().listings.offerings.hits;
@@ -50,7 +49,7 @@ export const filterOfferings = (pool) => {
     let age = 0;
     let insuranceOption;
 
-    console.log(filteredPool)
+    console.log(filteredPool);
 
     filteredPool.map((fill) => {
       if (fill.cruise_30_days_max_age) {
@@ -182,6 +181,18 @@ export const filterOfferings = (pool) => {
                 offering[Object.keys(value)].includes(null)
               );
             }
+
+            // filter undergoing treatment not covered
+            if (
+              key === "will_cover_undergoing_treatment" &&
+              Object.values(value)[0] === "No"
+            ) {
+              return (
+                offering[Object.keys(value)].includes("Yes") ||
+                offering[Object.keys(value)].includes("No") ||
+                offering[Object.keys(value)].includes(null)
+              );
+            }
             // filter others
             return offering[Object.keys(value)].includes(
               Object.values(value)[0]
@@ -190,7 +201,7 @@ export const filterOfferings = (pool) => {
         });
       }, offerings);
 
-    console.log(selectedOfferings)
+      console.log(selectedOfferings);
       // collected the ids of the selected offering into an array of array
       const offered = selectedOfferings.map((offering) => {
         let id = parseInt(offering.objectID);
@@ -209,14 +220,10 @@ export const filterOfferings = (pool) => {
         }
       });
 
-
-
       // filtered empty object out of the selectedFirm
       const filteredFirm = selectedFirm.filter((selected) => {
         return selected != null;
       });
-
-
 
       // console.log(randomizeResult(filteredFirm));
 

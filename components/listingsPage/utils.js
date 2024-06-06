@@ -9,13 +9,13 @@ import {
   Button,
   Inline,
   CompanyCard,
-  Pagination
+  Pagination,
 } from "@moneypensionservice/directories";
-import { AEMAnchor as Anchor } from "../landingPage/subComponents"
+import { AEMAnchor as Anchor } from "../landingPage/subComponents";
 import { mediaDetectIE11 } from "../../Utils/layouts/ie11";
 
 export const AEMRadio = styled(Radio)`
-    color: #000;
+  color: #000;
 `;
 
 export const DummyCard = styled.div`
@@ -32,7 +32,7 @@ export const DummyCard = styled.div`
 export const CompanyName = styled.h2`
   color: #0f19a0;
   border-bottom: 1px solid #edf0f0;
-  margin-bottom: 20px
+  margin-bottom: 20px;
 `;
 
 export const SubHead = styled.h5`
@@ -125,12 +125,11 @@ export const TooltipText = styled(Tooltip)`
   font-weight: 200;
   display: inline-block;
   margin-left: 20px;
-  a{
-      border: 1px solid #00788F;
-      background: #F3F1F3;
-      color: #00788F;
+  a {
+    border: 1px solid #00788f;
+    background: #f3f1f3;
+    color: #00788f;
   }
-  
 `;
 export const TooltipParagraph = styled(Paragraph)`
   color: #515151;
@@ -159,61 +158,66 @@ export const randomizeResult = (array) => {
   }
 };
 
-
 export const listingsPDF = (selectedFirms) => {
-  return(
+  return (
     <div>
-        <h1 style={{ color: '#006a00'}}>List of Travel Insurance Firms</h1>
-        { selectedFirms.map((firm, i)=>{
+      <h1 style={{ color: "#006a00" }}>List of Travel Insurance Firms</h1>
+      {selectedFirms.map((firm, i) => {
         return (
-          <div key={i}
-              style={{
-                padding: '15px',
-                fontSize: '16px',
-                width: '70%',
-                fontSize: '.75rem',
-                lineHeight: '1rem',
-              }}
+          <div
+            key={i}
+            style={{
+              padding: "15px",
+              fontSize: "16px",
+              width: "70%",
+              fontSize: ".75rem",
+              lineHeight: "1rem",
+            }}
           >
-            <div style={{
-              color: '#003d8e',
-              fontSize: '1rem',
-              lineHeight: '1.5rem',
-              fontWeight: '900',
-              }}>{firm.company}</div>
-             <div style={{wordWrap: 'break-word'}}>{firm.online.website}</div>
-             <div>{firm.online.phone}</div>
-             <div style={{
-              fontSize: '.75rem',
-              lineHeight: '1rem',
-              }}>{firm.online.email}</div>
+            <div
+              style={{
+                color: "#003d8e",
+                fontSize: "1rem",
+                lineHeight: "1.5rem",
+                fontWeight: "900",
+              }}
+            >
+              {firm.company}
+            </div>
+            <div style={{ wordWrap: "break-word" }}>{firm.online.website}</div>
+            <div>{firm.online.phone}</div>
+            <div
+              style={{
+                fontSize: ".75rem",
+                lineHeight: "1rem",
+              }}
+            >
+              {firm.online.email}
+            </div>
           </div>
-          )
+        );
       })}
-      </div>
-  )
-
+    </div>
+  );
 };
 
 export const displayFirms = (query, offerings, shuffledfirm) => {
+  if (!process.browser) {
+    let filteredPool = Object.entries(query).map((e) => ({ [e[0]]: e[1] }));
 
-  if(!process.browser){
+    let age = 0;
+    let insuranceOption;
 
-  let filteredPool = Object.entries(query).map((e) => ( { [e[0]]: e[1] } ));
+    filteredPool.map((fill) => {
+      if (fill.cruise_30_days_max_age) {
+        age = fill.cruise_30_days_max_age;
+      }
+      if (fill.singleOption || fill.annualOption) {
+        insuranceOption = fill.singleOption || fill.annualOption;
+      }
+    });
 
-  let age = 0;
-  let insuranceOption;
-
-  filteredPool.map((fill) => {
-    if (fill.cruise_30_days_max_age) {
-      age = fill.cruise_30_days_max_age;
-    }
-    if (fill.singleOption || fill.annualOption) {
-      insuranceOption = fill.singleOption || fill.annualOption;
-    }
-  });
-
-  // FILTERING OFFERINGS
+    // FILTERING OFFERINGS
     //start
     const selectedOfferings = filteredPool.reduce((acc, value) => {
       return acc.filter((offering) => {
@@ -228,9 +232,9 @@ export const displayFirms = (query, offerings, shuffledfirm) => {
             key == "land_45_days_max_age" ||
             key == "land_50_days_max_age" ||
             key == "land_55_days_max_age"
-            ) {
+          ) {
             let subtitle = parseInt(offering[Object.keys(value)]);
-            let intAge  = parseInt(value[key])
+            let intAge = parseInt(value[key]);
 
             return (
               subtitle === 1000 ||
@@ -247,14 +251,12 @@ export const displayFirms = (query, offerings, shuffledfirm) => {
 
           //  filter when travelling
           if (key === "how_far_in_advance_trip_cover_weeks") {
-            return parseInt(Object.values(value)[0]) <= parseInt(offering[key])
-
+            return parseInt(Object.values(value)[0]) <= parseInt(offering[key]);
           }
           // filter length of trip
           if (key === "singleOption" || key === "annualOption") {
             let land = "land_" + Object.values(value)[0] + "_days_max_age";
-            let cruise =
-              "cruise_" + Object.values(value)[0] + "_days_max_age";
+            let cruise = "cruise_" + Object.values(value)[0] + "_days_max_age";
 
             return (
               (parseInt(`${offering[land]}`) != -1 ||
@@ -338,135 +340,137 @@ export const displayFirms = (query, offerings, shuffledfirm) => {
               offering[Object.keys(value)].includes(null)
             );
           }
+          // filter undergoing treatment not covered
+          if (
+            key === "will_cover_undergoing_treatment" &&
+            Object.values(value)[0] === "No"
+          ) {
+            return (
+              offering[Object.keys(value)].includes("Yes") ||
+              offering[Object.keys(value)].includes("No") ||
+              offering[Object.keys(value)].includes(null)
+            );
+          }
 
-          return (offering[Object.keys(value)].includes(Object.values(value)[0]) )
+          return offering[Object.keys(value)].includes(Object.values(value)[0]);
         }
       });
     }, offerings);
 
     //end of offerings filters
-        // collected the ids of the selected offering into an array of array
-        const offered = selectedOfferings.map((offering) => {
-          let id = parseInt(offering.objectID);
-          let arr = [];
-          arr.push(id);
-          return arr;
-        });
+    // collected the ids of the selected offering into an array of array
+    const offered = selectedOfferings.map((offering) => {
+      let id = parseInt(offering.objectID);
+      let arr = [];
+      arr.push(id);
+      return arr;
+    });
 
-        // flaten the collected offering into a single array
-        const flatOffered = offered.flat();
+    // flaten the collected offering into a single array
+    const flatOffered = offered.flat();
 
-        // use the selected ids for filter firms
+    // use the selected ids for filter firms
 
-        const selectedFirm = shuffledfirm.map((firm) => {
-          if (firm.offering_ids.some((ele) => flatOffered.includes(ele))) {
-            return firm;
-          }
-        });
-
-
-        // filtered empty object out of the selectedFirm
-        const filteredFirm = selectedFirm.filter((selected) => {
-          return selected != null;
-        });
-
-        return filteredFirm
+    const selectedFirm = shuffledfirm.map((firm) => {
+      if (firm.offering_ids.some((ele) => flatOffered.includes(ele))) {
+        return firm;
       }
-}
+    });
+
+    // filtered empty object out of the selectedFirm
+    const filteredFirm = selectedFirm.filter((selected) => {
+      return selected != null;
+    });
+
+    return filteredFirm;
+  }
+};
 
 export const AEMCompanyCard = styled(CompanyCard)`
+  box-shadow: 4px 4px 4px rgba(0, 11, 59, 0.25);
+  padding: 25px;
+  border-bottom-left-radius: 25px;
+  border: 1px solid #9da1ca;
+  @media ${mediaDetectIE11} {
+    width: 100%;
+  }
 
-    box-shadow: 4px 4px 4px rgba(0, 11, 59, 0.25);
-    padding: 25px;
-    border-bottom-left-radius: 25px;
-    border: 1px solid #9DA1CA;
+  a {
+    color: #00788f;
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      color: #00788f;
+    }
+  }
+  a[class^="buttonStyles__ButtonWrapper"] {
+    background: #fff;
+    color: #c82a87;
+    font-weight: 700;
+    border: 1px solid #c82a87;
+    box-shadow: 0px 3px 0px rgba(0, 11, 59, 0.25);
+
     @media ${mediaDetectIE11} {
-      width: 100%;
+      height: 50px;
     }
 
-        a{
-            color: #00788F;
-            font-weight: 600;
-            text-decoration: none;
+    &:hover {
+      background: #f3f1f3;
+      border: 1px solid #ae0060;
+      box-shadow: 0px 1px 0px rgba(0, 11, 59, 0.25);
+      color: #ae0060;
+    }
+    &:active {
+      color: #000b3b;
+      background: #f3f1f3;
+      border: 3px solid #8200d1;
+      offset: 0px, 5px rgba(0, 11, 59, 0.25);
+    }
+    &:focus {
+      color: #000b3b;
+      background: #f0f05a;
+      border: 3px solid #8200d1;
+      offset: 0px, 1px rgba(0, 11, 59, 0.25);
+    }
+  }
 
-        &:hover {
-            color: #00788F
-        }
-        }
-        a[class^="buttonStyles__ButtonWrapper"] {
-           
-                background: #fff;
-                color: #C82A87; 
-                font-weight: 700;
-                border: 1px solid #C82A87;
-                box-shadow: 0px 3px 0px rgba(0, 11, 59, 0.25);
+  h2 {
+    color: #0f19a0;
+  }
+  & svg {
+    fill: #c82a87;
+    & path {
+      fill: #c82a87;
+    }
+  }
+`;
 
-                @media ${mediaDetectIE11} {
-                  height: 50px;
-                }
-                
-                &:hover{
-                    background: #F3F1F3;
-                    border: 1px solid #AE0060;
-                    box-shadow: 0px 1px 0px rgba(0, 11, 59, 0.25);
-                    color: #AE0060;
-                }
-                &:active{
-                    color: #000B3B;
-                    background: #F3F1F3;
-                    border: 3px solid #8200D1;
-                    Offset: 0px, 5px rgba(0, 11, 59, 0.25)
-                }
-                 &:focus {
-                    color: #000B3B;
-                    background: #F0F05A;
-                    border: 3px solid #8200D1;
-                    Offset: 0px, 1px rgba(0, 11, 59, 0.25)
-                }
-            
-        }
+export const AEMPagination = styled(Pagination)`
+  button {
+    background: #fff;
+    color: #c82a87;
+    font-weight: 700;
+    border: 1px solid #c82a87;
+    box-shadow: 0px 3px 0px rgba(0, 11, 59, 0.25);
 
-        
-
-        h2{
-            color: #0f19a0;
-        }
-        & svg{
-            fill: #c82a87;
-            & path {
-                fill: #c82a87;
-            }
-        }
-    
-  `;
-
-  export const AEMPagination = styled(Pagination)`
-        button{
-            background: #fff;
-            color: #C82A87; 
-            font-weight: 700;
-            border: 1px solid #C82A87;
-            box-shadow: 0px 3px 0px rgba(0, 11, 59, 0.25);
-            
-            &:hover{
-                background: #F3F1F3;
-                border: 1px solid #AE0060;
-                box-shadow: 0px 1px 0px rgba(0, 11, 59, 0.25);
-                color: #AE0060;
-            }
-            &:active{
-                color: #000B3B;
-                background: #F3F1F3;
-                border: 3px solid #8200D1;
-                Offset: 0px, 5px rgba(0, 11, 59, 0.25)
-            }
-             &:focus {
-                color: #000B3B;
-                background: #F0F05A;
-                border: 3px solid #8200D1;
-                Offset: 0px, 1px rgba(0, 11, 59, 0.25)
-            }
-        }
-  `;
-
-
+    &:hover {
+      background: #f3f1f3;
+      border: 1px solid #ae0060;
+      box-shadow: 0px 1px 0px rgba(0, 11, 59, 0.25);
+      color: #ae0060;
+    }
+    &:active {
+      color: #000b3b;
+      background: #f3f1f3;
+      border: 3px solid #8200d1;
+      offset: 0px, 5px rgba(0, 11, 59, 0.25);
+    }
+    &:focus {
+      color: #000b3b;
+      background: #f0f05a;
+      border: 3px solid #8200d1;
+      offset: 0px, 1px rgba(0, 11, 59, 0.25);
+    }
+  }
+`;
