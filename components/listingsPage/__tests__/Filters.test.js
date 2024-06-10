@@ -39,9 +39,9 @@ describe("Filters Component Tests", () => {
         // console.log(filters.debug())
     })
 
-    it("should render 8 Formfields", () => {
+    it("should render 9 Formfields", () => {
         const formField = findByTestAtrr(filters, "filterFormField")
-        expect(formField.length).toBe(8);
+        expect(formField.length).toBe(9);
     
     })
     it("should render 1 Select", () => {
@@ -49,9 +49,9 @@ describe("Filters Component Tests", () => {
         expect(select.length).toBe(1);
     
     })
-    it("should render 8 Tooltip", () => {
+    it("should render 9 Tooltip", () => {
         const tooltip = findByTestAtrr(filters, "filterTooltip")
-        expect(tooltip.length).toBe(8);
+        expect(tooltip.length).toBe(9);
        
     
     })
