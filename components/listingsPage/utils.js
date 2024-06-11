@@ -124,7 +124,7 @@ export const TooltipText = styled(Tooltip)`
   color: #000;
   font-weight: 200;
   display: inline-block;
-  margin-left: 20px;
+  margin-left: 10px;
   a {
     border: 1px solid #00788f;
     background: #f3f1f3;
