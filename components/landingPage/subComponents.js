@@ -70,7 +70,7 @@ const ListItem = styled.li`
     left: 0;
   }
 
-  &:nth-of-type(5):before {
+  &:nth-of-type(6):before {
     background-image: url(/assets/Images/MAS_cross-105.svg);
   }
 `;

@@ -15,19 +15,22 @@
       "heading": "A all cwmnïau sy'n y cyfeirlyfr hwn fy helpu?",
       "questions": [
         {
-          "answer": "Gallant, os gwrthodwyd yswiriant teithio i chi oherwydd cyflwr meddygol"
+          "answer": "Gallant, os gwrthodwyd yswiriant teithio i chi oherwydd cyflwr meddygol."
         },
         {
-          "answer": "Gallant, os ydych wedi cael yswiriant wedi'i ganslo oherwydd cyflwr meddygol"
+          "answer": "Gallant, os ydych wedi cael yswiriant wedi'i ganslo oherwydd cyflwr meddygol."
         },
         {
-          "answer": "Gallant, os cynigiwyd yswiriant i chi ond bod cyflwr meddygol wedi'i eithrio"
+          "answer": "Gallant, os cynigiwyd yswiriant i chi ond bod cyflwr meddygol wedi'i eithrio."
         },
         {
-          "answer": "Gallant, os cynigiwyd yswiriant i chi gyda phremiwm ychwanegol uchel oherwydd eich cyflwr meddygol"
+          "answer": "Gallant, os cynigiwyd yswiriant i chi gyda phremiwm ychwanegol uchel oherwydd eich cyflwr meddygol."
         },
         {
-          "answer": "Na, os ydych yn aros am ddiagnosis o gyflwr meddygol difrifol neu ddiagnosis diwygiedig o gyflwr meddygol sydd gennych eisoes"
+          "answer": "Gallant, os ydych chi'n cael triniaeth."
+        },
+        {
+          "answer": "Na, os ydych yn aros am ddiagnosis o gyflwr meddygol difrifol neu ddiagnosis diwygiedig o gyflwr meddygol sydd gennych eisoes."
         }
       ],
       "button": "Gweld pob cwmni"
