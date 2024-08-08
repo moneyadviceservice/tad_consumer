@@ -49,9 +49,9 @@ describe("Filters Component Tests", () => {
         expect(select.length).toBe(1);
     
     })
-    it("should render 9 Tooltip", () => {
+    it("should render 10 Tooltips", () => {
         const tooltip = findByTestAtrr(filters, "filterTooltip")
-        expect(tooltip.length).toBe(9);
+        expect(tooltip.length).toBe(10);
        
     
     })
