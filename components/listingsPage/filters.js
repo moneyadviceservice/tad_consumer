@@ -677,6 +677,15 @@ const Filters = ({ t, query }) => {
         <FilterFormFIeld data-testid="filterFormField">
           <Legend>
             {t("headings.my_doctor_has_given_me_a_terminal_prognosis")}
+            <TooltipText
+              minWidth="230px"
+              side="bottom"
+              text={
+                <TooltipParagraph>{t("toolTips.terminal")}</TooltipParagraph>
+
+              }
+              data-testid="filterTooltip"
+            />
           </Legend>
           {t("filters.will_cover_terminal_prognosis", {
             returnObjects: true,
