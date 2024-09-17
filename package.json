@@ -42,7 +42,7 @@
     "axios": "^0.21.2",
     "body-parser": "^1.19.0",
     "expect": "^26.6.1",
-    "express": "^4.17.3",
+    "express": "^4.21.0",
     "fetch-mock": "^9.10.7",
     "html-pdf": "^3.0.1",
     "i18next": "^19.8.2",
