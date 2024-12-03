@@ -1,4 +1,5 @@
 {
+  "language": "en",
   "filters": {
     "age": [
       { "range": "Under 18 years", "value": "Under 18 years" },
