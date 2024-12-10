@@ -50,8 +50,7 @@ const Homepage = ({ t, path }) => {
     addEvent({
       event: "pageLoadDirectory",
       pageName: "tid-homepage",
-      pageTitle:
-        "Travel Adviser Directory | Find a regulated travel insurance firm",
+      pageTitle: t("title"),
       lang: t("language"),
       toolStep: "1",
       stepName: "Find a travel insurance provider",

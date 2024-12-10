@@ -34,7 +34,7 @@ const Listings = ({ t, query, offered }) => {
     addEvent({
       event: "pageLoadDirectory",
       pageName: "tid-listings",
-      pageTitle: "Travel Adviser Directory | Travel firm listings",
+      pageTitle: t("title"),
       lang: t("language"),
       toolStep: "2",
       stepName: "TID-Search results",

@@ -1,5 +1,6 @@
 {
   "language": "en",
+  "title": "Travel Adviser Directory | Travel firm listings",
   "filters": {
     "age": [
       { "range": "Under 18 years", "value": "Under 18 years" },
