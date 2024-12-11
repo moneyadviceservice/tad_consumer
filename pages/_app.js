@@ -1,9 +1,8 @@
 import withReduxStore from "../redux/with-redux-store";
-import { Provider, } from "react-redux";
+import { Provider } from "react-redux";
 import { appWithTranslation } from "../Utils/translation/i18n";
 import Head from "../Utils/layouts/head";
 import { ThemeProvider, Container } from "@moneypensionservice/directories";
-
 
 const MyApp = ({
   Component,
@@ -12,6 +11,10 @@ const MyApp = ({
   path,
   alternateAddress,
 }) => {
+  if (typeof window !== "undefined") {
+    window.adobeDataLayer = window?.adobeDataLayer || [];
+  }
+
   return (
     <Provider store={reduxStore}>
       <ThemeProvider>
@@ -35,16 +38,13 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
 
   if (!process.browser) {
     alternateLang = ctx.req.language === "en" ? "cy" : "en";
- 
   }
-  
 
   let protocol = !process.browser ? ctx.req.protocol : "";
   let host = !process.browser ? ctx.req.headers.host : "";
   let path = !process.browser ? ctx.pathname : "";
-  let alternateAddress =
-    `${protocol}://${host}/${alternateLang}${path}`;
-  
+  let alternateAddress = `${protocol}://${host}/${alternateLang}${path}`;
+
   pageProps = await Component.getInitialProps(ctx);
 
   return {
@@ -56,4 +56,4 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
 };
 
 export default withReduxStore(appWithTranslation(MyApp));
-export { MyApp }
+export { MyApp };

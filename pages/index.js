@@ -11,7 +11,6 @@ import {
   Heading,
   Paragraph,
   resolveMedia,
-
 } from "@moneypensionservice/directories";
 import {
   ParagraphAnchor,
@@ -27,12 +26,14 @@ import Title from "../components/title";
 import FAQ from "../components/landingPage/faq";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import MyDocument from "../components/landingPage/videoTranscript";
+import { addEvent } from "../Utils/adobeAnalytics";
+import { useRouter } from "next/router";
 
 const PDFLink = styled(PDFDownloadLink)`
   font-size: 16px;
   margin: 0;
   width: 100%;
-  color: #037F8C;
+  color: #037f8c;
   text-align: left;
   ${resolveMedia.md`
   text-align: right;
@@ -41,38 +42,52 @@ const PDFLink = styled(PDFDownloadLink)`
 
 const Homepage = ({ t, path }) => {
   const [isClient, setIsClient] = useState(false);
+  const router = useRouter();
+
   useEffect(() => {
     setIsClient(true);
+
+    addEvent({
+      event: "pageLoadDirectory",
+      pageName: "tid-homepage",
+      pageTitle: t("title"),
+      lang: t("language"),
+      toolStep: "1",
+      stepName: "Find a travel insurance provider",
+    });
   }, []);
 
   return (
     <Fragment>
       {/* Main heading and firm registration anchor */}
-      <ExtendedSection bgImg  style={{paddingTop: "15px", paddingBottom: "15px"}}>
+      <ExtendedSection
+        bgImg
+        style={{ paddingTop: "15px", paddingBottom: "15px" }}
+      >
         <Section background constrained data-testid="contentRow">
-            <Col sizes={{ xs: 12, md: 9 }} data-testid="contentCol">
+          <Col sizes={{ xs: 12, md: 9 }} data-testid="contentCol">
             <Title />
-            </Col>
-            <Col sizes={{ xs: 12, md: 3 }} data-testid="contentCol">
+          </Col>
+          <Col sizes={{ xs: 12, md: 3 }} data-testid="contentCol">
             <ParagraphAnchor style={{ fontSize: "16px" }}>
-                <Anchor
+              <Anchor
                 href="https://radsignup.moneyhelper.org.uk/travel_insurance_registrations/new"
                 target="_blank"
                 style={{ fontSize: "16px" }}
-                >
+              >
                 {t("home.banner.register")}
-                </Anchor>
-                {t("home.banner.or")}
-                <Anchor
+              </Anchor>
+              {t("home.banner.or")}
+              <Anchor
                 href="https://radsignup.moneyhelper.org.uk/users/sign_in"
                 target="_blank"
                 style={{ fontSize: "16px" }}
-                >
+              >
                 {t("home.banner.login")}
-                </Anchor>
-                {t("home.banner.as")}
+              </Anchor>
+              {t("home.banner.as")}
             </ParagraphAnchor>
-            </Col>
+          </Col>
         </Section>
       </ExtendedSection>
       {/* Questions and quote disclaimer */}
@@ -97,7 +112,7 @@ const Homepage = ({ t, path }) => {
             </InternalLink>
           </Col>
           <Col sizes={{ xs: 12, md: 6 }} data-testid="contentCol">
-            <AboutBox >
+            <AboutBox>
               <Heading level={3} color="#000" style={{ marginTop: 0 }}>
                 {t("home.about.heading")}
               </Heading>
@@ -175,7 +190,7 @@ const Homepage = ({ t, path }) => {
   );
 };
 
-Homepage.getInitialProps = async () => ({
+Homepage.getInitialProps = async ({ query }) => ({
   namespacesRequired: ["landing", "common"],
 });
 
