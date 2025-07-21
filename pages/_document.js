@@ -36,6 +36,21 @@ export default class MyDocument extends Document {
         <Head />
 
         <body>
+          <script type="text/javascript" id="_informizely_script_tag"
+            dangerouslySetInnerHTML={{
+              __html: `
+              var IzWidget = IzWidget || {};
+              (function (d) {
+                var scriptElement = d.createElement('script');
+                scriptElement.type = 'text/javascript'; scriptElement.async = true;
+                scriptElement.src = "https://insitez.blob.core.windows.net/site/8a33e5b3-23da-46d4-9c32-8b9c38aeaeda.js";
+                var node = d.getElementById('_informizely_script_tag');
+                node.parentNode.insertBefore(scriptElement, node);
+              })(document);
+          `,
+            }}
+          />
+
           <noscript
             dangerouslySetInnerHTML={{
               __html: `
