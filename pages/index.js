@@ -116,7 +116,21 @@ const Homepage = ({ t, path }) => {
               <Heading level={3} color="#000" style={{ marginTop: 0 }}>
                 {t("home.about.heading")}
               </Heading>
-              {t("home.about.content")}
+              {t("home.about.paragraphs", { returnObjects: true }).map(
+                (text, i) => (
+                  <Paragraph textSize="16px">
+                    {text}
+                  </Paragraph>
+                )
+              )}
+
+              <UnorderedList>
+                {t("home.about.listitems", { returnObjects: true }).map(
+                  (text, i) => (
+                    <ListItem key={i}>{text}</ListItem>
+                  )
+                )}
+              </UnorderedList>
             </AboutBox>
           </Col>
         </Section>
