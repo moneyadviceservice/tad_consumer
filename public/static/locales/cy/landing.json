@@ -11,7 +11,15 @@
     },
     "about": {
       "heading": "Am y cyfeirlyfr hwn",
-      "content": "Ni allwn roi amcangyfrif pris - ond gallwn eich cyfeirio at gwmnïau arbenigol sy'n gallu. Mae pob cwmni wedi'i awdurdodi a'i reoleiddio gan yr Awdurdod Ymddygiad Ariannol (FCA) ac maent wedi bod trwy broses ddethol drylwyr i brofi eu harbenigedd"
+      "paragraphs": [
+        "Yn y cyfeirlyfr hwn, fe welwch restr fer o gwmnïau arbenigol sydd fwyaf tebygol o'ch yswirio. Nid ydym yn darparu dyfynbrisiau ein hunain. Bydd angen i chi gysylltu â phob cwmni yn uniongyrchol i gael y manylion.",
+        "Yn dibynnu ar eich oedran neu gyflwr meddygol, efallai y byddwch chi'n dal i weld bod yswiriant yn ddrud iawn neu ddim ar gael.",
+        "Mae pob cwmni:"
+      ],
+      "listitems": [
+        "wedi'i awdurdodi a'i reoleiddio gan yr Awdurdod Ymddygiad Ariannol (FCA).",
+        "wedi'i ddewis ar sail prawf o'u harbenigedd."
+      ]
     },
     "conditions": {
       "heading": "A all cwmnïau sy'n y cyfeirlyfr hwn fy helpu?",

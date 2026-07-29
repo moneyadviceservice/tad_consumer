@@ -12,7 +12,15 @@
     },
     "about": {
       "heading": "About this directory",
-      "content": "We can't provide quotes - but we can direct you to specialist firms that can. All firms are authorised and regulated by the Financial Conduct Authority (FCA) and have been through a rigorous selection process to prove their specialism"
+      "paragraphs": [
+        "You’ll see a shortlist of specialist firms that are most likely to cover you. We do not provide quotes ourselves. You’ll need to contact each firm directly for the details.",
+        "Depending on your age or medical condition, you might still find cover is very expensive or not available.",
+        "All firms:"
+      ],
+      "listitems": [
+        "are authorised and regulated by the Financial Conduct Authority (FCA)",
+        "have been selected based on proof of their specialism."
+      ]
     },
     "conditions": {
       "heading": "Can firms on this directory help me?",
